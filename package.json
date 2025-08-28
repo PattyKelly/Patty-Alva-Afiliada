@@ -1,0 +1,6 @@
+{
+  "name": "alva-landing",
+  "private": true,
+  "type": "module",
+  "dependencies": { "openai": "^4.58.1" }
+}
