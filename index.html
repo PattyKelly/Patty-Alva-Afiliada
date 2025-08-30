@@ -82,7 +82,7 @@
       border:1px solid #dde3ff;
     }
 
-    /* ======= BEST SELLER (grid) ======= */
+    /* ======= BEST SELLER (card + grid) ======= */
     .card{
       margin-top:26px; background:var(--card); border:1px solid var(--ring);
       border-radius:var(--radius); box-shadow:var(--shadow);
@@ -95,20 +95,30 @@
     }
     @media (max-width:1024px){ .grid{ grid-template-columns:1fr } }
 
-    .media{ display:flex; flex-direction:column; gap:14px }
-    .media img, .media video{
+    /* Coluna de MÍDIA agora em grade organizada */
+    .media{
+      display:grid;
+      gap:14px;
+      grid-template-columns:1fr;
+    }
+    @media (min-width:900px){
+      .media{ grid-template-columns:1fr 1fr; }
+      .media img:first-child{ grid-column:1/2; }
+      .media img:nth-child(2){ grid-column:2/3; }
+    }
+
+    .media img{
       width:100%; border-radius:14px; border:1px solid var(--ring);
       background:#fff; box-shadow:var(--shadow); object-fit:cover;
     }
 
-    /* slot da imagem IA (mantém quadrado bonito) */
+    /* Slot da imagem IA */
     .ai-creative{
       aspect-ratio: 1 / 1;
       object-fit: cover;
       background:#fff;
     }
-
-    /* 🔧 Ajuste fino só para imagens IA dentro do bloco .media */
+    /* Regra adicional solicitada */
     .media img.ai-creative{
       border:1px solid var(--ring);
       border-radius:14px;
@@ -172,7 +182,9 @@
 
     /* ======= LOJINHA (rosa) ======= */
     .lojinha{
-      margin-top:26px; border-radius:18px; border:1px solid #ffd6ea;
+      /* Mantido 26px como você pediu */
+      margin-top:26px;
+      border-radius:18px; border:1px solid #ffd6ea;
       background:linear-gradient(180deg,#fff0f7 0%, #ffe7f2 100%);
       box-shadow:var(--shadow); padding:22px;
       display:grid; gap:16px; grid-template-columns:1fr auto; align-items:center;
@@ -196,7 +208,7 @@
       display:grid; place-items:center; color:#fff; box-shadow:0 12px 30px rgba(37,211,102,.35);
       cursor:pointer; border:2px solid #e9fff1;
     }
-    .chat-fab svg{ width:34px; height:34px; }
+    .chat-fab svg{ width:28px; height:28px; display:block } /* alinhado, sem “torto” */
     .chat-fab:hover{ background:var(--whats-2) }
 
     .chat-modal{
@@ -276,8 +288,22 @@
       </div>
     </section>
 
+    <!-- LOJINHA (logo após o Hero) -->
+    <section class="lojinha">
+      <div>
+        <h3>Conheça minha lojinha com ofertas e kits 💖</h3>
+        <p class="mt-6">
+          Produtos em destaque, combos e condições especiais por tempo limitado.
+          <br/><span class="tag-cupom">🎁 Use o cupom <b>PATRICIAK</b> e garanta desconto</span>
+        </p>
+      </div>
+      <a class="btn-lojinha"
+         href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7"
+         target="_blank" rel="noopener">Ir para a lojinha</a>
+    </section>
+
     <!-- ========================================================= -->
-    <!-- BEST SELLER (VERSÃO CORRIGIDA)                           -->
+    <!-- BEST SELLER                                               -->
     <!-- ========================================================= -->
     <section class="card" id="desodorantes" aria-label="Best-seller">
       <div class="grid">
@@ -321,12 +347,13 @@
             width="800" height="800" loading="lazy" decoding="async" />
           -->
 
-          <!-- Vídeo somente do produto (sem pessoas) -->
+          <!-- VÍDEO REMOVIDO conforme pedido (mantido comentado p/ histórico)
           <video
             autoplay muted loop playsinline
             poster="https://videos.widde.io/widde-bucket-sp/33e680ec-40ad-4dd9-8241-fe4036ddfbb7/videos/9ee20bae-6798-4f45-ba4f-d09e7f191863-1743187279450-3648889/thumbnail.png">
             <source src="https://videos.widde.io/widde-bucket-sp/33e680ec-40ad-4dd9-8241-fe4036ddfbb7/videos/9ee20bae-6798-4f45-ba4f-d09e7f191863-1743187279450-3648889/gif.mp4" type="video/mp4">
           </video>
+          -->
         </div>
 
         <!-- TEXTO + argumentos (no grid, à direita) -->
@@ -360,7 +387,7 @@
         </div>
       </div>
 
-      <!-- FAIXA DE SELOS (fora do grid, ainda dentro da section) -->
+      <!-- FAIXA DE SELOS (fora do grid) -->
       <div class="selos-wrap">
         <div class="selos">
           <div class="selo">
@@ -399,39 +426,6 @@
       </div>
     </section>
 
-    <!-- ========================================================= -->
-    <!-- VERSÃO ANTERIOR DO BLOCO (COMENTADA, GUARDADA P/ HISTÓRICO)
-         🔒 Não será renderizada; mantida para não perder conteúdo.  -->
-    <!--
-    <section class="card" id="desodorantes" aria-label="Best-seller">
-      <div class="grid">
-        <div class="media">
-          <img class="ai-creative" src="assets/imagem1.png" alt="Pessoa feliz aplicando o Desodorante Cristal Natural Alva" width="800" height="800" loading="eager" fetchpriority="high" />
-          <img class="ai-creative" src="assets/imagem2.png" alt="Close do Desodorante Cristal Natural Alva" width="800" height="800" loading="lazy" decoding="async" />
-          <video autoplay muted loop playsinline poster="https://videos.widde.io/widde-bucket-sp/33e680ec-40ad-4dd9-8241-fe4036ddfbb7/videos/9ee20bae-6798-4f45-ba4f-d09e7f191863-1743187279450-3648889/thumbnail.png">
-            <source src="https://videos.widde.io/widde-bucket-sp/33e680ec-40ad-4dd9-8241-fe4036ddfbb7/videos/9ee20bae-6798-4f45-ba4f-d09e7f191863-1743187279450-3648889/gif.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="b-text">…(texto)…</div>
-      <div class="selos-wrap">…(selos)…</div>
-    </section>
-    -->
-
-    <!-- LOJINHA (rosa delicado) -->
-    <section class="lojinha">
-      <div>
-        <h3>Conheça minha lojinha com ofertas e kits 💖</h3>
-        <p class="mt-6">
-          Produtos em destaque, combos e condições especiais por tempo limitado.
-          <br/><span class="tag-cupom">🎁 Use o cupom <b>PATRICIAK</b> e garanta desconto</span>
-        </p>
-      </div>
-      <a class="btn-lojinha"
-         href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7"
-         target="_blank" rel="noopener">Ir para a lojinha</a>
-    </section>
-
     <!-- Form de contato Netlify (fica escondido, mas captura envios) -->
     <form name="contato" netlify hidden>
       <input type="text" name="nome" />
@@ -442,12 +436,10 @@
 
   <!-- CHAT (bolha verde estilo Whats) -->
   <button class="chat-fab" id="openChat" aria-label="Falar com a Alva">
-    <!-- ícone Whats -->
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path fill="#fff" d="M27.2 4.8A13.4 13.4 0 0 0 16 0C7.2 0 0 7.2 0 16c0 2.8.7 5.5 2.1 7.9L0 32l8.3-2.1A15.9 15.9 0 0 0 16 32c8.8 0 16-7.2 16-16 0-4.3-1.7-8.3-4.8-11.2Z" opacity=".15"/>
-      <path fill="#fff" d="M16 3.2c-7.1 0-12.8 5.7-12.8 12.8 0 2.5.7 4.8 2 6.8L4 28l5.4-1.4c1.9 1.2 4.1 1.8 6.6 1.8 7.1 0 12.8-5.7 12.8-12.8S23.1 3.2 16 3.2Z"/>
-      <path fill="#25D366" d="M16 5.6c6 0 10.8 4.8 10.8 10.8S22 27.2 16 27.2c-2.1 0-4-.6-5.6-1.6l-.4-.2-3.2.8.9-3.1-.2-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.8 10.4 10 5.6 16 5.6Z"/>
-      <path fill="#fff" d="M12.1 10.9c-.3-.7-.6-.7-.9-.7h-.8c-.3 0-.7.1-1 .4s-1.4 1.4-1.4 3.4 1.4 3.9 1.6 4.1c.2.3 2.8 4.4 6.9 6 .9.4 1.6.6 2.2.8 1 .3 1.8.2 2.4.1.7-.1 2.2-.9 2.6-1.8.3-.9.3-1.7.2-1.8-.1-.1-.3-.2-.6-.4l-2.1-1.1c-.3-.1-.5-.2-.7.2-.2.3-.8 1.1-.9 1.2-.2.1-.3.1-.6 0s-1.2-.4-2.3-1.1c-.8-.5-1.4-1.5-1.6-1.8-.2-.3 0-.4.1-.5.2-.2.3-.4.5-.6.2-.2.3-.4.4-.6.1-.2 0-.4 0-.6l-.9-2.2c-.3-.7-.5-.6-.7-.6h-.5Z"/>
+    <!-- Ícone centralizado -->
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2a9 9 0 0 0-9 9c0 1.8.5 3.4 1.4 4.8L3 22l6-1.6A9 9 0 1 0 12 2Z" fill="#ffffff" opacity=".15"></path>
+      <path fill="#ffffff" d="M16.6 15.2c-.3 0-.6 0-.8-.1l-1.7-.5a.9.9 0 0 0-.9.2l-.6.6a7.8 7.8 0 0 1-3.8-3.8l.6-.6a.9.9 0 0 0 .2-.9l-.5-1.7a1.4 1.4 0 0 0-1.4-1h-.8a1.6 1.6 0 0 0-1.6 1.7 9.6 9.6 0 0 0 9.6 9.6c.9 0 1.7-.7 1.7-1.6v-.8a1.4 1.4 0 0 0-1-1.5Z"></path>
     </svg>
   </button>
 
