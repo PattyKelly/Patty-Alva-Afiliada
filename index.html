@@ -39,9 +39,15 @@
     /* ======= NAV ======= */
     .topbar{
       display:flex; gap:16px; align-items:center; justify-content:space-between;
-      padding:8px 0 18px;
+      padding:12px 16px;               /* leve respiro */
+      background:var(--primary);        /* FUNDO AZUL (pedido) */
+      border-radius:14px;               /* fica “em cartão” */
+      box-shadow:var(--shadow);
     }
-    .brand{ font-weight:800; letter-spacing:.2px; font-size:20px }
+    .brand{
+      font-weight:800; letter-spacing:.2px; font-size:20px;
+      color:#fff;                        /* TEXTO BRANCO (pedido) */
+    }
     nav{ display:flex; flex-wrap:wrap; gap:10px }
     nav a{
       padding:10px 14px; background:var(--card); border:1px solid var(--ring);
@@ -163,7 +169,6 @@
 
     .buy-row{ display:flex; gap:12px; align-items:center; margin:18px 0 6px; flex-wrap:wrap }
     .buy-row .btn{ padding:14px 18px }
-    /* empurra o link secundário para a direita, como você sinalizou */
     .buy-row .btn-ghost{ margin-left:auto }
 
     /* ======= LOJINHA (rosa) ======= */
@@ -405,7 +410,6 @@
           <div class="selo">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <path d="M18 7c0-1.7-1.3-3-3-3-2 0-2 2-2 2M6 7c0-1.7-1.3-3 3-3 2 0 2 2 2 2"></path>
-              <circle cx="12" cy="14" r="5"></circle>
             </svg>
             <span>Vegano</span>
           </div>
