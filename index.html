@@ -127,15 +127,15 @@
     .b-text h2{ font-size:28px; margin:0 0 8px }
     .b-text p.lead{ color:var(--muted); margin:0 0 16px }
 
-    /* blocos de argumentos “market” */
+    /* blocos de argumentos “market” (AGORA COM OS 5 SELOS) */
     .kv-grid{
       display:grid; gap:12px;
-      grid-template-columns:repeat(2,1fr);
+      grid-template-columns:repeat(2,1fr); /* mantém 2 colunas como no layout */
     }
     @media (max-width:720px){ .kv-grid{ grid-template-columns:1fr } }
     .kv{
       background:#f6fff7; border:1px solid #e0f3e3; border-radius:12px; padding:12px 14px;
-      color:#264c2a;
+      color:#264c2a; font-weight:700;
     }
     .kv b{ color:#174e1d }
 
@@ -172,7 +172,7 @@
     }
     .btn-lojinha:hover{ background:var(--accent-pink-2) }
 
-    /* ======= SELOS (faixa inteira, fora do grid) ======= */
+    /* ======= SELOS (faixa inteira) — mantida no arquivo, mas vamos comentar o HTML p/ não duplicar ======= */
     .selos-wrap{
       margin-top:18px; padding:16px;
       background:#f9fbff; border:1px solid var(--ring); border-radius:14px;
@@ -278,9 +278,24 @@
     </section>
 
     <!-- ========================================================= -->
-    <!-- BEST SELLER (VERSÃO CORRIGIDA)                           -->
+    <!-- BEST SELLER                                               -->
     <!-- ========================================================= -->
     <section class="card" id="desodorantes" aria-label="Best-seller">
+
+      <!-- LOJINHA EM CIMA DA FOTO (topo da seção) -->
+      <div class="lojinha">
+        <div>
+          <h3>Conheça minha lojinha com ofertas e kits 💖</h3>
+          <p class="mt-6">
+            Produtos em destaque, combos e condições especiais por tempo limitado.
+            <br/><span class="tag-cupom">🎁 Use o cupom <b>PATRICIAK</b> e garanta desconto</span>
+          </p>
+        </div>
+        <a class="btn-lojinha"
+           href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7"
+           target="_blank" rel="noopener">Ir para a lojinha</a>
+      </div>
+
       <div class="grid">
         <!-- MÍDIA (apenas produto ou IA) -->
         <div class="media">
@@ -322,7 +337,7 @@
             width="800" height="800" loading="lazy" decoding="async" />
           -->
 
-          <!-- VÍDEO ANTIGO REMOVIDO A PEDIDO (mantido apenas comentado p/ histórico)
+          <!-- VÍDEO ANTIGO (DESABILITADO A PEDIDO)
           <video autoplay muted loop playsinline
             poster="https://videos.widde.io/widde-bucket-sp/33e680ec-40ad-4dd9-8241-fe4036ddfbb7/videos/9ee20bae-6798-4f45-ba4f-d09e7f191863-1743187279450-3648889/thumbnail.png">
             <source src="https://videos.widde.io/widde-bucket-sp/33e680ec-40ad-4dd9-8241-fe4036ddfbb7/videos/9ee20bae-6798-4f45-ba4f-d09e7f191863-1743187279450-3648889/gif.mp4" type="video/mp4">
@@ -330,7 +345,7 @@
           -->
         </div>
 
-        <!-- TEXTO + argumentos (no grid, à direita) -->
+        <!-- TEXTO + argumentos (à direita) -->
         <div class="b-text">
           <span class="badge">🏆 Campeão de Vendas</span>
           <h2>Desodorante Cristal Stick Vegano 60g Alva</h2>
@@ -339,11 +354,13 @@
             e sem manchar as roupas. Dura <b>até 1 ano</b> com uso contínuo.
           </p>
 
+          <!-- BLOQUINHOS VERDES (AGORA COM OS 5 SELOS) -->
           <div class="kv-grid">
-            <div class="kv"><b>Não resseca</b> a pele e deixa toque sequinho.</div>
-            <div class="kv"><b>Ajuda a uniformizar</b> a aparência das axilas.</div>
-            <div class="kv"><b>Fácil de usar</b>, aplicação suave e confortável.</div>
-            <div class="kv">Um stick rende <b>muito</b> (uso diário).</div>
+            <div class="kv">Sem Cloridrato de Alumínio</div>
+            <div class="kv">Dermatologicamente Testado</div>
+            <div class="kv">Hipoalergênico</div>
+            <div class="kv">Não Mancha a Roupa</div>
+            <div class="kv">Vegano</div>
           </div>
 
           <ul class="beneficios">
@@ -358,24 +375,10 @@
             <a class="btn btn-primary" href="https://mais.app/MQtQeF" target="_blank" rel="noopener noreferrer nofollow">COMPRE JÁ</a>
             <a class="btn btn-ghost"   href="https://mais.app/jROmOw" target="_blank" rel="noopener noreferrer nofollow">Ver todos os desodorantes</a>
           </div>
-
-          <!-- LOJINHA (trazida para mais perto do topo, logo após as CTAs) -->
-          <div class="lojinha">
-            <div>
-              <h3>Conheça minha lojinha com ofertas e kits 💖</h3>
-              <p class="mt-6">
-                Produtos em destaque, combos e condições especiais por tempo limitado.
-                <br/><span class="tag-cupom">🎁 Use o cupom <b>PATRICIAK</b> e garanta desconto</span>
-              </p>
-            </div>
-            <a class="btn-lojinha"
-              href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7"
-              target="_blank" rel="noopener">Ir para a lojinha</a>
-          </div>
         </div>
       </div>
 
-      <!-- FAIXA DE SELOS (fora do grid, ainda dentro da section) -->
+      <!-- FAIXA DE SELOS INFERIOR (COMENTADA PARA NÃO DUPLICAR)
       <div class="selos-wrap">
         <div class="selos">
           <div class="selo">
@@ -412,6 +415,7 @@
           </div>
         </div>
       </div>
+      -->
     </section>
 
     <!-- ========================================================= -->
