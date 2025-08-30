@@ -101,11 +101,22 @@
       background:#fff; box-shadow:var(--shadow); object-fit:cover;
     }
 
-    /* slot da imagem IA */
+    /* slot da imagem IA (mantém quadrado bonito) */
     .ai-creative{
       aspect-ratio: 1 / 1;
       object-fit: cover;
       background:#fff;
+    }
+
+    /* 🔧 Ajuste fino só para imagens IA dentro do bloco .media */
+    .media img.ai-creative{
+      border:1px solid var(--ring);
+      border-radius:14px;
+      background:#fff;
+      box-shadow:var(--shadow);
+      object-fit:cover;
+      width:100%;
+      height:auto;
     }
 
     .badge{
@@ -265,15 +276,30 @@
       </div>
     </section>
 
-    <!-- BEST SELLER -->
+    <!-- ========================================================= -->
+    <!-- BEST SELLER (VERSÃO CORRIGIDA)                           -->
+    <!-- ========================================================= -->
     <section class="card" id="desodorantes" aria-label="Best-seller">
       <div class="grid">
         <!-- MÍDIA (apenas produto ou IA) -->
         <div class="media">
-          <!-- SLOT DA IMAGEM IA (suba assets/alva_ai1.jpg que aparece aqui) -->
-          <img class="ai-creative" src="assets/alva_ai1.jpg" alt="Pessoa aplicando desodorante cristal natural em gesto feliz" />
+          <!-- IA / AUTORAIS (suas imagens em assets/) -->
+          <img
+            class="ai-creative"
+            src="assets/imagem1.png"
+            alt="Pessoa feliz aplicando o Desodorante Cristal Natural Alva"
+            width="800" height="800"
+            loading="eager" fetchpriority="high" />
 
-          <!-- Imagem 1 -->
+          <img
+            class="ai-creative"
+            src="assets/imagem2.png"
+            alt="Close do Desodorante Cristal Natural Alva"
+            width="800" height="800"
+            loading="lazy" decoding="async" />
+
+          <!-- OPCIONAL: imagens oficiais (descomentar se quiser exibir) -->
+          <!--
           <img
             src="https://alvapersonalcare.com.br/cdn/shop/files/52_64a62824-0cbc-4448-879b-cbcfaa7abb3f.png?v=1748520280&width=800&format=webp"
             srcset="
@@ -282,9 +308,8 @@
             "
             sizes="(max-width: 768px) 400px, 800px"
             alt="Desodorante Cristal Stick Vegano 60g Alva"
-            width="800" height="800" loading="eager" fetchpriority="high" />
+            width="800" height="800" loading="lazy" decoding="async" />
 
-          <!-- Imagem 2 -->
           <img
             src="https://alvapersonalcare.com.br/cdn/shop/files/2_0b52cb84-7c6c-4b90-9d5f-e7b8eb3dca6e.png?v=1748520280&width=800&format=webp"
             srcset="
@@ -293,7 +318,8 @@
             "
             sizes="(max-width: 768px) 400px, 800px"
             alt="Desodorante Cristal Stick Vegano 60g Alva — Imagem complementar"
-            width="800" height="800" loading="eager" />
+            width="800" height="800" loading="lazy" decoding="async" />
+          -->
 
           <!-- Vídeo somente do produto (sem pessoas) -->
           <video
@@ -303,7 +329,7 @@
           </video>
         </div>
 
-        <!-- TEXTO + argumentos -->
+        <!-- TEXTO + argumentos (no grid, à direita) -->
         <div class="b-text">
           <span class="badge">🏆 Campeão de Vendas</span>
           <h2>Desodorante Cristal Stick Vegano 60g Alva</h2>
@@ -334,7 +360,7 @@
         </div>
       </div>
 
-      <!-- FAIXA DE SELOS (fora do grid, não “flutua”) -->
+      <!-- FAIXA DE SELOS (fora do grid, ainda dentro da section) -->
       <div class="selos-wrap">
         <div class="selos">
           <div class="selo">
@@ -372,6 +398,25 @@
         </div>
       </div>
     </section>
+
+    <!-- ========================================================= -->
+    <!-- VERSÃO ANTERIOR DO BLOCO (COMENTADA, GUARDADA P/ HISTÓRICO)
+         🔒 Não será renderizada; mantida para não perder conteúdo.  -->
+    <!--
+    <section class="card" id="desodorantes" aria-label="Best-seller">
+      <div class="grid">
+        <div class="media">
+          <img class="ai-creative" src="assets/imagem1.png" alt="Pessoa feliz aplicando o Desodorante Cristal Natural Alva" width="800" height="800" loading="eager" fetchpriority="high" />
+          <img class="ai-creative" src="assets/imagem2.png" alt="Close do Desodorante Cristal Natural Alva" width="800" height="800" loading="lazy" decoding="async" />
+          <video autoplay muted loop playsinline poster="https://videos.widde.io/widde-bucket-sp/33e680ec-40ad-4dd9-8241-fe4036ddfbb7/videos/9ee20bae-6798-4f45-ba4f-d09e7f191863-1743187279450-3648889/thumbnail.png">
+            <source src="https://videos.widde.io/widde-bucket-sp/33e680ec-40ad-4dd9-8241-fe4036ddfbb7/videos/9ee20bae-6798-4f45-ba4f-d09e7f191863-1743187279450-3648889/gif.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="b-text">…(texto)…</div>
+      <div class="selos-wrap">…(selos)…</div>
+    </section>
+    -->
 
     <!-- LOJINHA (rosa delicado) -->
     <section class="lojinha">
