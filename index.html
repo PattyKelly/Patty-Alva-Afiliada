@@ -6,7 +6,7 @@
   <title>Alva Natural — Patty Afiliada</title>
   <meta name="description" content="Fórmulas limpas, sem agressões à pele e ao cabelo. Loja oficial com compra segura e entrega rastreável." />
 
-  <!-- Fonte limpa e confortável -->
+  <!-- Fonte confortável -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -16,32 +16,27 @@
       --card: #FFFFFF;
       --text: #1f2a44;
       --muted: #5c6b87;
-      --primary: #4054B2;   /* azul confortável */
+      --primary: #4054B2;
       --primary-2:#5968cc;
       --pill:#eef1ff;
       --ring:#E7E9F6;
       --shadow: 0 8px 24px rgba(20, 33, 61, 0.08);
       --radius: 16px;
     }
-
     *{ box-sizing: border-box }
     html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif }
 
     a{ color:inherit; text-decoration:none }
 
-    .wrap{ max-width:1200px; margin:0 auto; padding:28px 20px 80px }
+    .wrap{ max-width:1220px; margin:0 auto; padding:28px 18px 80px }
 
     /* ======= NAV ======= */
-    .topbar{
-      display:flex; gap:16px; align-items:center; justify-content:space-between;
-      padding:8px 0 18px;
-    }
+    .topbar{ display:flex; gap:16px; align-items:center; justify-content:space-between; padding:6px 0 18px }
     .brand{ font-weight:800; letter-spacing:.2px; font-size:20px }
     nav{ display:flex; flex-wrap:wrap; gap:10px }
     nav a{
       padding:10px 14px; background:var(--card); border:1px solid var(--ring);
-      border-radius:999px; font-weight:500; color:var(--muted);
-      transition:.2s;
+      border-radius:999px; font-weight:600; color:var(--muted); transition:.2s;
     }
     nav a:hover{ color:var(--text); border-color:#CFD3F5; box-shadow:var(--shadow) }
 
@@ -51,7 +46,7 @@
       border:1px solid var(--ring);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:44px 28px;
+      padding:44px 24px;
       margin-top:12px;
     }
     .hero h1{
@@ -81,18 +76,18 @@
     .card{
       margin-top:26px; background:var(--card); border:1px solid var(--ring);
       border-radius:var(--radius); box-shadow:var(--shadow);
-      padding:18px 18px 6px;
+      padding:18px;
     }
-    .grid{
-      display:grid; gap:24px;
-      grid-template-columns: 1.2fr 1fr;
-    }
+    .grid{ display:grid; gap:24px; grid-template-columns:1.25fr 1fr }
     @media (max-width:1024px){ .grid{ grid-template-columns:1fr } }
 
+    /* mídia sem cortes */
     .media{ display:flex; flex-direction:column; gap:14px }
-    .media img, .media video{
-      width:100%; border-radius:14px; border:1px solid var(--ring);
-      background:#fff; box-shadow:var(--shadow); object-fit:cover;
+    .media img,
+    .media video{
+      width:100%; height:auto; border-radius:14px; border:1px solid var(--ring);
+      background:#fff; box-shadow:var(--shadow); object-fit:contain; /* não corta */
+      max-height:720px;
     }
 
     .b-text h2{ font-size:28px; margin:0 0 8px }
@@ -103,9 +98,7 @@
     .buy-row{ display:flex; gap:12px; align-items:center; margin:18px 0 6px }
     .buy-row .btn{ padding:14px 18px }
 
-    .selos{
-      display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin:22px 0 10px;
-    }
+    .selos{ display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin:22px 0 4px }
     @media (max-width:780px){ .selos{ grid-template-columns:repeat(2,1fr) } }
     .selo{
       border:1px solid var(--ring); border-radius:12px; padding:14px;
@@ -126,56 +119,33 @@
       display:none; flex-direction:column; overflow:hidden;
     }
     .chat-modal header{
-      background:var(--primary); color:#fff; padding:14px 16px; font-weight:800; display:flex; justify-content:space-between; align-items:center
+      background:var(--primary); color:#fff; padding:14px 16px; font-weight:800;
+      display:flex; justify-content:space-between; align-items:center
     }
     .chat-body{ padding:12px; max-height:56vh; overflow:auto }
+    .chip-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px }
+    .chip{ padding:8px 12px; border-radius:999px; background:var(--pill);
+      border:1px solid #dde3ff; color:var(--primary); font-weight:600; cursor:pointer }
+    .chip a{ color:var(--primary) } /* chips podem conter link direto */
     .msg{ background:#f4f6ff; border:1px solid #e7eaff; padding:10px 12px; border-radius:12px; margin:8px 0; color:#23305a }
     .msg.user{ background:#EEF2FF; border-color:#dde3ff }
-    .chat-foot{ display:flex; gap:8px; border-top:1px solid var(--ring); padding:10px; }
+    .chat-foot{ display:flex; gap:8px; border-top:1px solid var(--ring); padding:10px }
     .chat-foot input{ flex:1; border:1px solid var(--ring); border-radius:10px; padding:10px 12px }
     .chat-foot button{ padding:10px 14px; border-radius:12px; background:var(--primary); color:#fff; border:1px solid transparent; font-weight:700 }
-
-    /* Chips (atalhos) */
-    .alva-quick-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: .5rem;
-      margin-top: .5rem;
-      margin-bottom: .25rem;
-    }
-    @media (min-width: 480px) {
-      .alva-quick-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    }
-    @media (min-width: 768px) {
-      .alva-quick-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    }
-    .chip {
-      padding:10px 12px; border-radius:999px;
-      background:var(--pill); border:1px solid #dde3ff;
-      color:var(--primary); font-weight:700; font-size:.92rem; cursor:pointer;
-      text-align:center;
-    }
-    .chip-link { text-decoration:none; display:inline-block }
-    .chip-link::after {
-      content: "↗";
-      font-size: .9em;
-      margin-left: .35rem;
-      opacity: .7;
-    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <!-- NAV -->
+    <!-- NAV (apenas links — não alterei sua estrutura) -->
     <div class="topbar">
       <div class="brand">ALVA Natural — Patty</div>
       <nav aria-label="Categorias">
-        <a href="#cabelos">Cabelos</a>
-        <a href="#bucal">Cuidados Bucais</a>
-        <a href="#corpo">Corpo</a>
-        <a href="#desodorantes">Desodorantes</a>
-        <a href="#lancamentos">Lançamentos</a>
-        <a href="#kits">Kits</a>
+        <a href="https://mais.app/aOqCmG" target="_blank" rel="noopener nofollow">Cabelos</a>
+        <a href="https://mais.app/nX49Uz" target="_blank" rel="noopener nofollow">Cuidados Bucais</a>
+        <a href="https://mais.app/BeCrvg" target="_blank" rel="noopener nofollow">Corpo</a>
+        <a href="https://mais.app/MQtQeF" target="_blank" rel="noopener nofollow">Desodorantes</a>
+        <a href="https://mais.app/KlwwBB" target="_blank" rel="noopener nofollow">Lançamentos</a>
+        <a href="https://mais.app/KlwwBB" target="_blank" rel="noopener nofollow">Kits</a>
       </nav>
     </div>
 
@@ -184,24 +154,23 @@
       <h1>Cuide-se sem química — resultados reais com Alva</h1>
       <p>Fórmulas limpas, sem agressões à pele e ao cabelo. Loja oficial com compra segura e entrega rastreável.</p>
 
-      <!-- CTAs com links de afiliado -->
       <div class="cta-row">
         <a class="btn btn-primary" href="https://mais.app/MQtQeF" target="_blank" rel="noopener noreferrer nofollow">Comprar agora</a>
         <a class="btn btn-ghost"   href="https://mais.app/KlwwBB" target="_blank" rel="noopener noreferrer nofollow">Ver a linha completa</a>
       </div>
 
-      <div class="pills">
+      <div class="pills" aria-label="Destaques">
         <span class="pill">Fórmulas limpas</span>
         <span class="pill">Sem agressões</span>
         <span class="pill">Resultados reais</span>
       </div>
     </section>
 
-    <!-- BEST SELLER -->
+    <!-- BEST SELLER (imagens + vídeo) -->
     <section class="card" id="desodorantes" aria-label="Best-seller">
       <div class="grid">
-        <!-- MÍDIA -->
-        <div class="media">
+        <!-- MÍDIA (sem recortes) -->
+        <div class="media" aria-label="Galeria de mídia">
           <!-- Imagem 1 -->
           <img
             id="main-product-image"
@@ -211,7 +180,7 @@
               https://alvapersonalcare.com.br/cdn/shop/files/52_64a62824-0cbc-4448-879b-cbcfaa7abb3f.png?v=1748520280&width=800&format=webp 800w
             "
             sizes="(max-width: 768px) 400px, 800px"
-            alt="Desodorante Cristal Stick Vegano 60g Alva"
+            alt="Desodorante Cristal Stick Vegano 60g Alva — imagem 1"
             width="800" height="800" loading="eager" fetchpriority="high" />
 
           <!-- Imagem 2 (complementar) -->
@@ -222,7 +191,7 @@
               https://alvapersonalcare.com.br/cdn/shop/files/2_0b52cb84-7c6c-4b90-9d5f-e7b8eb3dca6e.png?v=1748520280&width=800&format=webp 800w
             "
             sizes="(max-width: 768px) 400px, 800px"
-            alt="Desodorante Cristal Stick Vegano 60g Alva — Imagem complementar"
+            alt="Desodorante Cristal Stick Vegano 60g Alva — imagem 2"
             width="800" height="800" loading="eager" />
 
           <!-- Vídeo complementar -->
@@ -236,7 +205,9 @@
         <!-- TEXTO -->
         <div class="b-text">
           <h2>Desodorante Cristal Stick Vegano 60g Alva</h2>
-          <p class="lead">O desodorante natural mais vendido do Brasil — proteção saudável por até 12 horas, sem manchar as roupas.</p>
+          <p class="lead">
+            O desodorante natural mais vendido do Brasil — proteção saudável por até 12 horas, sem manchar as roupas.
+          </p>
 
           <ul class="beneficios">
             <li>👕 Sem manchas nas roupas</li>
@@ -251,16 +222,14 @@
           </div>
 
           <!-- Selos -->
-          <div class="selos">
+          <div class="selos" aria-label="Selos de qualidade">
             <div class="selo">
-              <!-- ícone frasco/sem Al -->
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <path d="M9 3h6l1 5H8l1-5Z"></path><path d="M7 8h10l-1 11a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2L7 8Z"></path>
               </svg>
               <span>Sem Cloridato de Alumínio</span>
             </div>
             <div class="selo">
-              <!-- ícone dermatologia -->
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <circle cx="12" cy="12" r="9"></circle>
                 <path d="M8 12h8M12 8v8"></path>
@@ -268,14 +237,12 @@
               <span>Dermatologicamente Testado</span>
             </div>
             <div class="selo">
-              <!-- ícone gota -->
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <path d="M12 3C9 8 6 10.5 6 14a6 6 0 0 0 12 0c0-3.5-3-6-6-11Z"></path>
               </svg>
               <span>Hipoalergênico</span>
             </div>
             <div class="selo">
-              <!-- ícone coelho -->
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <path d="M18 7c0-1.7-1.3-3-3-3-2 0-2 2-2 2M6 7c0-1.7 1.3-3 3-3 2 0 2 2 2 2"></path>
                 <circle cx="12" cy="14" r="5"></circle>
@@ -283,7 +250,6 @@
               <span>Vegano</span>
             </div>
             <div class="selo">
-              <!-- ícone camiseta -->
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <path d="M8 4 6 6v14h12V6l-2-2-3 2h-2l-3-2Z"></path>
               </svg>
@@ -294,14 +260,7 @@
       </div>
     </section>
 
-    <!-- Âncoras básicas para menu -->
-    <section id="cabelos" style="margin-top:24px"></section>
-    <section id="bucal"></section>
-    <section id="corpo"></section>
-    <section id="lancamentos"></section>
-    <section id="kits"></section>
-
-    <!-- Form de contato Netlify (fica escondido, mas captura envios) -->
+    <!-- Form tranquilo para Netlify Forms (mantém) -->
     <form name="contato" netlify hidden>
       <input type="text" name="nome" />
       <input type="email" name="email" />
@@ -310,9 +269,7 @@
   </div>
 
   <!-- CHAT -->
-  <button class="chat-fab" id="openChat" aria-label="Falar com a Alva">
-    💬
-  </button>
+  <button class="chat-fab" id="openChat" aria-label="Falar com a Alva">💬</button>
 
   <div class="chat-modal" id="chatModal" role="dialog" aria-label="Chat Alva">
     <header>
@@ -321,23 +278,21 @@
     </header>
 
     <div class="chat-body" id="chatBody">
-      <!-- Atalhos com links de afiliado -->
-      <div class="alva-quick-grid" id="quickLinks">
-        <a class="chip chip-link" href="https://mais.app/jROmOw" target="_blank" rel="nofollow noopener">Desodorante</a>
-        <a class="chip chip-link" href="https://mais.app/rAxpKd" target="_blank" rel="nofollow noopener">Shampoo (oleosos)</a>
-        <a class="chip chip-link" href="https://mais.app/s8rJAc" target="_blank" rel="nofollow noopener">Shampoo (secos)</a>
-        <a class="chip chip-link" href="https://mais.app/dJcOVD" target="_blank" rel="nofollow noopener">Condicionador</a>
-        <a class="chip chip-link" href="https://mais.app/G0dHHg" target="_blank" rel="nofollow noopener">Sabonete</a>
-        <a class="chip chip-link" href="https://mais.app/BeCrvg" target="_blank" rel="nofollow noopener">Creme corporal</a>
-        <a class="chip chip-link" href="https://mais.app/QleArk" target="_blank" rel="nofollow noopener">Lançamentos</a>
-        <a class="chip chip-link" href="https://mais.app/nX49Uz" target="_blank" rel="nofollow noopener">Kit dental</a>
-        <!-- Chip que fala com o chat -->
-        <button class="chip" type="button" data-say="Quero ajuda para escolher um desodorante que não manche a roupa.">Ajuda no chat</button>
+      <!-- Atalhos com links de afiliado (clicáveis) -->
+      <div class="chip-row" id="chips">
+        <a class="chip" href="https://mais.app/MQtQeF" target="_blank" rel="noopener nofollow">Desodorante</a>
+        <a class="chip" href="https://mais.app/aOqCmG" target="_blank" rel="noopener nofollow">Shampoo</a>
+        <a class="chip" href="https://mais.app/aOqCmG" target="_blank" rel="noopener nofollow">Condicionador</a>
+        <a class="chip" href="https://mais.app/G0dHHg" target="_blank" rel="noopener nofollow">Sabonete</a>
+        <a class="chip" href="https://mais.app/BeCrvg" target="_blank" rel="noopener nofollow">Creme corporal</a>
+        <a class="chip" href="https://mais.app/KlwwBB" target="_blank" rel="noopener nofollow">Lançamentos</a>
+        <a class="chip" href="https://mais.app/nX49Uz" target="_blank" rel="noopener nofollow">Kit dental</a>
       </div>
 
+      <!-- Mensagem de abertura -->
       <div class="msg">
         Olá! Sou sua atendente Alva. Posso ajudar a escolher (desodorante, shampoos, condicionador, sabonete, creme corporal, lançamentos e kit dental).
-        Toque em um atalho ou pergunte o que quiser. 😊
+        Toque num atalho ou pergunte o que quiser. 😊
       </div>
     </div>
 
@@ -358,21 +313,8 @@
 
     const open = ()=> $modal.style.display = 'flex';
     const close= ()=> $modal.style.display = 'none';
-
     $open.addEventListener('click', open);
     $close.addEventListener('click', close);
-
-    $send.addEventListener('click', ()=> {
-      const t = $input.value.trim();
-      if(!t) return;
-      sendMessage(t);
-      $input.value='';
-      $input.focus();
-    });
-
-    $input.addEventListener('keydown', (e)=>{
-      if(e.key === 'Enter'){ e.preventDefault(); $send.click(); }
-    });
 
     function addMsg(text, who='bot'){
       const el = document.createElement('div');
@@ -382,31 +324,31 @@
       $body.scrollTop = $body.scrollHeight;
     }
 
-    async function sendMessage(text){
-      addMsg(text, 'user');
+    async function sendToAssistant(text){
       try{
         const res = await fetch('/.netlify/functions/alvaChat', {
-          method:'POST', headers:{'Content-Type':'application/json'},
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
           body: JSON.stringify({ messages:[{role:'user', content:text}] })
         });
         const data = await res.json();
         addMsg(data.reply || 'Desculpe, não consegui responder agora.');
-      }catch(err){
+      }catch(e){
         addMsg('Ops, conexão indisponível agora. Tente novamente.');
       }
     }
 
-    // ======== Chips que “falam com o chat” ========
-    function wireQuickSay() {
-      document.querySelectorAll('.chip[data-say]').forEach(ch => {
-        ch.addEventListener('click', () => {
-          if (!$input || !$send) return;
-          $input.value = ch.dataset.say || '';
-          $send.click();
-        });
-      });
-    }
-    document.addEventListener('DOMContentLoaded', wireQuickSay);
+    $send.addEventListener('click', ()=>{
+      const t = $input.value.trim();
+      if(!t) return;
+      addMsg(t,'user');
+      $input.value='';
+      sendToAssistant(t);
+    });
+
+    $input.addEventListener('keydown', (e)=>{
+      if(e.key==='Enter'){ e.preventDefault(); $send.click(); }
+    });
   </script>
 </body>
 </html>
