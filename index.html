@@ -549,12 +549,93 @@
     }
 
     // Chip que “fala” algo no chat
-    document.querySelectorAll('.chip[data-say]').forEach(ch => {
-      ch.addEventListener('click', () => {
-        $input.value = ch.dataset.say || '';
-        $send.click();
-      });
+   // Chip que “fala” algo no chat
+  document.querySelectorAll('.chip[data-say]').forEach(ch => {
+    ch.addEventListener('click', () => {
+      $input.value = ch.dataset.say || '';
+      $send.click();
     });
-  </script>
+  });
+</script>
+
+<!-- ⬇️ NOVO BLOCO: rastreio do clique para a loja + conversão Ads -->
+<!-- ⬇️ Rastreio do clique para a loja + conversão Ads -->
+<script>
+(function () {
+  // 1) Domínios que contam como “loja do afiliado”
+  var HOSTS = ['alvapersonalcare.com.br','www.alvapersonalcare.com.br'];
+
+  // 2) Parâmetros obrigatórios do seu link de afiliado
+  var REQUIRES = [
+    { key: 'm_token' },
+    { key: 'utm_campaign', value: 'patty' }
+    // Se quiser exigir também utm_source/utm_medium, adicione:
+    // { key:'utm_source', value:'mais' },
+    // { key:'utm_medium', value:'maisplataforma' }
+  ];
+
+  function isAffiliateLink(a){
+    if(!a || !a.href) return false;
+    try{
+      var u = new URL(a.href);
+      if(!HOSTS.includes(u.hostname)) return false;
+      return REQUIRES.every(r => {
+        var v = u.searchParams.get(r.key);
+        return (v !== null) && (r.value ? v === r.value : true);
+      });
+    }catch(e){ return false; }
+  }
+
+  function appendClickIds(href){
+    try{
+      var u = new URL(href);
+      var p = new URLSearchParams(u.search);
+      if(window.location){
+        var s = new URLSearchParams(window.location.search);
+        ['gclid','gbraid','wbraid'].forEach(k=>{
+          var v = s.get(k);
+          if(v) p.set(k, v);
+        });
+      }
+      u.search = p.toString();
+      return u.toString();
+    }catch(e){ return href; }
+  }
+
+  // Intercepta cliques em links da loja do afiliado e dispara conversão
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a');
+    if (!isAffiliateLink(a)) return;
+
+    var targetHref = appendClickIds(a.href);
+    var openNewTab = e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1 || a.target === '_blank';
+
+    try {
+      // (Opcional) evento de debug
+      gtag('event', 'click_to_store', {
+        event_category: 'AffiliateOutbound',
+        event_label: targetHref,
+        value: 1,
+        send_to: 'AW-337916204',
+        transport_type: 'beacon'
+      });
+
+      // ✅ Conversão do Google Ads (use seu send_to completo)
+      gtag('event', 'conversion', {
+        'send_to': 'AW-337916204/o77ICMP_6ooDEKzikKEB',
+        'value': 1.0,
+        'currency': 'BRL'
+      });
+    } catch (err) {}
+
+    if (!openNewTab) {
+      e.preventDefault();
+      setTimeout(function(){ window.location.href = targetHref; }, 150);
+    } else {
+      a.href = targetHref;
+    }
+  }, true);
+})();
+</script>
 </body>
 </html>
