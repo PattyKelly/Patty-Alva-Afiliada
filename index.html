@@ -559,50 +559,78 @@
 </script>
 
 <!-- ⬇️ NOVO BLOCO: rastreio do clique para a loja + conversão Ads -->
-<!-- ⬇️ Rastreio do clique para a loja + conversão Ads -->
+<!-- ⬇️ Rastreio do clique para a loja + conversão Ads (PATCH) -->
 <script>
 (function () {
   // 1) Domínios que contam como “loja do afiliado”
-  var HOSTS = ['alvapersonalcare.com.br','www.alvapersonalcare.com.br'];
+  //    (incluímos 'mais.app' porque seus CTAs usam esse encurtador)
+  var HOSTS = ['alvapersonalcare.com.br','www.alvapersonalcare.com.br','mais.app'];
 
-  // 2) Parâmetros obrigatórios do seu link de afiliado
+  // 2) Parâmetros exigidos quando for domínio da ALVA (mantive sua regra)
   var REQUIRES = [
     { key: 'm_token' },
     { key: 'utm_campaign', value: 'patty' }
-    // Se quiser exigir também utm_source/utm_medium, adicione:
+    // Se quiser exigir também utm_source/utm_medium, descomente:
     // { key:'utm_source', value:'mais' },
     // { key:'utm_medium', value:'maisplataforma' }
   ];
 
+  // Seu rótulo de conversão (send_to completo)
+  var ADS_SEND_TO = 'AW-337916204/o77ICMP_6ooDEKzikKEB';
+
+  // Detecta se é link do afiliado
   function isAffiliateLink(a){
     if(!a || !a.href) return false;
     try{
-      var u = new URL(a.href);
-      if(!HOSTS.includes(u.hostname)) return false;
-      return REQUIRES.every(r => {
+      var u = new URL(a.href, location.href);
+      if (!HOSTS.includes(u.hostname)) return false;
+
+      // Se for 'mais.app', aceitamos sem exigir parâmetros (é um redirecionador)
+      if (u.hostname === 'mais.app') return true;
+
+      // Para o domínio da ALVA, aplica as exigências
+      return REQUIRES.every(function(r){
         var v = u.searchParams.get(r.key);
         return (v !== null) && (r.value ? v === r.value : true);
       });
     }catch(e){ return false; }
   }
 
+  // Preserva gclid/gbraid/wbraid no destino
   function appendClickIds(href){
     try{
-      var u = new URL(href);
-      var p = new URLSearchParams(u.search);
-      if(window.location){
-        var s = new URLSearchParams(window.location.search);
-        ['gclid','gbraid','wbraid'].forEach(k=>{
-          var v = s.get(k);
-          if(v) p.set(k, v);
-        });
-      }
+      var u = new URL(href, location.href);
+      var p = u.searchParams;
+      var s = new URLSearchParams(location.search);
+      ['gclid','gbraid','wbraid'].forEach(function(k){
+        var v = s.get(k);
+        if(v) p.set(k, v);
+      });
       u.search = p.toString();
       return u.toString();
     }catch(e){ return href; }
   }
 
-  // Intercepta cliques em links da loja do afiliado e dispara conversão
+  // Dispara a conversão e só então navega (com fallback)
+  function reportConversionAndGo(url){
+    var redirected = false;
+    var go = function(){ if(!redirected){ redirected = true; window.location.href = url; } };
+
+    try{
+      gtag('event', 'conversion', {
+        send_to: ADS_SEND_TO,
+        value: 1.0,
+        currency: 'BRL',
+        event_callback: go
+      });
+      // Fallback — dá tempo do hit sair mesmo em conexões lentas
+      setTimeout(go, 1200);
+    }catch(err){
+      go();
+    }
+  }
+
+  // Intercepta cliques em links do afiliado e dispara conversão
   document.addEventListener('click', function (e) {
     var a = e.target.closest('a');
     if (!isAffiliateLink(a)) return;
@@ -610,32 +638,26 @@
     var targetHref = appendClickIds(a.href);
     var openNewTab = e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1 || a.target === '_blank';
 
+    // (Opcional) evento de debug/analytics — não use 'send_to' aqui
     try {
-      // (Opcional) evento de debug
       gtag('event', 'click_to_store', {
         event_category: 'AffiliateOutbound',
         event_label: targetHref,
         value: 1,
-        send_to: 'AW-337916204',
         transport_type: 'beacon'
-      });
-
-      // ✅ Conversão do Google Ads (use seu send_to completo)
-      gtag('event', 'conversion', {
-        'send_to': 'AW-337916204/o77ICMP_6ooDEKzikKEB',
-        'value': 1.0,
-        'currency': 'BRL'
       });
     } catch (err) {}
 
-    if (!openNewTab) {
-      e.preventDefault();
-      setTimeout(function(){ window.location.href = targetHref; }, 150);
-    } else {
-      a.href = targetHref;
+    if (openNewTab) {
+      // Nova aba: não bloqueia a navegação; dispara a conversão "fire-and-forget"
+      try { gtag('event','conversion',{ send_to: ADS_SEND_TO, value: 1.0, currency: 'BRL' }); } catch(_) {}
+      a.href = targetHref; // ainda garantimos os IDs de clique no destino
+      return;
     }
+
+    // Mesma aba: bloqueia, dispara com callback e navega ao concluir
+    e.preventDefault();
+    reportConversionAndGo(targetHref);
   }, true);
 })();
 </script>
-</body>
-</html>
