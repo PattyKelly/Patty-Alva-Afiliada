@@ -11,33 +11,44 @@
 
   <!-- Perf: CSS crítico inline (restante pode ir em style.css minificado) -->
   <style>
-    :root{
-      --bg:#F6F7FB;--card:#FFF;--text:#1f2a44;--muted:#5c6b87;--primary:#4054B2;--primary-2:#5968cc;--pill:#eef1ff;--ring:#E7E9F6;--shadow:0 8px 24px rgba(20,33,61,.08);--radius:16px;--accent-pink:#FF69B4;--accent-pink-2:#ff7fbe;--whats:#25D366;--whats-2:#1fb659
-    }
+    :root{--navy:#0B1B34;--navy-2:#0F2646;--navy-3:#143257;--ice:#F2F6FB;--card:#FFFFFF;--text:#0E1525;--text-on-dark:#E9EEF6;--muted:#5c6b87;--primary:#1E90FF;--primary-2:#5AA9FF;--accent-1:#2ED3AE;--accent-2:#FF7AB6;--accent-3:#F6C76A;--ring:#223C64;--ring-light:#E2E8F4;--shadow:0 12px 36px rgba(0,0,0,.22);--radius:18px}
+    
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    html,body{margin:0;padding:0;background:var(--navy);color:var(--text-on-dark);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:1200px;margin:0 auto;padding:28px 20px 80px}
+    .wrap{max-width:1200px;margin:0 auto;padding:28px 20px 96px}
+    
     /* NAV */
-    .topbar{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--primary);border-radius:14px;box-shadow:var(--shadow)}
-    .brand{font-weight:800;letter-spacing:.2px;font-size:20px;color:#fff}
+    .topbar{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(10,22,46,.72);backdrop-filter:saturate(160%) blur(8px);border:1px solid rgba(255,255,255,.08);border-radius:16px;box-shadow:var(--shadow)}
+    
+    .brand{font-weight:900;letter-spacing:.2px;font-size:22px;color:#fff}
+    
     nav{display:flex;flex-wrap:wrap;gap:10px}
-    nav a{padding:10px 14px;background:var(--card);border:1px solid var(--ring);border-radius:999px;font-weight:600;color:#fff;background:rgba(255,255,255,.14);backdrop-filter:saturate(140%) blur(4px);outline-offset:3px}
-    nav a:hover{background:#fff;color:var(--text);border-color:#CFD3F5;box-shadow:var(--shadow)}
+    nav a{padding:10px 14px;border:1px solid rgba(255,255,255,.14);border-radius:999px;font-weight:700;color:#EAF2FF;background:rgba(255,255,255,.06)}
+    
+    nav a:hover{background:#fff;color:#0F2142;border-color:#fff;box-shadow:0 10px 24px rgba(255,255,255,.12)}
+    
     /* HERO */
-    .hero{background:linear-gradient(180deg,#fff 0%, #F6F7FB 100%);border:1px solid var(--ring);border-radius:var(--radius);box-shadow:var(--shadow);padding:44px 28px;margin-top:12px}
+    .hero{background:linear-gradient(180deg, var(--navy-2) 0%, var(--navy) 100%);border:1px solid rgba(255,255,255,.08);border-radius:24px;box-shadow:var(--shadow);padding:54px 28px;margin-top:14px;color:var(--text-on-dark)}
+    
     .hero h1{font-size:clamp(24px,4.4vw,44px);line-height:1.15;margin:0 0 10px;font-weight:800;letter-spacing:.2px}
-    .hero p{margin:0 0 22px;color:var(--muted);font-size:16px}
+    .hero p{margin:0 0 22px;color:#C7D4EA;font-size:18px}
+    
     .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 10px}
     .btn{padding:14px 20px;border-radius:12px;border:1px solid transparent;font-weight:800;box-shadow:var(--shadow);transition:.2s;font-size:15px}
     .btn-primary{background:var(--primary);color:#fff}
+    
     .btn-primary:hover{background:var(--primary-2)}
-    .btn-ghost{background:var(--card);color:var(--primary);border-color:var(--ring)}
+    .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.28)}
+    
     .btn-ghost:hover{border-color:#CFD3F5}
     .pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .pill{background:var(--pill);color:var(--primary);padding:10px 14px;border-radius:999px;font-weight:700;font-size:14px;border:1px solid #dde3ff}
+    .pill{background:rgba(255,255,255,.08);color:#F3F7FF;padding:10px 14px;border-radius:999px;font-weight:700;font-size:14px;border:1px solid rgba(255,255,255,.16)}
+    
     /* GRID + CARD */
-    .card{margin-top:26px;background:var(--card);border:1px solid var(--ring);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .card{margin-top:28px;background:var(--ice);border:1px solid var(--ring-light);border-radius:22px;box-shadow:0 16px 48px rgba(7,16,34,.35);padding:22px;color:var(--text)}
+    
     .grid{display:grid;gap:24px;grid-template-columns:1.15fr 1fr;align-items:start}
     @media (max-width:1024px){.grid{grid-template-columns:1fr}}
     .media{display:grid;gap:14px;grid-template-columns:1fr 1fr}
@@ -55,18 +66,21 @@
     .beneficios li{display:flex;align-items:center;gap:10px;margin:8px 0;padding:10px 12px;border:1px dashed #dfe3ff;border-radius:12px;background:#fbfcff}
     .beneficios .dot{width:10px;height:10px;border-radius:999px;background:var(--primary);opacity:.8}
     .buy-row{display:flex;gap:12px;align-items:center;margin:18px 0 6px;flex-wrap:wrap}
-    .lojinha{margin-top:26px;border-radius:18px;border:1px solid #ffd6ea;background:linear-gradient(180deg,#fff0f7 0%, #ffe7f2 100%);box-shadow:var(--shadow);padding:22px;display:grid;gap:16px;grid-template-columns:1fr auto;align-items:center}
+    .lojinha{margin-top:26px;border-radius:20px;border:1px solid rgba(255,122,182,.25);background:linear-gradient(180deg,#fff7fb 0%, #ffeaf5 100%);box-shadow:0 10px 32px rgba(255,122,182,.25);padding:24px;display:grid;gap:16px;grid-template-columns:1fr auto;align-items:center}
+    
     @media (max-width:800px){.lojinha{grid-template-columns:1fr}}
     .lojinha h3{margin:0;font-size:22px}
     .lojinha p{margin:0;color:#6a3b53}
     .tag-cupom{display:inline-flex;gap:8px;align-items:center;padding:10px 14px;border-radius:999px;background:#fff;border:1px dashed #ffacd0;font-weight:800;color:#b92b6c}
-    .btn-lojinha{background:var(--accent-pink);color:#fff;padding:14px 20px;border-radius:12px;font-weight:800}
+    .btn-lojinha{background:var(--accent-2);color:#fff;padding:14px 20px;border-radius:12px;font-weight:800}
+    
     .btn-lojinha:hover{background:var(--accent-pink-2)}
     /* CHAT */
     .chat-fab{position:fixed;right:22px;bottom:22px;z-index:50;width:68px;height:68px;border-radius:999px;background:var(--whats);display:grid;place-items:center;color:#fff;box-shadow:0 14px 32px rgba(37,211,102,.33);cursor:pointer;border:2px solid #e9fff1}
     .chat-fab:hover{background:var(--whats-2)}
     .chat-modal{position:fixed;right:18px;bottom:104px;width:min(420px,92vw);background:#fff;border:1px solid var(--ring);border-radius:16px;box-shadow:var(--shadow);display:none;flex-direction:column;overflow:hidden}
-    .chat-modal header{background:var(--primary);color:#fff;padding:14px 16px;font-weight:800;display:flex;justify-content:space-between;align-items:center}
+    .chat-modal header{background:var(--navy-3);color:#fff;padding:14px 16px;font-weight:800;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.08)}
+    
     .chat-body{padding:12px;max-height:56vh;overflow:auto}
     .msg{background:#f4f6ff;border:1px solid #e7eaff;padding:10px 12px;border-radius:12px;margin:8px 0;color:#23305a}
     .msg.user{background:#EEF2FF;border-color:#dde3ff}
@@ -84,6 +98,18 @@
     .site-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
     .site-nav a{padding:8px 12px;border-radius:10px;border:1px solid var(--ring);background:#fff;color:#33416a;font-weight:700}
     .site-nav a:hover{border-color:#cfd3f5}
+  /* ===== Menu/dropdown ===== */
+    .menu{display:flex;gap:10px;align-items:center}
+    .menu-item{position:relative}
+    .menu-button,.menu-link{padding:10px 14px;border:1px solid rgba(255,255,255,.14);border-radius:999px;font-weight:800;color:#EAF2FF;background:rgba(255,255,255,.06);cursor:pointer}
+    .menu-button:hover,.menu-link:hover{background:#fff;color:#0F2142;border-color:#fff;box-shadow:0 10px 24px rgba(255,255,255,.12)}
+    .dropdown{position:absolute;top:calc(100% + 10px);left:0;min-width:260px;background:rgba(10,22,46,.98);backdrop-filter:saturate(160%) blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.45);padding:10px;display:none;z-index:40}
+    .dropdown a{display:block;padding:10px 12px;border-radius:10px;color:#E9F1FF;border:1px solid transparent}
+    .dropdown a:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
+    .dropdown a.accent{color:#fff;background:linear-gradient(90deg,#1E90FF 0%, #2ED3AE 100%);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900}
+    .menu-item:focus-within .dropdown,.menu-item:hover .dropdown{display:block}
+    .menu-button[aria-expanded="true"] + .dropdown{display:block}
+
   </style>
 
   <!-- JSON-LD básico -->
@@ -110,33 +136,55 @@
   <div class="wrap">
     <!-- TOP NAV: marca + categorias do projeto -->
     <div class="topbar" role="banner">
-      <div class="brand">ALVA Natural — Patty</div>
-      <nav aria-label="Acessos rápidos">
-        <a href="/cuidado-diario/">Cuidado Diário</a>
-        <a href="/livros-de-sabedoria/">Livros de Sabedoria</a>
-        <a href="/tecnologia/">Tecnologia</a>
-        <a href="/relaxamento/">Relaxamento</a>
+      <div class="brand">Plataforma Patty — Bem‑Estar</div>
+      <nav class="menu" aria-label="Menu principal" role="menubar">
+        <div class="menu-item" role="none">
+          <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Cuidados Diários</button>
+          <div class="dropdown" role="menu" aria-label="Cuidados Diários">
+            <a role="menuitem" href="/cuidados-diarios/">Visão geral</a>
+            <a role="menuitem" href="https://mais.app/jROmOw" target="_blank" rel="noopener nofollow">Desodorantes</a>
+            <a role="menuitem" href="https://mais.app/rAxpKd" target="_blank" rel="noopener nofollow">Cabelos</a>
+            <a role="menuitem" href="https://mais.app/nX49Uz" target="_blank" rel="noopener nofollow">Cuidados Bucais</a>
+            <a role="menuitem" href="https://mais.app/BeCrvg" target="_blank" rel="noopener nofollow">Corpo</a>
+            <a role="menuitem" href="https://mais.app/QleArk" target="_blank" rel="noopener nofollow">Lançamentos</a>
+            <a role="menuitem" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="noopener">Kits</a>
+            <a role="menuitem" class="accent" href="#alva">Página da Alva</a>
+          </div>
+        </div>
+
+        <div class="menu-item" role="none">
+          <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Marcas</button>
+          <div class="dropdown" role="menu" aria-label="Marcas">
+            <a role="menuitem" class="accent" href="#alva">Alva (oficial)</a>
+          </div>
+        </div>
+
+        <div class="menu-item" role="none">
+          <a class="menu-link" role="menuitem" href="/sobre/">Sobre</a>
+        </div>
       </nav>
     </div>
 
     <!-- HERO -->
     <section class="hero" id="inicio">
-      <h1>Cuide-se sem química — resultados reais com Alva</h1>
-      <p>Fórmulas limpas, conteúdo confiável e curadoria de bem-estar. Explore categorias, encontre seu produto e aprofunde seu conhecimento.</p>
+      <h1>Cuidados Diários & Bem‑estar — plataforma confiável</h1>
+      <p>Explore as categorias, encontre produtos verificados e acesse páginas exclusivas de marcas. A ALVA tem uma área dedicada dentro de Cuidados Diários.</p>
       <div class="cta-row" role="group" aria-label="Ações principais">
-        <a class="btn btn-primary" href="https://mais.app/MQtQeF" target="_blank" rel="noopener noreferrer nofollow">Compre agora</a>
-        <a class="btn btn-ghost" href="https://mais.app/KlwwBB" target="_blank" rel="noopener noreferrer nofollow">Ver linha completa</a>
+        <a class="btn btn-primary" href="#alva">Ir para a Página da Alva</a>
+        <a class="btn btn-ghost" href="/cuidados-diarios/">Ver Cuidados Diários</a>
       </div>
       <div class="pills" aria-label="destaques">
         <span class="pill">Fórmulas limpas</span>
-        <span class="pill">Sem agressão</span>
-        <span class="pill">Resultados reais</span>
+        <span class="pill">Curadoria confiável</span>
+        <span class="pill">Entrega rastreável</span>
       </div>
-      <div class="site-nav" aria-label="Navegação por categorias">
-        <a href="#cuidado-diario">Cuidado Diário</a>
-        <a href="#livros">Livros de Sabedoria</a>
-        <a href="#tech">Tecnologia</a>
-        <a href="#relax">Relaxamento</a>
+      <div class="site-nav" aria-label="Atalhos de Cuidados Diários">
+        <a href="https://mais.app/jROmOw" target="_blank" rel="noopener nofollow">Desodorantes</a>
+        <a href="https://mais.app/rAxpKd" target="_blank" rel="noopener nofollow">Cabelos</a>
+        <a href="https://mais.app/nX49Uz" target="_blank" rel="noopener nofollow">Cuidados Bucais</a>
+        <a href="https://mais.app/BeCrvg" target="_blank" rel="noopener nofollow">Corpo</a>
+        <a href="https://mais.app/QleArk" target="_blank" rel="noopener nofollow">Lançamentos</a>
+        <a href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="noopener">Kits</a>
       </div>
     </section>
 
@@ -189,38 +237,13 @@
     </section>
 
     <!-- Livros de Sabedoria (conteúdo editorial) -->
-    <section class="card" id="livros" aria-labelledby="livros-title">
-      <h2 id="livros-title">Livros de Sabedoria</h2>
-      <p class="lead">Resenhas práticas e trechos-chave de estoicismo, budismo e clássicos contemporâneos — com links de afiliado onde fizer sentido.</p>
-      <div class="site-nav">
-        <a href="/livros-de-sabedoria/estoicismo/">Estoicismo</a>
-        <a href="/livros-de-sabedoria/habitos/">Hábitos</a>
-        <a href="/livros-de-sabedoria/mente/">Mente</a>
-      </div>
-    </section>
+    <section class="card" id="provas" aria-labelledby="provas-title"><h2 id="provas-title">Por que Alva?</h2><ul class="beneficios"><li><span class="dot"></span> Fórmulas limpas, veganas e hipoalergênicas</li><li><span class="dot"></span> Proteção até 12h sem manchar as roupas</li><li><span class="dot"></span> Compra segura e entrega rastreável</li></ul></section>
 
     <!-- Tecnologia (guia leve para o público) -->
-    <section class="card" id="tech" aria-labelledby="tech-title">
-      <h2 id="tech-title">Tecnologia</h2>
-      <p class="lead">Guias simples sobre privacidade, LGPD no dia a dia e ferramentas digitais úteis para produtividade sem complicação.</p>
-      <div class="site-nav">
-        <a href="/tecnologia/privacidade/">Privacidade</a>
-        <a href="/tecnologia/ferramentas/">Ferramentas</a>
-        <a href="/tecnologia/guias/">Guias</a>
-      </div>
-    </section>
+    <section class="card" id="depoimentos" aria-labelledby="dep-title"><h2 id="dep-title">Depoimentos</h2><div class="grid"><div class="msg">“Melhor desodorante que já usei. Cheiro suave e não mancha.” — Paula M.</div><div class="msg">“Meu cabelo agradece o shampoo sólido. Rende muito!” — Karine R.</div></div></section>
 
     <!-- Relaxamento (conteúdo + produtos) -->
-    <section class="card" id="relax" aria-labelledby="relax-title">
-      <h2 id="relax-title">Relaxamento</h2>
-      <p class="lead">Práticas rápidas de respiração, playlists e rituais de banho. Integração com produtos de autocuidado.
-      </p>
-      <div class="site-nav">
-        <a href="/relaxamento/respiracao/">Respiração</a>
-        <a href="/relaxamento/banho/">Banho</a>
-        <a href="/relaxamento/playlists/">Playlists</a>
-      </div>
-    </section>
+    <section class="card" id="faq" aria-labelledby="faq-title"><h2 id="faq-title">Perguntas Frequentes</h2><details><summary>O desodorante contém alumínio?</summary><p>Não. A linha Alva não usa cloridrato de alumínio.</p></details><details><summary>Mancha roupa escura?</summary><p>Não. A fórmula foi pensada para não transferir.</p></details><details><summary>É vegano e testado dermatologicamente?</summary><p>Sim para ambos.</p></details></section>
 
     <!-- Form Netlify (oculto) -->
     <form name="contato" netlify hidden>
@@ -228,6 +251,64 @@
       <input type="email" name="email" />
       <textarea name="mensagem"></textarea>
     </form>
+
+    <!-- ===== Página dedicada: ALVA (dentro de Cuidados Diários) ===== -->
+    <section class="card" id="alva" aria-labelledby="alva-title">
+      <nav aria-label="breadcrumb" class="site-nav" style="margin-bottom:10px">
+        <a href="/">Início</a>
+        <span>›</span>
+        <a href="/cuidados-diarios/">Cuidados Diários</a>
+        <span>›</span>
+        <span>Alva</span>
+      </nav>
+      <h2 id="alva-title">ALVA — Página Oficial dentro de Cuidados Diários</h2>
+      <p class="lead">Conteúdo e ofertas verificadas da Alva. Acompanhe os melhores produtos e acesse a lojinha oficial com rastreio de afiliado preservado.</p>
+
+      <!-- bloco hero/vitrine da Alva reaproveitado -->
+      <div class="grid">
+        <div class="media">
+          <picture>
+            <source type="image/avif" srcset="assets/imagem1.avif" />
+            <source type="image/webp" srcset="assets/imagem1.webp" />
+            <img class="ai-creative" src="assets/imagem1.png" alt="Pessoa aplicando o Desodorante Cristal Natural Alva" width="800" height="800" loading="lazy" />
+          </picture>
+          <img class="ai-creative" src="assets/imagem2.png" alt="Close do Desodorante Cristal Natural Alva" width="800" height="800" loading="lazy" decoding="async" />
+          <video class="custom-video" playsinline muted preload="metadata" poster="//alvapersonalcare.com.br/cdn/shop/files/Design_sem_nome-139.png?v=1749161958&width=1200">
+            <source src="//alvapersonalcare.com.br/cdn/shop/videos/c/vp/ffd31f37f5f44be7b5efe23a02130fe4/ffd31f37f5f44be7b5efe23a02130fe4.m3u8?v=0" type="application/x-mpegURL">
+            <source src="//alvapersonalcare.com.br/cdn/shop/videos/c/vp/ffd31f37f5f44be7b5efe23a02130fe4/ffd31f37f5f44be7b5efe23a02130fe4.HD-1080p-4.8Mbps-48898408.mp4?v=0" type="video/mp4">
+          </video>
+        </div>
+        <div class="b-text">
+          <span class="badge">🏆 Campeão de Vendas</span>
+          <h3>Desodorante Cristal Stick Vegano 60g Alva</h3>
+          <p class="lead">Proteção saudável por até <b>12 horas</b>, toque seco e sem manchar as roupas.</p>
+          <div class="kv-grid">
+            <div class="kv">Sem Cloridrato de Alumínio</div>
+            <div class="kv">Dermatologicamente Testado</div>
+            <div class="kv">Hipoalergênico</div>
+            <div class="kv">Não Mancha a Roupa</div>
+            <div class="kv">Vegano</div>
+          </div>
+          <ul class="beneficios">
+            <li><span class="dot"></span> 👕 Não mancha a roupa</li>
+            <li><span class="dot"></span> 🕒 Proteção natural por até 12 horas</li>
+            <li><span class="dot"></span> 📅 Dura até 1 ano</li>
+            <li><span class="dot"></span> 🌿 Toque seco, fácil de aplicar</li>
+            <li><span class="dot"></span> ✨ Aparência uniforme das axilas</li>
+          </ul>
+          <div class="buy-row">
+            <a class="btn btn-primary" href="https://mais.app/MQtQeF" target="_blank" rel="noopener noreferrer nofollow">COMPRE JÁ</a>
+            <a class="btn btn-ghost"   href="https://mais.app/jROmOw" target="_blank" rel="noopener noreferrer nofollow">Ver desodorantes</a>
+          </div>
+        </div>
+      </div>
+      <div class="lojinha" role="complementary" aria-label="Ofertas e kits Alva">
+        <div>
+          <h3>Lojinha da Alva 💖</h3>
+          <p class="mt-6">Produtos em destaque, combos e condições especiais por tempo limitado. <a class="btn-lojinha" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="noopener">Ir para a lojinha</a></p>
+        </div>
+      </div>
+    </section>
   </div>
 
   <!-- CHAT (bolha verde) -->
