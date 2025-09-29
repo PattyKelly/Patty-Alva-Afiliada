@@ -138,6 +138,7 @@
     <div class="topbar" role="banner">
       <div class="brand">Plataforma Patty — Bem‑Estar</div>
       <nav class="menu" aria-label="Menu principal" role="menubar">
+        <!-- Cuidados Diários + ALVA dentro -->
         <div class="menu-item" role="none">
           <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Cuidados Diários</button>
           <div class="dropdown" role="menu" aria-label="Cuidados Diários">
@@ -151,7 +152,52 @@
             <a role="menuitem" class="accent" href="#alva">Página da Alva</a>
           </div>
         </div>
+        
+        <!-- Tecnologia -->
+        <div class="menu-item" role="none">
+          <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Tecnologia</button>
+          <div class="dropdown" role="menu" aria-label="Tecnologia">
+            <a role="menuitem" href="/tecnologia/">Visão geral</a>
+            <a role="menuitem" href="/tecnologia/privacidade/">Privacidade</a>
+            <a role="menuitem" href="/tecnologia/ferramentas/">Ferramentas</a>
+            <a role="menuitem" href="/tecnologia/guias/">Guias</a>
+          </div>
+        </div>
 
+        <!-- Livros -->
+        <div class="menu-item" role="none">
+          <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Livros</button>
+          <div class="dropdown" role="menu" aria-label="Livros">
+            <a role="menuitem" href="/livros/">Visão geral</a>
+            <a role="menuitem" href="/livros/estoicismo/">Estoicismo</a>
+            <a role="menuitem" href="/livros/habitos/">Hábitos</a>
+            <a role="menuitem" href="/livros/mente/">Mente</a>
+          </div>
+        </div>
+
+        <!-- Saúde -->
+        <div class="menu-item" role="none">
+          <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Saúde</button>
+          <div class="dropdown" role="menu" aria-label="Saúde">
+            <a role="menuitem" href="/saude/">Visão geral</a>
+            <a role="menuitem" href="/saude/bem-estar/">Bem-estar</a>
+            <a role="menuitem" href="/saude/sono/">Sono</a>
+            <a role="menuitem" href="/saude/rotinas/">Rotinas</a>
+          </div>
+        </div>
+
+        <!-- Canais Interessantes -->
+        <div class="menu-item" role="none">
+          <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Canais Interessantes</button>
+          <div class="dropdown" role="menu" aria-label="Canais Interessantes">
+            <a role="menuitem" href="/canais/">Curadoria</a>
+            <a role="menuitem" href="/canais/youtube/">YouTube</a>
+            <a role="menuitem" href="/canais/instagram/">Instagram</a>
+            <a role="menuitem" href="/canais/newsletters/">Newsletters</a>
+          </div>
+        </div>
+
+        <!-- Marcas -->
         <div class="menu-item" role="none">
           <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Marcas</button>
           <div class="dropdown" role="menu" aria-label="Marcas">
@@ -167,24 +213,33 @@
 
     <!-- HERO -->
     <section class="hero" id="inicio">
-      <h1>Cuidados Diários & Bem‑estar — plataforma confiável</h1>
-      <p>Explore as categorias, encontre produtos verificados e acesse páginas exclusivas de marcas. A ALVA tem uma área dedicada dentro de Cuidados Diários.</p>
-      <div class="cta-row" role="group" aria-label="Ações principais">
-        <a class="btn btn-primary" href="#alva">Ir para a Página da Alva</a>
-        <a class="btn btn-ghost" href="/cuidados-diarios/">Ver Cuidados Diários</a>
-      </div>
-      <div class="pills" aria-label="destaques">
-        <span class="pill">Fórmulas limpas</span>
-        <span class="pill">Curadoria confiável</span>
-        <span class="pill">Entrega rastreável</span>
-      </div>
-      <div class="site-nav" aria-label="Atalhos de Cuidados Diários">
-        <a href="https://mais.app/jROmOw" target="_blank" rel="noopener nofollow">Desodorantes</a>
-        <a href="https://mais.app/rAxpKd" target="_blank" rel="noopener nofollow">Cabelos</a>
-        <a href="https://mais.app/nX49Uz" target="_blank" rel="noopener nofollow">Cuidados Bucais</a>
-        <a href="https://mais.app/BeCrvg" target="_blank" rel="noopener nofollow">Corpo</a>
-        <a href="https://mais.app/QleArk" target="_blank" rel="noopener nofollow">Lançamentos</a>
-        <a href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="noopener">Kits</a>
+      <div class="grid" style="grid-template-columns:1.2fr 1fr;align-items:center">
+        <div>
+          <h1>Plataforma de Bem‑Estar com curadoria profissional</h1>
+          <p>Conteúdo confiável e navegação clara por categorias. Produtos da <b>ALVA</b> ficam concentrados em <i>Cuidados Diários</i> e dentro da <i>Página da Alva</i>, sem tomar a página inicial.</p>
+          <div class="cta-row" role="group" aria-label="Ações principais">
+            <a class="btn btn-primary" href="#alva">Página da Alva</a>
+            <a class="btn btn-ghost" href="/cuidados-diarios/">Ver Cuidados Diários</a>
+          </div>
+          <div class="pills" aria-label="destaques">
+            <span class="pill">Visual premium</span>
+            <span class="pill">Links preservados</span>
+            <span class="pill">Rastreio de afiliado</span>
+          </div>
+        </div>
+        <div>
+          <div class="card" style="padding:16px;background:rgba(255,255,255,.08);color:#EAF2FF;border:1px solid rgba(255,255,255,.12)">
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a class="pill" href="https://mais.app/jROmOw" target="_blank" rel="noopener nofollow">Desodorantes</a>
+              <a class="pill" href="https://mais.app/rAxpKd" target="_blank" rel="noopener nofollow">Cabelos</a>
+              <a class="pill" href="https://mais.app/nX49Uz" target="_blank" rel="noopener nofollow">Bucal</a>
+              <a class="pill" href="https://mais.app/BeCrvg" target="_blank" rel="noopener nofollow">Corpo</a>
+              <a class="pill" href="https://mais.app/QleArk" target="_blank" rel="noopener nofollow">Lançamentos</a>
+              <a class="pill" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="noopener">Kits</a>
+            </div>
+            <small style="display:block;margin-top:10px;opacity:.8">Atalhos rápidos para ALVA — com tracking preservado</small>
+          </div>
+        </div>
       </div>
     </section>
 
