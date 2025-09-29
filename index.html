@@ -110,6 +110,24 @@
     .menu-item:focus-within .dropdown,.menu-item:hover .dropdown{display:block}
     .menu-button[aria-expanded="true"] + .dropdown{display:block}
 
+  /* UTIL */
+    .mt-6{margin-top:16px}.mt-10{margin-top:26px}
+    /* Site nav principal exigido */
+    .site-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .site-nav a{padding:8px 12px;border-radius:10px;border:1px solid var(--ring);background:#fff;color:#33416a;font-weight:700}
+    .site-nav a:hover{border-color:#cfd3f5}
+
+    /* ===== Temas por seção (cores profissionais) ===== */
+    .theme--alva{--navy:#0B1B34;--navy-2:#0F2646;--navy-3:#143257;--bg:var(--navy);--surface:#F2F6FB;--ink:#E9EEF6;--cta:#1E90FF}
+    .theme--tech{--bg:#0B1220;--surface:#0F1A2B;--ink:#E6ECF8;--cta:#7C5CFC;--chip:#162542;--chip-border:#263656}
+    .theme--livros{--bg:#101418;--surface:#F7F4EF;--ink:#0F1727;--cta:#C7A970;--chip:#fff5e6;--chip-border:#eadcc6}
+    .theme--saude{--bg:#0D1A16;--surface:#F3FBF7;--ink:#0E1525;--cta:#2ED3AE;--chip:#e7fbf4;--chip-border:#b8efd8}
+    .theme--canais{--bg:#120f1f;--surface:#f5f3ff;--ink:#0E0A1A;--cta:#8B5CF6;--chip:#efecff;--chip-border:#dbd5ff}
+    .themed{background:var(--bg);color:var(--ink);border:1px solid rgba(255,255,255,.08);border-radius:24px;box-shadow:0 18px 60px rgba(0,0,0,.35)}
+    .themed .card{background:var(--surface);color:var(--ink);border-color:rgba(255,255,255,.14)}
+    .themed .btn-primary{background:var(--cta)}
+    .themed .pill{background:var(--chip,rgba(255,255,255,.08));border-color:var(--chip-border,rgba(255,255,255,.16));color:inherit}
+
   </style>
 
   <!-- JSON-LD básico -->
@@ -212,7 +230,7 @@
     </div>
 
     <!-- HERO -->
-    <section class="hero" id="inicio">
+    <section class="hero themed theme--livros" id="inicio">
       <div class="grid" style="grid-template-columns:1.2fr 1fr;align-items:center">
         <div>
           <h1>Plataforma de Bem‑Estar com curadoria profissional</h1>
@@ -308,7 +326,7 @@
     </form>
 
     <!-- ===== Página dedicada: ALVA (dentro de Cuidados Diários) ===== -->
-    <section class="card" id="alva" aria-labelledby="alva-title">
+    <section class="card themed theme--alva" id="alva" aria-labelledby="alva-title">
       <nav aria-label="breadcrumb" class="site-nav" style="margin-bottom:10px">
         <a href="/">Início</a>
         <span>›</span>
@@ -364,6 +382,32 @@
         </div>
       </div>
     </section>
+
+    <!-- ===== Hubs adicionais com paletas profissionais ===== -->
+    <section class="card themed theme--tech" id="tecnologia" aria-labelledby="tec-title">
+      <h2 id="tec-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">Tecnologia</h2>
+      <p class="lead">Guias práticos de privacidade, produtividade e ferramentas digitais.</p>
+      <div class="site-nav"><a href="/tecnologia/privacidade/">Privacidade</a><a href="/tecnologia/ferramentas/">Ferramentas</a><a href="/tecnologia/guias/">Guias</a></div>
+    </section>
+
+    <section class="card themed theme--livros" id="livros" aria-labelledby="liv-title">
+      <h2 id="liv-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">Livros</h2>
+      <p class="lead">Resenhas e ideias acionáveis para viver melhor (estoicismo, hábitos, mente).</p>
+      <div class="site-nav"><a href="/livros/estoicismo/">Estoicismo</a><a href="/livros/habitos/">Hábitos</a><a href="/livros/mente/">Mente</a></div>
+    </section>
+
+    <section class="card themed theme--saude" id="saude" aria-labelledby="sau-title">
+      <h2 id="sau-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">Saúde</h2>
+      <p class="lead">Rotinas de bem‑estar, sono e recuperação.</p>
+      <div class="site-nav"><a href="/saude/bem-estar/">Bem-estar</a><a href="/saude/sono/">Sono</a><a href="/saude/rotinas/">Rotinas</a></div>
+    </section>
+
+    <section class="card themed theme--canais" id="canais" aria-labelledby="can-title">
+      <h2 id="can-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">Canais Interessantes</h2>
+      <p class="lead">Curadoria de creators e newsletters que valem seu tempo.</p>
+      <div class="site-nav"><a href="/canais/youtube/">YouTube</a><a href="/canais/instagram/">Instagram</a><a href="/canais/newsletters/">Newsletters</a></div>
+    </section>
+
   </div>
 
   <!-- CHAT (bolha verde) -->
