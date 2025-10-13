@@ -4,64 +4,63 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- =========================================
-       META / SEO
-       ========================================= -->
-
-  <!-- EDITAR AQUI: NOME DO SITE -->
-  <title>Mais Sabiamente — Curadoria Inteligente</title>
+  <!-- =========================================================
+       META / SEO BÁSICO – Edite os campos marcados "EDITAR AQUI"
+       ========================================================= -->
+  <title>Mais Sabiamente — Curadoria Inteligente</title> <!-- EDITAR AQUI: <title> -->
   <meta name="description" content="Curadoria prática de bem-estar, livros, tecnologia e relaxamento. Links organizados por categorias, com compra segura e rastreável." />
 
-  <!-- Canonical & i18n -->
-  <!-- EDITAR AQUI: URL CANÔNICA -->
-  <link rel="canonical" href="https://exemplo.seudominio/" />
+  <!-- Canonical (URL pública da homepage) -->
+  <link rel="canonical" href="https://exemplo.seudominio/" /> <!-- EDITAR AQUI: canonical -->
 
-  <!-- Preconnect / DNS Prefetch -->
+  <!-- Preconnect / DNS Prefetch (melhora performance para domínios externos usados) -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
   <link rel="dns-prefetch" href="//www.googletagmanager.com">
   <link rel="dns-prefetch" href="//alvapersonalcare.com.br">
   <link rel="dns-prefetch" href="//mais.app">
 
-  <!-- Fonts -->
+  <!-- Google Fonts (Inter). Opcional: substitua por fonte local se quiser 100/100 no Lighthouse -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Open Graph / Twitter -->
+  <!-- Open Graph / Twitter Cards (compartilhamento) -->
   <meta property="og:type" content="website">
-  <!-- EDITAR AQUI: NOME DO SITE -->
-  <meta property="og:title" content="Mais Sabiamente — Curadoria Inteligente">
-  <meta property="og:description" content="Descubra melhor. Viva sabiamente. Curadoria de bem-estar, livros, tecnologia e relaxamento.">
-  <!-- EDITAR AQUI: URL DO SITE -->
-  <meta property="og:url" content="https://exemplo.seudominio/">
-  <!-- EDITAR AQUI: IMAGEM OG -->
-  <meta property="og:image" content="https://exemplo.seudominio/og-cover.jpg">
+  <meta property="og:title" content="Mais Sabiamente — Curadoria Inteligente"><!-- EDITAR AQUI: og:title -->
+  <meta property="og:description" content="Descubra melhor. Viva sabiamente. Curadoria de bem‑estar, livros, tecnologia e relaxamento.">
+  <meta property="og:url" content="https://exemplo.seudominio/"><!-- EDITAR AQUI: og:url -->
+  <meta property="og:image" content="https://exemplo.seudominio/og-cover.jpg"><!-- EDITAR AQUI: og:image -->
   <meta name="twitter:card" content="summary_large_image">
-  <!-- EDITAR AQUI: NOME DO SITE -->
   <meta name="twitter:title" content="Mais Sabiamente — Curadoria Inteligente">
   <meta name="twitter:description" content="Curadoria prática em um só lugar.">
-  <!-- EDITAR AQUI: IMAGEM OG -->
-  <meta name="twitter:image" content="https://exemplo.seudominio/og-cover.jpg">
+  <meta name="twitter:image" content="https://exemplo.seudominio/og-cover.jpg"><!-- EDITAR AQUI: twitter:image -->
 
   <!-- Favicon / Manifest -->
   <link rel="icon" href="/favicon.ico">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- ================= CSS crítico ================= -->
+  <!-- ================= CSS CRÍTICO ================= -->
   <style>
+    /* ===== Paleta / tokens ===== */
     :root{--navy:#0B1B34;--navy-2:#0F2646;--navy-3:#143257;--ice:#F2F6FB;--card:#FFFFFF;--text:#0E1525;--text-on-dark:#E9EEF6;--muted:#5c6b87;--primary:#1E90FF;--primary-2:#5AA9FF;--accent-1:#2ED3AE;--accent-2:#FF7AB6;--accent-3:#F6C76A;--ring:#223C64;--ring-light:#E2E8F4;--shadow:0 12px 36px rgba(0,0,0,.22);--radius:18px}
+
+    /* ===== Reset suave ===== */
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--navy);color:var(--text-on-dark);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
     a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto}
     .wrap{max-width:1200px;margin:0 auto;padding:28px 20px 96px}
 
-    /* NAV */
-    .topbar{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(10,22,46,.72);backdrop-filter:saturate(160%) blur(8px);border:1px solid rgba(255,255,255,.08);border-radius:16px;box-shadow:var(--shadow)}
-    .brand{font-weight:900;letter-spacing:.2px;font-size:22px;color:#fff;white-space:nowrap}
+    /* ===== TOPBAR / NAV ===== */
+    .topbar{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(10,22,46,.72);backdrop-filter:saturate(160%) blur(8px);border:1px solid rgba(255,255,255,.08);border-radius:16px;box-shadow:var(--shadow);position:sticky;top:12px;z-index:1000}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.2px;font-size:22px;color:#fff;white-space:nowrap}
+    .brand img{width:42px;height:42px;border-radius:10px;object-fit:contain;filter:drop-shadow(0 4px 16px rgba(0,0,0,.35))}
     nav.menu{display:flex;flex-wrap:wrap;gap:10px}
     .menu-link,.menu-button{padding:10px 14px;border:1px solid rgba(255,255,255,.14);border-radius:999px;font-weight:800;color:#EAF2FF;background:rgba(255,255,255,.06);cursor:pointer}
     .menu-link:hover,.menu-button:hover{background:#fff;color:#0F2142;border-color:#fff;box-shadow:0 10px 24px rgba(255,255,255,.12)}
     .menu{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
     .menu-item{position:relative}
+
+    /* ===== Dropdown (menus rápidos) ===== */
     .dropdown{position:absolute;top:calc(100% + 10px);left:0;min-width:260px;background:rgba(10,22,46,.98);backdrop-filter:saturate(160%) blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.45);padding:10px;display:none;z-index:40}
     .dropdown a{display:block;padding:10px 12px;border-radius:10px;color:#E9F1FF;border:1px solid transparent}
     .dropdown a:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
@@ -69,19 +68,22 @@
     .menu-item:focus-within .dropdown,.menu-item:hover .dropdown{display:block}
     .menu-button[aria-expanded="true"] + .dropdown{display:block}
 
-    /* === MEGA MENU (estilo Amazon) === */
+    /* === MEGA MENU (Item 1 do seu checklist) === */
     .departamentos{position:relative}
-    .mega{position:absolute;top:calc(100% + 10px);left:0;width:min(940px,92vw);background:rgba(10,22,46,.98);border:1px solid rgba(255,255,255,.12);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.5);display:none;padding:16px;z-index:45}
+    .mega{position:absolute;top:calc(100% + 10px);left:0;width:min(980px,92vw);background:rgba(10,22,46,.98);border:1px solid rgba(255,255,255,.12);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.5);padding:16px;display:none;z-index:45;backdrop-filter:saturate(160%) blur(8px)}
     .departamentos:focus-within .mega,.departamentos:hover .mega{display:block}
     .mega-grid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
-    .mega h4{margin:4px 0 6px;color:#CFE1FF;font-size:14px;text-transform:uppercase;letter-spacing:.08em}
+    @media (max-width:720px){.mega-grid{grid-template-columns:1fr}}
+    .mega h4{margin:4px 0 6px;color:#CFE1FF;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
     .mega a{display:block;padding:8px 10px;border-radius:10px;color:#E9F1FF}
     .mega a:hover{background:rgba(255,255,255,.08)}
     .mega .note{opacity:.7;font-size:12px;margin-top:6px}
+    .menu-button.depart-button{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25)}
+    .menu-button.depart-button:hover{background:#fff;color:#0F2142}
 
-    /* HERO */
-    .hero{background:linear-gradient(180deg, var(--navy-2) 0%, var(--navy) 100%);border:1px solid rgba(255,255,255,.08);border-radius:24px;box-shadow:var(--shadow);padding:54px 28px;margin-top:14px;color:var(--text-on-dark)}
-    .hero h1{font-size:clamp(24px,4.4vw,44px);line-height:1.15;margin:0 0 10px;font-weight:800;letter-spacing:.2px}
+    /* ===== HERO (capa do site) ===== */
+    .hero{background:linear-gradient(180deg,var(--navy-2) 0%, var(--navy) 100%);border:1px solid rgba(255,255,255,.08);border-radius:24px;box-shadow:var(--shadow);padding:54px 28px;margin-top:14px;color:var(--text-on-dark)}
+    .hero h1{font-size:clamp(26px,4.4vw,46px);line-height:1.15;margin:0 0 10px;font-weight:800;letter-spacing:.2px}
     .hero p{margin:0 0 22px;color:#C7D4EA;font-size:18px}
     .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 10px}
     .btn{padding:14px 20px;border-radius:12px;border:1px solid transparent;font-weight:800;box-shadow:var(--shadow);transition:.2s;font-size:15px}
@@ -92,7 +94,7 @@
     .pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
     .pill{background:rgba(255,255,255,.08);color:#F3F7FF;padding:10px 14px;border-radius:999px;font-weight:700;font-size:14px;border:1px solid rgba(255,255,255,.16)}
 
-    /* GRID + CARD */
+    /* ===== GRID / CARD ===== */
     .card{margin-top:28px;background:var(--ice);border:1px solid var(--ring-light);border-radius:22px;box-shadow:0 16px 48px rgba(7,16,34,.35);padding:22px;color:var(--text)}
     .grid{display:grid;gap:24px;grid-template-columns:1.15fr 1fr;align-items:start}
     @media (max-width:1024px){.grid{grid-template-columns:1fr}}
@@ -101,6 +103,8 @@
     .media img,.media video{width:100%;border-radius:14px;border:1px solid var(--ring);background:#fff;box-shadow:var(--shadow);object-fit:cover}
     .media img.ai-creative{aspect-ratio:1/1;height:auto}
     .custom-video{grid-column:1/-1;aspect-ratio:16/9;background:#000;border:1px solid var(--ring);border-radius:14px;box-shadow:var(--shadow);width:100%;height:auto;display:block}
+
+    /* ===== Destaques / listagens ===== */
     .badge{display:inline-flex;align-items:center;gap:8px;font-weight:800;color:#1f2a44;background:#EEF2FF;border:1px solid #dde3ff;padding:8px 12px;border-radius:999px;margin-bottom:10px}
     .b-text h2,.b-text h3{font-size:28px;margin:0 0 8px}
     .b-text p.lead{color:var(--muted);margin:0 0 16px}
@@ -111,32 +115,16 @@
     .beneficios li{display:flex;align-items:center;gap:10px;margin:8px 0;padding:10px 12px;border:1px dashed #dfe3ff;border-radius:12px;background:#fbfcff}
     .beneficios .dot{width:10px;height:10px;border-radius:999px;background:var(--primary);opacity:.8}
     .buy-row{display:flex;gap:12px;align-items:center;margin:18px 0 6px;flex-wrap:wrap}
+
+    /* ===== Lojinha (box rosa) ===== */
     .lojinha{margin-top:26px;border-radius:20px;border:1px solid rgba(255,122,182,.25);background:linear-gradient(180deg,#fff7fb 0%, #ffeaf5 100%);box-shadow:0 10px 32px rgba(255,122,182,.25);padding:24px;display:grid;gap:16px;grid-template-columns:1fr auto;align-items:center}
     @media (max-width:800px){.lojinha{grid-template-columns:1fr}}
     .lojinha h3{margin:0;font-size:22px}
     .lojinha p{margin:0;color:#6a3b53}
-    .tag-cupom{display:inline-flex;gap:8px;align-items:center;padding:10px 14px;border-radius:999px;background:#fff;border:1px dashed #ffacd0;font-weight:800;color:#b92b6c}
     .btn-lojinha{background:var(--accent-2);color:#fff;padding:14px 20px;border-radius:12px;font-weight:800}
     .btn-lojinha:hover{opacity:.95}
 
-    /* CHAT */
-    .chat-fab{position:fixed;right:22px;bottom:22px;z-index:50;width:68px;height:68px;border-radius:999px;background:#25D366;display:grid;place-items:center;color:#fff;box-shadow:0 14px 32px rgba(37,211,102,.33);cursor:pointer;border:2px solid #e9fff1}
-    .chat-fab:hover{filter:brightness(1.05)}
-    .chat-modal{position:fixed;right:18px;bottom:104px;width:min(420px,92vw);background:#fff;border:1px solid var(--ring);border-radius:16px;box-shadow:var(--shadow);display:none;flex-direction:column;overflow:hidden}
-    .chat-modal header{background:var(--navy-3);color:#fff;padding:14px 16px;font-weight:800;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.08)}
-    .chat-body{padding:12px;max-height:56vh;overflow:auto}
-    .msg{background:#f4f6ff;border:1px solid #e7eaff;padding:10px 12px;border-radius:12px;margin:8px 0;color:#23305a}
-    .msg.user{background:#EEF2FF;border-color:#dde3ff}
-    .chat-foot{display:flex;gap:8px;border-top:1px solid var(--ring);padding:10px}
-    .chat-foot input{flex:1;border:1px solid var(--ring);border-radius:10px;padding:10px 12px}
-    .chat-foot button{padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;border:1px solid transparent;font-weight:700}
-    .alva-quick-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:.5rem 0}
-    @media (min-width:480px){.alva-quick-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    .chip{padding:10px 12px;border-radius:999px;background:#f7faff;border:1px solid #dde3ff;color:var(--primary);font-weight:700;font-size:.94rem;cursor:pointer;text-align:center}
-    .chip-link{display:inline-block}
-    .chip-link::after{content:"↗";font-size:.9em;margin-left:.35rem;opacity:.7}
-
-    /* UTIL */
+    /* ===== Chips utilitárias ===== */
     .mt-6{margin-top:16px}.mt-10{margin-top:26px}
     .site-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
     .site-nav a{padding:8px 12px;border-radius:10px;border:1px solid var(--ring);background:#fff;color:#33416a;font-weight:700}
@@ -152,64 +140,64 @@
     .themed .card{background:var(--surface);color:var(--ink);border-color:rgba(255,255,255,.14)}
     .themed .btn-primary{background:var(--cta)}
     .themed .pill{background:var(--chip,rgba(255,255,255,.08));border-color:var(--chip-border,rgba(255,255,255,.16));color:inherit}
+
+    /* ===== Chat flutuante ===== */
+    .chat-fab{position:fixed;right:22px;bottom:22px;z-index:50;width:68px;height:68px;border-radius:999px;background:#25D366;display:grid;place-items:center;color:#fff;box-shadow:0 14px 32px rgba(37,211,102,.33);cursor:pointer;border:2px solid #e9fff1}
+    .chat-fab:hover{filter:brightness(1.05)}
+    .chat-modal{position:fixed;right:18px;bottom:104px;width:min(420px,92vw);background:#fff;border:1px solid var(--ring);border-radius:16px;box-shadow:var(--shadow);display:none;flex-direction:column;overflow:hidden}
+    .chat-modal header{background:var(--navy-3);color:#fff;padding:14px 16px;font-weight:800;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.08)}
+    .chat-body{padding:12px;max-height:56vh;overflow:auto}
+    .msg{background:#f4f6ff;border:1px solid #e7eaff;padding:10px 12px;border-radius:12px;margin:8px 0;color:#23305a}
+    .msg.user{background:#EEF2FF;border-color:#dde3ff}
+    .chat-foot{display:flex;gap:8px;border-top:1px solid var(--ring);padding:10px}
+    .chat-foot input{flex:1;border:1px solid var(--ring);border-radius:10px;padding:10px 12px}
+    .chat-foot button{padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;border:1px solid transparent;font-weight:700}
+
+    /* Quick links do chat */
+    .alva-quick-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:.5rem 0}
+    @media (min-width:480px){.alva-quick-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    .chip{padding:10px 12px;border-radius:999px;background:#f7faff;border:1px solid #dde3ff;color:var(--primary);font-weight:700;font-size:.94rem;cursor:pointer;text-align:center}
+    .chip-link{display:inline-block}
+    .chip-link::after{content:"↗";font-size:.9em;margin-left:.35rem;opacity:.7}
   </style>
 
-  <!-- ================= Consent Mode (default negado) + GA4 + Ads ================= -->
+  <!-- ================= Consent Mode (padrão: negado) + GA4 + Ads ================= -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
-    gtag('consent', 'default', {
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      ad_storage: 'denied',
-      analytics_storage: 'denied',
-      wait_for_update: 500
-    });
+    gtag('consent', 'default', { ad_user_data:'denied', ad_personalization:'denied', ad_storage:'denied', analytics_storage:'denied', wait_for_update: 500 });
   </script>
-  <!-- EDITAR AQUI: GA4 / ADS -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script> <!-- EDITAR AQUI: GA4 ID -->
   <script>
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX', { send_page_view: true, allow_google_signals: false });
-    gtag('config', 'AW-337916204');
+    gtag('config', 'G-XXXXXXX', { send_page_view:true, allow_google_signals:false });
+    gtag('config', 'AW-337916204'); /* Ads (opcional) */
   </script>
 
-  <!-- JSON-LD Website + Organization -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"WebSite",
-        "name":"Mais Sabiamente — Curadoria Inteligente",
-        "url":"https://exemplo.seudominio/",
-        "potentialAction":{
-          "@type":"SearchAction",
-          "target":"https://exemplo.seudominio/busca?q={query}",
-          "query-input":"required name=query"
-        }
-      },
-      {
-        "@type":"Organization",
-        "name":"Mais Sabiamente",
-        "url":"https://exemplo.seudominio/",
-        "logo":"https://exemplo.seudominio/logo.png"
-      }
-    ]
-  }
+  <!-- JSON-LD Website + Organization (básico) -->
+  <script type="application/ld+json">{
+    "@context":"https://schema.org","@graph":[
+      {"@type":"WebSite","name":"Mais Sabiamente — Curadoria Inteligente","url":"https://exemplo.seudominio/","potentialAction":{"@type":"SearchAction","target":"https://exemplo.seudominio/busca?q={query}","query-input":"required name=query"}},
+      {"@type":"Organization","name":"Mais Sabiamente","url":"https://exemplo.seudominio/","logo":"https://exemplo.seudominio/logo.png"}
+    ]}
   </script>
 </head>
 <body>
   <div class="wrap">
-    <!-- TOP NAV: marca + categorias do projeto -->
+    <!-- =====================================================
+         TOP NAV: marca + categorias + DEPARTAMENTOS (mega)
+         ===================================================== -->
     <div class="topbar" role="banner">
-      <!-- EDITAR AQUI: NOME DA MARCA EXIBIDA -->
-      <div class="brand">Mais Sabiamente — Curadoria</div>
+      <div class="brand">
+        <!-- EDITAR AQUI: caminho da sua logo (fornecida) -->
+        <img src="/assets/logo-mais-sabiamente.png" alt="Mais Sabiamente" aria-hidden="true"> <!-- substitua pelo seu arquivo -->
+        <span>Mais Sabiamente — Curadoria</span>
+      </div>
 
       <nav class="menu" aria-label="Menu principal" role="menubar">
-        <!-- MENU: DEPARTAMENTOS (ESTILO AMAZON) -->
+        <!-- ====== MEGA-MENU (Item 1) ====== -->
         <div class="menu-item departamentos" role="none">
-          <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Departamentos</button>
+          <button class="menu-button depart-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Departamentos</button>
           <div class="mega" role="menu" aria-label="Departamentos">
             <div class="mega-grid">
               <div>
@@ -244,13 +232,13 @@
                 <a role="menuitem" href="/saude/">Saúde (hub)</a>
                 <a role="menuitem" href="/blog/">Blog</a>
                 <a role="menuitem" href="/blog/qual-perigo-esconde-o-acucar/">Qual perigo esconde o Açúcar?</a>
-                <p class="note">* Itens acima são exemplos. Substitua pelos seus links quando quiser.</p>
+                <p class="note">* Substitua pelos seus links quando quiser.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Menus rápidos (mantive os seus) -->
+        <!-- ===== Menus rápidos (mantidos) ===== -->
         <div class="menu-item" role="none">
           <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Cuidados Diários</button>
           <div class="dropdown" role="menu" aria-label="Cuidados Diários">
@@ -314,7 +302,7 @@
           <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Marcas</button>
           <div class="dropdown" role="menu" aria-label="Marcas">
             <a role="menuitem" class="accent" href="#alva">Alva (oficial)</a>
-            <!-- EDITAR AQUI: adicionar outras marcas quando quiser -->
+            <!-- EDITAR AQUI: adicione outras marcas quando quiser -->
           </div>
         </div>
 
@@ -324,51 +312,40 @@
       </nav>
     </div>
 
-    <!-- HERO -->
+    <!-- ================= HERO / CAPA (com CTA) ================= -->
     <section class="hero themed theme--livros" id="inicio">
       <div class="grid" style="grid-template-columns:1.2fr 1fr;align-items:center">
         <div>
           <h1>Mais Sabiamente — curadoria profissional para viver melhor</h1>
           <p>Conteúdo confiável e navegação clara por categorias. Produtos da <b>ALVA</b> ficam concentrados em <i>Cuidados Diários</i> e na <i>Página da Alva</i>, sem poluir a capa.</p>
-
           <div class="cta-row" role="group" aria-label="Ações principais">
             <a class="btn btn-primary" href="#alva">Página da Alva</a>
             <a class="btn btn-ghost" href="/cuidados-diarios/">Ver Cuidados Diários</a>
           </div>
-
           <div class="pills" aria-label="destaques">
             <span class="pill">Visual premium</span>
             <span class="pill">Links preservados</span>
             <span class="pill">Rastreio de afiliado</span>
           </div>
         </div>
-
-        <!-- HERO: BANNER ROTATIVO DE OFERTAS -->
+        <!-- Banner/atalhos (substitua pelas suas imagens ou chips) -->
         <div>
-          <div class="card" style="padding:0;background:rgba(255,255,255,.08);color:#EAF2FF;border:1px solid rgba(255,255,255,.12);overflow:hidden">
-            <div id="banner-wrap" style="position:relative">
-              <!-- Slides (substitua as imagens/links livremente) -->
-              <a class="slide" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="sponsored nofollow noopener" style="display:block">
-                <img src="/assets/banners/alva-cupom.jpg" alt="Cupom Alva: ofertas semanais — Clique aqui" style="width:100%;display:block;object-fit:cover;max-height:360px">
-              </a>
-              <a class="slide" href="https://mais.app/jROmOw" target="_blank" rel="sponsored nofollow noopener" style="display:none">
-                <img src="/assets/banners/desodorantes.jpg" alt="Desodorantes Alva — Conheça a linha completa" style="width:100%;display:block;object-fit:cover;max-height:360px">
-              </a>
-              <a class="slide" href="https://mais.app/QleArk" target="_blank" rel="sponsored nofollow noopener" style="display:none">
-                <img src="/assets/banners/lancamentos.jpg" alt="Lançamentos Alva — ver novidades" style="width:100%;display:block;object-fit:cover;max-height:360px">
-              </a>
-
-              <!-- Navegação -->
-              <button id="prevSlide" aria-label="Anterior" style="position:absolute;top:50%;left:10px;transform:translateY(-50%);background:rgba(0,0,0,.35);border:0;color:#fff;border-radius:999px;width:36px;height:36px;cursor:pointer">‹</button>
-              <button id="nextSlide" aria-label="Próximo"  style="position:absolute;top:50%;right:10px;transform:translateY(-50%);background:rgba(0,0,0,.35);border:0;color:#fff;border-radius:999px;width:36px;height:36px;cursor:pointer">›</button>
+          <div class="card" style="padding:16px;background:rgba(255,255,255,.08);color:#EAF2FF;border:1px solid rgba(255,255,255,.12)">
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a class="pill" href="https://mais.app/jROmOw" target="_blank" rel="sponsored nofollow noopener">Desodorantes</a>
+              <a class="pill" href="https://mais.app/rAxpKd" target="_blank" rel="sponsored nofollow noopener">Cabelos</a>
+              <a class="pill" href="https://mais.app/nX49Uz" target="_blank" rel="sponsored nofollow noopener">Bucal</a>
+              <a class="pill" href="https://mais.app/BeCrvg" target="_blank" rel="sponsored nofollow noopener">Corpo</a>
+              <a class="pill" href="https://mais.app/QleArk" target="_blank" rel="sponsored nofollow noopener">Lançamentos</a>
+              <a class="pill" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="sponsored nofollow noopener">Kits</a>
             </div>
-            <small style="display:block;margin:10px;opacity:.8">Banner rotativo de ofertas — com tracking preservado</small>
+            <small style="display:block;margin-top:10px;opacity:.8">Atalhos rápidos — com tracking preservado</small>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BLOCO VITRINE + CONTEÚDO (Cuidado Diário) -->
+    <!-- ================= BLOCO VITRINE + CONTEÚDO (exemplo ALVA) ================= -->
     <section class="card" id="cuidado-diario" aria-labelledby="cd-title">
       <div class="grid">
         <div class="media">
@@ -419,7 +396,7 @@
       </div>
     </section>
 
-    <!-- Por que Alva -->
+    <!-- ================= Seções rápidas ================= -->
     <section class="card" id="provas" aria-labelledby="provas-title">
       <h2 id="provas-title">Por que Alva?</h2>
       <ul class="beneficios">
@@ -429,7 +406,6 @@
       </ul>
     </section>
 
-    <!-- Depoimentos -->
     <section class="card" id="depoimentos" aria-labelledby="dep-title">
       <h2 id="dep-title">Depoimentos</h2>
       <div class="grid">
@@ -438,7 +414,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="card" id="faq" aria-labelledby="faq-title">
       <h2 id="faq-title">Perguntas Frequentes</h2>
       <details><summary>O desodorante contém alumínio?</summary><p>Não. A linha Alva não usa cloridrato de alumínio.</p></details>
@@ -446,7 +421,7 @@
       <details><summary>É vegano e testado dermatologicamente?</summary><p>Sim para ambos.</p></details>
     </section>
 
-    <!-- ===== Página dedicada: ALVA ===== -->
+    <!-- ================= Página dedicada: ALVA ================= -->
     <section class="card themed theme--alva" id="alva" aria-labelledby="alva-title">
       <nav aria-label="breadcrumb" class="site-nav" style="margin-bottom:10px">
         <a href="/">Início</a><span>›</span>
@@ -454,7 +429,7 @@
         <span>Alva</span>
       </nav>
       <h2 id="alva-title">ALVA — Página Oficial dentro de Cuidados Diários</h2>
-      <p class="lead">Conteúdo e ofertas verificadas da Alva. Acompanhe os melhores produtos e acesse a lojinha oficial com rastreio de afiliado preservado.</p>
+      <p class="lead">Conteúdo e ofertas verificadas da Alva. Acesse a lojinha oficial com rastreio de afiliado preservado.</p>
 
       <div class="grid">
         <div class="media">
@@ -469,7 +444,6 @@
             <source src="//alvapersonalcare.com.br/cdn/shop/videos/c/vp/ffd31f37f5f44be7b5efe23a02130fe4/ffd31f37f5f44be7b5efe23a02130fe4.HD-1080p-4.8Mbps-48898408.mp4?v=0" type="video/mp4">
           </video>
         </div>
-
         <div class="b-text">
           <span class="badge">🏆 Campeão de Vendas</span>
           <h3>Desodorante Cristal Stick Vegano 60g Alva</h3>
@@ -494,22 +468,6 @@
           </div>
         </div>
       </div>
-
-      <!-- COMO USAR O ALVA EM PEDRA -->
-      <section class="card" id="como-usar-alva" aria-labelledby="como-alva-title" style="margin-top:22px">
-        <h3 id="como-alva-title">Como usar o Alva em Pedra (Cristal)</h3>
-        <ul class="beneficios">
-          <li><span class="dot"></span> Umedeça levemente a ponta da pedra com água corrente.</li>
-          <li><span class="dot"></span> Aplique nas axilas limpas, com 5–10 passadas por área.</li>
-          <li><span class="dot"></span> Seque a pedra após o uso e mantenha a tampa sem umidade.</li>
-          <li><span class="dot"></span> Reaplique após atividades intensas ou banho, se necessário.</li>
-          <li><span class="dot"></span> Evite usar sobre pele lesionada ou recém-depilada (aguarde 12–24h).</li>
-        </ul>
-        <div class="buy-row">
-          <a class="btn btn-primary" href="https://mais.app/MQtQeF" target="_blank" rel="sponsored nofollow noopener">Comprar agora</a>
-          <a class="btn btn-ghost" href="https://mais.app/jROmOw" target="_blank" rel="sponsored nofollow noopener">Ver a linha completa</a>
-        </div>
-      </section>
 
       <div class="lojinha" role="complementary" aria-label="Ofertas e kits Alva" style="margin-top:22px">
         <div>
@@ -536,8 +494,8 @@
 
     <section class="card themed theme--saude" id="saude" aria-labelledby="sau-title">
       <h2 id="sau-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">Saúde</h2>
-      <p class="lead">Rotinas de bem-estar, sono e recuperação.</p>
-      <div class="site-nav"><a href="/saude/bem-estar/">Bem-estar</a><a href="/saude/sono/">Sono</a><a href="/saude/rotinas/">Rotinas</a><a href="/blog/">Blog</a><a href="/blog/qual-perigo-esconde-o-acucar/">Qual perigo esconde o Açúcar?</a></div>
+      <p class="lead">Rotinas de bem‑estar, sono e recuperação.</p>
+      <div class="site-nav"><a href="/saude/bem-estar/">Bem-estar</a><a href="/saude/sono/">Sono</a><a href="/saude/rotinas/">Rotinas</a><a href="/blog/">Blog</a><a href="/blog/qual-perigo-esconde-o-acucar/">Açúcar?</a></div>
     </section>
 
     <section class="card themed theme--canais" id="canais" aria-labelledby="can-title">
@@ -547,7 +505,7 @@
     </section>
   </div>
 
-  <!-- CHAT (bolha verde) -->
+  <!-- ================= CHAT (bolha verde) ================= -->
   <button class="chat-fab" id="openChat" aria-label="Falar com a Alva">
     <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="#fff" d="M16 3.2A12.8 12.8 0 0 0 3.2 16c0 2.2.6 4.3 1.8 6.2L4 29.6l7.6-1.9c1.4.8 3 .1 4.4.1A12.8 12.8 0 1 0 16 3.2Zm6.7 16.9c-.3.9-1.7 1.7-2.6 1.9-.7.2-1.6.3-4.7-1.0-4-1.7-6.9-5.9-7.1-6.1-.3-.3-1.7-2.1-1.7-4s1.1-2.8 1.5-3.1c.4-.4 1-.5 1.4-.5h.7c.2 0 .6-.1.9.7.3.8 1.0 2.5 1.1 2.7.1.2.1.5 0 .7l-.5.7c-.1.2-.3.4-.2.6 0 .2.2.4.4.6.6.9 1.4 1.9 2.4 2.6 1.6 1.1 2.2.9 2.6.7l.8-1c.2-.2.5-.3.8-.2.3.1 2 .9 2.3 1.1.3.1.5.2.5.4.1.2.1 1-.2 1.7Z"/></svg>
   </button>
@@ -576,25 +534,7 @@
     </div>
   </div>
 
-  <!-- ======== HERO BANNER JS (autoplay + setas) ======== -->
-  <script>
-    (function(){
-      var slides = Array.from(document.querySelectorAll('#banner-wrap .slide'));
-      if(!slides.length) return;
-      var i = 0, timer;
-      var show = function(n){ slides.forEach(function(s,idx){ s.style.display = (idx===n?'block':'none'); }); };
-      var next = function(){ i = (i+1)%slides.length; show(i); };
-      var prev = function(){ i = (i-1+slides.length)%slides.length; show(i); };
-      var start = function(){ timer = setInterval(next, 5000); };
-      var stop  = function(){ clearInterval(timer); };
-
-      document.getElementById('nextSlide').addEventListener('click', function(){ stop(); next(); start(); });
-      document.getElementById('prevSlide').addEventListener('click', function(){ stop(); prev(); start(); });
-      show(i); start();
-    })();
-  </script>
-
-  <!-- ======== CHAT UI ======== -->
+  <!-- ====== CHAT: JS mínimo ====== -->
   <script>
     const $open  = document.getElementById('openChat');
     const $close = document.getElementById('closeChat');
@@ -623,23 +563,16 @@
     async function sendMessage(text){
       addMsg(text, 'user');
       try{
-        const res = await fetch('/.netlify/functions/alvaChat', {
-          method:'POST',
-          headers:{'Content-Type':'application/json'},
-          body: JSON.stringify({ messages:[{role:'user', content:text}] })
-        });
-        const data = await res.json();
-        addMsg(data.reply || 'Desculpe, não consegui responder agora.');
-      }catch(err){
-        addMsg('Ops, conexão indisponível agora. Tente novamente.');
-      }
+        const res = await fetch('/.netlify/functions/alvaChat', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ messages:[{role:'user', content:text}] })});
+        const data = await res.json(); addMsg(data.reply || 'Desculpe, não consegui responder agora.');
+      }catch(err){ addMsg('Ops, conexão indisponível agora. Tente novamente.'); }
     }
     document.querySelectorAll('.chip[data-say]').forEach(ch=>{
       ch.addEventListener('click', ()=>{ $input.value = ch.dataset.say || ''; $send.click(); });
     });
   </script>
 
-  <!-- ===== Menu A11y: aria-expanded ===== -->
+  <!-- ===== Menu A11y: aria-expanded (dropdowns + mega) ===== -->
   <script>
     document.querySelectorAll('.menu-item > .menu-button').forEach(function(btn){
       btn.addEventListener('click', function(){
@@ -650,10 +583,12 @@
       document.addEventListener('click', function(e){
         if(!btn.parentElement.contains(e.target)){ btn.setAttribute('aria-expanded','false'); }
       });
+      // Esc fecha o menu/mega
+      btn.parentElement.addEventListener('keydown', function(e){ if(e.key==='Escape'){ btn.setAttribute('aria-expanded','false'); btn.focus(); } });
     });
   </script>
 
-  <!-- ===== Clique afiliado + conversão Ads + GA4 events ===== -->
+  <!-- ===== Clique afiliado + conversão Ads + GA4 events (preservando IDs) ===== -->
   <script>
   (function(){
     var HOSTS = ['alvapersonalcare.com.br','www.alvapersonalcare.com.br','mais.app'];
@@ -665,7 +600,7 @@
       try{
         var u = new URL(a.href, location.href);
         if(!HOSTS.includes(u.hostname)) return false;
-        if(u.hostname==='mais.app') return true;
+        if(u.hostname==='mais.app') return true; // tracker curto
         return REQUIRED.every(function(r){ return u.searchParams.get(r.key) !== null; });
       }catch(_){ return false; }
     }
@@ -678,8 +613,7 @@
     }
     function ga4Event(name, params){ try{ gtag('event', name, params||{}); }catch(_){} }
     function reportAdsConversion(cb){
-      try{ gtag('event','conversion',{ send_to: ADS_SEND_TO, value: 1.0, currency: 'BRL', event_callback: cb }); }
-      catch(_){ cb && cb(); }
+      try{ gtag('event','conversion',{ send_to: ADS_SEND_TO, value: 1.0, currency: 'BRL', event_callback: cb }); } catch(_){ cb && cb(); }
     }
 
     document.addEventListener('click', function(e){
@@ -692,12 +626,7 @@
       var targetHref = appendClickIds(a.href);
       var openNew = e.ctrlKey||e.metaKey||e.shiftKey||e.button===1||a.target==='_blank';
 
-      ga4Event('select_promotion', {
-        campaign: 'patty',
-        creative_name: 'affiliate_link',
-        location_id: 'site_menu_or_card',
-        destination: targetHref
-      });
+      ga4Event('select_promotion', {campaign:'patty', creative_name:'affiliate_link', location_id:'site_menu_or_card', destination:targetHref});
 
       if(openNew){ reportAdsConversion(); a.href = targetHref; return; }
       e.preventDefault(); reportAdsConversion(function(){ location.href = targetHref; });
