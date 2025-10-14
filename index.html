@@ -13,64 +13,131 @@
   <!-- Canonical (URL pública da homepage) -->
   <link rel="canonical" href="https://exemplo.seudominio/" /> <!-- EDITAR AQUI: canonical -->
 
-  <!-- Preconnect / DNS Prefetch (melhora performance para domínios externos usados) -->
+  <!-- ===== Performance hints (preconnect/dns) ===== -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
   <link rel="dns-prefetch" href="//www.googletagmanager.com">
   <link rel="dns-prefetch" href="//alvapersonalcare.com.br">
   <link rel="dns-prefetch" href="//mais.app">
 
-  <!-- Google Fonts (Inter). Opcional: substitua por fonte local se quiser 100/100 no Lighthouse -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- ===== TIPOGRAFIA =====
+       Mantemos Inter para textos e DM Serif Display para títulos,
+       igual ao visual do exemplo. -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
-  <!-- Open Graph / Twitter Cards (compartilhamento) -->
+  <!-- ===== Open Graph / Twitter Cards (compartilhamento) ===== -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Mais Sabiamente — Curadoria Inteligente"><!-- EDITAR AQUI: og:title -->
-  <meta property="og:description" content="Descubra melhor. Viva sabiamente. Curadoria de bem‑estar, livros, tecnologia e relaxamento.">
+  <meta property="og:description" content="Descubra melhor. Viva sabiamente. Curadoria de bem-estar, livros, tecnologia e relaxamento.">
   <meta property="og:url" content="https://exemplo.seudominio/"><!-- EDITAR AQUI: og:url -->
-  <meta property="og:image" content="https://exemplo.seudominio/og-cover.jpg"><!-- EDITAR AQUI: og:image -->
+  <meta property="og:image" content="https://exemplo.seudominio/og-cover.jpg"><!-- EDITAR AQUI: og:image (1200x630) -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Mais Sabiamente — Curadoria Inteligente">
   <meta name="twitter:description" content="Curadoria prática em um só lugar.">
   <meta name="twitter:image" content="https://exemplo.seudominio/og-cover.jpg"><!-- EDITAR AQUI: twitter:image -->
 
-  <!-- Favicon / Manifest -->
+  <!-- ===== Favicon / Manifest ===== -->
   <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"> <!-- 180x180 -->
   <link rel="manifest" href="/site.webmanifest">
+
+  <!-- ===== Preload da logo (corrige quebra inicial) ===== -->
+  <link rel="preload" as="image" href="/assets/logo-mais-sabiamente.png" imagesrcset="/assets/logo-mais-sabiamente.png 1x, /assets/logo-mais-sabiamente@2x.png 2x" fetchpriority="high">
+  <!-- Se migrar para SVG, prefira: /assets/logo-mais-sabiamente.svg -->
 
   <!-- ================= CSS CRÍTICO ================= -->
   <style>
-    /* ===== Paleta / tokens ===== */
-    :root{--navy:#0B1B34;--navy-2:#0F2646;--navy-3:#143257;--ice:#F2F6FB;--card:#FFFFFF;--text:#0E1525;--text-on-dark:#E9EEF6;--muted:#5c6b87;--primary:#1E90FF;--primary-2:#5AA9FF;--accent-1:#2ED3AE;--accent-2:#FF7AB6;--accent-3:#F6C76A;--ring:#223C64;--ring-light:#E2E8F4;--shadow:0 12px 36px rgba(0,0,0,.22);--radius:18px}
+    /* =========================================================
+       TOKENS / PALETA – tema "ms" alinhado à logo (tons de cinza)
+       ========================================================= */
+    :root{
+      /* Base brand (cinzas elegantes) */
+      --ms-bg-1:#1F1F1F;   /* fundo principal */
+      --ms-bg-2:#2B2B2B;   /* gradiente topo */
+      --ms-bg-3:#3A3A3A;   /* topbar/headers */
+      --ms-ink:#EEEFF5;    /* texto claro */
+      --ms-muted:#9AA3B2;  /* texto secundário */
 
-    /* ===== Reset suave ===== */
+      /* Cores utilitárias (mantidas) */
+      --primary:#1E90FF; --primary-2:#5AA9FF;
+      --accent-1:#2ED3AE; --accent-2:#FF7AB6; --accent-3:#F6C76A;
+
+      /* Superfícies claras usadas em cards/vitrines */
+      --ice:#F2F6FB; --card:#FFFFFF; --text:#0E1525;
+
+      --ring:#223C64; --ring-light:#E2E8F4;
+      --shadow:0 12px 36px rgba(0,0,0,.22);
+      --radius:18px;
+    }
+
+    /* =========================================================
+       RESET SUAVE / BASE
+       ========================================================= */
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--navy);color:var(--text-on-dark);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    html,body{
+      margin:0; padding:0;
+      background:var(--ms-bg-1);
+      color:var(--ms-ink);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;height:auto}
     .wrap{max-width:1200px;margin:0 auto;padding:28px 20px 96px}
 
-    /* ===== TOPBAR / NAV ===== */
-    .topbar{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(10,22,46,.72);backdrop-filter:saturate(160%) blur(8px);border:1px solid rgba(255,255,255,.08);border-radius:16px;box-shadow:var(--shadow);position:sticky;top:12px;z-index:1000}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.2px;font-size:22px;color:#fff;white-space:nowrap}
-    .brand img{width:42px;height:42px;border-radius:10px;object-fit:contain;filter:drop-shadow(0 4px 16px rgba(0,0,0,.35))}
+    /* =========================================================
+       TOPBAR / NAV
+       ========================================================= */
+    .topbar{
+      display:flex;gap:16px;align-items:center;justify-content:space-between;
+      padding:14px 18px;
+      background:linear-gradient(180deg, rgba(43,43,43,.86), rgba(31,31,31,.86));
+      backdrop-filter:saturate(160%) blur(8px);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px; box-shadow:var(--shadow);
+      position:sticky; top:12px; z-index:1000;
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      font-weight:900;letter-spacing:.2px;font-size:22px;color:#fff;white-space:nowrap
+    }
+    .brand img{
+      width:44px;height:44px;object-fit:contain;border-radius:10px;
+      /* a logo já tem fundo cinza; se usar .svg sem fundo, ative esta “plaquinha”:
+      background:#fff; border:1px solid rgba(0,0,0,.12); */
+      filter:drop-shadow(0 4px 16px rgba(0,0,0,.35));
+    }
     nav.menu{display:flex;flex-wrap:wrap;gap:10px}
-    .menu-link,.menu-button{padding:10px 14px;border:1px solid rgba(255,255,255,.14);border-radius:999px;font-weight:800;color:#EAF2FF;background:rgba(255,255,255,.06);cursor:pointer}
-    .menu-link:hover,.menu-button:hover{background:#fff;color:#0F2142;border-color:#fff;box-shadow:0 10px 24px rgba(255,255,255,.12)}
     .menu{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .menu-link,.menu-button{
+      padding:10px 14px;border:1px solid rgba(255,255,255,.14);
+      border-radius:999px;font-weight:800;color:#EAF2FF;background:rgba(255,255,255,.06);cursor:pointer
+    }
+    .menu-link:hover,.menu-button:hover{background:#fff;color:#0F2142;border-color:#fff;box-shadow:0 10px 24px rgba(255,255,255,.12)}
     .menu-item{position:relative}
 
     /* ===== Dropdown (menus rápidos) ===== */
-    .dropdown{position:absolute;top:calc(100% + 10px);left:0;min-width:260px;background:rgba(10,22,46,.98);backdrop-filter:saturate(160%) blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.45);padding:10px;display:none;z-index:40}
+    .dropdown{
+      position:absolute;top:calc(100% + 10px);left:0;min-width:260px;
+      background:rgba(25,25,25,.98);backdrop-filter:saturate(160%) blur(8px);
+      border:1px solid rgba(255,255,255,.12);border-radius:14px;
+      box-shadow:0 20px 50px rgba(0,0,0,.45);padding:10px;display:none;z-index:40
+    }
     .dropdown a{display:block;padding:10px 12px;border-radius:10px;color:#E9F1FF;border:1px solid transparent}
     .dropdown a:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
     .dropdown a.accent{background:linear-gradient(90deg,#1E90FF 0%, #2ED3AE 100%);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900}
     .menu-item:focus-within .dropdown,.menu-item:hover .dropdown{display:block}
     .menu-button[aria-expanded="true"] + .dropdown{display:block}
 
-    /* === MEGA MENU (Item 1 do seu checklist) === */
+    /* ===== MEGA MENU (Item 1 do seu checklist) ===== */
     .departamentos{position:relative}
-    .mega{position:absolute;top:calc(100% + 10px);left:0;width:min(980px,92vw);background:rgba(10,22,46,.98);border:1px solid rgba(255,255,255,.12);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.5);padding:16px;display:none;z-index:45;backdrop-filter:saturate(160%) blur(8px)}
+    .mega{
+      position:absolute;top:calc(100% + 10px);left:0;width:min(980px,92vw);
+      background:rgba(25,25,25,.98);backdrop-filter:saturate(160%) blur(8px);
+      border:1px solid rgba(255,255,255,.12);border-radius:16px;
+      box-shadow:0 20px 60px rgba(0,0,0,.5);padding:16px;display:none;z-index:45
+    }
     .departamentos:focus-within .mega,.departamentos:hover .mega{display:block}
     .mega-grid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
     @media (max-width:720px){.mega-grid{grid-template-columns:1fr}}
@@ -81,10 +148,19 @@
     .menu-button.depart-button{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25)}
     .menu-button.depart-button:hover{background:#fff;color:#0F2142}
 
-    /* ===== HERO (capa do site) ===== */
-    .hero{background:linear-gradient(180deg,var(--navy-2) 0%, var(--navy) 100%);border:1px solid rgba(255,255,255,.08);border-radius:24px;box-shadow:var(--shadow);padding:54px 28px;margin-top:14px;color:var(--text-on-dark)}
-    .hero h1{font-size:clamp(26px,4.4vw,46px);line-height:1.15;margin:0 0 10px;font-weight:800;letter-spacing:.2px}
-    .hero p{margin:0 0 22px;color:#C7D4EA;font-size:18px}
+    /* =========================================================
+       HERO (capa do site) – tema cinza da marca
+       ========================================================= */
+    .hero{
+      background:linear-gradient(180deg,var(--ms-bg-2) 0%, var(--ms-bg-1) 100%);
+      border:1px solid rgba(255,255,255,.08);border-radius:24px;
+      box-shadow:var(--shadow);padding:54px 28px;margin-top:14px;color:var(--ms-ink)
+    }
+    .hero h1{
+      font-family:"DM Serif Display", ui-serif, Georgia, serif;
+      font-size:clamp(26px,4.4vw,46px);line-height:1.15;margin:0 0 10px;font-weight:600;letter-spacing:.2px
+    }
+    .hero p{margin:0 0 22px;color:var(--ms-muted);font-size:18px}
     .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 10px}
     .btn{padding:14px 20px;border-radius:12px;border:1px solid transparent;font-weight:800;box-shadow:var(--shadow);transition:.2s;font-size:15px}
     .btn-primary{background:var(--primary);color:#fff}
@@ -94,7 +170,9 @@
     .pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
     .pill{background:rgba(255,255,255,.08);color:#F3F7FF;padding:10px 14px;border-radius:999px;font-weight:700;font-size:14px;border:1px solid rgba(255,255,255,.16)}
 
-    /* ===== GRID / CARD ===== */
+    /* =========================================================
+       GRID / CARD / LISTAGENS
+       ========================================================= */
     .card{margin-top:28px;background:var(--ice);border:1px solid var(--ring-light);border-radius:22px;box-shadow:0 16px 48px rgba(7,16,34,.35);padding:22px;color:var(--text)}
     .grid{display:grid;gap:24px;grid-template-columns:1.15fr 1fr;align-items:start}
     @media (max-width:1024px){.grid{grid-template-columns:1fr}}
@@ -104,9 +182,8 @@
     .media img.ai-creative{aspect-ratio:1/1;height:auto}
     .custom-video{grid-column:1/-1;aspect-ratio:16/9;background:#000;border:1px solid var(--ring);border-radius:14px;box-shadow:var(--shadow);width:100%;height:auto;display:block}
 
-    /* ===== Destaques / listagens ===== */
     .badge{display:inline-flex;align-items:center;gap:8px;font-weight:800;color:#1f2a44;background:#EEF2FF;border:1px solid #dde3ff;padding:8px 12px;border-radius:999px;margin-bottom:10px}
-    .b-text h2,.b-text h3{font-size:28px;margin:0 0 8px}
+    .b-text h2,.b-text h3{font-family:"DM Serif Display", ui-serif, Georgia, serif;font-size:28px;margin:0 0 8px}
     .b-text p.lead{color:var(--muted);margin:0 0 16px}
     .kv-grid{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
     @media (max-width:720px){.kv-grid{grid-template-columns:1fr}}
@@ -130,8 +207,8 @@
     .site-nav a{padding:8px 12px;border-radius:10px;border:1px solid var(--ring);background:#fff;color:#33416a;font-weight:700}
     .site-nav a:hover{border-color:#cfd3f5}
 
-    /* ===== Temas por seção (cores profissionais) ===== */
-    .theme--alva{--navy:#0B1B34;--navy-2:#0F2646;--navy-3:#143257;--bg:var(--navy);--surface:#F2F6FB;--ink:#0E1525;--cta:#1E90FF}
+    /* ===== Temas por seção (mantidos) ===== */
+    .theme--alva{--bg:var(--ms-bg-1);--surface:#F2F6FB;--ink:#0E1525;--cta:#1E90FF}
     .theme--tech{--bg:#0B1220;--surface:#0F1A2B;--ink:#E6ECF8;--cta:#7C5CFC;--chip:#162542;--chip-border:#263656}
     .theme--livros{--bg:#101418;--surface:#F7F4EF;--ink:#0F1727;--cta:#C7A970;--chip:#fff5e6;--chip-border:#eadcc6}
     .theme--saude{--bg:#0D1A16;--surface:#F3FBF7;--ink:#0E1525;--cta:#2ED3AE;--chip:#e7fbf4;--chip-border:#b8efd8}
@@ -145,7 +222,7 @@
     .chat-fab{position:fixed;right:22px;bottom:22px;z-index:50;width:68px;height:68px;border-radius:999px;background:#25D366;display:grid;place-items:center;color:#fff;box-shadow:0 14px 32px rgba(37,211,102,.33);cursor:pointer;border:2px solid #e9fff1}
     .chat-fab:hover{filter:brightness(1.05)}
     .chat-modal{position:fixed;right:18px;bottom:104px;width:min(420px,92vw);background:#fff;border:1px solid var(--ring);border-radius:16px;box-shadow:var(--shadow);display:none;flex-direction:column;overflow:hidden}
-    .chat-modal header{background:var(--navy-3);color:#fff;padding:14px 16px;font-weight:800;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.08)}
+    .chat-modal header{background:var(--ms-bg-3);color:#fff;padding:14px 16px;font-weight:800;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.08)}
     .chat-body{padding:12px;max-height:56vh;overflow:auto}
     .msg{background:#f4f6ff;border:1px solid #e7eaff;padding:10px 12px;border-radius:12px;margin:8px 0;color:#23305a}
     .msg.user{background:#EEF2FF;border-color:#dde3ff}
@@ -189,8 +266,12 @@
          ===================================================== -->
     <div class="topbar" role="banner">
       <div class="brand">
-        <!-- EDITAR AQUI: caminho da sua logo (fornecida) -->
-        <img src="/assets/logo-mais-sabiamente.png" alt="Mais Sabiamente" aria-hidden="true"> <!-- substitua pelo seu arquivo -->
+        <!-- LOGO: usar o arquivo que você subiu (respeitando maiúsculas/minúsculas) -->
+        <img
+          src="/assets/logo-mais-sabiamente.png"
+          srcset="/assets/logo-mais-sabiamente.png 1x, /assets/logo-mais-sabiamente@2x.png 2x"
+          width="44" height="44"
+          alt="Mais Sabiamente — logomarca">
         <span>Mais Sabiamente — Curadoria</span>
       </div>
 
@@ -238,7 +319,7 @@
           </div>
         </div>
 
-        <!-- ===== Menus rápidos (mantidos) ===== -->
+        <!-- ===== Menus rápidos ===== -->
         <div class="menu-item" role="none">
           <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Cuidados Diários</button>
           <div class="dropdown" role="menu" aria-label="Cuidados Diários">
@@ -313,7 +394,7 @@
     </div>
 
     <!-- ================= HERO / CAPA (com CTA) ================= -->
-    <section class="hero themed theme--livros" id="inicio">
+    <section class="hero" id="inicio">
       <div class="grid" style="grid-template-columns:1.2fr 1fr;align-items:center">
         <div>
           <h1>Mais Sabiamente — curadoria profissional para viver melhor</h1>
@@ -388,7 +469,7 @@
       <!-- Lojinha -->
       <div class="lojinha" role="complementary" aria-label="Ofertas e kits">
         <div>
-          <h3>Conheça minha lojinha com ofertas e kits 💖</h3>
+          <h3>Lojinha 💖</h3>
           <p class="mt-6">Produtos em destaque, combos e condições especiais por tempo limitado.
             <a class="btn-lojinha" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="sponsored nofollow noopener">Ir para a lojinha</a>
           </p>
@@ -398,7 +479,7 @@
 
     <!-- ================= Seções rápidas ================= -->
     <section class="card" id="provas" aria-labelledby="provas-title">
-      <h2 id="provas-title">Por que Alva?</h2>
+      <h2 id="provas-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">Por que Alva?</h2>
       <ul class="beneficios">
         <li><span class="dot"></span> Fórmulas limpas, veganas e hipoalergênicas</li>
         <li><span class="dot"></span> Proteção até 12h sem manchar as roupas</li>
@@ -407,7 +488,7 @@
     </section>
 
     <section class="card" id="depoimentos" aria-labelledby="dep-title">
-      <h2 id="dep-title">Depoimentos</h2>
+      <h2 id="dep-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">Depoimentos</h2>
       <div class="grid">
         <div class="msg">“Melhor desodorante que já usei. Cheiro suave e não mancha.” — Paula M.</div>
         <div class="msg">“Meu cabelo agradece o shampoo sólido. Rende muito!” — Karine R.</div>
@@ -415,7 +496,7 @@
     </section>
 
     <section class="card" id="faq" aria-labelledby="faq-title">
-      <h2 id="faq-title">Perguntas Frequentes</h2>
+      <h2 id="faq-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">Perguntas Frequentes</h2>
       <details><summary>O desodorante contém alumínio?</summary><p>Não. A linha Alva não usa cloridrato de alumínio.</p></details>
       <details><summary>Mancha roupa escura?</summary><p>Não. A fórmula foi pensada para não transferir.</p></details>
       <details><summary>É vegano e testado dermatologicamente?</summary><p>Sim para ambos.</p></details>
@@ -428,7 +509,7 @@
         <a href="/cuidados-diarios/">Cuidados Diários</a><span>›</span>
         <span>Alva</span>
       </nav>
-      <h2 id="alva-title">ALVA — Página Oficial dentro de Cuidados Diários</h2>
+      <h2 id="alva-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">ALVA — Página Oficial dentro de Cuidados Diários</h2>
       <p class="lead">Conteúdo e ofertas verificadas da Alva. Acesse a lojinha oficial com rastreio de afiliado preservado.</p>
 
       <div class="grid">
@@ -446,7 +527,7 @@
         </div>
         <div class="b-text">
           <span class="badge">🏆 Campeão de Vendas</span>
-          <h3>Desodorante Cristal Stick Vegano 60g Alva</h3>
+          <h3 style="font-family:'DM Serif Display', ui-serif, Georgia, serif">Desodorante Cristal Stick Vegano 60g Alva</h3>
           <p class="lead">Proteção saudável por até <b>12 horas</b>, toque seco e sem manchar as roupas.</p>
           <div class="kv-grid">
             <div class="kv">Sem Cloridrato de Alumínio</div>
@@ -494,7 +575,7 @@
 
     <section class="card themed theme--saude" id="saude" aria-labelledby="sau-title">
       <h2 id="sau-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">Saúde</h2>
-      <p class="lead">Rotinas de bem‑estar, sono e recuperação.</p>
+      <p class="lead">Rotinas de bem-estar, sono e recuperação.</p>
       <div class="site-nav"><a href="/saude/bem-estar/">Bem-estar</a><a href="/saude/sono/">Sono</a><a href="/saude/rotinas/">Rotinas</a><a href="/blog/">Blog</a><a href="/blog/qual-perigo-esconde-o-acucar/">Açúcar?</a></div>
     </section>
 
