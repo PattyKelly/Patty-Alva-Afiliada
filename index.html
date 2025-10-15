@@ -4,267 +4,182 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- =========================================================
-       META / SEO — EDITAR QUANDO SUBIR O DOMÍNIO REAL
-       ========================================================= -->
-  <title>Mais Sabiamente — Curadoria Inteligente</title>
+  <title>Plataforma Patty — Viva Sabiamente</title>
   <meta name="description" content="Curadoria prática de bem-estar, livros, tecnologia e relaxamento. Links organizados por categorias, com compra segura e rastreável." />
+
+  <!-- Canonical & i18n -->
   <link rel="canonical" href="https://exemplo.seudominio/" />
 
-  <!-- Performance -->
+  <!-- Preconnect / DNS Prefetch -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
   <link rel="dns-prefetch" href="//www.googletagmanager.com">
   <link rel="dns-prefetch" href="//alvapersonalcare.com.br">
   <link rel="dns-prefetch" href="//mais.app">
-  <!-- Preload da logo (ATENÇÃO: respeita o “L” maiúsculo) -->
-  <link rel="preload" as="image" href="/assets/Logo.png">
 
-  <!-- Tipografia -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Opcional: fonte local -->
+  <!-- <link rel="preload" as="font" type="font/woff2" href="/assets/inter-var.woff2" crossorigin> -->
 
-  <!-- Social -->
+  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Mais Sabiamente — Curadoria Inteligente">
+  <meta property="og:title" content="Plataforma Patty — Viva Sabiamente">
   <meta property="og:description" content="Descubra melhor. Viva sabiamente. Curadoria de bem-estar, livros, tecnologia e relaxamento.">
   <meta property="og:url" content="https://exemplo.seudominio/">
   <meta property="og:image" content="https://exemplo.seudominio/og-cover.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Plataforma Patty — Viva Sabiamente">
+  <meta name="twitter:description" content="Curadoria prática em um só lugar.">
+  <meta name="twitter:image" content="https://exemplo.seudominio/og-cover.jpg">
 
+  <!-- Favicon / Manifest -->
   <link rel="icon" href="/favicon.ico">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- ================= CSS CRÍTICO (tokens + layout base) ================= -->
+  <!-- ================= CSS crítico ================= -->
   <style>
-    /* ===== Design tokens ===== */
-    :root{
-      --ink:#0E1525; --on-dark:#E9EEF6; --muted:#A6B3C9;
-      --navy:#0B1B34; --navy-2:#0F2646; --navy-3:#143257;
-      --surface:#F2F6FB; --ring:#223C64; --ring-light:#E2E8F4;
-      --primary:#1E90FF; --primary-2:#5AA9FF; --accent-2:#FF7AB6;
-      --radius:18px; --shadow:0 12px 36px rgba(0,0,0,.22);
-      --font-sans:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      --font-serif:'DM Serif Display', ui-serif, Georgia, 'Times New Roman', serif;
-    }
+    :root{--navy:#0B1B34;--navy-2:#0F2646;--navy-3:#143257;--ice:#F2F6FB;--card:#FFFFFF;--text:#0E1525;--text-on-dark:#E9EEF6;--muted:#5c6b87;--primary:#1E90FF;--primary-2:#5AA9FF;--accent-1:#2ED3AE;--accent-2:#FF7AB6;--accent-3:#F6C76A;--ring:#223C64;--ring-light:#E2E8F4;--shadow:0 12px 36px rgba(0,0,0,.22);--radius:18px}
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--navy);color:var(--on-dark);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    html,body{margin:0;padding:0;background:var(--navy);color:var(--text-on-dark);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
     a{color:inherit;text-decoration:none}
-    img{max-width:100%;height:auto;vertical-align:middle}
     .wrap{max-width:1200px;margin:0 auto;padding:28px 20px 96px}
-
-    /* ===== Topbar (sticky) ===== */
-    .topbar{
-      position:sticky; top:12px; z-index:1000;
-      display:flex; gap:16px; align-items:center; justify-content:space-between;
-      padding:14px 18px; background:rgba(10,22,46,.72);
-      backdrop-filter:saturate(160%) blur(8px);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:16px; box-shadow:var(--shadow)
-    }
-    .brand{ display:flex; align-items:center; gap:10px; white-space:nowrap }
-    .brand img{ width:42px; height:42px; object-fit:contain; border-radius:10px }
-    .brand-name{ font:800 20px/1 var(--font-sans) }
-    nav.menu{ display:flex; flex-wrap:wrap; gap:10px }
-    .menu{ display:flex; gap:10px; align-items:center; flex-wrap:wrap }
-    .menu-item{ position:relative }
-    .menu-link,.menu-button{
-      padding:10px 14px; border:1px solid rgba(255,255,255,.14);
-      border-radius:999px; font-weight:800; color:#EAF2FF;
-      background:rgba(255,255,255,.06); cursor:pointer
-    }
-    .menu-link:hover,.menu-button:hover{ background:#fff; color:#0F2142; border-color:#fff; box-shadow:0 10px 24px rgba(255,255,255,.12) }
-    /* Botões de topo (direita), iguais ao mood do exemplo */
-    .top-cta{ display:flex; gap:10px; align-items:center }
-    .ghost{ background:transparent; border:1px solid rgba(255,255,255,.28) }
-    .pill-cta{ padding:10px 16px; border-radius:999px; font-weight:800 }
-
-    /* ===== Dropdown padrão ===== */
-    .dropdown{
-      position:absolute; top:calc(100% + 10px); left:0; min-width:260px;
-      background:rgba(10,22,46,.98); backdrop-filter:saturate(160%) blur(8px);
-      border:1px solid rgba(255,255,255,.12); border-radius:14px;
-      box-shadow:0 20px 50px rgba(0,0,0,.45); padding:10px; display:none; z-index:40
-    }
-    .dropdown a{ display:block; padding:10px 12px; border-radius:10px; color:#E9F1FF; border:1px solid transparent }
-    .dropdown a:hover{ background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.14) }
-    .dropdown a.accent{ background:linear-gradient(90deg,#1E90FF 0%, #2ED3AE 100%); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:900 }
-    .menu-item:focus-within .dropdown,.menu-item:hover .dropdown{ display:block }
-    .menu-button[aria-expanded="true"] + .dropdown{ display:block }
-
-    /* ===== Mega-menu (Departamentos) ===== */
-    .departamentos{ position:relative }
-    .mega{
-      position:absolute; top:calc(100% + 10px); left:0; width:min(980px,92vw);
-      background:rgba(10,22,46,.98); border:1px solid rgba(255,255,255,.12);
-      border-radius:16px; box-shadow:0 20px 60px rgba(0,0,0,.5);
-      padding:16px; display:none; z-index:45; backdrop-filter:saturate(160%) blur(8px)
-    }
-    .departamentos:focus-within .mega,.departamentos:hover .mega{ display:block }
-    .mega-grid{ display:grid; gap:16px; grid-template-columns:repeat(3,1fr) }
-    @media (max-width:720px){ .mega-grid{ grid-template-columns:1fr } }
-    .mega h4{ margin:4px 0 6px; color:#CFE1FF; font:600 13px/1 var(--font-sans); text-transform:uppercase; letter-spacing:.08em }
-    .mega a{ display:block; padding:8px 10px; border-radius:10px; color:#E9F1FF }
-    .mega a:hover{ background:rgba(255,255,255,.08) }
-    .mega .note{ opacity:.7; font-size:12px; margin-top:6px }
-    .menu-button.depart-button{ background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.25) }
-
-    /* ===== Apresentação (home com busca — estilo Squarespace) ===== */
-    .landing{
-      margin-top:18px; border:1px solid rgba(255,255,255,.08); border-radius:24px;
-      background:linear-gradient(180deg,var(--navy-2) 0%, var(--navy) 100%); box-shadow:var(--shadow);
-      padding:42px 26px
-    }
-    .landing-grid{ display:grid; gap:22px; grid-template-columns:1.15fr 1fr; align-items:center }
-    @media (max-width:1024px){ .landing-grid{ grid-template-columns:1fr } }
-    .landing h1{ font-family:var(--font-serif); font-size:clamp(30px,6.2vw,64px); line-height:1.07; margin:0 0 14px }
-    .landing .sub{ margin:0 0 22px; color:#C7D4EA; font-size:18px }
-    /* Busca */
-    .search-wrap{ margin-top:10px }
-    .search{
-      display:flex; align-items:center; gap:10px; padding:14px 16px; width:100%;
-      background:#fff; border:1px solid var(--ring-light); border-radius:12px; color:#233; box-shadow:0 10px 28px rgba(0,0,0,.18)
-    }
-    .search input{ flex:1; border:0; outline:0; font:600 16px/1 var(--font-sans) }
-    .search button{ border:0; background:var(--primary); color:#fff; font-weight:800; padding:12px 16px; border-radius:10px; cursor:pointer }
-    .search .icon{ width:20px; height:20px; opacity:.7 }
-    .hint{ margin-top:10px; font-size:14px; color:#C7D4EA }
-    .hint a{ color:#9CC2FF; text-decoration:underline dotted }
-
-    /* ===== Carrossel “marketing” ===== */
-    .slider{ position:relative; border:1px solid rgba(255,255,255,.12); border-radius:18px; overflow:hidden; background:#0A1426 }
-    .slides{ position:relative; height:100% }
-    .slide{ position:absolute; inset:0; display:grid; place-items:center; opacity:0; transition:opacity .5s ease }
-    .slide[aria-hidden="false"]{ opacity:1 }
-    .slide img{ width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; display:block }
-    .arrow{ position:absolute; top:50%; transform:translateY(-50%); width:38px; height:38px; border-radius:999px; border:0; background:rgba(0,0,0,.35); color:#fff; cursor:pointer }
-    .arrow.prev{ left:10px } .arrow.next{ right:10px }
-    .dots{ position:absolute; inset:auto 0 10px 0; display:flex; justify-content:center; gap:8px }
-    .dot{ width:10px; height:10px; border-radius:999px; border:1px solid rgba(255,255,255,.6); background:transparent; cursor:pointer }
-    .dot[aria-current="true"]{ background:#fff }
-
-    /* ===== Cards / grids etc (reaproveita seu layout) ===== */
-    .card{ margin-top:28px; background:var(--surface); border:1px solid var(--ring-light); border-radius:22px; box-shadow:0 16px 48px rgba(7,16,34,.35); padding:22px; color:var(--ink) }
-    .grid{ display:grid; gap:24px; grid-template-columns:1.15fr 1fr; align-items:start }
-    @media (max-width:1024px){ .grid{ grid-template-columns:1fr } }
-    .media{ display:grid; gap:14px; grid-template-columns:1fr 1fr }
-    @media (max-width:1024px){ .media{ grid-template-columns:1fr } }
-    .media img,.media video{ width:100%; border-radius:14px; border:1px solid var(--ring); background:#fff; box-shadow:var(--shadow); object-fit:cover }
-    .media img.ai-creative{ aspect-ratio:1/1; height:auto }
-    .custom-video{ grid-column:1/-1; aspect-ratio:16/9; background:#000; border:1px solid var(--ring); border-radius:14px; box-shadow:var(--shadow); width:100%; height:auto; display:block }
-
-    /* ===== Chat (WhatsApp visual) ===== */
-    .chat-fab{
-      position:fixed; right:22px; bottom:22px; z-index:50; width:68px; height:68px;
-      display:grid; place-items:center; border-radius:999px; background:#25D366; color:#fff;
-      border:2px solid #e9fff1; box-shadow:0 14px 32px rgba(37,211,102,.33); cursor:pointer
-    }
-    .chat-modal{ position:fixed; right:18px; bottom:104px; width:min(420px,92vw); background:#fff; border:1px solid var(--ring); border-radius:16px; box-shadow:var(--shadow); display:none; flex-direction:column; overflow:hidden }
-    .chat-modal header{ background:var(--navy-3); color:#fff; padding:14px 16px; font-weight:800; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,.08) }
-    .chat-body{ padding:12px; max-height:56vh; overflow:auto }
-    .msg{ background:#f4f6ff; border:1px solid #e7eaff; padding:10px 12px; border-radius:12px; margin:8px 0; color:#23305a }
-    .msg.user{ background:#EEF2FF; border-color:#dde3ff }
-    .chat-foot{ display:flex; gap:8px; border-top:1px solid var(--ring); padding:10px }
-    .chat-foot input{ flex:1; border:1px solid var(--ring); border-radius:10px; padding:10px 12px }
-    .chat-foot button{ padding:10px 14px; border-radius:12px; background:var(--primary); color:#fff; border:1px solid transparent; font-weight:700 }
-
-    /* Pills e utilitários */
-    .pill{ background:rgba(255,255,255,.08); color:#F3F7FF; padding:10px 14px; border-radius:999px; font-weight:700; font-size:14px; border:1px solid rgba(255,255,255,.16) }
-    .pills{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px }
-    .kv-grid{ display:grid; gap:12px; grid-template-columns:repeat(2,1fr) }
-    @media (max-width:720px){ .kv-grid{ grid-template-columns:1fr } }
-    .kv{ background:#f6fff7; border:1px solid #e0f3e3; border-radius:12px; padding:12px 14px; color:#264c2a; font-weight:700 }
-    ul.beneficios{ padding-left:0; margin:12px 0 6px; list-style:none }
-    .beneficios li{ display:flex; align-items:center; gap:10px; margin:8px 0; padding:10px 12px; border:1px dashed #dfe3ff; border-radius:12px; background:#fbfcff }
-    .beneficios .dot{ width:10px; height:10px; border-radius:999px; background:var(--primary); opacity:.8 }
-
-    /* Temas extras (já usados depois) */
-    .themed{ background:var(--navy); color:var(--ink); border:1px solid rgba(255,255,255,.08); border-radius:24px; box-shadow:0 18px 60px rgba(0,0,0,.35) }
-    .themed .card{ background:var(--surface); color:var(--ink); border-color:rgba(255,255,255,.14) }
+    /* NAV */
+    .topbar{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(10,22,46,.72);backdrop-filter:saturate(160%) blur(8px);border:1px solid rgba(255,255,255,.08);border-radius:16px;box-shadow:var(--shadow)}
+    .brand{font-weight:900;letter-spacing:.2px;font-size:22px;color:#fff}
+    nav.menu{display:flex;flex-wrap:wrap;gap:10px}
+    .menu-link,.menu-button{padding:10px 14px;border:1px solid rgba(255,255,255,.14);border-radius:999px;font-weight:800;color:#EAF2FF;background:rgba(255,255,255,.06);cursor:pointer}
+    .menu-link:hover,.menu-button:hover{background:#fff;color:#0F2142;border-color:#fff;box-shadow:0 10px 24px rgba(255,255,255,.12)}
+    .menu{display:flex;gap:10px;align-items:center}
+    .menu-item{position:relative}
+    .dropdown{position:absolute;top:calc(100% + 10px);left:0;min-width:260px;background:rgba(10,22,46,.98);backdrop-filter:saturate(160%) blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.45);padding:10px;display:none;z-index:40}
+    .dropdown a{display:block;padding:10px 12px;border-radius:10px;color:#E9F1FF;border:1px solid transparent}
+    .dropdown a:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
+    .dropdown a.accent{background:linear-gradient(90deg,#1E90FF 0%, #2ED3AE 100%);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900}
+    .menu-item:focus-within .dropdown,.menu-item:hover .dropdown{display:block}
+    .menu-button[aria-expanded="true"] + .dropdown{display:block}
+    /* HERO */
+    .hero{background:linear-gradient(180deg, var(--navy-2) 0%, var(--navy) 100%);border:1px solid rgba(255,255,255,.08);border-radius:24px;box-shadow:var(--shadow);padding:54px 28px;margin-top:14px;color:var(--text-on-dark)}
+    .hero h1{font-size:clamp(24px,4.4vw,44px);line-height:1.15;margin:0 0 10px;font-weight:800;letter-spacing:.2px}
+    .hero p{margin:0 0 22px;color:#C7D4EA;font-size:18px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 10px}
+    .btn{padding:14px 20px;border-radius:12px;border:1px solid transparent;font-weight:800;box-shadow:var(--shadow);transition:.2s;font-size:15px}
+    .btn-primary{background:var(--primary);color:#fff}
+    .btn-primary:hover{background:var(--primary-2)}
+    .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.28)}
+    .btn-ghost:hover{border-color:#CFD3F5}
+    .pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .pill{background:rgba(255,255,255,.08);color:#F3F7FF;padding:10px 14px;border-radius:999px;font-weight:700;font-size:14px;border:1px solid rgba(255,255,255,.16)}
+    /* GRID + CARD */
+    .card{margin-top:28px;background:var(--ice);border:1px solid var(--ring-light);border-radius:22px;box-shadow:0 16px 48px rgba(7,16,34,.35);padding:22px;color:var(--text)}
+    .grid{display:grid;gap:24px;grid-template-columns:1.15fr 1fr;align-items:start}
+    @media (max-width:1024px){.grid{grid-template-columns:1fr}}
+    .media{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+    @media (max-width:1024px){.media{grid-template-columns:1fr}}
+    .media img,.media video{width:100%;border-radius:14px;border:1px solid var(--ring);background:#fff;box-shadow:var(--shadow);object-fit:cover}
+    .media img.ai-creative{aspect-ratio:1/1;height:auto}
+    .custom-video{grid-column:1/-1;aspect-ratio:16/9;background:#000;border:1px solid var(--ring);border-radius:14px;box-shadow:var(--shadow);width:100%;height:auto;display:block}
+    .badge{display:inline-flex;align-items:center;gap:8px;font-weight:800;color:#1f2a44;background:#EEF2FF;border:1px solid #dde3ff;padding:8px 12px;border-radius:999px;margin-bottom:10px}
+    .b-text h2,.b-text h3{font-size:28px;margin:0 0 8px}
+    .b-text p.lead{color:var(--muted);margin:0 0 16px}
+    .kv-grid{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+    @media (max-width:720px){.kv-grid{grid-template-columns:1fr}}
+    .kv{background:#f6fff7;border:1px solid #e0f3e3;border-radius:12px;padding:12px 14px;color:#264c2a;font-weight:700}
+    ul.beneficios{padding-left:0;margin:12px 0 6px;list-style:none}
+    .beneficios li{display:flex;align-items:center;gap:10px;margin:8px 0;padding:10px 12px;border:1px dashed #dfe3ff;border-radius:12px;background:#fbfcff}
+    .beneficios .dot{width:10px;height:10px;border-radius:999px;background:var(--primary);opacity:.8}
+    .buy-row{display:flex;gap:12px;align-items:center;margin:18px 0 6px;flex-wrap:wrap}
+    .lojinha{margin-top:26px;border-radius:20px;border:1px solid rgba(255,122,182,.25);background:linear-gradient(180deg,#fff7fb 0%, #ffeaf5 100%);box-shadow:0 10px 32px rgba(255,122,182,.25);padding:24px;display:grid;gap:16px;grid-template-columns:1fr auto;align-items:center}
+    @media (max-width:800px){.lojinha{grid-template-columns:1fr}}
+    .lojinha h3{margin:0;font-size:22px}
+    .lojinha p{margin:0;color:#6a3b53}
+    .tag-cupom{display:inline-flex;gap:8px;align-items:center;padding:10px 14px;border-radius:999px;background:#fff;border:1px dashed #ffacd0;font-weight:800;color:#b92b6c}
+    .btn-lojinha{background:var(--accent-2);color:#fff;padding:14px 20px;border-radius:12px;font-weight:800}
+    .btn-lojinha:hover{opacity:.95}
+    /* CHAT */
+    .chat-fab{position:fixed;right:22px;bottom:22px;z-index:50;width:68px;height:68px;border-radius:999px;background:#25D366;display:grid;place-items:center;color:#fff;box-shadow:0 14px 32px rgba(37,211,102,.33);cursor:pointer;border:2px solid #e9fff1}
+    .chat-fab:hover{filter:brightness(1.05)}
+    .chat-modal{position:fixed;right:18px;bottom:104px;width:min(420px,92vw);background:#fff;border:1px solid var(--ring);border-radius:16px;box-shadow:var(--shadow);display:none;flex-direction:column;overflow:hidden}
+    .chat-modal header{background:var(--navy-3);color:#fff;padding:14px 16px;font-weight:800;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.08)}
+    .chat-body{padding:12px;max-height:56vh;overflow:auto}
+    .msg{background:#f4f6ff;border:1px solid #e7eaff;padding:10px 12px;border-radius:12px;margin:8px 0;color:#23305a}
+    .msg.user{background:#EEF2FF;border-color:#dde3ff}
+    .chat-foot{display:flex;gap:8px;border-top:1px solid var(--ring);padding:10px}
+    .chat-foot input{flex:1;border:1px solid var(--ring);border-radius:10px;padding:10px 12px}
+    .chat-foot button{padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;border:1px solid transparent;font-weight:700}
+    .alva-quick-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:.5rem 0}
+    @media (min-width:480px){.alva-quick-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    .chip{padding:10px 12px;border-radius:999px;background:#f7faff;border:1px solid #dde3ff;color:var(--primary);font-weight:700;font-size:.94rem;cursor:pointer;text-align:center}
+    .chip-link{display:inline-block}
+    .chip-link::after{content:"↗";font-size:.9em;margin-left:.35rem;opacity:.7}
+    /* UTIL */
+    .mt-6{margin-top:16px}.mt-10{margin-top:26px}
+    .site-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .site-nav a{padding:8px 12px;border-radius:10px;border:1px solid var(--ring);background:#fff;color:#33416a;font-weight:700}
+    .site-nav a:hover{border-color:#cfd3f5}
+    /* ===== Temas por seção (cores profissionais) ===== */
+    .theme--alva{--navy:#0B1B34;--navy-2:#0F2646;--navy-3:#143257;--bg:var(--navy);--surface:#F2F6FB;--ink:#0E1525;--cta:#1E90FF}
+    .theme--tech{--bg:#0B1220;--surface:#0F1A2B;--ink:#E6ECF8;--cta:#7C5CFC;--chip:#162542;--chip-border:#263656}
+    .theme--livros{--bg:#101418;--surface:#F7F4EF;--ink:#0F1727;--cta:#C7A970;--chip:#fff5e6;--chip-border:#eadcc6}
+    .theme--saude{--bg:#0D1A16;--surface:#F3FBF7;--ink:#0E1525;--cta:#2ED3AE;--chip:#e7fbf4;--chip-border:#b8efd8}
+    .theme--canais{--bg:#120f1f;--surface:#f5f3ff;--ink:#0E0A1A;--cta:#8B5CF6;--chip:#efecff;--chip-border:#dbd5ff}
+    .themed{background:var(--bg);color:var(--ink);border:1px solid rgba(255,255,255,.08);border-radius:24px;box-shadow:0 18px 60px rgba(0,0,0,.35)}
+    .themed .card{background:var(--surface);color:var(--ink);border-color:rgba(255,255,255,.14)}
+    .themed .btn-primary{background:var(--cta)}
+    .themed .pill{background:var(--chip,rgba(255,255,255,.08));border-color:var(--chip-border,rgba(255,255,255,.16));color:inherit}
   </style>
 
-  <!-- ================= Consent Mode + GA4 + Ads ================= -->
+  <!-- ================= Consent Mode (default negado) + GA4 + Ads ================= -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
     gtag('consent', 'default', {
-      ad_user_data:'denied', ad_personalization:'denied',
-      ad_storage:'denied', analytics_storage:'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
       wait_for_update: 500
     });
   </script>
-  <!-- IDs reais aqui -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX', { send_page_view:true, allow_google_signals:false });
+    gtag('config', 'G-XXXXXXX', { send_page_view: true, allow_google_signals: false });
     gtag('config', 'AW-337916204');
   </script>
 
-  <!-- JSON-LD -->
-  <script type="application/ld+json">{
-    "@context":"https://schema.org","@graph":[
-      {"@type":"WebSite","name":"Mais Sabiamente — Curadoria Inteligente","url":"https://exemplo.seudominio/","potentialAction":{"@type":"SearchAction","target":"https://exemplo.seudominio/busca?q={query}","query-input":"required name=query"}},
-      {"@type":"Organization","name":"Mais Sabiamente","url":"https://exemplo.seudominio/","logo":"https://exemplo.seudominio/logo.png"}
-    ]}</script>
+  <!-- JSON-LD Website + Organization -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":"WebSite","name":"Plataforma Patty — Viva Sabiamente","url":"https://exemplo.seudominio/","potentialAction":{"@type":"SearchAction","target":"https://exemplo.seudominio/busca?q={query}","query-input":"required name=query"}},
+      {"@type":"Organization","name":"Plataforma Patty","url":"https://exemplo.seudominio/","logo":"https://exemplo.seudominio/logo.png"}
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="wrap">
-
-    <!-- =====================================================
-         TOPBAR — Logo + Menu + Mega-menu + CTAs à direita
-         ===================================================== -->
+    <!-- TOP NAV: marca + categorias do projeto -->
     <div class="topbar" role="banner">
-      <a class="brand" href="/" aria-label="Início">
-        <!-- LOGO: caminho ajustado para 'assets/Logo.png' -->
-        <img src="/assets/Logo.png" width="42" height="42" alt="Mais Sabiamente — logomarca">
-        <span class="brand-name">Mais Sabiamente — Curadoria</span>
-      </a>
-
+      <div class="brand">Plataforma Patty — Bem‑Estar</div>
       <nav class="menu" aria-label="Menu principal" role="menubar">
-        <!-- Departamentos (mega) -->
-        <div class="menu-item departamentos" role="none">
-          <button class="menu-button depart-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Departamentos</button>
-          <div class="mega" role="menu" aria-label="Departamentos">
-            <div class="mega-grid">
-              <div>
-                <h4>Cuidados Diários</h4>
-                <a role="menuitem" href="/cuidados-diarios/">Visão Geral</a>
-                <a role="menuitem" href="https://mais.app/jROmOw" target="_blank" rel="sponsored nofollow noopener">Desodorantes</a>
-                <a role="menuitem" href="https://mais.app/rAxpKd" target="_blank" rel="sponsored nofollow noopener">Cabelos</a>
-                <a role="menuitem" href="https://mais.app/nX49Uz" target="_blank" rel="sponsored nofollow noopener">Cuidados Bucais</a>
-                <a role="menuitem" href="https://mais.app/BeCrvg" target="_blank" rel="sponsored nofollow noopener">Corpo</a>
-                <a role="menuitem" href="https://mais.app/QleArk" target="_blank" rel="sponsored nofollow noopener">Lançamentos</a>
-                <a role="menuitem" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="sponsored nofollow noopener">Kits</a>
-                <a role="menuitem" class="accent" href="#alva">Página da Alva</a>
-              </div>
-              <div>
-                <h4>Tecnologia</h4>
-                <a role="menuitem" href="/tecnologia/">Visão Geral</a>
-                <a role="menuitem" href="/tecnologia/privacidade/">Privacidade</a>
-                <a role="menuitem" href="/tecnologia/ferramentas/">Ferramentas</a>
-                <a role="menuitem" href="/tecnologia/guias/">Guias</a>
-                <h4 style="margin-top:10px">Casa & Escritório</h4>
-                <a role="menuitem" href="/tecnologia/casa/">Casa</a>
-                <a role="menuitem" href="/tecnologia/escritorio/">Escritório</a>
-              </div>
-              <div>
-                <h4>Livros</h4>
-                <a role="menuitem" href="/livros/">Visão Geral</a>
-                <a role="menuitem" href="/livros/em-alta/">Em alta</a>
-                <a role="menuitem" href="/livros/estoicismo/">Estoicismo</a>
-                <a role="menuitem" href="/livros/habitos/">Hábitos</a>
-                <a role="menuitem" href="/livros/mente/">Mente</a>
-                <h4 style="margin-top:10px">Saúde & Blog</h4>
-                <a role="menuitem" href="/saude/">Saúde (hub)</a>
-                <a role="menuitem" href="/blog/">Blog</a>
-                <a role="menuitem" href="/blog/qual-perigo-esconde-o-acucar/">Qual perigo esconde o Açúcar?</a>
-                <p class="note">* Substitua pelos seus links quando quiser.</p>
-              </div>
-            </div>
+        <!-- Cuidados Diários + ALVA dentro -->
+        <div class="menu-item" role="none">
+          <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Cuidados Diários</button>
+          <div class="dropdown" role="menu" aria-label="Cuidados Diários">
+            <a role="menuitem" href="/cuidados-diarios/">Visão geral</a>
+            <a role="menuitem" href="https://mais.app/jROmOw" target="_blank" rel="sponsored nofollow noopener">Desodorantes</a>
+            <a role="menuitem" href="https://mais.app/rAxpKd" target="_blank" rel="sponsored nofollow noopener">Cabelos</a>
+            <a role="menuitem" href="https://mais.app/nX49Uz" target="_blank" rel="sponsored nofollow noopener">Cuidados Bucais</a>
+            <a role="menuitem" href="https://mais.app/BeCrvg" target="_blank" rel="sponsored nofollow noopener">Corpo</a>
+            <a role="menuitem" href="https://mais.app/QleArk" target="_blank" rel="sponsored nofollow noopener">Lançamentos</a>
+            <a role="menuitem" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="sponsored nofollow noopener">Kits</a>
+            <a role="menuitem" class="accent" href="#alva">Página da Alva</a>
           </div>
         </div>
-
-        <!-- Mesmos menus que você já tinha (ordem preservada) -->
+        <!-- Tecnologia -->
         <div class="menu-item" role="none">
           <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Tecnologia</button>
           <div class="dropdown" role="menu" aria-label="Tecnologia">
@@ -272,20 +187,19 @@
             <a role="menuitem" href="/tecnologia/privacidade/">Privacidade</a>
             <a role="menuitem" href="/tecnologia/ferramentas/">Ferramentas</a>
             <a role="menuitem" href="/tecnologia/guias/">Guias</a>
-            <a role="menuitem" href="/tecnologia/casa/">Casa</a>
-            <a role="menuitem" href="/tecnologia/escritorio/">Escritório</a>
           </div>
         </div>
+        <!-- Livros -->
         <div class="menu-item" role="none">
           <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Livros</button>
           <div class="dropdown" role="menu" aria-label="Livros">
             <a role="menuitem" href="/livros/">Visão geral</a>
-            <a role="menuitem" href="/livros/em-alta/">Em alta</a>
             <a role="menuitem" href="/livros/estoicismo/">Estoicismo</a>
             <a role="menuitem" href="/livros/habitos/">Hábitos</a>
             <a role="menuitem" href="/livros/mente/">Mente</a>
           </div>
         </div>
+        <!-- Saúde -->
         <div class="menu-item" role="none">
           <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Saúde</button>
           <div class="dropdown" role="menu" aria-label="Saúde">
@@ -293,10 +207,9 @@
             <a role="menuitem" href="/saude/bem-estar/">Bem-estar</a>
             <a role="menuitem" href="/saude/sono/">Sono</a>
             <a role="menuitem" href="/saude/rotinas/">Rotinas</a>
-            <a role="menuitem" href="/blog/">Blog</a>
-            <a role="menuitem" href="/blog/qual-perigo-esconde-o-acucar/">Qual perigo esconde o Açúcar?</a>
           </div>
         </div>
+        <!-- Canais Interessantes -->
         <div class="menu-item" role="none">
           <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Canais Interessantes</button>
           <div class="dropdown" role="menu" aria-label="Canais Interessantes">
@@ -306,6 +219,7 @@
             <a role="menuitem" href="/canais/newsletters/">Newsletters</a>
           </div>
         </div>
+        <!-- Marcas -->
         <div class="menu-item" role="none">
           <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Marcas</button>
           <div class="dropdown" role="menu" aria-label="Marcas">
@@ -316,99 +230,65 @@
           <a class="menu-link" role="menuitem" href="/sobre/">Sobre</a>
         </div>
       </nav>
-
-      <!-- CTAs à direita (mood do exemplo) -->
-      <div class="top-cta" aria-label="Ações rápidas">
-        <a class="menu-link ghost pill-cta" href="/login/">Fazer login</a>
-        <a class="menu-link pill-cta" href="#search">Encontrar</a>
-      </div>
     </div>
 
-    <!-- =====================================================
-         APRESENTAÇÃO / HOME — título + BUSCA + carrossel
-         ===================================================== -->
-    <section class="landing" id="home" aria-label="Apresentação">
-      <div class="landing-grid">
-        <div>
-          <h1>Descubra com calma, viva <em>sabiamente</em>.</h1>
-          <p class="sub">Uma “página de entrada” com pesquisa — encontre conteúdos, hubs e links de confiança.</p>
-
-          <!-- Busca de site -->
-          <form class="search-wrap" id="search" action="/busca" method="get" role="search" aria-label="Pesquisar no site">
-            <div class="search">
-              <!-- ícone lupa -->
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-              <input name="q" id="q" placeholder="Comece sua busca aqui" aria-label="Campo de busca" required />
-              <button type="submit">Buscar</button>
-            </div>
-            <div class="hint">Precisa de inspiração? <a href="#alva">Veja a Página da Alva</a> ou acesse os hubs abaixo.</div>
-          </form>
-        </div>
-
-        <!-- Carrossel de “marketing” (lado direito) -->
-        <div class="slider" aria-roledescription="carrossel" aria-label="Destaques">
-          <div class="slides" id="slides">
-            <figure class="slide" aria-hidden="false">
-              <img src="/assets/imagem1.png" alt="Destaque 1 — Cuidados diários" loading="eager" fetchpriority="high">
-            </figure>
-            <figure class="slide" aria-hidden="true">
-              <img src="/assets/Imagem2.png" alt="Destaque 2 — Bem-estar e livros" loading="lazy">
-            </figure>
-          </div>
-          <button class="arrow prev" aria-label="Slide anterior" id="prev">‹</button>
-          <button class="arrow next" aria-label="Próximo slide"   id="next">›</button>
-          <div class="dots" role="tablist" aria-label="Seleção de slide">
-            <button class="dot" role="tab" aria-controls="s-0" aria-current="true"></button>
-            <button class="dot" role="tab" aria-controls="s-1"></button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================
-         (DAQUI PRA BAIXO) — SEÇÕES ORIGINAIS MANTIDAS
-         ===================================================== -->
-
-    <!-- HERO editorial compacto com CTAs -->
-    <section class="themed" style="border-radius:24px; margin-top:16px; padding:28px">
+    <!-- HERO -->
+    <section class="hero themed theme--livros" id="inicio">
       <div class="grid" style="grid-template-columns:1.2fr 1fr;align-items:center">
         <div>
-          <h2 style="font-family:var(--font-serif);font-size:clamp(24px,4.4vw,44px);margin:0 0 10px">Mais Sabiamente — curadoria profissional para viver melhor</h2>
-          <p style="margin:0 0 22px;color:#C7D4EA;font-size:18px">Conteúdo confiável por categorias. Produtos da <b>ALVA</b> ficam concentrados em <i>Cuidados Diários</i> e na <i>Página da Alva</i>.</p>
-          <div class="pills">
+          <h1>Plataforma de Bem‑Estar com curadoria profissional</h1>
+          <p>Conteúdo confiável e navegação clara por categorias. Produtos da <b>ALVA</b> ficam concentrados em <i>Cuidados Diários</i> e dentro da <i>Página da Alva</i>, sem tomar a página inicial.</p>
+          <div class="cta-row" role="group" aria-label="Ações principais">
+            <a class="btn btn-primary" href="#alva">Página da Alva</a>
+            <a class="btn btn-ghost" href="/cuidados-diarios/">Ver Cuidados Diários</a>
+          </div>
+          <div class="pills" aria-label="destaques">
             <span class="pill">Visual premium</span>
             <span class="pill">Links preservados</span>
             <span class="pill">Rastreio de afiliado</span>
           </div>
         </div>
-        <div class="card" style="padding:16px;background:rgba(255,255,255,.08);color:#EAF2FF;border:1px solid rgba(255,255,255,.12)">
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a class="pill" href="https://mais.app/jROmOw" target="_blank" rel="sponsored nofollow noopener">Desodorantes</a>
-            <a class="pill" href="https://mais.app/rAxpKd" target="_blank" rel="sponsored nofollow noopener">Cabelos</a>
-            <a class="pill" href="https://mais.app/nX49Uz" target="_blank" rel="sponsored nofollow noopener">Bucal</a>
-            <a class="pill" href="https://mais.app/BeCrvg" target="_blank" rel="sponsored nofollow noopener">Corpo</a>
-            <a class="pill" href="https://mais.app/QleArk" target="_blank" rel="sponsored nofollow noopener">Lançamentos</a>
-            <a class="pill" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="sponsored nofollow noopener">Kits</a>
+        <div>
+          <div class="card" style="padding:16px;background:rgba(255,255,255,.08);color:#EAF2FF;border:1px solid rgba(255,255,255,.12)">
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a class="pill" href="https://mais.app/jROmOw" target="_blank" rel="sponsored nofollow noopener">Desodorantes</a>
+              <a class="pill" href="https://mais.app/rAxpKd" target="_blank" rel="sponsored nofollow noopener">Cabelos</a>
+              <a class="pill" href="https://mais.app/nX49Uz" target="_blank" rel="sponsored nofollow noopener">Bucal</a>
+              <a class="pill" href="https://mais.app/BeCrvg" target="_blank" rel="sponsored nofollow noopener">Corpo</a>
+              <a class="pill" href="https://mais.app/QleArk" target="_blank" rel="sponsored nofollow noopener">Lançamentos</a>
+              <a class="pill" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="sponsored nofollow noopener">Kits</a>
+            </div>
+            <small style="display:block;margin-top:10px;opacity:.8">Atalhos rápidos para ALVA — com tracking preservado</small>
           </div>
-          <small style="display:block;margin-top:10px;opacity:.8">Atalhos rápidos — tracking preservado</small>
         </div>
       </div>
     </section>
 
-    <!-- Vitrine Alva -->
+    <!-- BLOCO VITRINE + CONTEÚDO (Cuidado Diário) -->
     <section class="card" id="cuidado-diario" aria-labelledby="cd-title">
       <div class="grid">
         <div class="media">
-          <img class="ai-creative" src="/assets/imagem1.png" alt="Pessoa aplicando o Desodorante Cristal Natural Alva" width="800" height="800" loading="eager" fetchpriority="high" />
-          <img class="ai-creative" src="/assets/Imagem2.png" alt="Close do Desodorante Cristal Natural Alva" width="800" height="800" loading="lazy" decoding="async" />
+          <picture>
+            <source type="image/avif" srcset="assets/imagem1.avif" />
+            <source type="image/webp" srcset="assets/imagem1.webp" />
+            <img class="ai-creative" src="assets/imagem1.png" alt="Pessoa aplicando o Desodorante Cristal Natural Alva" width="800" height="800" loading="eager" fetchpriority="high" />
+          </picture>
+          <img class="ai-creative" src="assets/imagem2.png" alt="Close do Desodorante Cristal Natural Alva" width="800" height="800" loading="lazy" decoding="async" />
+          <video class="custom-video" playsinline muted preload="metadata" poster="//alvapersonalcare.com.br/cdn/shop/files/Design_sem_nome-139.png?v=1749161958&width=1200">
+            <source src="//alvapersonalcare.com.br/cdn/shop/videos/c/vp/ffd31f37f5f44be7b5efe23a02130fe4/ffd31f37f5f44be7b5efe23a02130fe4.m3u8?v=0" type="application/x-mpegURL">
+            <source src="//alvapersonalcare.com.br/cdn/shop/videos/c/vp/ffd31f37f5f44be7b5efe23a02130fe4/ffd31f37f5f44be7b5efe23a02130fe4.HD-1080p-4.8Mbps-48898408.mp4?v=0" type="video/mp4">
+          </video>
         </div>
         <div class="b-text">
-          <span class="pill" style="background:#EEF2FF;color:#1f2a44;border:1px solid #dde3ff">🏆 Campeão de Vendas</span>
-          <h3 id="cd-title" style="margin:8px 0">Desodorante Cristal Stick Vegano 60g Alva</h3>
-          <p class="lead" style="color:#5c6b87">Proteção saudável por até <b>12 horas</b>, toque seco e sem manchar as roupas.</p>
+          <span class="badge">🏆 Campeão de Vendas</span>
+          <h2 id="cd-title">Desodorante Cristal Stick Vegano 60g Alva</h2>
+          <p class="lead">O desodorante natural mais vendido — proteção saudável por até <b>12 horas</b>, toque seco e sem manchar as roupas.</p>
           <div class="kv-grid">
-            <div class="kv">Sem Cloridrato de Alumínio</div><div class="kv">Dermatologicamente Testado</div>
-            <div class="kv">Hipoalergênico</div><div class="kv">Não Mancha a Roupa</div><div class="kv">Vegano</div>
+            <div class="kv">Sem Cloridrato de Alumínio</div>
+            <div class="kv">Dermatologicamente Testado</div>
+            <div class="kv">Hipoalergênico</div>
+            <div class="kv">Não Mancha a Roupa</div>
+            <div class="kv">Vegano</div>
           </div>
           <ul class="beneficios">
             <li><span class="dot"></span> 👕 Não mancha a roupa</li>
@@ -417,86 +297,151 @@
             <li><span class="dot"></span> 🌿 Toque seco, fácil de aplicar</li>
             <li><span class="dot"></span> ✨ Aparência uniforme das axilas</li>
           </ul>
-          <div style="display:flex;gap:12px;flex-wrap:wrap">
-            <a class="menu-link" style="background:var(--primary);color:#fff;border:0" href="https://mais.app/MQtQeF" target="_blank" rel="sponsored nofollow noopener">COMPRE JÁ</a>
-            <a class="menu-link ghost" href="https://mais.app/jROmOw" target="_blank" rel="sponsored nofollow noopener">Ver todos os desodorantes</a>
+          <div class="buy-row">
+            <a class="btn btn-primary" href="https://mais.app/MQtQeF" target="_blank" rel="sponsored nofollow noopener">COMPRE JÁ</a>
+            <a class="btn btn-ghost" href="https://mais.app/jROmOw" target="_blank" rel="sponsored nofollow noopener">Ver todos os desodorantes</a>
           </div>
         </div>
       </div>
-
-      <div class="card" style="border:1px solid rgba(255,122,182,.25);background:linear-gradient(180deg,#fff7fb 0%, #ffeaf5 100%);box-shadow:0 10px 32px rgba(255,122,182,.25)">
-        <h3 style="margin-top:0">Lojinha da Alva 💖</h3>
-        <p class="mt-6">Produtos em destaque, combos e condições especiais por tempo limitado.
-          <a class="menu-link" style="background:var(--accent-2);color:#fff;border:0" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="sponsored nofollow noopener">Ir para a lojinha</a>
-        </p>
+      <!-- Lojinha -->
+      <div class="lojinha" role="complementary" aria-label="Ofertas e kits">
+        <div>
+          <h3>Conheça minha lojinha com ofertas e kits 💖</h3>
+          <p class="mt-6">Produtos em destaque, combos e condições especiais por tempo limitado.
+            <a class="btn-lojinha" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="sponsored nofollow noopener">Ir para a lojinha</a>
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- Por que / Depoimentos / FAQ -->
-    <section class="card" id="provas"><h2 style="font-family:var(--font-serif)">Por que Alva?</h2>
-      <ul class="beneficios"><li><span class="dot"></span> Fórmulas limpas, veganas e hipoalergênicas</li><li><span class="dot"></span> Proteção até 12h sem manchar as roupas</li><li><span class="dot"></span> Compra segura e entrega rastreável</li></ul>
+    <section class="card" id="provas" aria-labelledby="provas-title">
+      <h2 id="provas-title">Por que Alva?</h2>
+      <ul class="beneficios">
+        <li><span class="dot"></span> Fórmulas limpas, veganas e hipoalergênicas</li>
+        <li><span class="dot"></span> Proteção até 12h sem manchar as roupas</li>
+        <li><span class="dot"></span> Compra segura e entrega rastreável</li>
+      </ul>
     </section>
 
-    <section class="card" id="depoimentos"><h2 style="font-family:var(--font-serif)">Depoimentos</h2>
-      <div class="grid"><div class="msg">“Melhor desodorante que já usei. Cheiro suave e não mancha.” — Paula M.</div><div class="msg">“Meu cabelo agradece o shampoo sólido. Rende muito!” — Karine R.</div></div>
+    <section class="card" id="depoimentos" aria-labelledby="dep-title">
+      <h2 id="dep-title">Depoimentos</h2>
+      <div class="grid">
+        <div class="msg">“Melhor desodorante que já usei. Cheiro suave e não mancha.” — Paula M.</div>
+        <div class="msg">“Meu cabelo agradece o shampoo sólido. Rende muito!” — Karine R.</div>
+      </div>
     </section>
 
-    <section class="card" id="faq"><h2 style="font-family:var(--font-serif)">Perguntas Frequentes</h2>
+    <section class="card" id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Perguntas Frequentes</h2>
       <details><summary>O desodorante contém alumínio?</summary><p>Não. A linha Alva não usa cloridrato de alumínio.</p></details>
       <details><summary>Mancha roupa escura?</summary><p>Não. A fórmula foi pensada para não transferir.</p></details>
       <details><summary>É vegano e testado dermatologicamente?</summary><p>Sim para ambos.</p></details>
     </section>
 
-    <!-- Página dedicada: ALVA -->
-    <section class="card themed" id="alva" aria-labelledby="alva-title">
-      <nav aria-label="breadcrumb" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
-        <a href="/">Início</a><span>›</span><a href="/cuidados-diarios/">Cuidados Diários</a><span>›</span><span>Alva</span>
+    <!-- ===== Página dedicada: ALVA (dentro de Cuidados Diários) ===== -->
+    <section class="card themed theme--alva" id="alva" aria-labelledby="alva-title">
+      <nav aria-label="breadcrumb" class="site-nav" style="margin-bottom:10px">
+        <a href="/">Início</a><span>›</span>
+        <a href="/cuidados-diarios/">Cuidados Diários</a><span>›</span>
+        <span>Alva</span>
       </nav>
-      <h2 id="alva-title" style="font-family:var(--font-serif)">ALVA — Página Oficial dentro de Cuidados Diários</h2>
-      <p class="lead">Conteúdo e ofertas verificadas da Alva. Acesse a lojinha oficial com rastreio de afiliado preservado.</p>
-
+      <h2 id="alva-title">ALVA — Página Oficial dentro de Cuidados Diários</h2>
+      <p class="lead">Conteúdo e ofertas verificadas da Alva. Acompanhe os melhores produtos e acesse a lojinha oficial com rastreio de afiliado preservado.</p>
       <div class="grid">
         <div class="media">
-          <img class="ai-creative" src="/assets/imagem1.png" alt="Pessoa aplicando o Desodorante Cristal Natural Alva" width="800" height="800" loading="lazy" />
-          <img class="ai-creative" src="/assets/Imagem2.png" alt="Close do Desodorante Cristal Natural Alva" width="800" height="800" loading="lazy" decoding="async" />
+          <picture>
+            <source type="image/avif" srcset="assets/imagem1.avif" />
+            <source type="image/webp" srcset="assets/imagem1.webp" />
+            <img class="ai-creative" src="assets/imagem1.png" alt="Pessoa aplicando o Desodorante Cristal Natural Alva" width="800" height="800" loading="lazy" />
+          </picture>
+          <img class="ai-creative" src="assets/imagem2.png" alt="Close do Desodorante Cristal Natural Alva" width="800" height="800" loading="lazy" decoding="async" />
+          <video class="custom-video" playsinline muted preload="metadata" poster="//alvapersonalcare.com.br/cdn/shop/files/Design_sem_nome-139.png?v=1749161958&width=1200">
+            <source src="//alvapersonalcare.com.br/cdn/shop/videos/c/vp/ffd31f37f5f44be7b5efe23a02130fe4/ffd31f37f5f44be7b5efe23a02130fe4.m3u8?v=0" type="application/x-mpegURL">
+            <source src="//alvapersonalcare.com.br/cdn/shop/videos/c/vp/ffd31f37f5f44be7b5efe23a02130fe4/ffd31f37f5f44be7b5efe23a02130fe4.HD-1080p-4.8Mbps-48898408.mp4?v=0" type="video/mp4">
+          </video>
         </div>
-
-        <div>
-          <span class="pill">🏆 Campeão de Vendas</span>
-          <h3 style="font-family:var(--font-serif)">Desodorante Cristal Stick Vegano 60g Alva</h3>
+        <div class="b-text">
+          <span class="badge">🏆 Campeão de Vendas</span>
+          <h3>Desodorante Cristal Stick Vegano 60g Alva</h3>
           <p class="lead">Proteção saudável por até <b>12 horas</b>, toque seco e sem manchar as roupas.</p>
-          <div class="kv-grid"><div class="kv">Sem Cloridrato de Alumínio</div><div class="kv">Dermatologicamente Testado</div><div class="kv">Hipoalergênico</div><div class="kv">Não Mancha a Roupa</div><div class="kv">Vegano</div></div>
-          <ul class="beneficios"><li><span class="dot"></span> 👕 Não mancha a roupa</li><li><span class="dot"></span> 🕒 Proteção natural por até 12 horas</li><li><span class="dot"></span> 📅 Dura até 1 ano</li><li><span class="dot"></span> 🌿 Toque seco, fácil de aplicar</li><li><span class="dot"></span> ✨ Aparência uniforme das axilas</li></ul>
-          <div style="display:flex;gap:12px;flex-wrap:wrap">
-            <a class="menu-link" style="background:var(--primary);color:#fff;border:0" href="https://mais.app/MQtQeF" target="_blank" rel="sponsored nofollow noopener">COMPRE JÁ</a>
-            <a class="menu-link ghost" href="https://mais.app/jROmOw" target="_blank" rel="sponsored nofollow noopener">Ver desodorantes</a>
+          <div class="kv-grid">
+            <div class="kv">Sem Cloridrato de Alumínio</div>
+            <div class="kv">Dermatologicamente Testado</div>
+            <div class="kv">Hipoalergênico</div>
+            <div class="kv">Não Mancha a Roupa</div>
+            <div class="kv">Vegano</div>
+          </div>
+          <ul class="beneficios">
+            <li><span class="dot"></span> 👕 Não mancha a roupa</li>
+            <li><span class="dot"></span> 🕒 Proteção natural por até 12 horas</li>
+            <li><span class="dot"></span> 📅 Dura até 1 ano</li>
+            <li><span class="dot"></span> 🌿 Toque seco, fácil de aplicar</li>
+            <li><span class="dot"></span> ✨ Aparência uniforme das axilas</li>
+          </ul>
+          <div class="buy-row">
+            <a class="btn btn-primary" href="https://mais.app/MQtQeF" target="_blank" rel="sponsored nofollow noopener">COMPRE JÁ</a>
+            <a class="btn btn-ghost"   href="https://mais.app/jROmOw" target="_blank" rel="sponsored nofollow noopener">Ver desodorantes</a>
           </div>
         </div>
       </div>
-
-      <div class="card" style="border:1px solid rgba(255,122,182,.25);background:linear-gradient(180deg,#fff7fb 0%, #ffeaf5 100%);box-shadow:0 10px 32px rgba(255,122,182,.25);margin-top:22px">
-        <h3 style="margin-top:0">Lojinha da Alva 💖</h3>
-        <p class="mt-6">Produtos em destaque, combos e condições especiais por tempo limitado.
-          <a class="menu-link" style="background:var(--accent-2);color:#fff;border:0" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="sponsored nofollow noopener">Ir para a lojinha</a>
-        </p>
+      <div class="lojinha" role="complementary" aria-label="Ofertas e kits Alva">
+        <div>
+          <h3>Lojinha da Alva 💖</h3>
+          <p class="mt-6">Produtos em destaque, combos e condições especiais por tempo limitado.
+            <a class="btn-lojinha" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="sponsored nofollow noopener">Ir para a lojinha</a>
+          </p>
+        </div>
       </div>
     </section>
-  </div><!-- /.wrap -->
 
-  <!-- =====================================================
-       CHAT (ícone WhatsApp) + Modal simples
-       ===================================================== -->
-  <button class="chat-fab" id="openChat" aria-label="Falar no WhatsApp">
-    <!-- Ícone WhatsApp (SVG) -->
-    <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path fill="#fff" d="M19.11 17.37c-.27-.13-1.6-.79-1.85-.87-.25-.09-.43-.13-.6.13-.18.27-.69.86-.84 1.03-.15.18-.31.2-.58.07-.27-.13-1.14-.42-2.17-1.34-.8-.71-1.34-1.58-1.5-1.85-.16-.27-.02-.42.12-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.44-.82-1.98-.22-.53-.44-.46-.6-.47h-.51c-.16 0-.42.06-.64.31-.22.27-.84.82-.84 2s.86 2.31.98 2.47c.13.16 1.7 2.6 4.11 3.65.58.25 1.04.4 1.4.51.59.19 1.13.16 1.56.1.48-.07 1.6-.65 1.83-1.27.22-.62.22-1.15.16-1.27-.06-.11-.24-.18-.51-.31zM16.02 3.2c-7.06 0-12.8 5.73-12.8 12.8 0 2.25.6 4.46 1.74 6.41L3.2 28.8l6.58-1.73a12.76 12.76 0 006.24 1.66c7.06 0 12.8-5.73 12.8-12.8 0-7.06-5.74-12.73-12.8-12.73z"/></svg>
+    <!-- ===== Hubs adicionais com paletas profissionais ===== -->
+    <section class="card themed theme--tech" id="tecnologia" aria-labelledby="tec-title">
+      <h2 id="tec-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">Tecnologia</h2>
+      <p class="lead">Guias práticos de privacidade, produtividade e ferramentas digitais.</p>
+      <div class="site-nav"><a href="/tecnologia/privacidade/">Privacidade</a><a href="/tecnologia/ferramentas/">Ferramentas</a><a href="/tecnologia/guias/">Guias</a></div>
+    </section>
+
+    <section class="card themed theme--livros" id="livros" aria-labelledby="liv-title">
+      <h2 id="liv-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">Livros</h2>
+      <p class="lead">Resenhas e ideias acionáveis para viver melhor (estoicismo, hábitos, mente).</p>
+      <div class="site-nav"><a href="/livros/estoicismo/">Estoicismo</a><a href="/livros/habitos/">Hábitos</a><a href="/livros/mente/">Mente</a></div>
+    </section>
+
+    <section class="card themed theme--saude" id="saude" aria-labelledby="sau-title">
+      <h2 id="sau-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">Saúde</h2>
+      <p class="lead">Rotinas de bem‑estar, sono e recuperação.</p>
+      <div class="site-nav"><a href="/saude/bem-estar/">Bem-estar</a><a href="/saude/sono/">Sono</a><a href="/saude/rotinas/">Rotinas</a></div>
+    </section>
+
+    <section class="card themed theme--canais" id="canais" aria-labelledby="can-title">
+      <h2 id="can-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">Canais Interessantes</h2>
+      <p class="lead">Curadoria de creators e newsletters que valem seu tempo.</p>
+      <div class="site-nav"><a href="/canais/youtube/">YouTube</a><a href="/canais/instagram/">Instagram</a><a href="/canais/newsletters/">Newsletters</a></div>
+    </section>
+  </div>
+
+  <!-- CHAT (bolha verde) -->
+  <button class="chat-fab" id="openChat" aria-label="Falar com a Alva">
+    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="#fff" d="M16 3.2A12.8 12.8 0 0 0 3.2 16c0 2.2.6 4.3 1.8 6.2L4 29.6l7.6-1.9c1.4.8 3 .1 4.4.1A12.8 12.8 0 1 0 16 3.2Zm6.7 16.9c-.3.9-1.7 1.7-2.6 1.9-.7.2-1.6.3-4.7-1.0-4-1.7-6.9-5.9-7.1-6.1-.3-.3-1.7-2.1-1.7-4s1.1-2.8 1.5-3.1c.4-.4 1-.5 1.4-.5h.7c.2 0 .6-.1.9.7.3.8 1.0 2.5 1.1 2.7.1.2.1.5 0 .7l-.5.7c-.1.2-.3.4-.2.6 0 .2.2.4.4.6.6.9 1.4 1.9 2.4 2.6 1.6 1.1 2.2.9 2.6.7l.8-1c.2-.2.5-.3.8-.2.3.1 2 .9 2.3 1.1.3.1.5.2.5.4.1.2.1 1-.2 1.7Z"/></svg>
   </button>
-  <div class="chat-modal" id="chatModal" role="dialog" aria-label="Chat WhatsApp" aria-modal="true">
+  <div class="chat-modal" id="chatModal" role="dialog" aria-label="Chat Alva" aria-modal="true">
     <header>
-      <span>Fale com a gente</span>
+      <span>Falar com a Alva</span>
       <button id="closeChat" style="background:transparent;border:0;color:#fff;font-weight:800;cursor:pointer">✕</button>
     </header>
     <div class="chat-body" id="chatBody">
-      <div class="msg">Olá! Digite sua dúvida abaixo e enviaremos 😉</div>
+      <div class="alva-quick-grid" id="quickLinks">
+        <a class="chip chip-link" href="https://mais.app/jROmOw" target="_blank" rel="sponsored nofollow noopener">Desodorante</a>
+        <a class="chip chip-link" href="https://mais.app/rAxpKd" target="_blank" rel="sponsored nofollow noopener">Shampoo (oleosos)</a>
+        <a class="chip chip-link" href="https://mais.app/s8rJAc" target="_blank" rel="sponsored nofollow noopener">Shampoo (secos)</a>
+        <a class="chip chip-link" href="https://mais.app/dJcOVD" target="_blank" rel="sponsored nofollow noopener">Condicionador</a>
+        <a class="chip chip-link" href="https://mais.app/G0dHHg" target="_blank" rel="sponsored nofollow noopener">Sabonete</a>
+        <a class="chip chip-link" href="https://mais.app/BeCrvg" target="_blank" rel="sponsored nofollow noopener">Creme corporal</a>
+        <a class="chip chip-link" href="https://mais.app/QleArk" target="_blank" rel="sponsored nofollow noopener">Lançamentos</a>
+        <a class="chip chip-link" href="https://mais.app/nX49Uz" target="_blank" rel="sponsored nofollow noopener">Kit dental</a>
+        <button class="chip" type="button" data-say="Quero ajuda para escolher um desodorante que não manche a roupa.">Ajuda no chat</button>
+      </div>
+      <div class="msg">Olá! Posso ajudar a escolher (desodorante, shampoos, condicionador, sabonete, creme corporal, lançamentos e kit dental). Toque em um atalho ou pergunte o que quiser. 😊</div>
     </div>
     <div class="chat-foot">
       <input id="chatInput" placeholder="Digite sua dúvida..." />
@@ -504,31 +449,46 @@
     </div>
   </div>
 
-  <!-- ================= JS: Carrossel, Menu, Chat, Afiliados, LGPD ================= -->
   <script>
-    // ---------- Carrossel (landing)
-    (function(){
-      const slides = Array.from(document.querySelectorAll('.slide'));
-      if(!slides.length) return;
-      const dots = Array.from(document.querySelectorAll('.dot'));
-      const nextBtn = document.getElementById('next');
-      const prevBtn = document.getElementById('prev');
-      let i = 0, t;
-      const show = n => { slides.forEach((s,idx)=> s.setAttribute('aria-hidden', idx===n ? 'false':'true'));
-                          dots.forEach((d,idx)=> d.setAttribute('aria-current', idx===n ? 'true':'false')); };
-      const next = ()=>{ i=(i+1)%slides.length; show(i); };
-      const prev = ()=>{ i=(i-1+slides.length)%slides.length; show(i); };
-      const start= ()=>{ if(matchMedia('(prefers-reduced-motion: reduce)').matches) return; t=setInterval(next,5000); };
-      const stop = ()=> clearInterval(t);
-      nextBtn.addEventListener('click', ()=>{ stop(); next(); start(); });
-      prevBtn.addEventListener('click', ()=>{ stop(); prev(); start(); });
-      dots.forEach((d,idx)=> d.addEventListener('click', ()=>{ stop(); i=idx; show(i); start(); }));
-      document.querySelector('.slider').addEventListener('mouseenter', stop);
-      document.querySelector('.slider').addEventListener('mouseleave', start);
-      show(i); start();
-    })();
+    // ======== CHAT UI ========
+    const $open  = document.getElementById('openChat');
+    const $close = document.getElementById('closeChat');
+    const $modal = document.getElementById('chatModal');
+    const $body  = document.getElementById('chatBody');
+    const $input = document.getElementById('chatInput');
+    const $send  = document.getElementById('chatSend');
 
-    // ---------- Menu A11y (abre/fecha + click fora)
+    const open = ()=>{ $modal.style.display='flex'; $input.focus(); };
+    const close= ()=>{ $modal.style.display='none'; $open.focus(); };
+
+    $open.addEventListener('click', open);
+    $close.addEventListener('click', close);
+
+    $send.addEventListener('click', ()=> {
+      const t = $input.value.trim();
+      if(!t) return; sendMessage(t); $input.value=''; $input.focus();
+    });
+    $input.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ e.preventDefault(); $send.click(); }});
+
+    function addMsg(text, who='bot'){
+      const el = document.createElement('div');
+      el.className = 'msg' + (who==='user' ? ' user' : '');
+      el.textContent = text; $body.appendChild(el); $body.scrollTop = $body.scrollHeight;
+    }
+    async function sendMessage(text){
+      addMsg(text, 'user');
+      try{
+        const res = await fetch('/.netlify/functions/alvaChat', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ messages:[{role:'user', content:text}] })});
+        const data = await res.json(); addMsg(data.reply || 'Desculpe, não consegui responder agora.');
+      }catch(err){ addMsg('Ops, conexão indisponível agora. Tente novamente.'); }
+    }
+    document.querySelectorAll('.chip[data-say]').forEach(ch=>{
+      ch.addEventListener('click', ()=>{ $input.value = ch.dataset.say || ''; $send.click(); });
+    });
+  </script>
+
+  <!-- ===== Menu A11y: aria-expanded ===== -->
+  <script>
     document.querySelectorAll('.menu-item > .menu-button').forEach(function(btn){
       btn.addEventListener('click', function(){
         var expanded = btn.getAttribute('aria-expanded') === 'true';
@@ -538,101 +498,91 @@
       document.addEventListener('click', function(e){
         if(!btn.parentElement.contains(e.target)){ btn.setAttribute('aria-expanded','false'); }
       });
-      btn.parentElement.addEventListener('keydown', function(e){
-        if(e.key==='Escape'){ btn.setAttribute('aria-expanded','false'); btn.focus(); }
-      });
     });
-
-    // ---------- Chat (mock; substitua por integração real/WhatsApp)
-    const $open  = document.getElementById('openChat');
-    const $close = document.getElementById('closeChat');
-    const $modal = document.getElementById('chatModal');
-    const $body  = document.getElementById('chatBody');
-    const $input = document.getElementById('chatInput');
-    const $send  = document.getElementById('chatSend');
-    const open = ()=>{ $modal.style.display='flex'; $input.focus(); };
-    const close= ()=>{ $modal.style.display='none'; $open.focus(); };
-    $open.addEventListener('click', open);
-    $close.addEventListener('click', close);
-    $send.addEventListener('click', ()=> {
-      const t = $input.value.trim();
-      if(!t) return;
-      const el = document.createElement('div'); el.className='msg user'; el.textContent=t; $body.appendChild(el);
-      // Redirecionar para WhatsApp (substitua pelo seu número)
-      window.open(`https://wa.me/5599999999999?text=${encodeURIComponent(t)}`,'_blank');
-      $input.value='';
-    });
-    $input.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ e.preventDefault(); $send.click(); }});
-
-    // ---------- Afiliados (mantém UTMs + GA/Ads)
-    (function(){
-      var HOSTS = ['alvapersonalcare.com.br','www.alvapersonalcare.com.br','mais.app'];
-      var REQUIRED = [{key:'m_token'}];
-      var ADS_SEND_TO = 'AW-337916204/o77ICMP_6ooDEKzikKEB';
-      function isAffiliate(a){
-        if(!a||!a.href) return false;
-        try{
-          var u = new URL(a.href, location.href);
-          if(!HOSTS.includes(u.hostname)) return false;
-          if(u.hostname==='mais.app') return true;
-          return REQUIRED.every(function(r){ return u.searchParams.get(r.key) !== null; });
-        }catch(_){ return false; }
-      }
-      function appendClickIds(href){
-        try{
-          var u=new URL(href,location.href), p=u.searchParams, s=new URLSearchParams(location.search);
-          ['gclid','gbraid','wbraid','fbclid','ttclid'].forEach(function(k){ var v=s.get(k); if(v) p.set(k,v); });
-          u.search=p.toString(); return u.toString();
-        }catch(_){ return href; }
-      }
-      function ga4Event(name, params){ try{ gtag('event', name, params||{}); }catch(_){} }
-      function reportAdsConversion(cb){
-        try{ gtag('event','conversion',{ send_to: ADS_SEND_TO, value: 1.0, currency: 'BRL', event_callback: cb }); } catch(_){ cb && cb(); }
-      }
-      document.addEventListener('click', function(e){
-        var a = e.target.closest('a'); if(!isAffiliate(a)) return;
-        var curRel = (a.getAttribute('rel') || '').toLowerCase();
-        var relSet = new Set(curRel.split(/\s+/).filter(Boolean).concat(['sponsored','nofollow','noopener']));
-        a.setAttribute('rel', Array.from(relSet).join(' '));
-        var targetHref = appendClickIds(a.href);
-        var openNew = e.ctrlKey||e.metaKey||e.shiftKey||e.button===1||a.target==='_blank';
-        ga4Event('select_promotion', {campaign:'patty', creative_name:'affiliate_link', location_id:'site_menu_or_card', destination:targetHref});
-        if(openNew){ reportAdsConversion(); a.href = targetHref; return; }
-        e.preventDefault(); reportAdsConversion(function(){ location.href = targetHref; });
-      }, true);
-    })();
-
-    // ---------- LGPD banner ----------
-    (function(){
-      var KEY='consent_choice_v1';
-      function setChoice(v){
-        localStorage.setItem(KEY, v);
-        if(v==='granted'){
-          gtag('consent', 'update', { ad_user_data:'granted', ad_personalization:'granted', ad_storage:'granted', analytics_storage:'granted' });
-        } else {
-          gtag('consent', 'update', { ad_user_data:'denied', ad_personalization:'denied', ad_storage:'denied', analytics_storage:'denied' });
-        }
-      }
-      function init(){
-        var saved = localStorage.getItem(KEY);
-        var banner = document.getElementById('consent-banner');
-        if(!saved){ banner.style.display='block'; }
-        document.getElementById('consent-accept').onclick = function(){ setChoice('granted'); banner.remove(); };
-        document.getElementById('consent-decline').onclick = function(){ setChoice('denied'); banner.remove(); };
-      }
-      if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', init); } else { init(); }
-    })();
   </script>
 
-  <!-- ================= LGPD Banner ================= -->
+  <!-- ===== Clique afiliado + conversão Ads + GA4 events ===== -->
+  <script>
+  (function(){
+    var HOSTS = ['alvapersonalcare.com.br','www.alvapersonalcare.com.br','mais.app'];
+    var REQUIRED = [{key:'m_token'}];
+    var ADS_SEND_TO = 'AW-337916204/o77ICMP_6ooDEKzikKEB';
+
+    function isAffiliate(a){
+      if(!a||!a.href) return false;
+      try{
+        var u = new URL(a.href, location.href);
+        if(!HOSTS.includes(u.hostname)) return false;
+        if(u.hostname==='mais.app') return true;
+        return REQUIRED.every(function(r){ return u.searchParams.get(r.key) !== null; });
+      }catch(_){ return false; }
+    }
+    function appendClickIds(href){
+      try{
+        var u=new URL(href,location.href), p=u.searchParams, s=new URLSearchParams(location.search);
+        ['gclid','gbraid','wbraid','fbclid','ttclid'].forEach(function(k){ var v=s.get(k); if(v) p.set(k,v); });
+        u.search=p.toString(); return u.toString();
+      }catch(_){ return href; }
+    }
+    function ga4Event(name, params){ try{ gtag('event', name, params||{}); }catch(_){} }
+    function reportAdsConversion(cb){
+      try{ gtag('event','conversion',{ send_to: ADS_SEND_TO, value: 1.0, currency: 'BRL', event_callback: cb }); }
+      catch(_){ cb && cb(); }
+    }
+
+    document.addEventListener('click', function(e){
+      var a = e.target.closest('a');
+      if(!isAffiliate(a)) return;
+      var curRel = (a.getAttribute('rel') || '').toLowerCase();
+      var relSet = new Set(curRel.split(/\s+/).filter(Boolean).concat(['sponsored','nofollow','noopener']));
+      a.setAttribute('rel', Array.from(relSet).join(' '));
+
+      var targetHref = appendClickIds(a.href);
+      var openNew = e.ctrlKey||e.metaKey||e.shiftKey||e.button===1||a.target==='_blank';
+
+      ga4Event('select_promotion', {
+        campaign: 'patty',
+        creative_name: 'affiliate_link',
+        location_id: 'site_menu_or_card',
+        destination: targetHref
+      });
+
+      if(openNew){ reportAdsConversion(); a.href = targetHref; return; }
+      e.preventDefault(); reportAdsConversion(function(){ location.href = targetHref; });
+    }, true);
+  })();
+  </script>
+
+  <!-- ===== Consent Banner (LGPD) ===== -->
   <div id="consent-banner" style="position:fixed;inset:auto 10px 10px 10px;max-width:720px;margin:auto;background:#0F1A2B;color:#E6ECF8;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px;box-shadow:0 20px 50px rgba(0,0,0,.45);z-index:9999;display:none">
     <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between">
       <p style="margin:0;flex:1;min-width:280px">Usamos cookies para analytics e anúncios. Você pode aceitar ou recusar. Veja nossa <a href="/privacidade/" style="color:#9CC2FF">Política de Privacidade</a>.</p>
       <div style="display:flex;gap:8px">
-        <button id="consent-decline" class="menu-link ghost">Recusar</button>
-        <button id="consent-accept" class="menu-link" style="background:var(--primary);color:#fff;border:0">Aceitar</button>
+        <button id="consent-decline" class="btn-ghost" style="padding:10px 14px;border-radius:10px;border:1px solid #cfd3f5;background:transparent;color:#fff">Recusar</button>
+        <button id="consent-accept" class="btn-primary" style="padding:10px 14px;border-radius:10px;border:0;background:#1E90FF;color:#fff;font-weight:800">Aceitar</button>
       </div>
     </div>
   </div>
+  <script>
+  (function(){
+    var KEY='consent_choice_v1';
+    function setChoice(v){
+      localStorage.setItem(KEY, v);
+      if(v==='granted'){
+        gtag('consent', 'update', { ad_user_data:'granted', ad_personalization:'granted', ad_storage:'granted', analytics_storage:'granted' });
+      } else {
+        gtag('consent', 'update', { ad_user_data:'denied', ad_personalization:'denied', ad_storage:'denied', analytics_storage:'denied' });
+      }
+    }
+    function init(){
+      var saved = localStorage.getItem(KEY);
+      var banner = document.getElementById('consent-banner');
+      if(!saved){ banner.style.display='block'; }
+      document.getElementById('consent-accept').onclick = function(){ setChoice('granted'); banner.remove(); };
+      document.getElementById('consent-decline').onclick = function(){ setChoice('denied'); banner.remove(); };
+    }
+    if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', init); } else { init(); }
+  })();
+  </script>
 </body>
 </html>
