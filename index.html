@@ -5,295 +5,471 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mais Sabiamente — Curadoria Profissional</title>
 
-  <!-- 
-    Paleta de cores baseada na logo (substitua os hexadecimais pelas cores reais da sua marca)
-    Exemplo: --primary: azul principal; --accent: cor secundária; --background: fundo do site 
-  -->
+  <!-- Paleta de cores personalizada baseada na logo -->
   <style>
     :root {
-      --primary: #2E59A0;        /* Cor principal da logo */
-      --accent: #58C2A8;         /* Cor secundária da logo */
-      --background: #101523;     /* Fundo escuro baseado na logo */
-      --text: #EAF2FF;           /* Textos claros */
-      --menu-bg: #161B2A;        /* Fundo do menu/topbar */
-      --card-bg: rgba(255,255,255,0.07); /* Cards e botões */
+      --primary: #2E59A0;        /* Azul forte da logo */
+      --primary-light: #4A79D3;  /* Azul claro para gradientes */
+      --accent: #58C2A8;         /* Verde água da logo */
+      --background: #121B2D;     /* Fundo escuro suave */
+      --card-bg: rgba(255, 255, 255, 0.08); /* Fundo translúcido para cards */
+      --text-light: #EAF2FF;     /* Texto claro */
+      --text-muted: #9BB1CD;     /* Texto para legendas */
+      --border-radius: 28px;
+      --container-max-width: 960px;
     }
-    body {
-      font-family: 'Inter', 'Poppins', Arial, sans-serif;
-      background: var(--background);
-      color: var(--text);
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
+
+    /* Reset e layouts base */
+    *, *::before, *::after {
       box-sizing: border-box;
     }
-    /* Topbar/menu fixo, alinhado à direita */
+    body, html {
+      margin: 0;
+      padding: 0;
+      background: var(--background);
+      color: var(--text-light);
+      font-family: 'Poppins', 'Inter', Arial, sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    a:hover, a:focus {
+      color: var(--primary-light);
+      outline: none;
+    }
+
+    /* Wrapper com largura máxima e centrado */
+    .container {
+      max-width: var(--container-max-width);
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    /* Topbar/menu */
     .topbar {
-      width: 100%;
-      background: var(--menu-bg);
-      padding: 14px 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 2px 24px rgba(0,0,0,0.18);
+      background: #16213E;
+      padding: 18px var(--container-max-width);
+      box-shadow: 0 4px 16px rgb(0 0 0 / 0.4);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
     }
-    .logo-img {
-      width: 76px;
-      height: auto;
-      border-radius: 8px;
-      background: #fff;
-      margin-right: 20px;
-    }
-    .menu-list {
+    .topbar .logo {
       display: flex;
-      gap: 16px;
-      justify-content: flex-end;
       align-items: center;
-      list-style: none;
-      margin: 0;
-      padding: 0;
+      gap: 14px;
+      cursor: pointer;
+    }
+    .topbar .logo img {
+      width: 130px; /* Logo maior */
+      height: auto;
+      border-radius: 12px;
+      transition: filter 0.3s ease;
+    }
+    .topbar .logo img:hover {
+      filter: brightness(1.1);
+    }
+    .topbar nav {
       flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      gap: 18px;
     }
-    .menu-list li {
+    .topbar nav a {
       display: inline-block;
-    }
-    .menu-list a {
-      text-decoration: none;
-      color: var(--text);
       padding: 12px 24px;
+      border-radius: var(--border-radius);
       background: var(--card-bg);
-      border-radius: 28px;
-      font-size: 16px;
       font-weight: 600;
-      transition: background .22s;
+      font-size: 16px;
+      user-select: none;
+      transition: background 0.3s, color 0.3s;
     }
-    .menu-list a.active, .menu-list a:hover {
-      background: linear-gradient(90deg, var(--primary), var(--accent));
+    .topbar nav a:hover, .topbar nav a.active {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
       color: #fff;
+      box-shadow: 0 8px 22px rgb(30 144 255 / 0.35);
     }
-    /* Botão especial de contato */
-    .btn-contact {
+    .topbar nav a.contact-btn {
       background: var(--primary);
-      color: #fff;
-      border: none;
-      border-radius: 28px;
-      font-weight: bold;
+      color: white;
       padding: 12px 36px;
-      margin-left: 14px;
+      font-weight: 700;
+      transition: background 0.3s;
     }
-    /* Home Page centralizada com pesquisa e campanhas */
+    .topbar nav a.contact-btn:hover {
+      background: var(--accent);
+      box-shadow: 0 8px 32px rgb(88 194 168 / 0.65);
+    }
+
+    /* Main content abaixo do fixed topbar */
+    main {
+      margin-top: 100px;
+    }
+
+    /* Hero Home Section */
     .hero-home {
       display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      align-items: stretch;
-      gap: 48px;
-      max-width: 1200px;
-      margin: 48px auto 0 auto;
-      background: linear-gradient(135deg, var(--background) 65%, var(--accent) 95%);
+      grid-template-columns: 1.4fr 1fr;
+      gap: 36px;
+      background: linear-gradient(180deg, #161E3E 0%, #244873 98%);
       border-radius: 32px;
-      box-shadow: 0 12px 42px rgba(0,0,0,0.22);
-      padding: 54px 38px;
+      padding: 64px 56px;
+      box-shadow: 0 20px 64px rgba(0, 0, 0, 0.4);
+      max-width: var(--container-max-width);
+      margin: 0 auto 80px auto;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      /* micro textures */
+      background-image:
+        radial-gradient(rgba(46,89,160,0.12) 4%, transparent 10%),
+        radial-gradient(rgba(88,194,168,0.09) 6%, transparent 23%);
+      background-repeat: repeat;
+      background-size: 120px 120px, 200px 200px;
     }
-    .hero-content {
+
+    .hero-home .hero-content {
       display: flex;
       flex-direction: column;
-      gap: 22px;
       justify-content: center;
+      gap: 26px;
     }
-    .hero-logo {
-      max-width: 120px;
-      margin-bottom: 16px;
-    }
-    .hero-content h1 {
-      font-size: clamp(2.6rem, 6vw, 4rem);
+    .hero-home h1 {
       font-weight: 900;
-      color: var(--primary);
-      margin-bottom: 0;
+      font-size: clamp(3rem, 6vw, 4.6rem);
+      letter-spacing: -0.025em;
+      color: var(--primary-light);
+      text-shadow: 2px 2px 12px rgba(0,0,0,0.72);
     }
-    .hero-content p {
-      font-size: 1.15rem;
-      color: var(--text);
-      margin-top: 0;
+    .hero-home p {
+      color: var(--text-light);
+      font-size: 1.3rem;
+      letter-spacing: 0.02em;
+      line-height: 1.4;
+      max-width: 520px;
     }
-    /* Campo de pesquisa destaque */
-    .search-bar {
+    /* Pesquisar */
+    .hero-home form.search-bar {
+      padding: 0;
       display: flex;
       align-items: center;
-      background: var(--card-bg);
-      border-radius: 40px;
-      margin: 8px 0 0 0;
-      overflow: hidden;
+      gap: 8px;
+      margin-top: 24px;
     }
-    .search-bar input {
+    .search-bar input[type="search"] {
       flex: 1;
+      font-size: 18px;
       padding: 18px 24px;
-      background: transparent;
-      color: var(--text);
+      border-radius: 50px 0 0 50px;
       border: none;
-      font-size: 17px;
-      outline: none;
+      outline-offset: 2px;
+      transition: box-shadow 0.2s ease;
+      background: rgba(255 255 255 / 0.14);
+      color: white;
+      font-weight: 600;
+      font-family: 'Poppins', 'Inter', Arial, sans-serif;
+    }
+    .search-bar input[type="search"]:focus {
+      box-shadow: 0 0 14px 3px var(--primary-light);
+      background: rgba(255 255 255 / 0.25);
     }
     .search-bar button {
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      border-radius: 0 40px 40px 0;
-      font-size: 22px;
-      padding: 0 24px;
       cursor: pointer;
-      transition: background .23s;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+      font-size: 24px;
+      padding: 0 26px;
+      border-radius: 0 50px 50px 0;
+      border: none;
+      box-shadow: 0 6px 20px rgba(88,194,168,0.5);
+      transition: background 0.25s ease;
     }
-    .search-bar button:hover { background: var(--accent); }
-    /* Carrossel lateral de campanhas */
+    .search-bar button:hover {
+      background: var(--primary-light);
+    }
+
+    /* Carousel lateral (campanhas) */
     .campaign-carousel {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
       justify-content: flex-start;
+      /* background overlay sutil */
+      background: rgba(46, 89, 160, 0.15);
+      border-radius: 28px;
+      padding: 32px 16px;
+      box-shadow: 0 0 26px rgba(46, 89, 160, 0.4);
+      max-height: 570px;
+      overflow-y: auto;
     }
-    .campaign-title {
+    .campaign-carousel::-webkit-scrollbar {
+      width: 8px;
+    }
+    .campaign-carousel::-webkit-scrollbar-thumb {
+      background-color: var(--accent);
+      border-radius: 8px;
+    }
+    .campaign-carousel h2 {
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 1.6rem;
+      margin-bottom: 28px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      user-select: none;
+    }
+    .campaign-card {
+      display: block;
+      background: var(--card-bg);
+      color: var(--text-light);
+      padding: 16px 20px;
+      margin-bottom: 14px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.12rem;
+      border-radius: 22px;
+      border: 1px solid var(--primary-light);
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+    .campaign-card:hover {
+      background: linear-gradient(120deg, var(--accent), var(--primary-light));
+      color: #fff;
+      box-shadow: 0 10px 26px rgba(88,194,168,0.5);
+      transform: translateY(-4px);
+      cursor: pointer;
+    }
+
+    /* Seção Cuidados Diários com Alva dentro */
+    section#cuidados, section#cuidados-alva {
+      margin-bottom: 72px;
+    }
+    section#cuidados > h2 {
       color: var(--primary);
-      font-size: 1.16rem;
-      font-weight: bold;
-      margin-bottom: 18px;
+      font-weight: 900;
+      font-size: 2.5rem;
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+      text-shadow: 1px 1px 8px rgba(0,0,0,0.22);
     }
-    .campaign-list {
+    /* Subtítulo Alva dentro Cuidados Diários */
+    .alva-section {
+      background: rgba(88, 194, 168, 0.15);
+      border-radius: var(--border-radius);
+      padding: 28px 32px;
+      margin-top: 16px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 1.3rem;
+      box-shadow: 0 0 8px var(--accent);
+      user-select: none;
+    }
+    /* Cards em Cuidados */
+    .card-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 22px;
+      margin-top: 28px;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      padding: 20px;
+      box-shadow: 0 4px 24px rgb(0 0 0 / 0.12);
+      min-width: 260px;
+      max-width: 350px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      color: var(--text-light);
       display: flex;
       flex-direction: column;
-      gap: 12px;
-    }
-    .campaign-item {
-      background: var(--card-bg);
-      color: var(--text);
-      border-radius: 20px;
-      padding: 16px 20px;
+      align-items: center;
       text-align: center;
-      font-weight: 600;
-      font-size: 1.05rem;
-      text-decoration: none;
-      border: 1px solid var(--primary);
-      transition: all .22s;
+      user-select: none;
     }
-    .campaign-item:hover {
-      background: linear-gradient(90deg, var(--accent), var(--primary));
-      color: #fff;
-      transform: scale(1.035);
+    .card:hover, .card:focus {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 46px rgba(88,194,168,0.4);
+      outline: none;
     }
-    /* Cards e botões auxiliares */
-    .btn-card {
-      background: var(--accent);
-      color: #fff;
-      border-radius: 22px;
-      padding: 8px 22px;
-      margin-right: 10px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background .22s;
+    .card img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 18px;
+      border-radius: 18px;
+      filter: drop-shadow(0 1px 4px rgba(0,0,0,0.22));
     }
-    .btn-card:hover {
-      background: var(--primary);
-      color: #fff;
+    .card h3 {
+      font-weight: 800;
+      font-size: 1.18rem;
+      margin-bottom: 12px;
+      color: var(--primary-light);
     }
-    /* Responsividade */
-    @media (max-width: 900px) {
+    .card p {
+      font-size: 1.04rem;
+      line-height: 1.28;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* Responsividade mobile para home e menu */
+    @media screen and (max-width: 960px) {
+      .topbar {
+        flex-wrap: wrap;
+        padding: 18px 24px;
+      }
+      .topbar nav {
+        justify-content: center;
+        flex-basis: 100%;
+        margin-top: 12px;
+      }
       .hero-home {
         grid-template-columns: 1fr;
-        padding: 32px 9vw;
+        padding: 48px 32px;
+        margin-bottom: 40px;
       }
       .campaign-carousel {
-        margin-top: 36px;
+        max-height: 320px;
+        padding: 28px 8px;
+        border-radius: 24px;
+        margin-bottom: 40px;
+      }
+      .card-list {
+        justify-content: center;
+      }
+      /* Logo menor em mobile */
+      .topbar .logo img {
+        width: 110px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOPBAR/MENU com logo e itens à direita -->
-  <nav class="topbar">
-    <!-- LOGO com fallback -->
-    <img class="logo-img" src="/assets/Logo.png" alt="Logo" onerror="this.onerror=null;this.src='https://placehold.co/120x60?text=Logo';">
-    <!-- MENU ALINHADO À DIREITA -->
-    <ul class="menu-list">
-      <li><a href="#" class="active">Home</a></li>
-      <li><a href="#departamentos">Departamentos</a></li>
-      <li><a href="#cuidados">Cuidados Diários</a></li>
-      <li><a href="#tecnologia">Tecnologia</a></li>
-      <li><a href="#livros">Livros</a></li>
-      <li><a href="#saude">Saúde</a></li>
-      <li><a href="#marcas">Marcas</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a class="btn-contact" href="#contato">Contato</a></li>
-    </ul>
-  </nav>
-
-  <!-- PÁGINA HOME COMPLETA: hero, pesquisa, campanhas -->
-  <section class="hero-home">
-    <!-- ÁREA DE ENTRADA -->
-    <div class="hero-content">
-      <!-- LOGO DA MARCA NO HERO -->
-      <img class="hero-logo" src="/assets/Logo.png" alt="Logo principal" onerror="this.onerror=null;this.src='https://placehold.co/120x60?text=Logo';">
-      <h1>Mais Sabiamente — Curadoria profissional para viver melhor</h1>
-      <p>
-        Conteúdo confiável e navegação clara por categorias.<br>
-        Produtos da <strong>ALVA</strong> ficam concentrados em <b>Cuidados Diários</b> e na <b>Página da Alva</b>, sem poluir a capa.
-      </p>
-      <!-- CAMPO DE PESQUISA -->
-      <form class="search-bar" role="search" action="/busca" method="get" autocomplete="off">
-        <input type="search" name="q" id="search" placeholder="Pesquise produtos, categorias ou marcas..." />
-        <button type="submit" title="Buscar">🔍</button>
-      </form>
-      <!-- BOTÕES RÁPIDOS -->
-      <div style="margin-top:18px;">
-        <a class="btn-card" href="#alva">Página da Alva</a>
-        <a class="btn-card" href="#cuidados">Cuidados Diários</a>
-        <a class="btn-card" href="#premium">Visual premium</a>
-        <a class="btn-card" href="#links">Links preservados</a>
-      </div>
+  <!-- Topbar fixa com logo maior -->
+  <header class="topbar" role="banner">
+    <div class="container">
+      <a href="#" class="logo" aria-label="Ir para página inicial">
+        <img src="/assets/Logo.png" alt="Logo Mais Sabiamente" onerror="this.onerror=null;this.src='https://placehold.co/130x50?text=Logo';" />
+      </a>
+      <nav role="navigation" aria-label="Menu principal">
+        <a href="#" class="active">Home</a>
+        <a href="#departamentos">Departamentos</a>
+        <a href="#cuidados">Cuidados Diários</a>
+        <a href="#tecnologia">Tecnologia</a>
+        <a href="#livros">Livros</a>
+        <a href="#saude">Saúde</a>
+        <a href="#marcas">Marcas</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato" class="contact-btn">Contato</a>
+      </nav>
     </div>
-    <!-- CARROSSEL DE CAMPANHAS LATERAL -->
-    <aside class="campaign-carousel">
-      <span class="campaign-title">Campanhas em destaque</span>
-      <div class="campaign-list">
-        <a href="https://mais.app/jROmOw" class="campaign-item">Desodorantes</a>
-        <a href="https://mais.app/rAxpKd" class="campaign-item">Cabelos</a>
-        <a href="https://mais.app/nX49Uz" class="campaign-item">Bucal</a>
-        <a href="https://mais.app/BeCrvg" class="campaign-item">Corpo</a>
-        <a href="https://mais.app/QleArk" class="campaign-item">Lançamentos</a>
-        <a href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty" class="campaign-item">Kits</a>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="container" role="main">
+
+    <!-- Hero moderna e maior -->
+    <section class="hero-home" aria-label="Seção principal de apresentação">
+      <div class="hero-content" tabindex="0">
+        <h1>Mais Sabiamente — Curadoria profissional para viver melhor</h1>
+        <p>Conteúdo confiável e navegação clara por categorias. Produtos da <strong>ALVA</strong> ficam concentrados em <b>Cuidados Diários</b>, que agora incluem a página <span style="font-weight:700;">Alva</span>.</p>
+        <form class="search-bar" role="search" action="/busca" method="get" autocomplete="off">
+          <input
+            type="search"
+            name="q"
+            id="search"
+            aria-label="Pesquisar produtos, categorias ou marcas"
+            placeholder="Pesquise produtos, categorias ou marcas..."
+          />
+          <button type="submit" aria-label="Buscar"><span>🔍</span></button>
+        </form>
       </div>
-    </aside>
-  </section>
 
-  <!-- SEÇÕES/CARDS DEPARTAMENTOS (PRONTO PARA EXPANSÃO FUTURA) -->
-  <section id="departamentos">
-    <!-- ... coloque aqui os cards/links/categorias de departamentos -->
-  </section>
-  <section id="cuidados">
-    <!-- ... coloque aqui cards/cuidados diários -->
-  </section>
-  <section id="tecnologia">
-    <!-- ... cards de tecnologia -->
-  </section>
-  <section id="livros">
-    <!-- ... cards de livros -->
-  </section>
-  <section id="saude">
-    <!-- ... cards de saúde -->
-  </section>
-  <section id="marcas">
-    <!-- ... marcas e parcerias -->
-  </section>
-  <section id="sobre">
-    <!-- ... sobre a curadoria -->
-  </section>
-  <section id="contato">
-    <!-- ... formulário de contato ou informações -->
-  </section>
+      <!-- Carrossel lateral das campanhas -->
+      <aside class="campaign-carousel" aria-label="Campanhas em destaque">
+        <h2>Campanhas em destaque</h2>
+        <a href="https://mais.app/jROmOw" class="campaign-card">Desodorantes</a>
+        <a href="https://mais.app/rAxpKd" class="campaign-card">Cabelos</a>
+        <a href="https://mais.app/nX49Uz" class="campaign-card">Bucal</a>
+        <a href="https://mais.app/BeCrvg" class="campaign-card">Corpo</a>
+        <a href="https://mais.app/QleArk" class="campaign-card">Lançamentos</a>
+        <a href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty" class="campaign-card">Kits</a>
+      </aside>
+    </section>
 
-  <!-- FOOTER com dados básicos -->
-  <footer style="text-align:center; margin:38px 0; color:var(--accent); font-size:0.98rem;">
-    © 2025 Mais Sabiamente — Curadoria profissional. <br>
-    Desenvolvido para manutenção fácil e expansão futura.
+    <!-- Seções -->
+    <section id="departamentos" aria-label="Departamentos">
+      <!-- Conteúdo futuros departamentos aqui -->
+    </section>
+
+    <section id="cuidados" aria-label="Cuidados Diários e Alva">
+      <h2>Cuidados Diários</h2>
+      <!-- Seção interna Alva -->
+      <div class="alva-section" tabindex="0">
+        Página Alva integrada em Cuidados Diários – descubra os produtos exclusivos.
+      </div>
+
+      <!-- Exemplos de cards para cuidados diários / alva -->
+      <div class="card-list">
+        <article class="card" tabindex="0" role="region" aria-labelledby="card1-title">
+          <img src="/assets/desodorante.png" alt="Desodorante natural" />
+          <h3 id="card1-title">Desodorante Natural</h3>
+          <p>Proteção eficaz e fórmula natural, ótima para o dia a dia.</p>
+        </article>
+        <article class="card" tabindex="0" role="region" aria-labelledby="card2-title">
+          <img src="/assets/cabelo.png" alt="Produtos para cabelo" />
+          <h3 id="card2-title">Cuidado Capilar</h3>
+          <p>Hidratação e tratamento para todos os tipos de cabelo.</p>
+        </article>
+        <article class="card" tabindex="0" role="region" aria-labelledby="card3-title">
+          <img src="/assets/bucal.png" alt="Produtos para saúde bucal" />
+          <h3 id="card3-title">Cuidados Bucais</h3>
+          <p>Produtos para higiene e saúde da boca de forma natural.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Outras seções -->
+    <section id="tecnologia" aria-label="Tecnologia">
+      <!-- Tecnologia -->
+    </section>
+    <section id="livros" aria-label="Livros">
+      <!-- Livros -->
+    </section>
+    <section id="saude" aria-label="Saúde">
+      <!-- Saúde -->
+    </section>
+    <section id="marcas" aria-label="Marcas">
+      <!-- Marcas -->
+    </section>
+    <section id="sobre" aria-label="Sobre">
+      <!-- Sobre a curadoria -->
+    </section>
+    <section id="contato" aria-label="Contato">
+      <!-- Formulário ou contato -->
+    </section>
+  </main>
+
+  <footer role="contentinfo" style="text-align:center; padding:24px 18px; color: var(--accent); font-weight: 600; font-size: 1rem;">
+    © 2025 Mais Sabiamente — Curadoria profissional. Todos os direitos reservados.
   </footer>
 
 </body>
