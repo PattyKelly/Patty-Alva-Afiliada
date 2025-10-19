@@ -5,25 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!--
-    MAIS SABIAMENTE — Landing Page (arquivo único)
+    MAIS SABIAMENTE â€” Landing Page (arquivo Ãºnico)
     -------------------------------------------------
-    Versão: 1.1
-    Objetivo: template HTML estático, pronto para GitHub -> Netlify.
-    INSTRUÇÕES RÁPIDAS:
+    VersÃ£o: 1.1
+    Objetivo: template HTML estÃ¡tico, pronto para GitHub -> Netlify.
+    INSTRUÃ‡Ã•ES RÃPIDAS:
       - Substitua os placeholders marcados com "EDITAR AQUI".
       - Logo: coloque seu arquivo em /assets/ (ex: /assets/Logo.png).
       - GA4: preencha G-XXXXXXX com seu Measurement ID.
-      - Para conversões Ads, preserve AW-337916204 ou substitua conforme necessário.
-      - Para transformar links de afiliado, veja função `buildAffiliateUrl()` no final do arquivo.
-    OBSERVAÇÕES TÉCNICAS:
-      - Use nomes exatos e case-sensitive para arquivos em /assets/ (Netlify/GitHub Pages são sensíveis a maiúsculas).
+      - Para conversÃµes Ads, preserve AW-337916204 ou substitua conforme necessÃ¡rio.
+      - Para transformar links de afiliado, veja funÃ§Ã£o `buildAffiliateUrl()` no final do arquivo.
+    OBSERVAÃ‡Ã•ES TÃ‰CNICAS:
+      - Use nomes exatos e case-sensitive para arquivos em /assets/ (Netlify/GitHub Pages sÃ£o sensÃ­veis a maiÃºsculas).
       - O script "Logo fallback loader" tenta nomes comuns automaticamente; atualize se o nome for diferente.
-      - O layout da topbar usa CSS Grid (grid-template-columns: auto 1fr auto) — isso resolve desalinhamentos quando há elementos fixos (left-nav).
+      - O layout da topbar usa CSS Grid (grid-template-columns: auto 1fr auto) â€” isso resolve desalinhamentos quando hÃ¡ elementos fixos (left-nav).
   -->
 
   <!-- META / SEO -->
-  <title>Mais Sabiamente — Curadoria Inteligente</title> <!-- EDITAR AQUI -->
-  <meta name="description" content="Curadoria prática de bem-estar, livros, tecnologia e relaxamento. Links organizados por categorias, com compra segura e rastreável." />
+  <title>Mais Sabiamente â€” Curadoria Inteligente</title> <!-- EDITAR AQUI -->
+  <meta name="description" content="Curadoria prÃ¡tica de bem-estar, livros, tecnologia e relaxamento. Links organizados por categorias, com compra segura e rastreÃ¡vel." />
   <link rel="canonical" href="https://exemplo.seudominio/" /> <!-- EDITAR AQUI -->
 
   <!-- Preconnect / Fonts -->
@@ -36,19 +36,19 @@
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Mais Sabiamente — Curadoria Inteligente">
+  <meta property="og:title" content="Mais Sabiamente â€” Curadoria Inteligente">
   <meta property="og:description" content="Descubra melhor. Viva sabiamente. Curadoria de bem-estar, livros, tecnologia e relaxamento.">
   <meta property="og:url" content="https://exemplo.seudominio/"><!-- EDITAR AQUI -->
   <meta property="og:image" content="https://exemplo.seudominio/og-cover.jpg"><!-- EDITAR AQUI -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mais Sabiamente — Curadoria Inteligente">
-  <meta name="twitter:description" content="Curadoria prática em um só lugar.">
+  <meta name="twitter:title" content="Mais Sabiamente â€” Curadoria Inteligente">
+  <meta name="twitter:description" content="Curadoria prÃ¡tica em um sÃ³ lugar.">
   <meta name="twitter:image" content="https://exemplo.seudominio/og-cover.jpg"><!-- EDITAR AQUI -->
 
   <link rel="icon" href="/favicon.ico">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- ================= CSS CRÍTICO ================= -->
+  <!-- ================= CSS CRÃTICO ================= -->
   <style>
     /* -------------------------
        Tokens de cor e tipografia
@@ -71,11 +71,11 @@
     /* -------------------------
        TOPBAR: usar GRID para centralizar o menu
        - resolve desalinhamentos causados por elementos fixos (left-nav)
-       - mantém look/estilo original adaptado
+       - mantÃ©m look/estilo original adaptado
        ------------------------- */
     .topbar{
       display:grid;
-      grid-template-columns:auto 1fr auto; /* marca | menu (centro) | ações */
+      grid-template-columns:auto 1fr auto; /* marca | menu (centro) | aÃ§Ãµes */
       gap:16px;
       align-items:center;
       padding:14px 18px;
@@ -98,7 +98,7 @@
     .menu-link:hover,.menu-button:hover{background:#fff;color:#0F2142;border-color:#fff;box-shadow:0 10px 24px rgba(255,255,255,.12)}
     .menu-item{position:relative}
 
-    /* Ações/CTAs (direita) */
+    /* AÃ§Ãµes/CTAs (direita) */
     .top-actions{grid-column:3/4;justify-self:end;display:flex;gap:10px;align-items:center}
     .top-actions .btn{padding:8px 12px;border-radius:10px;font-weight:800;cursor:pointer}
     .top-actions .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.08);color:var(--text-on-dark)}
@@ -119,7 +119,7 @@
     @media (max-width:720px){.mega-grid{grid-template-columns:1fr}}
 
     /* -------------------------
-       HERO / CAPA (Ajustado: grid fluído)
+       HERO / CAPA (Ajustado: grid fluÃ­do)
        ------------------------- */
     .hero{background:linear-gradient(180deg,var(--navy-2) 0%, var(--navy) 100%);border:1px solid rgba(255,255,255,.08);border-radius:24px;box-shadow:var(--shadow);padding:54px 28px;margin-top:14px;color:var(--text-on-dark)}
     .hero .grid{display:grid;gap:24px;grid-template-columns:1.2fr minmax(320px,420px);align-items:center} /* ajuste aplicado */
@@ -169,9 +169,9 @@
     .left-nav button{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.03);padding:10px;border-radius:10px;color:var(--text-on-dark);cursor:pointer}
     .left-nav button.active{background:linear-gradient(180deg,#F6C76A,#E9C56A);color:#0F1320;font-weight:700}
 
-    /* Quando left-nav visível em desktop, criamos espaço à esquerda para evitar sobreposição visual */
+    /* Quando left-nav visÃ­vel em desktop, criamos espaÃ§o Ã  esquerda para evitar sobreposiÃ§Ã£o visual */
     @media (min-width:1000px){
-      .wrap{padding-left:calc(24px + 96px);} /* 96px = espaço reservado para left-nav + margem */
+      .wrap{padding-left:calc(24px + 96px);} /* 96px = espaÃ§o reservado para left-nav + margem */
     }
 
     /* Responsividade fina */
@@ -180,14 +180,14 @@
       .top-actions{display:none}
     }
 
-    /* utilitários */
+    /* utilitÃ¡rios */
     .mt-6{margin-top:16px}.mt-10{margin-top:26px}
 
     /* acessibilidade focus */
     .menu-button:focus,.menu-link:focus{outline:3px solid rgba(90,170,255,.18);outline-offset:3px;border-color:rgba(255,255,255,.18)}
   </style>
 
-  <!-- ================= Consent Mode (padrão: negado) + GA4 placeholder ================= -->
+  <!-- ================= Consent Mode (padrÃ£o: negado) + GA4 placeholder ================= -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
@@ -200,10 +200,10 @@
     gtag('config', 'AW-337916204'); /* Ads (opcional) */
   </script>
 
-  <!-- JSON-LD básico -->
+  <!-- JSON-LD bÃ¡sico -->
   <script type="application/ld+json">{
     "@context":"https://schema.org","@graph":[
-      {"@type":"WebSite","name":"Mais Sabiamente — Curadoria Inteligente","url":"https://exemplo.seudominio/","potentialAction":{"@type":"SearchAction","target":"https://exemplo.seudominio/busca?q={query}","query-input":"required name=query"}},
+      {"@type":"WebSite","name":"Mais Sabiamente â€” Curadoria Inteligente","url":"https://exemplo.seudominio/","potentialAction":{"@type":"SearchAction","target":"https://exemplo.seudominio/busca?q={query}","query-input":"required name=query"}},
       {"@type":"Organization","name":"Mais Sabiamente","url":"https://exemplo.seudominio/","logo":"https://exemplo.seudominio/logo.png"}
     ]}
   </script>
@@ -218,7 +218,7 @@
       <div class="brand" aria-hidden="false">
         <!-- LOGO: troque o src se o arquivo no repo tiver outro nome (veja fallback JS no final do body) -->
         <img id="siteLogo" src="/assets/Logo.png" alt="Mais Sabiamente" aria-hidden="false">
-        <span>Mais Sabiamente — Curadoria</span>
+        <span>Mais Sabiamente â€” Curadoria</span>
       </div>
 
       <nav class="menu" aria-label="Menu principal" role="menubar">
@@ -228,92 +228,92 @@
           <div class="mega" role="menu" aria-label="Departamentos">
             <div class="mega-grid">
               <div>
-                <h4>Cuidados Diários</h4>
-                <a role="menuitem" href="/cuidados-diarios/">Visão Geral</a>
+                <h4>Cuidados DiÃ¡rios</h4>
+                <a role="menuitem" href="/cuidados-diarios/">VisÃ£o Geral</a>
                 <a role="menuitem" href="https://mais.app/jROmOw" target="_blank" rel="sponsored nofollow noopener">Desodorantes</a>
                 <a role="menuitem" href="https://mais.app/rAxpKd" target="_blank" rel="sponsored nofollow noopener">Cabelos</a>
                 <a role="menuitem" href="https://mais.app/nX49Uz" target="_blank" rel="sponsored nofollow noopener">Cuidados Bucais</a>
                 <a role="menuitem" href="https://mais.app/BeCrvg" target="_blank" rel="sponsored nofollow noopener">Corpo</a>
-                <a role="menuitem" href="https://mais.app/QleArk" target="_blank" rel="sponsored nofollow noopener">Lançamentos</a>
+                <a role="menuitem" href="https://mais.app/QleArk" target="_blank" rel="sponsored nofollow noopener">LanÃ§amentos</a>
                 <a role="menuitem" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="sponsored nofollow noopener">Kits</a>
-                <a role="menuitem" class="accent" href="#alva">Página da Alva</a>
+                <a role="menuitem" class="accent" href="#alva">PÃ¡gina da Alva</a>
               </div>
 
               <div>
                 <h4>Tecnologia</h4>
-                <a role="menuitem" href="/tecnologia/">Visão Geral</a>
+                <a role="menuitem" href="/tecnologia/">VisÃ£o Geral</a>
                 <a role="menuitem" href="/tecnologia/privacidade/">Privacidade</a>
                 <a role="menuitem" href="/tecnologia/ferramentas/">Ferramentas</a>
                 <a role="menuitem" href="/tecnologia/guias/">Guias</a>
-                <h4 style="margin-top:10px">Casa & Escritório</h4>
+                <h4 style="margin-top:10px">Casa & EscritÃ³rio</h4>
                 <a role="menuitem" href="/tecnologia/casa/">Casa</a>
-                <a role="menuitem" href="/tecnologia/escritorio/">Escritório</a>
+                <a role="menuitem" href="/tecnologia/escritorio/">EscritÃ³rio</a>
               </div>
 
               <div>
                 <h4>Livros</h4>
-                <a role="menuitem" href="/livros/">Visão Geral</a>
+                <a role="menuitem" href="/livros/">VisÃ£o Geral</a>
                 <a role="menuitem" href="/livros/em-alta/">Em alta</a>
                 <a role="menuitem" href="/livros/estoicismo/">Estoicismo</a>
-                <a role="menuitem" href="/livros/habitos/">Hábitos</a>
+                <a role="menuitem" href="/livros/habitos/">HÃ¡bitos</a>
                 <a role="menuitem" href="/livros/mente/">Mente</a>
-                <h4 style="margin-top:10px">Saúde & Blog</h4>
-                <a role="menuitem" href="/saude/">Saúde (hub)</a>
+                <h4 style="margin-top:10px">SaÃºde & Blog</h4>
+                <a role="menuitem" href="/saude/">SaÃºde (hub)</a>
                 <a role="menuitem" href="/blog/">Blog</a>
-                <a role="menuitem" href="/blog/qual-perigo-esconde-o-acucar/">Qual perigo esconde o Açúcar?</a>
+                <a role="menuitem" href="/blog/qual-perigo-esconde-o-acucar/">Qual perigo esconde o AÃ§Ãºcar?</a>
                 <p class="note" style="opacity:.7;font-size:12px">* Substitua pelos seus links quando quiser.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Menus rápidos (mantidos) -->
+        <!-- Menus rÃ¡pidos (mantidos) -->
         <div class="menu-item" role="none">
-          <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Cuidados Diários</button>
-          <div class="dropdown" role="menu" aria-label="Cuidados Diários">
-            <a role="menuitem" href="/cuidados-diarios/">Visão geral</a>
+          <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Cuidados DiÃ¡rios</button>
+          <div class="dropdown" role="menu" aria-label="Cuidados DiÃ¡rios">
+            <a role="menuitem" href="/cuidados-diarios/">VisÃ£o geral</a>
             <a role="menuitem" href="https://mais.app/jROmOw" target="_blank" rel="sponsored nofollow noopener">Desodorantes</a>
             <a role="menuitem" href="https://mais.app/rAxpKd" target="_blank" rel="sponsored nofollow noopener">Cabelos</a>
             <a role="menuitem" href="https://mais.app/nX49Uz" target="_blank" rel="sponsored nofollow noopener">Cuidados Bucais</a>
             <a role="menuitem" href="https://mais.app/BeCrvg" target="_blank" rel="sponsored nofollow noopener">Corpo</a>
-            <a role="menuitem" href="https://mais.app/QleArk" target="_blank" rel="sponsored nofollow noopener">Lançamentos</a>
+            <a role="menuitem" href="https://mais.app/QleArk" target="_blank" rel="sponsored nofollow noopener">LanÃ§amentos</a>
             <a role="menuitem" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="sponsored nofollow noopener">Kits</a>
-            <a role="menuitem" class="accent" href="#alva">Página da Alva</a>
+            <a role="menuitem" class="accent" href="#alva">PÃ¡gina da Alva</a>
           </div>
         </div>
 
         <div class="menu-item" role="none">
           <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Tecnologia</button>
           <div class="dropdown" role="menu" aria-label="Tecnologia">
-            <a role="menuitem" href="/tecnologia/">Visão geral</a>
+            <a role="menuitem" href="/tecnologia/">VisÃ£o geral</a>
             <a role="menuitem" href="/tecnologia/privacidade/">Privacidade</a>
             <a role="menuitem" href="/tecnologia/ferramentas/">Ferramentas</a>
             <a role="menuitem" href="/tecnologia/guias/">Guias</a>
             <a role="menuitem" href="/tecnologia/casa/">Casa</a>
-            <a role="menuitem" href="/tecnologia/escritorio/">Escritório</a>
+            <a role="menuitem" href="/tecnologia/escritorio/">EscritÃ³rio</a>
           </div>
         </div>
 
         <div class="menu-item" role="none">
           <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Livros</button>
           <div class="dropdown" role="menu" aria-label="Livros">
-            <a role="menuitem" href="/livros/">Visão geral</a>
+            <a role="menuitem" href="/livros/">VisÃ£o geral</a>
             <a role="menuitem" href="/livros/em-alta/">Em alta</a>
             <a role="menuitem" href="/livros/estoicismo/">Estoicismo</a>
-            <a role="menuitem" href="/livros/habitos/">Hábitos</a>
+            <a role="menuitem" href="/livros/habitos/">HÃ¡bitos</a>
             <a role="menuitem" href="/livros/mente/">Mente</a>
           </div>
         </div>
 
         <div class="menu-item" role="none">
-          <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">Saúde</button>
-          <div class="dropdown" role="menu" aria-label="Saúde">
-            <a role="menuitem" href="/saude/">Visão geral</a>
+          <button class="menu-button" role="menuitem" aria-haspopup="true" aria-expanded="false">SaÃºde</button>
+          <div class="dropdown" role="menu" aria-label="SaÃºde">
+            <a role="menuitem" href="/saude/">VisÃ£o geral</a>
             <a role="menuitem" href="/saude/bem-estar/">Bem-estar</a>
             <a role="menuitem" href="/saude/sono/">Sono</a>
             <a role="menuitem" href="/saude/rotinas/">Rotinas</a>
             <a role="menuitem" href="/blog/">Blog</a>
-            <a role="menuitem" href="/blog/qual-perigo-esconde-o-acucar/">Qual perigo esconde o Açúcar?</a>
+            <a role="menuitem" href="/blog/qual-perigo-esconde-o-acucar/">Qual perigo esconde o AÃ§Ãºcar?</a>
           </div>
         </div>
 
@@ -340,7 +340,7 @@
       </nav>
 
       <div class="top-actions" aria-hidden="true">
-        <button class="btn-ghost" aria-label="Pesquisar">🔍</button>
+        <button class="btn-ghost" aria-label="Pesquisar">ðŸ”</button>
         <a class="btn-primary" href="#contato">Contato</a>
       </div>
     </div> <!-- /topbar -->
@@ -349,11 +349,11 @@
     <section class="hero themed theme--livros" id="inicio" aria-label="Capa">
       <div class="grid" style="align-items:center">
         <div>
-          <h1>Mais Sabiamente — curadoria profissional para viver melhor</h1>
-          <p>Conteúdo confiável e navegação clara por categorias. Produtos da <b>ALVA</b> ficam concentrados em <i>Cuidados Diários</i> e na <i>Página da Alva</i>, sem poluir a capa.</p>
-          <div class="cta-row" role="group" aria-label="Ações principais">
-            <a class="btn btn-primary" href="#alva">Página da Alva</a>
-            <a class="btn btn-ghost" href="/cuidados-diarios/">Ver Cuidados Diários</a>
+          <h1>Mais Sabiamente â€” curadoria profissional para viver melhor</h1>
+          <p>ConteÃºdo confiÃ¡vel e navegaÃ§Ã£o clara por categorias. Produtos da <b>ALVA</b> ficam concentrados em <i>Cuidados DiÃ¡rios</i> e na <i>PÃ¡gina da Alva</i>, sem poluir a capa.</p>
+          <div class="cta-row" role="group" aria-label="AÃ§Ãµes principais">
+            <a class="btn btn-primary" href="#alva">PÃ¡gina da Alva</a>
+            <a class="btn btn-ghost" href="/cuidados-diarios/">Ver Cuidados DiÃ¡rios</a>
           </div>
           <div class="pills" aria-label="destaques">
             <span class="pill">Visual premium</span>
@@ -370,16 +370,16 @@
               <a class="pill" href="https://mais.app/rAxpKd" target="_blank" rel="sponsored nofollow noopener">Cabelos</a>
               <a class="pill" href="https://mais.app/nX49Uz" target="_blank" rel="sponsored nofollow noopener">Bucal</a>
               <a class="pill" href="https://mais.app/BeCrvg" target="_blank" rel="sponsored nofollow noopener">Corpo</a>
-              <a class="pill" href="https://mais.app/QleArk" target="_blank" rel="sponsored nofollow noopener">Lançamentos</a>
+              <a class="pill" href="https://mais.app/QleArk" target="_blank" rel="sponsored nofollow noopener">LanÃ§amentos</a>
               <a class="pill" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="sponsored nofollow noopener">Kits</a>
             </div>
-            <small style="display:block;margin-top:10px;opacity:.8">Atalhos rápidos — com tracking preservado</small>
+            <small style="display:block;margin-top:10px;opacity:.8">Atalhos rÃ¡pidos â€” com tracking preservado</small>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= BLOCO VITRINE + CONTEÚDO (exemplo ALVA) ================= -->
+    <!-- ================= BLOCO VITRINE + CONTEÃšDO (exemplo ALVA) ================= -->
     <section class="card" id="cuidado-diario" aria-labelledby="cd-title" style="margin-top:28px">
       <div class="grid">
         <div class="media">
@@ -395,25 +395,25 @@
           </video>
         </div>
         <div class="b-text">
-          <span class="badge">🏆 Campeão de Vendas</span>
+          <span class="badge">ðŸ† CampeÃ£o de Vendas</span>
           <h2 id="cd-title">Desodorante Cristal Stick Vegano 60g Alva</h2>
-          <p class="lead">O desodorante natural mais vendido — proteção saudável por até <b>12 horas</b>, toque seco e sem manchar as roupas.</p>
+          <p class="lead">O desodorante natural mais vendido â€” proteÃ§Ã£o saudÃ¡vel por atÃ© <b>12 horas</b>, toque seco e sem manchar as roupas.</p>
           <div class="kv-grid" style="margin-top:12px;gap:10px">
-            <div class="kv">Sem Cloridrato de Alumínio</div>
+            <div class="kv">Sem Cloridrato de AlumÃ­nio</div>
             <div class="kv">Dermatologicamente Testado</div>
-            <div class="kv">Hipoalergênico</div>
-            <div class="kv">Não Mancha a Roupa</div>
+            <div class="kv">HipoalergÃªnico</div>
+            <div class="kv">NÃ£o Mancha a Roupa</div>
             <div class="kv">Vegano</div>
           </div>
           <ul class="beneficios" style="margin-top:14px">
-            <li><span class="dot"></span> 👕 Não mancha a roupa</li>
-            <li><span class="dot"></span> 🕒 Proteção natural por até 12 horas</li>
-            <li><span class="dot"></span> 📅 Dura até 1 ano</li>
-            <li><span class="dot"></span> 🌿 Toque seco, fácil de aplicar</li>
-            <li><span class="dot"></span> ✨ Aparência uniforme das axilas</li>
+            <li><span class="dot"></span> ðŸ‘• NÃ£o mancha a roupa</li>
+            <li><span class="dot"></span> ðŸ•’ ProteÃ§Ã£o natural por atÃ© 12 horas</li>
+            <li><span class="dot"></span> ðŸ“… Dura atÃ© 1 ano</li>
+            <li><span class="dot"></span> ðŸŒ¿ Toque seco, fÃ¡cil de aplicar</li>
+            <li><span class="dot"></span> âœ¨ AparÃªncia uniforme das axilas</li>
           </ul>
           <div class="buy-row">
-            <a class="btn btn-primary" href="https://mais.app/MQtQeF" target="_blank" rel="sponsored nofollow noopener">COMPRE JÁ</a>
+            <a class="btn btn-primary" href="https://mais.app/MQtQeF" target="_blank" rel="sponsored nofollow noopener">COMPRE JÃ</a>
             <a class="btn btn-ghost" href="https://mais.app/jROmOw" target="_blank" rel="sponsored nofollow noopener">Ver todos os desodorantes</a>
           </div>
         </div>
@@ -422,48 +422,48 @@
       <!-- Lojinha -->
       <div class="lojinha" role="complementary" aria-label="Ofertas e kits">
         <div>
-          <h3>Conheça minha lojinha com ofertas e kits 💖</h3>
-          <p class="mt-6">Produtos em destaque, combos e condições especiais por tempo limitado.
+          <h3>ConheÃ§a minha lojinha com ofertas e kits ðŸ’–</h3>
+          <p class="mt-6">Produtos em destaque, combos e condiÃ§Ãµes especiais por tempo limitado.
             <a class="btn-lojinha" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="sponsored nofollow noopener">Ir para a lojinha</a>
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ================= Seções rápidas ================= -->
+    <!-- ================= SeÃ§Ãµes rÃ¡pidas ================= -->
     <section class="card" id="provas" aria-labelledby="provas-title">
       <h2 id="provas-title">Por que Alva?</h2>
       <ul class="beneficios">
-        <li><span class="dot"></span> Fórmulas limpas, veganas e hipoalergênicas</li>
-        <li><span class="dot"></span> Proteção até 12h sem manchar as roupas</li>
-        <li><span class="dot"></span> Compra segura e entrega rastreável</li>
+        <li><span class="dot"></span> FÃ³rmulas limpas, veganas e hipoalergÃªnicas</li>
+        <li><span class="dot"></span> ProteÃ§Ã£o atÃ© 12h sem manchar as roupas</li>
+        <li><span class="dot"></span> Compra segura e entrega rastreÃ¡vel</li>
       </ul>
     </section>
 
     <section class="card" id="depoimentos" aria-labelledby="dep-title">
       <h2 id="dep-title">Depoimentos</h2>
       <div class="grid">
-        <div class="msg">“Melhor desodorante que já usei. Cheiro suave e não mancha.” — Paula M.</div>
-        <div class="msg">“Meu cabelo agradece o shampoo sólido. Rende muito!” — Karine R.</div>
+        <div class="msg">â€œMelhor desodorante que jÃ¡ usei. Cheiro suave e nÃ£o mancha.â€ â€” Paula M.</div>
+        <div class="msg">â€œMeu cabelo agradece o shampoo sÃ³lido. Rende muito!â€ â€” Karine R.</div>
       </div>
     </section>
 
     <section class="card" id="faq" aria-labelledby="faq-title">
       <h2 id="faq-title">Perguntas Frequentes</h2>
-      <details><summary>O desodorante contém alumínio?</summary><p>Não. A linha Alva não usa cloridrato de alumínio.</p></details>
-      <details><summary>Mancha roupa escura?</summary><p>Não. A fórmula foi pensada para não transferir.</p></details>
-      <details><summary>É vegano e testado dermatologicamente?</summary><p>Sim para ambos.</p></details>
+      <details><summary>O desodorante contÃ©m alumÃ­nio?</summary><p>NÃ£o. A linha Alva nÃ£o usa cloridrato de alumÃ­nio.</p></details>
+      <details><summary>Mancha roupa escura?</summary><p>NÃ£o. A fÃ³rmula foi pensada para nÃ£o transferir.</p></details>
+      <details><summary>Ã‰ vegano e testado dermatologicamente?</summary><p>Sim para ambos.</p></details>
     </section>
 
-    <!-- ================= Página dedicada: ALVA ================= -->
+    <!-- ================= PÃ¡gina dedicada: ALVA ================= -->
     <section class="card themed theme--alva" id="alva" aria-labelledby="alva-title">
       <nav aria-label="breadcrumb" class="site-nav" style="margin-bottom:10px">
-        <a href="/">Início</a><span>›</span>
-        <a href="/cuidados-diarios/">Cuidados Diários</a><span>›</span>
+        <a href="/">InÃ­cio</a><span>â€º</span>
+        <a href="/cuidados-diarios/">Cuidados DiÃ¡rios</a><span>â€º</span>
         <span>Alva</span>
       </nav>
-      <h2 id="alva-title">ALVA — Página Oficial dentro de Cuidados Diários</h2>
-      <p class="lead">Conteúdo e ofertas verificadas da Alva. Acesse a lojinha oficial com rastreio de afiliado preservado.</p>
+      <h2 id="alva-title">ALVA â€” PÃ¡gina Oficial dentro de Cuidados DiÃ¡rios</h2>
+      <p class="lead">ConteÃºdo e ofertas verificadas da Alva. Acesse a lojinha oficial com rastreio de afiliado preservado.</p>
 
       <div class="grid">
         <div class="media">
@@ -479,25 +479,25 @@
           </video>
         </div>
         <div class="b-text">
-          <span class="badge">🏆 Campeão de Vendas</span>
+          <span class="badge">ðŸ† CampeÃ£o de Vendas</span>
           <h3>Desodorante Cristal Stick Vegano 60g Alva</h3>
-          <p class="lead">Proteção saudável por até <b>12 horas</b>, toque seco e sem manchar as roupas.</p>
+          <p class="lead">ProteÃ§Ã£o saudÃ¡vel por atÃ© <b>12 horas</b>, toque seco e sem manchar as roupas.</p>
           <div class="kv-grid">
-            <div class="kv">Sem Cloridrato de Alumínio</div>
+            <div class="kv">Sem Cloridrato de AlumÃ­nio</div>
             <div class="kv">Dermatologicamente Testado</div>
-            <div class="kv">Hipoalergênico</div>
-            <div class="kv">Não Mancha a Roupa</div>
+            <div class="kv">HipoalergÃªnico</div>
+            <div class="kv">NÃ£o Mancha a Roupa</div>
             <div class="kv">Vegano</div>
           </div>
           <ul class="beneficios">
-            <li><span class="dot"></span> 👕 Não mancha a roupa</li>
-            <li><span class="dot"></span> 🕒 Proteção natural por até 12 horas</li>
-            <li><span class="dot"></span> 📅 Dura até 1 ano</li>
-            <li><span class="dot"></span> 🌿 Toque seco, fácil de aplicar</li>
-            <li><span class="dot"></span> ✨ Aparência uniforme das axilas</li>
+            <li><span class="dot"></span> ðŸ‘• NÃ£o mancha a roupa</li>
+            <li><span class="dot"></span> ðŸ•’ ProteÃ§Ã£o natural por atÃ© 12 horas</li>
+            <li><span class="dot"></span> ðŸ“… Dura atÃ© 1 ano</li>
+            <li><span class="dot"></span> ðŸŒ¿ Toque seco, fÃ¡cil de aplicar</li>
+            <li><span class="dot"></span> âœ¨ AparÃªncia uniforme das axilas</li>
           </ul>
           <div class="buy-row">
-            <a class="btn btn-primary" href="https://mais.app/MQtQeF" target="_blank" rel="sponsored nofollow noopener">COMPRE JÁ</a>
+            <a class="btn btn-primary" href="https://mais.app/MQtQeF" target="_blank" rel="sponsored nofollow noopener">COMPRE JÃ</a>
             <a class="btn btn-ghost"   href="https://mais.app/jROmOw" target="_blank" rel="sponsored nofollow noopener">Ver desodorantes</a>
           </div>
         </div>
@@ -505,8 +505,8 @@
 
       <div class="lojinha" role="complementary" aria-label="Ofertas e kits Alva" style="margin-top:22px">
         <div>
-          <h3>Lojinha da Alva 💖</h3>
-          <p class="mt-6">Produtos em destaque, combos e condições especiais por tempo limitado.
+          <h3>Lojinha da Alva ðŸ’–</h3>
+          <p class="mt-6">Produtos em destaque, combos e condiÃ§Ãµes especiais por tempo limitado.
             <a class="btn-lojinha" href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty&m_token=2e057236-790e-4505-948c-c5d5f863c5a7" target="_blank" rel="sponsored nofollow noopener">Ir para a lojinha</a>
           </p>
         </div>
@@ -516,20 +516,20 @@
     <!-- Hubs adicionais -->
     <section class="card themed theme--tech" id="tecnologia" aria-labelledby="tec-title">
       <h2 id="tec-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">Tecnologia</h2>
-      <p class="lead">Guias práticos de privacidade, produtividade e ferramentas digitais.</p>
-      <div class="site-nav"><a href="/tecnologia/privacidade/">Privacidade</a><a href="/tecnologia/ferramentas/">Ferramentas</a><a href="/tecnologia/guias/">Guias</a><a href="/tecnologia/casa/">Casa</a><a href="/tecnologia/escritorio/">Escritório</a></div>
+      <p class="lead">Guias prÃ¡ticos de privacidade, produtividade e ferramentas digitais.</p>
+      <div class="site-nav"><a href="/tecnologia/privacidade/">Privacidade</a><a href="/tecnologia/ferramentas/">Ferramentas</a><a href="/tecnologia/guias/">Guias</a><a href="/tecnologia/casa/">Casa</a><a href="/tecnologia/escritorio/">EscritÃ³rio</a></div>
     </section>
 
     <section class="card themed theme--livros" id="livros" aria-labelledby="liv-title">
       <h2 id="liv-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">Livros</h2>
-      <p class="lead">Resenhas e ideias acionáveis para viver melhor (estoicismo, hábitos, mente).</p>
-      <div class="site-nav"><a href="/livros/em-alta/">Em alta</a><a href="/livros/estoicismo/">Estoicismo</a><a href="/livros/habitos/">Hábitos</a><a href="/livros/mente/">Mente</a></div>
+      <p class="lead">Resenhas e ideias acionÃ¡veis para viver melhor (estoicismo, hÃ¡bitos, mente).</p>
+      <div class="site-nav"><a href="/livros/em-alta/">Em alta</a><a href="/livros/estoicismo/">Estoicismo</a><a href="/livros/habitos/">HÃ¡bitos</a><a href="/livros/mente/">Mente</a></div>
     </section>
 
     <section class="card themed theme--saude" id="saude" aria-labelledby="sau-title">
-      <h2 id="sau-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">Saúde</h2>
-      <p class="lead">Rotinas de bem-estar, sono e recuperação.</p>
-      <div class="site-nav"><a href="/saude/bem-estar/">Bem-estar</a><a href="/saude/sono/">Sono</a><a href="/saude/rotinas/">Rotinas</a><a href="/blog/">Blog</a><a href="/blog/qual-perigo-esconde-o-acucar/">Açúcar?</a></div>
+      <h2 id="sau-title" style="font-family:'DM Serif Display', ui-serif, Georgia, serif">SaÃºde</h2>
+      <p class="lead">Rotinas de bem-estar, sono e recuperaÃ§Ã£o.</p>
+      <div class="site-nav"><a href="/saude/bem-estar/">Bem-estar</a><a href="/saude/sono/">Sono</a><a href="/saude/rotinas/">Rotinas</a><a href="/blog/">Blog</a><a href="/blog/qual-perigo-esconde-o-acucar/">AÃ§Ãºcar?</a></div>
     </section>
 
     <section class="card themed theme--canais" id="canais" aria-labelledby="can-title">
@@ -547,7 +547,7 @@
   <div class="chat-modal" id="chatModal" role="dialog" aria-label="Chat Alva" aria-modal="true">
     <header>
       <span>Falar com a Alva</span>
-      <button id="closeChat" style="background:transparent;border:0;color:#fff;font-weight:800;cursor:pointer">✕</button>
+      <button id="closeChat" style="background:transparent;border:0;color:#fff;font-weight:800;cursor:pointer">âœ•</button>
     </header>
     <div class="chat-body" id="chatBody">
       <div class="alva-quick-grid" id="quickLinks">
@@ -557,19 +557,19 @@
         <a class="chip chip-link" href="https://mais.app/dJcOVD" target="_blank" rel="sponsored nofollow noopener">Condicionador</a>
         <a class="chip chip-link" href="https://mais.app/G0dHHg" target="_blank" rel="sponsored nofollow noopener">Sabonete</a>
         <a class="chip chip-link" href="https://mais.app/BeCrvg" target="_blank" rel="sponsored nofollow noopener">Creme corporal</a>
-        <a class="chip chip-link" href="https://mais.app/QleArk" target="_blank" rel="sponsored nofollow noopener">Lançamentos</a>
+        <a class="chip chip-link" href="https://mais.app/QleArk" target="_blank" rel="sponsored nofollow noopener">LanÃ§amentos</a>
         <a class="chip chip-link" href="https://mais.app/nX49Uz" target="_blank" rel="sponsored nofollow noopener">Kit dental</a>
-        <button class="chip" type="button" data-say="Quero ajuda para escolher um desodorante que não manche a roupa.">Ajuda no chat</button>
+        <button class="chip" type="button" data-say="Quero ajuda para escolher um desodorante que nÃ£o manche a roupa.">Ajuda no chat</button>
       </div>
-      <div class="msg">Olá! Posso ajudar a escolher (desodorante, shampoos, condicionador, sabonete, creme corporal, lançamentos e kit dental). Toque em um atalho ou pergunte o que quiser. 😊</div>
+      <div class="msg">OlÃ¡! Posso ajudar a escolher (desodorante, shampoos, condicionador, sabonete, creme corporal, lanÃ§amentos e kit dental). Toque em um atalho ou pergunte o que quiser. ðŸ˜Š</div>
     </div>
     <div class="chat-foot">
-      <input id="chatInput" placeholder="Digite sua dúvida..." />
+      <input id="chatInput" placeholder="Digite sua dÃºvida..." />
       <button id="chatSend">Enviar</button>
     </div>
   </div>
 
-  <!-- ====== CHAT: JS mínimo ====== -->
+  <!-- ====== CHAT: JS mÃ­nimo ====== -->
   <script>
     // Chat UI control (chama Netlify function se existir)
     const $open  = document.getElementById('openChat');
@@ -602,8 +602,8 @@
       try{
         const res = await fetch('/.netlify/functions/alvaChat', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ messages:[{role:'user', content:text}] })});
         if(!res.ok) throw new Error('no-func');
-        const data = await res.json(); addMsg(data.reply || 'Desculpe, não consegui responder agora.');
-      }catch(err){ addMsg('Ops, conexão indisponível agora. Tente novamente.'); }
+        const data = await res.json(); addMsg(data.reply || 'Desculpe, nÃ£o consegui responder agora.');
+      }catch(err){ addMsg('Ops, conexÃ£o indisponÃ­vel agora. Tente novamente.'); }
     }
 
     // chips que preenchem o input e disparam
@@ -614,7 +614,7 @@
 
   <!-- ===== Menu A11y: aria-expanded (dropdowns + mega) ===== -->
   <script>
-    // Controla aria-expanded dos botões do menu (toggle) e fecha ao clicar fora
+    // Controla aria-expanded dos botÃµes do menu (toggle) e fecha ao clicar fora
     document.querySelectorAll('.menu-item > .menu-button').forEach(function(btn){
       btn.addEventListener('click', function(e){
         var expanded = btn.getAttribute('aria-expanded') === 'true';
@@ -629,7 +629,7 @@
     });
   </script>
 
-  <!-- ===== Clique afiliado + conversão Ads + GA4 events (preservando IDs) ===== -->
+  <!-- ===== Clique afiliado + conversÃ£o Ads + GA4 events (preservando IDs) ===== -->
   <script>
   (function(){
     var HOSTS = ['alvapersonalcare.com.br','www.alvapersonalcare.com.br','mais.app'];
@@ -678,7 +678,7 @@
   <!-- ===== Consent Banner (LGPD) ===== -->
   <div id="consent-banner" style="position:fixed;inset:auto 10px 10px 10px;max-width:720px;margin:auto;background:#0F1A2B;color:#E6ECF8;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px;box-shadow:0 20px 50px rgba(0,0,0,.45);z-index:9999;display:none">
     <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between">
-      <p style="margin:0;flex:1;min-width:280px">Usamos cookies para analytics e anúncios. Você pode aceitar ou recusar. Veja nossa <a href="/privacidade/" style="color:#9CC2FF">Política de Privacidade</a>.</p>
+      <p style="margin:0;flex:1;min-width:280px">Usamos cookies para analytics e anÃºncios. VocÃª pode aceitar ou recusar. Veja nossa <a href="/privacidade/" style="color:#9CC2FF">PolÃ­tica de Privacidade</a>.</p>
       <div style="display:flex;gap:8px">
         <button id="consent-decline" class="btn-ghost" style="padding:10px 14px;border-radius:10px;border:1px solid #cfd3f5;background:transparent;color:#fff">Recusar</button>
         <button id="consent-accept" class="btn-primary" style="padding:10px 14px;border-radius:10px;border:0;background:#1E90FF;color:#fff;font-weight:800">Aceitar</button>
@@ -744,7 +744,7 @@
     });
   </script>
 
-  <!-- ===== Logo fallback loader (tenta múltiplos nomes comuns) ===== -->
+  <!-- ===== Logo fallback loader (tenta mÃºltiplos nomes comuns) ===== -->
   <script>
     (function(){
       // Tentativa de carregar variantes comuns de nomes de logo para evitar erro de path.
@@ -767,11 +767,11 @@
             logoEl.src = src;
             logoEl.style.display = 'block';
           };
-          img.onerror = function(){ /* falha silenciosa, tenta próximo */ };
+          img.onerror = function(){ /* falha silenciosa, tenta prÃ³ximo */ };
           img.src = src;
         })(candidates[i]);
       }
-      // Se nenhum carregar, escondemos o elemento após 800ms para evitar placeholder quebrado.
+      // Se nenhum carregar, escondemos o elemento apÃ³s 800ms para evitar placeholder quebrado.
       setTimeout(function(){
         if(!loaded){ logoEl.style.display = 'none'; }
       }, 800);
