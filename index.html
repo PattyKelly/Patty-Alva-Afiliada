@@ -4,109 +4,112 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mais Sabiamente — Curadoria Profissional</title>
-
-  <!-- Paleta personalizada e responsividade aprimorada -->
+  <!-- Paleta personalizada responsiva -->
   <style>
     :root {
-      --primary: #2E59A0;        /* Azul principal logo */
+      --primary: #2E59A0;            /* Azul principal logo */
       --primary-light: #4A79D3;
       --accent: #58C2A8;
       --background: #121B2D;
       --card-bg: rgba(255,255,255,0.10);
       --text-main: #EAF2FF;
       --text-muted: #9BB1CD;
-      --border-radius: 28px;
+      --border-radius: 30px;
       --container-max-width: 1200px;
     }
     *, *::before, *::after { box-sizing: border-box; }
-    html, body { 
+    html, body {
       margin: 0; padding: 0; background: var(--background);
-      color: var(--text-main); font-family: 'Poppins','Inter',Arial,sans-serif;
+      color: var(--text-main);
+      font-family: 'Poppins','Inter',Arial,sans-serif;
       overflow-x: hidden;
     }
     a { color: var(--accent); text-decoration: none; transition: color .23s;}
     a:hover, a:focus { color: var(--primary-light); outline: none;}
+    /* Container principal */
     .container {
       max-width: var(--container-max-width);
-      margin: 0 auto; padding: 0 32px;
+      margin: 0 auto;
+      padding: 0 32px;
     }
-
-    /* ===== HEADER / MENU ===== */
+    /* ===== TOPO/Menu ===== */
     .topbar {
       width: 100vw; background: #151A27; padding-top: 22px;
       position: fixed; top: 0; left: 0; z-index: 1000;
       box-shadow: 0 3px 16px rgba(0,0,0,0.17);
       display: flex; flex-direction: column; align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
     .logo-img {
-      width: 112px; height: auto; border-radius: 16px;
-      margin-bottom: 8px; margin-top: 2px;
-      box-shadow: 0 2px 14px rgba(46,89,160,0.10);
+      width: 128px; height: auto; border-radius: 16px;
+      margin-bottom: 9px;
+      box-shadow: 0 2px 14px rgba(46,89,160,0.08);
       display: block; margin-left: auto; margin-right: auto;
     }
     .menu-list {
-      display: flex; gap: 22px; justify-content: center; width: 100%;
+      display: flex; gap: 24px; justify-content: center; width: 100%;
+      margin-bottom: 5px;
     }
     .menu-list a {
       background: var(--card-bg);
       color: var(--text-main);
-      padding: 13px 28px; border-radius: 26px;
+      padding: 14px 30px; border-radius: 28px;
       font-weight: 600; font-size: 17px;
       transition: background .25s, color .21s;
-      margin: 0 1px;
+      margin: 0 2px;
     }
     .menu-list a.active, .menu-list a:hover {
       background: linear-gradient(90deg, var(--primary), var(--accent));
       color: #fff;
     }
     .menu-list a.contact-btn { background: var(--primary); color: #fff; }
-    main { margin-top: 155px;}
+    main { margin-top: 170px;}
 
-    /* ===== HERO HOME: GRID LAYOUT ===== */
+    /* ===== HERO HOME COMPLETO USANDO GRID HORIZONTAL ===== */
     .hero-home {
-      display: grid; grid-template-columns: 2fr 1.06fr;
-      gap: 58px; align-items: start;
+      display: grid; grid-template-columns: 1.8fr 1fr;
+      gap: 62px; align-items: start;
       background: linear-gradient(118deg, #18213D 60%, #58C2A8 100%);
       border-radius: 32px; box-shadow: 0 20px 64px rgba(0, 0, 0, 0.37);
       min-height: 520px; max-width: var(--container-max-width);
-      margin: 38px auto 40px auto; padding: 70px 52px 64px 60px;
+      margin: 38px auto 44px auto; padding: 75px 54px 72px 66px;
       background-image: radial-gradient(rgba(46,89,160,0.13) 4%, transparent 11%),
-                        radial-gradient(rgba(88,194,168,0.09) 6%, transparent 19%);
+                        radial-gradient(rgba(88,194,168,0.08) 6%, transparent 19%);
       background-repeat: repeat; background-size: 120px 120px, 190px 170px;
-
+      position: relative;
     }
     /* BLOCO TEXTO DA HOME À ESQUERDA */
     .hero-content {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      gap: 22px;
+      gap: 20px;
+      min-width: 240px;
       height: 100%;
     }
     .hero-home h1 {
-      font-size: clamp(3rem, 7vw, 4.7rem);
+      font-size: clamp(2.1rem, 5vw, 3.5rem);  /* AJUSTE AQUI PARA REDUZIR */
       color: var(--primary-light);
       font-weight: 900;
-      line-height: 1;
+      letter-spacing: -0.02em;
       margin: 0;
-      letter-spacing: -0.025em;
-      text-shadow: 2px 2px 12px rgba(0,0,0,0.55);
+      line-height: 1.07;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.45);
     }
     .hero-home h2 {
-      font-size: 2.16rem;
+      font-size: 2rem;
       font-weight: 700;
       margin: 12px 0 0 0;
       color: var(--accent);
       letter-spacing: .01em;
-      line-height: 1.16;
+      line-height: 1.22;
     }
     .hero-home p {
       color: var(--text-main);
-      font-size: 1.22rem;
+      font-size: 1.17rem;
       letter-spacing: 0.02em;
-      line-height: 1.35;
-      margin-top: 14px; max-width: 460px;
+      line-height: 1.38;
+      margin-top: 14px; max-width: 480px;
     }
     .search-bar { display: flex; margin-top: 19px; }
     .search-bar input {
@@ -137,37 +140,37 @@
       flex-direction: column;
       gap: 24px;
       align-items: stretch;
-      height: 100%;
+      min-width: 200px;
       justify-content: flex-start;
       background: rgba(46,89,160,0.11);
-      border-radius: 30px;
-      padding: 28px 12px;
-      box-shadow: 0 4px 36px rgba(46,89,160,0.12);
+      border-radius: 32px;
+      padding: 32px 14px;
+      box-shadow: 0 4px 36px rgba(46,89,160,0.11);
     }
     .panel-title {
       color: var(--accent);
-      font-size: 1.24rem;
+      font-size: 1.23rem;
       margin-bottom: 18px;
       text-align: center;
-      letter-spacing: .14em;
       font-weight: 900;
       border-bottom: 1px solid var(--accent);
       padding-bottom: 6px;
+      letter-spacing: .13em;
       text-transform: uppercase;
       user-select: none;
     }
     .campaign-btn {
-      background: rgba(46,89,160,0.20);
+      background: rgba(46,89,160,0.19);
       color: #EAF2FF;
       border-radius: 22px;
       padding: 19px 0;
       text-align: center;
       font-weight: 700;
       font-size: 1.13rem;
-      transition: background .21s;
+      transition: background .19s;
       border: none; outline: none;
       cursor: pointer;
-      box-shadow: 0 4px 16px rgba(88, 194, 168, 0.12);
+      box-shadow: 0 4px 12px rgba(88, 194, 168, 0.10);
       margin-bottom: 2px;
       display: block;
       text-decoration: none;
@@ -188,32 +191,41 @@
       color: var(--text-main);
       display: flex; flex-direction: column; align-items: center; text-align: center;
       transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;
+      margin-bottom: 12px;
     }
     .card:hover, .card:focus {
-      transform: translateY(-7px); box-shadow: 0 10px 32px rgba(88,194,168,0.15); outline: none;
+      transform: translateY(-7px); box-shadow: 0 10px 32px rgba(88,194,168,0.14); outline: none;
     }
     .card img {
       width: 85px; height: auto; margin-bottom: 13px; border-radius: 12px;
-      filter: drop-shadow(0 1px 4px rgba(0,0,0,0.14));
+      filter: drop-shadow(0 1px 4px rgba(0,0,0,0.13));
     }
-    .card h3 { font-weight: 800; font-size: 1.12rem; margin-bottom: 12px; color: var(--primary-light);}
+    .card h3 {
+      font-weight: 800; font-size: 1.12rem; margin-bottom: 12px; color: var(--primary-light);}
     .card p { font-size: 0.98rem; line-height: 1.28; color: var(--text-muted);}
     section { margin-bottom: 64px;}
-    footer { text-align: center; padding: 27px 10px; color: var(--accent); font-weight: 600; font-size: 1.03rem;}
-    @media (max-width: 800px) {
+    footer { text-align: center; padding: 29px 10px; color: var(--accent); font-weight: 600; font-size: 1.08rem;}
+    @media (max-width: 900px) {
       .container { padding: 0 12px;}
-      .menu-list { gap: 6px;}
-      .hero-home { grid-template-columns: 1fr; padding: 32px 4vw; gap: 18px;}
+      .menu-list { gap: 5px;}
+      .hero-home { grid-template-columns: 1fr; padding: 32px 4vw; gap: 18px; }
       .campaign-sidebar {margin-top: 28px;}
-      .logo-img { width: 70px;}
+      .logo-img { width: 77px;}
       .card-list { justify-content: center;}
+      main { margin-top: 210px;}
+    }
+    /* EXTRAS para layout futuro e manutenção */
+    @media (max-width: 600px) {
+      .panel-title { font-size: 1rem; }
+      .campaign-btn { font-size: 1rem; padding: 12px 0;}
+      .card h3 { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
-  <!-- MENU CENTRALIZADO + LOGO NO TOPO -->
+  <!-- ======= HEADER COMPLETO ======= -->
   <header class="topbar">
-      <img class="logo-img" src="/assets/Logo.png" alt="Logo Mais Sabiamente" onerror="this.onerror=null;this.src='https://placehold.co/120x50?text=Logo';" />
+      <img class="logo-img" src="/assets/Logo.png" alt="Logo Mais Sabiamente" onerror="this.onerror=null;this.src='https://placehold.co/128x54?text=Logo';" />
       <nav class="menu-list">
         <a class="active" href="#">Home</a>
         <a href="#departamentos">Departamentos</a>
@@ -228,10 +240,9 @@
   </header>
 
   <main class="container">
-
-    <!-- HOME MODERNA: GRID COM PAINEL DIREITO DE CAMPANHAS -->
+    <!-- ======= SEÇÃO HOME (PAINEL GRID) ======= -->
     <section class="hero-home">
-      <!-- BLOCO TEXTO PRINCIPAL À ESQUERDA -->
+      <!-- BLOCO TEXTO À ESQUERDA -->
       <div class="hero-content">
         <h1>Mais Sabiamente</h1>
         <h2>Curadoria profissional para viver melhor</h2>
@@ -249,7 +260,7 @@
           <a class="btn-card" href="#links">Links preservados</a>
         </div>
       </div>
-      <!-- BLOCO PAINEL DE CAMPANHAS À DIREITA -->
+      <!-- PAINEL DE CAMPANHAS À DIREITA -->
       <aside class="campaign-sidebar">
         <div class="panel-title">Campanhas</div>
         <a href="https://mais.app/jROmOw" class="campaign-btn">Desodorantes</a>
@@ -261,7 +272,7 @@
       </aside>
     </section>
 
-    <!-- CARDS DE PRODUTOS/AFILIADOS EXEMPLO -->
+    <!-- ======= CARDS DE PRODUTOS/AFILIADOS EXEMPLO ======= -->
     <section id="produtos">
       <div class="card-list">
         <article class="card">
@@ -278,30 +289,30 @@
       </div>
     </section>
 
-    <!-- SEÇÕES PARA ORGANIZAÇÃO DO SITE/EXPANSÃO -->
+    <!-- ======= SEÇÕES EXPANSÍVEIS / MANTENÇÃO ======= -->
     <section id="departamentos">
-      <!-- Cards para departamentos, categorias, serviços -->
+      <!-- Cards para departamentos/categorias/serviços -->
     </section>
     <section id="cuidados">
       <!-- Cards/cuidados diários -->
     </section>
     <section id="tecnologia">
-      <!-- Cards de tecnologia/apps/etc. -->
+      <!-- Cards de tecnologia/apps etc. -->
     </section>
     <section id="livros">
-      <!-- Cards para livros/ebooks/resenhas -->
+      <!-- Cards para livros, ebooks, resenhas -->
     </section>
     <section id="saude">
       <!-- Dicas, produtos/campanhas de saúde -->
     </section>
     <section id="marcas">
-      <!-- Marcas afiliadas, destaque de parcerias -->
+      <!-- Marcas afiliadas, parcerias -->
     </section>
     <section id="sobre">
-      <!-- Sobre, missão, equipe, transparência, etc. -->
+      <!-- Sobre, missão, equipe, transparência etc. -->
     </section>
     <section id="contato">
-      <!-- Formulário, e-mail, redes sociais -->
+      <!-- Formulário de contato, redes sociais, e-mails -->
     </section>
   </main>
   <footer>
