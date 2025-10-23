@@ -4,235 +4,271 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mais Sabiamente — Curadoria Profissional</title>
-  <!-- Fontes elegantes e minimalistas (serifada + sans) -->
+  <!-- Google Fonts Serif/Premium para headline e Sans elegante para menus/texto -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family:Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #1d2834;
-      --blue-dark: #131921;
-      --blue-darker: #12171e;
-      --accent: #82dbea;
-      --white: #fcfcfc;
-      --gray-light: #e5eaea;
-      --gray-mid: #bfc5c7;
+      --primary: #254060;
+      --primary-light: #4A79D3;
+      --accent: #61e4d8;
+      --background: #18212b;
+      --background-mid: #212b36;
+      --glass: rgba(239,248,245,0.13);
+      --glass-light: rgba(228,242,248,0.22);
+      --card-glass: rgba(210,245,245,0.11);
+      --brand-dark: #252c3d;
+      --text-main: #eaf4ff;
+      --text-dark: #23303a;
+      --text-muted: #A1C7EA;
+      --border-radius: 22px;
+      --container-max-width: 1200px;
+      --menu-height: 96px;
+      --neon: 0 0 8px #67eec8, 0 0 2px #4a9ed4;
     }
-    html,body { margin:0; padding:0; background:var(--blue-dark); min-height:100%; }
-    body {
-      color: var(--white); font-family: 'Inter', Arial, sans-serif;
-      background: radial-gradient(ellipse at 70% 7%,#2d3946 0 30%,var(--blue-darker) 100%);
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--background);
+      color: var(--text-main);
+      font-family: 'Inter', Arial, sans-serif;
+      min-height: 100%;
+      overflow-x: hidden;
     }
-    /* ==== HEADER (Squarespace style) ==== */
+    /* efeito dots e cores de fundo, moderna e leve, inspirado squarespace */
+    body::before {
+      content: '';
+      pointer-events: none;
+      position: fixed; z-index: 0;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: radial-gradient(ellipse 90vw 70vw at 60% 0, #23406440 0 30%,var(--background) 100%);
+      background-image: 
+        radial-gradient(rgba(88,194,168,0.09) 1.6px, transparent 0px), 
+        radial-gradient(rgba(46,89,160,0.07) 1.3px, transparent 2px);
+      background-size: 48px 48px, 110px 110px;
+      opacity:.31;
+    }
+    /* ======================= HEADER ======================== */
     .topbar {
-      width: 100vw; padding: 0;
-      position: fixed; top:0; left:0; z-index:10;
-      background: rgba(19,25,33,0.78);
+      width: 100vw;
+      background: rgba(20,26,38,0.88);
+      position: fixed; top:0; left:0; z-index:1000;
+      border-bottom: 1.5px solid #28447024;
       backdrop-filter: blur(8px);
-      border-bottom: 1.5px solid #232d38ad;
     }
     .header-inner {
-      max-width: 1300px; margin: 0 auto; 
-      padding: 0 36px; height: 82px; display: flex; align-items: center; justify-content: space-between;
+      max-width: 1400px; margin: 0 auto;
+      padding: 0 40px; height: var(--menu-height);
+      display: flex; align-items: center; justify-content: flex-start;
     }
-    .logo-nav-wrap {
-      display: flex; align-items: center; gap: 35px;
+    .logo-box {
+      height: 80px; display:flex; align-items:center; margin-right: 30px;
     }
     .logo-img {
-      width: 60px; height: 60px; border-radius: 16px; background: #fff3; box-shadow: none; display: block;
-      margin-right: 7px; object-fit: contain;
-      border: 1.8px solid #34526e36;
+      width: 64px; height: 64px; object-fit: contain; background: #fff3;
+      border-radius: 12px;
+      border: 1.8px solid var(--accent);
+      margin-top: 5px;
     }
+    /* Menu horizontal limpo, transition moderna, sem caixas */
     .menu-list {
-      display: flex; gap: 25px; align-items: center;
+      display: flex; gap: 23px; align-items: center; width: 100%;
     }
     .menu-list a {
-      color: #f3f7fa;
-      font-size: 1.13rem;
-      font-weight: 500;
-      background: none;
-      border: none;
-      padding: 0;
-      transition: color .18s;
-      position: relative;
-      text-decoration: none;
-      letter-spacing: .01em;
+      color: #eff4fa; font-size: 1.12rem; font-weight: 500;
+      background: none; border: none; padding: 0 4px;
+      transition: color .18s; letter-spacing: .01em; position: relative;
+      text-decoration: none; border-radius: 6px;
     }
     .menu-list a.active, .menu-list a:hover {
       color: var(--accent);
+      background: none; border: none;
     }
     .menu-list a.contact-btn {
-      font-weight: 600; border:1.3px solid var(--accent);
-      padding: 7px 18px; border-radius:17px; margin-left: 15px;
-      background: none; color: var(--accent); transition:background .13s,color .13s;
+      font-weight: 600; border: 1.4px solid var(--accent);
+      padding: 7px 20px; border-radius:13px; margin-left: 10px;
+      background: rgba(28,40,55,0.30); color: var(--accent);
+      transition: background .13s,color .13s;
     }
-    .menu-list a.contact-btn:hover { background: var(--accent); color: #172034; }
-    main { margin-top: 92px; }
-    /* ==== HERO HOME === */
+    .menu-list a.contact-btn:hover { background: var(--accent); color: #182b3f; }
+    main { margin-top: calc(var(--menu-height) + 46px);}
+    /* ================== HERO / HOME ================== */
     .hero-home {
       display: grid; 
-      grid-template-columns: 1.1fr 0.8fr;
-      align-items: center; gap: 70px;
-      min-height: 520px; max-width: 1280px; margin: 0 auto;
-      padding: 80px 34px 54px 88px;
+      grid-template-columns: 1.13fr 0.9fr; 
+      align-items: center; 
+      gap: 60px;
+      max-width: var(--container-max-width);
+      min-height: 480px;
+      margin: 0 auto 48px auto;
+      padding: 80px 38px 60px 85px;
     }
-    .hero-text-block {
-      flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 36px;
+    .hero-content {
+      display: flex; flex-direction: column; align-items: flex-start; gap: 32px;
+      margin-left: 0; flex: 1; min-width: 270px;
     }
-    .hero-headline {
+    /* ------------ HEADLINE/PREMIUM: Playfair ou sua serif. ------------ */
+    .hero-main-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem,6vw,4.5rem);
-      font-weight: 700; letter-spacing: -0.01em;
-      color: var(--white);
-      margin: 0 0 22px 0; line-height: 1.08;
+      font-size: clamp(2.7rem,8vw,4.3rem);
+      color: #f8fbff;
+      font-weight: 700; letter-spacing: 0;
+      margin-bottom: 18px; margin-top: 9px;
+      line-height: 1.08;
+      filter: none;
+      text-shadow: 0 3px 34px #a8d7d511, 0 1px 2px #5f6c7d25;
     }
     .hero-subtitle {
-      color: var(--accent); font-size: 1.23rem; font-weight: 600; margin-bottom: 4px; margin-top: 10px;
-      letter-spacing:.03em;
+      color: var(--accent);
+      font-size: 1.237rem;
+      font-weight: 600;
+      letter-spacing:.04em;
+      margin-bottom: 4px;
     }
     .hero-description {
-      color: #f1f6fa; font-size: 1.07rem; max-width: 570px; line-height: 1.54; margin-bottom: 23px;
-      letter-spacing: .019em;
+      color: var(--text-main); font-size: 1.07rem; max-width: 530px;
+      line-height: 1.53; letter-spacing: .018em; margin-bottom: 14px;
     }
-    /* ==== BUSCA QUADRADA CLEAN ===== */
-    .search-area { width: 100%; margin-bottom: 17px; }
+    /* ------------------- BARRA DE PESQUISA --------------------- */
+    .search-area { width: 100%; }
     .search-bar {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      background: #212b37ea;
+      width: 100%; display: flex; align-items: center;
+      background: var(--glass);
       border-radius: 14px;
-      padding: 0 7px 0 14px;
-      border: 2.2px solid #679fbe2c;
-      box-shadow: 0 2px 21px #10d8f122;
-      margin-top: 10px; margin-bottom: 7px;
+      border: 2px solid #529ad920;
+      box-shadow: 0 2px 17px #00d8e914;
+      margin-top: 9px; margin-bottom: 5px;
     }
     .search-bar input {
-      flex: 1; font-size: 1.14rem;
-      padding: 22px 18px;
+      flex:1; font-size: 1.13rem;
+      padding: 23px 19px;
       background: none;
-      color: #e2f0fd;
+      color: #e1f2ff;
       border: none; outline: none; font-family: inherit;
       letter-spacing:.012em;
     }
-    .search-bar input::placeholder { color: #a8b7c860; }
+    .search-bar input::placeholder { color: #cbe0ec90; }
     .search-bar button {
       background: none; border: none; font-size: 2.1rem; color: var(--accent);
-      cursor: pointer; padding: 2px 21px 0 8px;
+      cursor:pointer; padding: 2px 23px 0 6px;
     }
-    /* ==== BOTOES FLAT/HOVERS ==== */
-    .cta-row { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 26px;}
+    /* ------------------- BOTOES FLAT/HOVER MODERNO ------------------ */
+    .cta-row { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 13px;}
     .btn-card {
-      background: #232d38f6;
-      color: var(--accent); font-weight: 700; letter-spacing:.022em;
-      padding: 14px 32px; border-radius: 14px;
-      font-size: 1.05rem; box-shadow: 0 1px 10px #00effa0c;
-      border: 2px solid transparent;
-      outline: none; transition: background .18s,color .16s,border .11s;
+      background: #212a3889;
+      color: var(--accent); font-weight: 700; letter-spacing:.012em;
+      padding: 13px 28px; border-radius: 9px;
+      font-size: 1.07rem;
+      border: 2px solid transparent; outline: none;
+      transition: background .18s, color .12s, border .13s;
     }
-    .btn-card:hover, .btn-card:focus { background: #53ede425; border: 2px solid var(--accent); color: #102944;}
-    /* ==== PAINEL DE CAMPANHAS LATERAL ==== */
+    .btn-card:hover, .btn-card:focus { background: #b4fff426; border: 2px solid var(--accent); color: #102944;}
+    /* ============= PAINEL DE CAMPANHAS (DIREITA) ============ */
     .campaign-sidebar {
-      min-width: 235px; max-width: 375px;
-      padding: 52px 36px;
-      border-radius:24px;
-      background: rgba(31, 40, 53, 0.87);
-      box-shadow: 0 3px 44px #16d9ef14, 0 0 0 2px #2555732f inset;
-      border: 1.7px solid #448fad1e;
-      display: flex; flex-direction: column; gap: 29px; align-items: stretch;
+      min-width: 235px; max-width: 425px;
+      padding: 56px 44px 48px 47px;
+      border-radius:22px;
+      background: rgba(31, 40, 53, 0.88);
+      box-shadow: 0 3px 44px #16d9ef16, 0 0 0 2px #2555733e inset;
+      border: 1.7px solid #448fad17;
+      display: flex; flex-direction: column; gap: 32px; align-items: stretch;
       align-self: flex-start;
     }
     .panel-title { 
-      text-align:center; 
-      color: var(--accent); 
-      font-size: 1.09rem; 
-      border-bottom: 1.5px solid #67e4be72; 
-      font-weight: bold; 
-      padding-bottom:10px; letter-spacing:.10em; margin-bottom:13px;
+      text-align:center; color: var(--accent); font-size: 1.15rem;
+      font-weight: bold; border-bottom: 1.5px solid #67e4be78;
+      letter-spacing:.11em; margin-bottom:18px; padding-bottom:8px;
     }
     .campaign-btn {
-      background: none;
-      color: #efffff; border-radius: 17px; 
-      padding: 18px 0; text-align: center;
-      font-weight: 600; font-size: 1.08rem; border: 1.3px solid #376b7a2f;
-      transition: background .14s, color .13s, border .13s;
-      cursor: pointer; margin-bottom: 6px; letter-spacing: .01em;
+      background: none; color: #efffff; border-radius: 13px; border: 1.3px solid #376b7a37;
+      padding: 17px 0; text-align: center;
+      font-weight: 600; font-size: 1.04rem;
+      transition: background .15s, color .11s, border .11s;
+      cursor: pointer; margin-bottom: 7px; letter-spacing: .01em;
     }
     .campaign-btn:hover, .campaign-btn:focus {
-      background: #53ede418;
-      color: #171f38;
-      border-color: var(--accent);
+      background: #bafdff16; color: #152898; border-color: var(--accent);
     }
-
-    /* ==== PROD CARD ==== */
-    .card-list { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 39px;}
+    /* ============ PRODUTOS/AFILIADOS ================ */
+    .card-list { display: flex; flex-wrap: wrap; gap: 17px; margin-top: 38px;}
     .card {
-      background: #202c3674;
-      border-radius: 16px; box-shadow: 0 2px 17px #10c8f91a;
-      min-width: 220px; max-width: 340px; color: var(--text-main);
-      display: flex; flex-direction: column; align-items: center; text-align: center; border: 1.6px solid #2fdbfb18;
-      transition: background .25s,color .19s, box-shadow .13s;
+      background: var(--card-glass);
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 18px #2ee6a814;
+      min-width: 215px; max-width: 322px; color: var(--text-main);
+      display: flex; flex-direction: column; align-items: center; text-align: center; border: 1.4px solid #27bde94a;
+      transition: background .19s, color .18s, box-shadow .13s;
     }
-    .card:hover, .card:focus { background: #10131a; color: var(--accent);}
-    .card img { width: 78px; height: auto; margin-bottom: 13px; border-radius: 15px; }
-    .card h3 { font-weight: 700; font-size: 1.04rem; margin-bottom: 10px; color: var(--accent);}
-    .card p { font-size: 1rem; color: #b5deeb; margin-bottom: 0;}
-    section { margin-bottom: 54px;}
-    /* ==== FOOTER ==== */
-    footer { text-align: center; color: var(--accent); background: none; padding:34px 18px 23px 18px; font-weight: 600; font-size:1.04rem; border-top:1.7px solid #232d38;}
-    /* ==== MOBILE ==== */
-    @media (max-width: 900px) {
-      .header-inner { padding: 0 15px;}
-      .hero-home { grid-template-columns: 1fr; padding: 11vw 2vw; gap: 49px;}
-      .panel-title, .hero-headline, .hero-subtitle { text-align:center;}
-      main { margin-top: 100px;}
-      .campaign-sidebar { margin-top: 12px;}
+    .card:hover, .card:focus { background: #112238; color: var(--accent);}
+    .card img { width: 72px; height: auto; margin-bottom: 13px; border-radius: 14px; }
+    .card h3 { font-weight: 700; font-size: 1.07rem; margin-bottom: 12px; color: var(--accent);}
+    .card p { font-size: 0.98rem; color: #c9e7f1; margin-bottom: 0;}
+    section { margin-bottom: 41px;}
+
+    /* ==================== FOOTER =================== */
+    footer { text-align: center; color: var(--accent); background: none; padding:32px 14px 22px 14px; font-weight: 600; font-size:1.07rem; border-top:1.7px solid #232d38;}
+
+    /* ================= MEDIA QUERIES ================== */
+    @media (max-width: 1080px) {
+      .header-inner { padding: 0 10px; }
+      .logo-img { width:44px; height:44px;}
+      .hero-home { grid-template-columns: 1fr; padding: 12vw 1vw; gap: 64px;}
+      .panel-title, .hero-main-title, .hero-subtitle { text-align:center;}
+      .campaign-sidebar { margin-top: 20px;}
     }
     @media (max-width: 650px) {
       .container { padding: 0 2vw;}
-      .logo-img { width:39px; height:39px;}
-      .header-inner { padding: 0 3px;}
-      .hero-home { padding: 10vw 0.5vw;}
-      .card-list { gap:8px; }
-      .panel-title { font-size:.94rem; }
+      .logo-img { width:36px; height:36px;}
+      .header-inner { padding: 0 2px;}
+      .hero-home { padding: 11vw 0vw; }
+      .card-list { gap: 5px; }
     }
   </style>
 </head>
 <body>
-  <!-- =================== HEADER CLEAN ==================== -->
+  <!-- =================== HEADER ==================== -->
   <header class="topbar">
     <div class="header-inner">
-      <div class="logo-nav-wrap">
+      <!-- Logo à esquerda, alinhada -->
+      <div class="logo-box">
         <img class="logo-img" src="/assets/Logo.png" alt="Logo Mais Sabiamente" onerror="this.onerror=null;this.src='https://placehold.co/62x62?text=Logo';" />
-        <nav class="menu-list">
-          <a class="active" href="#">Home</a>
-          <a href="#departamentos">Departamentos</a>
-          <a href="#cuidados">Cuidados Diários</a>
-          <a href="#tecnologia">Tecnologia</a>
-          <a href="#livros">Livros</a>
-          <a href="#saude">Saúde</a>
-          <a href="#marcas">Marcas</a>
-          <a href="#sobre">Sobre</a>
-          <a href="#contato" class="contact-btn">Contato</a>
-        </nav>
       </div>
+      <!-- Menu horizontal, minimalista -->
+      <nav class="menu-list">
+        <a class="active" href="#">Home</a>
+        <a href="#departamentos">Departamentos</a>
+        <a href="#cuidados">Cuidados Diários</a>
+        <a href="#tecnologia">Tecnologia</a>
+        <a href="#livros">Livros</a>
+        <a href="#saude">Saúde</a>
+        <a href="#marcas">Marcas</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato" class="contact-btn">Contato</a>
+      </nav>
     </div>
   </header>
-  <!-- =========== HERO STYLE SQUARESPACE - GRID FLEXIBLE =========== -->
+
+  <!-- =================== MAIN/HERO ==================== -->
   <main class="container">
+    <!-- HERO EM GRID, BLOCO ESQUERDO ALINHADO COM A LOGO -->
     <section class="hero-home">
-      <div class="hero-text-block">
-        <h1 class="hero-headline">Sabiamente</h1>
+      <div class="hero-content">
+        <!-- Headline serifada premium -->
+        <h1 class="hero-main-title">Sabiamente</h1>
         <div class="hero-subtitle">Curadoria profissional para viver melhor</div>
         <div class="hero-description">
           Conteúdo confiável, navegação fácil por departamentos, campanhas e afiliados em destaque.<br>
           Acesse as melhores oportunidades, produtos e links preservados.
         </div>
         <div class="search-area">
+          <!-- Barra de busca quadrada minimalista -->
           <form class="search-bar" action="/busca" method="get" autocomplete="off">
             <input type="search" name="q" placeholder="Pesquise produtos, categorias ou marcas…"/>
             <button type="submit" title="Buscar">&#10140;</button>
           </form>
+          <!-- Botões principais, flat neon */
           <div class="cta-row">
             <a class="btn-card" href="#departamentos">Departamentos</a>
             <a class="btn-card" href="#cuidados">Cuidados Diários</a>
@@ -241,6 +277,7 @@
           </div>
         </div>
       </div>
+      <!-- Cartão glass painel de campanhas -->
       <aside class="campaign-sidebar">
         <div class="panel-title">CAMPANHAS</div>
         <a href="https://mais.app/jROmOw" class="campaign-btn">Desodorantes</a>
@@ -251,7 +288,7 @@
         <a href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty" class="campaign-btn">Kits</a>
       </aside>
     </section>
-    <!-- GRID DE PRODUTOS/AFILIADOS -->
+    <!-- CARDS DE PRODUTOS/AFILIADOS, SEMPRE EXPANSÍVEL -->
     <section id="produtos">
       <div class="card-list">
         <article class="card">
@@ -266,7 +303,7 @@
         </article>
       </div>
     </section>
-    <!-- AREAS FUTURAS -->
+    <!-- ÁREAS DE EXPANSÃO / PERSONALIZAÇÃO -->
     <section id="departamentos"></section>
     <section id="cuidados"></section>
     <section id="tecnologia"></section>
@@ -276,6 +313,7 @@
     <section id="sobre"></section>
     <section id="contato"></section>
   </main>
+  <!-- ================= RODAPÉ ================== -->
   <footer>
     © 2025 Mais Sabiamente — Curadoria profissional.
   </footer>
