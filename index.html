@@ -4,276 +4,240 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mais Sabiamente — Curadoria Profissional</title>
-  <!--
-    Paleta tech + glass + visual harmônico com a logo.
-    Estrutura MAXIMAMENTE ORGANIZADA e COMENTADA.
-  -->
+  <!-- Inclusão fonte manuscrita "Caveat" do Google Fonts para simular letra da logo
+       Substitua pelo nome real se a fonte da sua logo for custom e disponível como webfont -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #2E59A0;            /* Azul logo */
-      --primary-light: #4A79D3;      /* Azul secundário */
-      --accent: #58C2A8;             /* Verde logo */
-      --background: #181E2A;         /* Fundo escuro tech */
-      --element-bg: rgba(40,66,104,0.29);
-      --glass: rgba(36,51,95,0.78);
-      --text-main: #EAF2FF;
-      --text-muted: #8ca2bc;
-      --border-radius: 28px;
-      --container-max-width: 1180px;
+      --primary: #2E59A0;
+      --primary-light: #4A79D3;
+      --accent: #58C2A8;
+      --background: #151F2C;       /* Fundo marinho quase preto */
+      --background-glass: rgba(230,245,243,0.11);
+      --background-glass-strong: rgba(237,247,247,0.30);
+      --element-bg: rgba(220,245,241,0.19); /* Caixas glass claras */
+      --glass: rgba(244,248,250,0.17);
+      --text-main: #eaf5ff;
+      --text-dark: #22303a;
+      --text-muted: #69c4dd;
+      --border-radius: 24px;
+      --container-max-width: 1200px;
       --menu-height: 112px;
-      --neon: 0 0 9px #58C2A8, 0 0 3px #4A79D3;
+      --neon: 0 0 6px #58C2A8, 0 0 2px #4A79D3;
     }
     *, *::before, *::after { box-sizing: border-box; }
     html, body {
       margin: 0; padding: 0;
-      background: var(--background)
-                  radial-gradient(ellipse 90vw 70vw at 70% 0, #22437022 0%, transparent 100%);
+      background: var(--background);
       color: var(--text-main);
       font-family: 'Poppins', 'Inter', Arial, sans-serif;
       overflow-x: hidden;
+      min-height: 100%;
     }
     body::before {
-      /* Matrix dots/effect tech background */
+      /* matrix-dots tech bg */
       content: '';
       pointer-events: none;
-      position: fixed;
-      z-index: 0;
+      position: fixed; z-index: 0;
       left: 0; top: 0; width: 100vw; height: 100vh;
-      background-image: radial-gradient(rgba(88,194,168,0.07) 1px, transparent 0px), radial-gradient(rgba(46,89,160,0.06) 1.4px, transparent 2px);
-      background-size: 36px 36px, 90px 90px;
-      opacity: 0.43;
+      background-image: 
+        radial-gradient(rgba(88,194,168,0.08) 1.4px, transparent 0), 
+        radial-gradient(rgba(46,89,160,0.07) 1.2px, transparent 2px);
+      background-size: 42px 42px, 86px 86px;
+      opacity: .39;
     }
-    a { color: var(--accent); text-decoration: none; transition: color .21s;}
-    a:hover, a:focus { color: var(--primary-light); outline: none; }
-    /* ====== CONTAINER CENTRAL ====== */
-    .container {
-      max-width: var(--container-max-width);
-      margin: 0 auto;
-      padding: 0 2.5vw;
-      position: relative;
+    .container { 
+      max-width: var(--container-max-width); 
+      margin: 0 auto; 
+      padding: 0 2vw; 
+      position: relative; 
       z-index: 1;
     }
-    /* ====== HEADER FIXO LOGO ESQUERDA, MENU HORIZONTAL ====== */
+    a { color: var(--accent); text-decoration: none; transition: color .19s;}
+    a:hover, a:focus { color: var(--primary-light); outline: none; }
+
+    /* TOPBAR: logo à esquerda, menu em linha */
     .topbar {
-      width: 100vw;
-      background: linear-gradient(106deg, #19253c 63%, #153150 99%);
+      width: 100vw; background: linear-gradient(106deg, #203357 65%, #184654 97%);
       position: fixed; top: 0; left: 0; z-index: 1000;
-      box-shadow: 0 6px 29px #44c2a827;
+      box-shadow: 0 4px 38px #7eeef422;
       min-height: var(--menu-height);
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 0; gap: 0;
-      border-bottom: 2px solid rgba(72,228,211,0.07);
-      padding-bottom: 2px;
+      display: flex; align-items: center; justify-content: flex-start;
+      border-bottom: 2px solid #58C2A833;
+      padding: 0 0 0 0;
     }
     .logo-box {
       display: flex; align-items: center; justify-content: flex-start;
-      height: 76px; min-width: 140px;
-      padding-left: 32px; padding-right: 18px;
+      min-width: 90px; margin-left: 16px;
+      height: 80px;
     }
     .logo-img {
-      width: 77px; height: 77px; object-fit: contain;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.065);
-      box-shadow: 0px 0px 0px 4px #22304d18, var(--neon);
-      border: 2px solid var(--accent);
-      transition: filter .18s, box-shadow .21s;
+      width: 78px; height: 78px; object-fit: contain;
+      border-radius: 18px; background: rgba(255,255,255,0.06);
+      box-shadow: 0px 0px 0px 4px #b2f7f82c, var(--neon); border: 2.5px solid #58C2A8;
+      transition: filter .18s, box-shadow .21s; margin: 0;
     }
-    .logo-img:hover { filter: brightness(1.08); box-shadow: 0 0 0 6px #61e3d920;}
-    /* MENU em linha, fluido e centralizado verticalmente */
+    .logo-img:hover { filter: brightness(1.12); box-shadow: 0 0 0 6px #61e3d96a;}
     .menu-list {
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      width: 100%;
-      margin-left: 16px;
+      display: flex; gap: 15px; align-items: center; width: 100%;
+      margin-left: 24px;
     }
     .menu-list a {
-      background: var(--element-bg);
+      background: var(--background-glass);
       color: var(--text-main);
-      padding: 14px 30px;
-      border-radius: 23px;
-      font-weight: 600;
-      font-size: 17px;
-      margin: 0 1.5px;
-      box-shadow: 0 1px 8px rgba(94,206,224,0.03);
-      border: 1px solid transparent;
-      letter-spacing: 0.01em;
+      padding: 13px 26px; border-radius: 18px;
+      font-weight: 600; font-size: 17px;
+      margin: 0 1.1px;
+      border: 1.3px solid transparent;
       transition: background .18s, color .14s, border .14s, box-shadow .13s;
     }
     .menu-list a.active, .menu-list a:hover {
-      background: linear-gradient(89deg, var(--primary), var(--accent) 96%);
-      color: #fff;
-      border-color: var(--accent);
-      box-shadow: 0 0 7px #53e5f3ad;
+      background: linear-gradient(99deg, #A6ECFD44 75%, var(--accent) 150%);
+      color: #022e3b; border-color: var(--accent);
+      box-shadow: 0 0 14px #58C2A8, 0 2px 12px #134e9442;
     }
     .menu-list a.contact-btn {
-      background: var(--primary);
-      color: #fff;
-      border: 1.5px solid var(--accent);
-      font-weight: bold; letter-spacing: .05em;
+      background: var(--primary-light);
+      color: #fcfcfc; border: 1.5px solid var(--accent);
+      font-weight: bold; letter-spacing: .04em; font-size: 17.3px;
       box-shadow: var(--neon);
     }
     main { margin-top: calc(var(--menu-height) + 32px);}
-    /* ======= GRID HERO, EFEITO GLASS E TECH ======= */
+    /* HERO: grid para texto à esquerda, campanhas direita */
     .hero-home {
       display: grid;
-      grid-template-columns: 1.6fr 1.15fr;
-      gap: 60px;
+      grid-template-columns: 1.4fr 1.01fr;
+      gap: 50px;
       align-items: start;
-      background: linear-gradient(116deg, #18243B 70%, #2E59A088 100%);
-      border-radius: 36px;
-      box-shadow: 0 20px 62px #57e5c712, 0 13px 54px #12344239;
-      min-height: 540px;
+      background: linear-gradient(116deg, #232e49 73%, #d6fff885 110%);
+      border-radius: 32px;
+      box-shadow: 0 22px 55px #17c9e418, 0 11px 34px #122e4632;
+      min-height: 570px;
       max-width: var(--container-max-width);
-      margin: 52px auto 50px auto; padding: 90px 68px 90px 74px;
-      background-image: radial-gradient(rgba(46,89,160,0.11) 4%, transparent 12%),
-                        radial-gradient(rgba(88,194,168,0.11) 3%, transparent 24%);
-      background-repeat: repeat; background-size: 116px 110px, 160px 120px;
+      margin: 48px auto 60px auto; padding: 70px 54px 70px 44px;
+      background-image: linear-gradient(118deg,rgba(255,255,255,0.11) 7%,transparent 73%),
+                        radial-gradient(rgba(46,89,160,0.09) 6%, transparent 22%);
+      background-repeat: repeat; background-size: 99px 90px, 166px 100px;
       position: relative; z-index: 1;
     }
-    /* BLOCO ESQUERDO HERO: TITULO, SUBTITULO, PESQUISA, BOTOES */
+    /* HERO TEXTO - tudo encostado à esquerda */
     .hero-content {
       display: flex; flex-direction: column; align-items: flex-start;
-      gap: 20px; min-width: 270px; z-index: 1;
-      margin-left: 15px;
+      gap: 16px; min-width: 270px; z-index: 1; margin-left: 0;
     }
     .hero-main-title {
-      font-size: clamp(2.95rem, 7vw, 4.2rem);
-      color: var(--primary-light);
-      font-weight: 900;
-      margin: 0 0 0 0; letter-spacing: -0.014em; line-height: 1.08;
-      text-shadow: 0 5px 38px #202e6294, 2px 2px 8px #1646882f, var(--neon);
-      filter: drop-shadow(0 1px 0 var(--accent));
-      transition: font-size .13s;
+      font-family: 'Caveat', 'Comic Sans MS', cursive;
+      font-size: clamp(3.2rem, 8vw, 4.5rem);
+      color: #102944; font-weight: 700;
+      margin: 0 0 4px 0; line-height: 1.06; letter-spacing: 0.01em;
+      text-shadow: 0 2px 44px #b3e7fb3b, 0 1px 2px #0e0e0e40, var(--neon);
+      filter: drop-shadow(0 0px 0 var(--accent)); transition: font-size .16s;
     }
     .hero-subtitle {
-      font-size: 1.32rem;
-      font-weight: 700;
-      margin: 18px 0 0 0;
-      color: var(--accent);
-      letter-spacing: .014em;
-      line-height: 1.24;
+      font-size: 1.3rem; font-weight: 700;
+      margin: 10px 0 0 0; color: var(--accent);
+      letter-spacing: .011em; line-height: 1.16;
+      text-shadow: 0 1px 1px #c2fff6bd;
     }
-    .hero-description { color: var(--text-main); font-size: 1.09rem; margin-top: 13px; max-width: 500px;}
-    .search-area {
-      margin-top: 24px; width: 100%;
+    .hero-description {
+      color: #fff; font-size: 1.09rem;
+      background: var(--background-glass-strong); border-radius: 12px;
+      padding: 12px 18px 10px 12px; margin-top: 9px;
+      box-shadow: 0 1px 21px #6ef0e91a;
     }
-    .search-bar {
-      display: flex; box-shadow: 0 4px 23px #54afbc06; border-radius: 32px; background: var(--glass);
-      border: 1.6px solid #4A79D3;
-      overflow: hidden; margin-bottom: 15px;
-    }
+    .search-area { margin-top: 16px; width: 100%; }
+    .search-bar { display: flex; background: var(--glass); border-radius: 24px; border: 2px solid #42b3ac48; overflow: hidden; margin-bottom: 10px;}
     .search-bar input {
-      flex: 1; font-size: 17.5px; padding: 20px 24px;
-      border: none; background: transparent;
-      color: #eef4ff; font-family: inherit; letter-spacing: .013em;
-      background: transparent;
+      flex: 1; font-size: 17.5px; padding: 20px 23px; border: none; background: transparent; color: #eef4ff; font-family: inherit; letter-spacing: .013em;
     }
-    .search-bar input:focus { background: #212a49; }
+    .search-bar input:focus { background: #e2eee9; color: #22303a;}
     .search-bar button {
-      background: linear-gradient(93deg,#58C2A8,#4A79D3);
-      color: #fff; font-weight: 700; font-size: 27px;
-      border: none; padding: 0 24px;
-      cursor: pointer; border-radius: 0;
-      transition: filter .13s,background .15s;
-      box-shadow: 0 3px 16px #58c2a824;
+      background: linear-gradient(93deg,#abd5d8,#4adad3); color: #1e2a32;
+      font-weight: 700; font-size: 27px; border: none; border-radius: 0;
+      padding: 0 28px; cursor: pointer;
+      box-shadow: 0 2px 8px #58c2a826;
+      transition: filter .11s,background .13s;
     }
-    .search-bar button:hover { filter: brightness(1.09); }
-    /* Botoes principais - destaque, gradiente tech */
-    .cta-row { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 15px;}
+    .search-bar button:hover { filter: brightness(1.17);}
+    /* Botões principais gradientes premium */
+    .cta-row { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 10px;}
     .btn-card {
-      background: linear-gradient(99deg, #54bcb1cc 80%, #2e59a0a0);
-      color: #fff; font-weight: 700; padding: 13px 0; border-radius: 21px;
-      min-width: 159px; font-size: 1.06rem; text-align: center; flex: 1 1 175px;
-      box-shadow: 0 2px 12px #39e0b41f;
-      transition: background .14s;
-      letter-spacing: .011em;
-      outline: none; border: none;
+      background: linear-gradient(99deg, #54bbbb55 55%, #2e59a025 100%);
+      color: #082841; font-weight: 700; padding: 13px 0;
+      border-radius: 21px; min-width: 159px; font-size: 1.05rem;
+      text-align: center; flex: 1 1 120px; box-shadow: 0 1px 12px #39e0b41c;
+      border: 2.2px solid #94eff2; letter-spacing: .011em;
+      outline: none; transition: background .14s, color .17s, outline .09s;
     }
-    .btn-card:hover { background: linear-gradient(90deg, #2E59A0, #58C2A8 97%);}
-    /* PAINEL LATERAL DE CAMPANHAS - EFEITO CARTAO GLASS */
+    .btn-card:hover { background: linear-gradient(95deg, #cfdbe3, #58C2A8 97%); color: var(--primary);}
+    /* PAINEL LATERAL CAMPANHAS GLASS */
     .campaign-sidebar {
-      display: flex; flex-direction: column; gap: 26px; align-items: stretch; min-width: 220px;
-      background: var(--glass);
-      border-radius: 36px;
-      padding: 44px 22px;
-      box-shadow: 0 6px 36px #39e0b413;
-      justify-content: flex-start; border: 1.5px solid #4A79D3;
+      display: flex; flex-direction: column; gap: 28px; align-items: stretch;
+      min-width: 246px; background: var(--background-glass-strong);
+      border-radius: 34px;
+      padding: 44px 28px;
+      box-shadow: 0 4px 34px #1980b10e;
+      border: 2.1px solid #8ad5ebe8;
+      justify-content: flex-start;
     }
     .panel-title {
-      color: var(--accent);
-      font-size: 1.19rem; font-weight: 900;
-      margin-bottom: 22px; letter-spacing: .13em;
-      text-transform: uppercase;
-      border-bottom: 1.5px solid var(--accent);
-      text-align: center; padding-bottom: 9px;
-      user-select: none;
+      color: var(--accent); font-size: 1.16rem; font-weight: 900;
+      letter-spacing: .13em; text-transform: uppercase;
+      border-bottom: 2px solid var(--accent);
+      text-align: center; padding-bottom: 9px; user-select: none;
     }
     .campaign-btn {
-      background: var(--element-bg);
-      color: #EAF2FF;
-      border-radius: 24px;
-      padding: 23px 0;
-      text-align: center;
-      font-weight: 700; font-size: 1.11rem;
-      box-shadow: 0 2px 9px #2290b218;
-      border: none; outline: none;
-      cursor: pointer; text-decoration: none;
-      margin-bottom: 6px; letter-spacing: .015em;
-      transition: background .14s, color .13s;
+      background: var(--background-glass);
+      color: #00394c; border-radius: 24px;
+      padding: 23px 0; text-align: center;
+      font-weight: 700; font-size: 1.13rem;
+      box-shadow: 0 2px 11px #2290b218;
+      border: 1.2px solid #6ecffa4a;
+      cursor: pointer; margin-bottom: 5px; letter-spacing: .012em;
+      transition: background .15s, color .16s;
     }
     .campaign-btn:hover {
-      background: linear-gradient(90deg,#58C2A8,#4A79D3); color: #fff;
+      background: linear-gradient(90deg,#d3fffd,#6ecffa); color: #10505c; border-color: #58C2A8;
     }
+
     /* CARDS DE PRODUTOS AFILIADOS */
-    .card-list {
-      display: flex; flex-wrap: wrap; gap: 27px; margin-top: 38px; justify-content: flex-start;
-    }
+    .card-list { display: flex; flex-wrap: wrap; gap: 26px; margin-top: 39px; }
     .card {
-      background: var(--element-bg);
-      border-radius: var(--border-radius);
-      padding: 26px;
-      box-shadow: 0 4px 19px #23335522, 0 2px 10px #4A79D321;
-      min-width: 222px; max-width: 340px; color: var(--text-main);
+      background: var(--background-glass-strong);
+      border-radius: var(--border-radius); box-shadow: 0 2px 17px #119e8209;
+      min-width: 220px; max-width: 330px; color: var(--text-dark);
       display: flex; flex-direction: column; align-items: center; text-align: center;
       transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; margin-bottom: 12px;
+      border: 2px solid #94eff2;
     }
-    .card:hover, .card:focus {
-      transform: translateY(-7px); box-shadow: 0 11px 28px #2adbcb18;
-      border: 1.6px solid var(--primary-light);
-    }
-    .card img { width: 82px; height: auto; margin-bottom: 13px; border-radius: 15px; filter: drop-shadow(0 2px 4px #134e9442);}
-    .card h3 { font-weight: 800; font-size: 1.10rem; margin-bottom: 12px; color: var(--primary-light);}
-    .card p { font-size: 1.02rem; color: var(--text-muted);} section { margin-bottom: 60px;}
-    /* RODAPÉ CLEAN */
-    footer { text-align: center; padding: 36px 24px; color: var(--accent); font-weight: 600; font-size: 1.09rem; border-top: 2px solid #2e59a04a; background: #181E2A;}
-
-    /* RESPONSIVIDADE, MOBILE E TABLET */
-    @media (max-width: 1100px) {
-      .hero-home { grid-template-columns: 1fr; padding: 9vw 3vw 11vw 3vw; gap: 20px;}
-      .campaign-sidebar { margin-top: 22px;}
-      .container { padding: 0 0.5vw;}
-      .logo-box { padding-left: 9px; }
-      .hero-content { margin-left: 1vw;}
-      .menu-list { flex-wrap: wrap; gap: 6px;}
-      main { margin-top: 124px;}
-    }
-    @media (max-width: 630px) {
-      .panel-title { font-size: 1rem;}
-      .campaign-btn { font-size: .96rem; padding: 14px 0;}
-      .card h3 { font-size: .93rem;} .btn-card { min-width: 100px;}
-      .hero-main-title { font-size: 1.23rem;}
+    .card:hover, .card:focus { transform: translateY(-7px); box-shadow: 0 12px 32px #2adbcb20; border: 2.5px solid var(--primary-light);}
+    .card img { width: 78px; height: auto; margin-bottom: 13px; border-radius: 16px; filter: drop-shadow(0 1px 4px #134e9435);}
+    .card h3 { font-weight: 800; font-size: 1.08rem; margin-bottom: 11px; color: var(--primary-light);}
+    .card p { font-size: 1rem; color: var(--text-muted);}
+    section { margin-bottom: 49px;}
+    /* FOOTER tech clean */
+    footer { text-align: center; padding: 34px 18px; color: var(--accent); font-weight: 600; font-size: 1.09rem; border-top: 2px solid #2e59a04a; background: #181F2C;}
+    /* MOBILE/TABLET ADAPTAÇÃO */
+    @media (max-width: 1200px) {
+      .hero-home { grid-template-columns: 1fr; padding: 9vw 4vw 11vw 4vw; gap: 26px;}
+      .campaign-sidebar { margin-top: 25px;}
       .container { padding: 0 1vw;}
+      .logo-box { min-width: 56px; }
+    }
+    @media (max-width: 760px) {
+      .panel-title { font-size: 1rem;}
+      .campaign-btn { font-size: .92rem; padding: 12px 0;}
+      .card h3 { font-size: .98rem; }
+      .hero-main-title { font-size: 1.21rem; }
+      .container { padding: 0 2vw;}
       .logo-img { width: 54px; height: 54px;}
-      .hero-home { padding: 7vw 0.7vw;}
+      .hero-home { padding: 7vw 0.7vw; }
+      .card { min-width: 150px;}
     }
   </style>
 </head>
 <body>
-  <!-- ========== HEADER MODERNO, LOGO NO CANTO ESQUERDO ========== -->
+  <!-- HEADER: LOGO À ESQUERDA, MENU TECH -->
   <header class="topbar">
     <div class="logo-box">
       <img class="logo-img" src="/assets/Logo.png" alt="Logo Mais Sabiamente" onerror="this.onerror=null;this.src='https://placehold.co/88x88?text=Logo';" />
@@ -291,14 +255,10 @@
     </nav>
   </header>
   <main class="container">
-    <!-- ========== HERO/GRID ==========
-      Á esquerda: Título, subtítulo e busca
-      À direita: Campanhas
-      Fundo glass, tech premium
-    -->
+    <!-- HERO EM GRID, ALINHADO À ESQUERDA, VISUAL PALETA TECH-CLARO -->
     <section class="hero-home">
-      <!-- Bloco texto do destaque -->
       <div class="hero-content">
+        <!-- Título manuscrito, idêntico à logo (substitua pela fonte real se disponível) -->
         <h1 class="hero-main-title">Sabiamente</h1>
         <h2 class="hero-subtitle">Curadoria profissional para viver melhor</h2>
         <p class="hero-description">
@@ -306,12 +266,10 @@
           Acesse as melhores oportunidades, produtos e links preservados.
         </p>
         <div class="search-area">
-          <!-- Barra de pesquisa moderna -->
           <form class="search-bar" action="/busca" method="get" autocomplete="off">
-            <input type="search" name="q" placeholder="Pesquise produtos, categorias ou marcas…" />
+            <input type="search" name="q" placeholder="Pesquise produtos, categorias ou marcas…"/>
             <button type="submit">🔍</button>
           </form>
-          <!-- Botões principais tech -->
           <div class="cta-row">
             <a class="btn-card" href="#departamentos">Departamentos</a>
             <a class="btn-card" href="#cuidados">Cuidados Diários</a>
@@ -320,7 +278,7 @@
           </div>
         </div>
       </div>
-      <!-- Painel Campanhas visual glass -->
+      <!-- PAINEL DE CAMPANHAS, glass premium 30% claro -->
       <aside class="campaign-sidebar">
         <div class="panel-title">Campanhas</div>
         <a href="https://mais.app/jROmOw" class="campaign-btn">Desodorantes</a>
@@ -331,7 +289,7 @@
         <a href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty" class="campaign-btn">Kits</a>
       </aside>
     </section>
-    <!-- ========== CARDS DE PRODUTOS/AFILIADOS ========== -->
+    <!-- GRID DE PRODUTOS/AFILIADOS -->
     <section id="produtos">
       <div class="card-list">
         <article class="card">
@@ -344,10 +302,9 @@
           <h3>Produto Afiliado 2</h3>
           <p>Bastante procurado, breve descrição do produto 2.</p>
         </article>
-        <!-- Adicione outros cards conforme sua curadoria crescer -->
       </div>
     </section>
-    <!-- ======= ÁREAS DE EXPANSÃO NO PROJETO ======= -->
+    <!-- ÁREAS EXPANSÍVEIS -->
     <section id="departamentos"></section>
     <section id="cuidados"></section>
     <section id="tecnologia"></section>
