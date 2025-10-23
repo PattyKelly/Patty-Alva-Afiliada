@@ -4,279 +4,248 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mais Sabiamente — Curadoria Profissional</title>
-  <!-- 
-    Paleta de cores principal
-    Personalize os tons no :root para harmonizar com sua logo
-  -->
+  <!-- Paleta tech, tons mesclados à logo -->
   <style>
     :root {
-      --primary: #2E59A0;            /* Azul principal */
-      --primary-light: #4A79D3;      /* Azul claro destaque */
-      --accent: #58C2A8;             /* Verde secundário */
-      --background: #121B2D;         /* Fundo escuro */
-      --card-bg: rgba(255,255,255,0.14);/* Fundo para cards/menus/campanhas */
+      --primary: #2E59A0;           /* Azul logo */
+      --primary-light: #4A79D3;     /* Azul gradiente/destaque */
+      --accent: #58C2A8;            /* Verde água, da logo */
+      --background: #181E2A;        /* Fundo azul tech */
+      --element-bg: rgba(40,66,104,0.27); /* Cards/menus painel tech */
+      --glass: rgba(44,55,95, 0.72);
+      --glass-strong: rgba(64,120,175,0.18);
       --text-main: #EAF2FF;
-      --text-muted: #9BB1CD;
+      --text-muted: #8ca2bc;
       --border-radius: 30px;
-      --container-max-width: 1200px;
-      --menu-height: 136px;
+      --container-max-width: 1220px;
+      --menu-height: 130px;
+      --neon: 0 0 10px #58C2A8,0 0 4px #4A79D3;
     }
-
-    /* ===== RESET E LAYOUT BASE ===== */
     *, *::before, *::after { box-sizing: border-box; }
     html, body {
       margin: 0;
       padding: 0;
-      background: var(--background);
+      background: var(--background) radial-gradient(ellipse at 70% 0, #19355099 0%, transparent 80%);
       color: var(--text-main);
       font-family: 'Poppins', 'Inter', Arial, sans-serif;
       overflow-x: hidden;
     }
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color .23s;
+    body::before {
+      /* Matrix Dots/Efeito pattern tech */
+      content: '';
+      pointer-events: none;
+      position: fixed;
+      z-index: 0;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background-image: radial-gradient(rgba(88,194,168,0.075) 1px, transparent 0px), radial-gradient(rgba(46,89,160,0.07) 1.3px, transparent 2px);
+      background-size: 46px 46px, 86px 86px;
+      opacity: 0.5;
     }
+    a { color: var(--accent); text-decoration: none; transition: color .23s;}
     a:hover, a:focus { color: var(--primary-light); outline: none; }
-
-    /* ===== CONTAINER CENTRALIZADO ===== */
     .container {
       max-width: var(--container-max-width);
       margin: 0 auto;
-      padding: 0 32px;
+      padding: 0 3vw;
+      position: relative;
+      z-index: 1;
     }
 
-    /* ===== HEADER GLOBAL - LOGO + MENU ===== */
+    /* ========= TOPBAR TECH ========= */
     .topbar {
       width: 100vw;
-      background: #151A27;
       position: fixed;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       z-index: 1000;
-      box-shadow: 0 3px 16px rgba(0,0,0,0.17);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 7px;
+      background: linear-gradient(106deg, #161E30 60%, #193550 99%);
+      box-shadow: 0 5px 38px rgba(88, 194, 168, 0.07);
       min-height: var(--menu-height);
+      padding: 10px 0 0 0;
+      display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0;
+      border-bottom: 1.5px solid var(--glass-strong);
+    }
+    .logo-box {
+      display: flex; align-items: center; justify-content: left;
+      height: 80px; padding-left: 34px; flex-shrink: 0;
     }
     .logo-img {
-      width: 120px;
-      height: auto;
-      border-radius: 16px;
-      margin: 10px auto 0 auto;
-      box-shadow: 0 3px 12px rgba(46,89,160,0.08);
-      display: block;
+      width: 90px; height: auto; border-radius: 15px;
+      background: rgba(249,249,255,0.09);
+      box-shadow: var(--neon);
+      margin-right: 24px;
+      border: 2px solid var(--accent);
+      transition: filter .18s;
     }
+    .logo-img:hover { filter: brightness(1.12); }
     .menu-list {
       display: flex;
       gap: 18px;
-      justify-content: center;
-      width: 100%;
-      margin-bottom: 2px;
-      margin-top: 3px;
+      flex: 1;
+      justify-content: flex-start;
+      align-items: center;
     }
     .menu-list a {
-      background: var(--card-bg);
+      background: var(--element-bg);
       color: var(--text-main);
-      padding: 13px 29px;
-      border-radius: 28px;
-      font-weight: 600;
-      font-size: 17px;
+      padding: 13px 30px; border-radius: 27px;
+      font-weight: 600; font-size: 17px;
       margin: 0 1.5px;
-      transition: background .25s, color .21s;
+      box-shadow: 0 1px 8px rgba(94,206,224,0.06);
+      letter-spacing: .01em;
+      border: 1px solid transparent;
+      transition: background .18s, color .13s, border .18s;
     }
     .menu-list a.active, .menu-list a:hover {
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      color: #fff;
+      background: linear-gradient(90deg, var(--primary), var(--accent) 96%);
+      color: #fff; border-color: var(--accent);
+      box-shadow: 0 0 12px #49bce8b0;
     }
     .menu-list a.contact-btn {
-      background: var(--primary); color: #fff;
+      background: var(--primary); color: #fff; border: 1.5px solid var(--accent);
+      font-weight: bold; letter-spacing: .06em;
+      box-shadow: var(--neon);
     }
-    /* Espaço do conteúdo abaixo do header fixo */
-    main { margin-top: calc(var(--menu-height) + 32px); }
-
-    /* ===== HERO HOME: GRID LAYOUT COM TÍTULO E CAMPANHAS ===== */
+    main { margin-top: calc(var(--menu-height) + 45px);}
+    /* =========== HERO TECH: GRID LAYOUT ============ */
     .hero-home {
       display: grid;
-      grid-template-columns: 1.7fr 1.1fr;
-      gap: 60px;
+      grid-template-columns: 1.7fr 1.12fr;
+      gap: 58px;
       align-items: start;
-      background: linear-gradient(118deg, #18213D 62%, #58C2A8 100%);
-      border-radius: 32px;
-      box-shadow: 0 20px 64px rgba(0, 0, 0, 0.38);
+      background: linear-gradient(116deg, #19263D 68%, #58C2A8 100%);
+      border-radius: 36px;
+      box-shadow: 0 24px 70px rgba(82,225,204,0.09), 0 12px 50px rgba(0,0,0,0.21);
       min-height: 520px;
       max-width: var(--container-max-width);
-      margin: 40px auto 44px auto;
-      padding: 76px 56px 74px 62px;
-      background-image: 
-        radial-gradient(rgba(46,89,160,0.13) 3%, transparent 10%),
-        radial-gradient(rgba(88,194,168,0.08) 5%, transparent 20%);
-      background-repeat: repeat;
-      background-size: 120px 120px, 190px 170px;
+      margin: 44px auto 54px auto;
+      padding: 88px 65px 88px 70px;
+      background-image: radial-gradient(rgba(88,194,168,0.11) 2%, transparent 15%),
+                        radial-gradient(rgba(46,89,160,0.13) 3%, transparent 29%);
+      background-repeat: repeat; background-size: 116px 116px, 150px 120px;
+      position: relative;
+      z-index: 1;
     }
-    /* === BLOCO ESQUERDO: TÍTULO, CHAMADA, PESQUISA, BOTOES === */
     .hero-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 20px;
-      min-width: 240px;
+      display: flex; flex-direction: column; justify-content: flex-start; gap: 22px; min-width: 260px;
+      height: 100%;
+      z-index: 1;
     }
     .hero-main-title {
-      font-size: clamp(2.7rem, 5vw, 3.7rem);
+      font-size: clamp(2.7rem, 7vw, 3.5rem);
       color: var(--primary-light);
       font-weight: 900;
-      margin: 0 0 5px 0;
-      letter-spacing: -0.015em;
-      line-height: 1.08;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.44);
+      margin: 0 0 2px 0;
+      letter-spacing: -0.017em;
+      line-height: 1.05;
+      text-shadow: 0 5px 44px #10185477, 2px 2px 10px #12235533;
+      filter: drop-shadow(0 1px 0 var(--accent));
     }
-    .hero-subtitle {
-      font-size: 2.1rem;
-      font-weight: 700;
-      margin: 14px 0 0 0;
-      color: var(--accent);
-      letter-spacing: .008em;
-      line-height: 1.18;
-    }
-    .hero-description {
-      color: var(--text-main);
-      font-size: 1.15rem;
-      line-height: 1.34;
-      margin-top: 13px;
-      max-width: 490px;
-      font-weight: 400;
-    }
-    /* === BARRA DE PESQUISA === */
-    .search-bar { display: flex; margin-top: 19px;}
+    .hero-subtitle { font-size: 1.5rem; font-weight: 700; margin: 16px 0 0 0; color: var(--accent); letter-spacing: .006em; line-height: 1.16;}
+    .hero-description { color: var(--text-main); font-size: 1.12rem; margin-top: 18px; max-width: 520px;}
+    .search-bar { display: flex; margin-top: 24px;}
     .search-bar input {
-      flex: 1; font-size: 18px; padding: 18px 24px;
-      border-radius: 30px 0 0 30px; border: none;
-      background: rgba(255,255,255,0.13);
-      color: white;
-      font-family: inherit;
+      flex: 1; font-size: 18px; padding: 19px 25px;
+      border-radius: 32px 0 0 32px; border: none; background: rgba(44,55,95,0.86);
+      color: #eef4ff; box-shadow: 0 0 0 1.5px var(--accent) inset;
+      font-family: inherit; letter-spacing: .02em;
     }
-    .search-bar input:focus { background: rgba(255,255,255,0.19);}
+    .search-bar input:focus { background: #222b4d; box-shadow: 0 0 0 2px var(--accent) inset;}
     .search-bar button {
-      background: var(--accent); color: #fff;
-      font-weight: 700; font-size: 24px;
-      border-radius: 0 30px 30px 0; border: none;
-      padding: 0 22px;
-      transition: background .21s;
+      background: var(--accent);
+      color: #fff; font-weight: 700; font-size: 25px;
+      border-radius: 0 32px 32px 0; border: none;
+      padding: 0 26px; transition: background .16s;
+      box-shadow: 0 4px 15px #44c2a850;
     }
     .search-bar button:hover { background: var(--primary-light);}
-    /* === BOTOES DESTAQUE HOME === */
-    .cta-row { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 23px;}
+    .cta-row { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 27px;}
     .btn-card {
-      background: var(--accent); color: #fff;
-      padding: 12px 0; border-radius: 21px;
-      font-weight: 700; min-width: 142px; text-align: center; flex: 1 1 160px;
+      background: linear-gradient(99deg, #54bcb1cc 80%, #2e59a0a0);
+      color: #fff; font-weight: 700; padding: 13px 0; border-radius: 21px;
+      min-width: 152px; font-size: 1.05rem; text-align: center; flex: 1 1 168px;
+      letter-spacing: .01em; outline: none; border: none;
+      box-shadow: 0 2px 16px #39e0b41c;
+      transition: background .14s;
     }
-    .btn-card:hover { background: var(--primary-light);}
-
-    /* ===== COLUNA/CAMPAHAS À DIREITA ===== */
+    .btn-card:hover { background: linear-gradient(90deg, #2E59A0, #58C2A8 96%);}
+    /* =========== PAINEL DE CAMPANHAS À DIREITA ============ */
     .campaign-sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      align-items: stretch;
-      min-width: 220px;
-      background: rgba(46,89,160,0.12);
-      border-radius: 32px;
-      padding: 32px 14px;
-      box-shadow: 0 4px 36px rgba(46,89,160,0.11);
-      justify-content: flex-start;
+      display: flex; flex-direction: column; gap: 24px; align-items: stretch;
+      min-width: 220px; background: var(--glass);
+      border-radius: 36px;
+      padding: 38px 18px;
+      box-shadow: 0 4px 36px #44AABB0e;
+      justify-content: flex-start; border: 1.5px solid var(--glass-strong);
     }
     .panel-title {
       color: var(--accent);
-      font-size: 1.16rem;
-      margin-bottom: 18px;
-      text-align: center;
-      font-weight: 900;
-      border-bottom: 1px solid var(--accent);
-      padding-bottom: 8px;
-      letter-spacing: .10em;
+      font-size: 1.09rem; font-weight: 900;
+      margin-bottom: 20px;
+      letter-spacing: .11em;
       text-transform: uppercase;
+      border-bottom: 1.5px solid var(--accent);
+      text-align: center; padding-bottom: 8px;
+      user-select: none;
     }
     .campaign-btn {
-      background: rgba(46,89,160,0.19);
+      background: var(--element-bg);
       color: #EAF2FF;
       border-radius: 22px;
-      padding: 21px 0;
+      padding: 23px 0;
       text-align: center;
-      font-weight: 700;
-      font-size: 1.12rem;
-      transition: background .18s;
+      font-weight: 700; font-size: 1.13rem;
+      box-shadow: 0 2px 10px #39e0b410;
       border: none; outline: none;
-      cursor: pointer;
-      box-shadow: 0 3px 13px rgba(88, 194, 168, 0.10);
-      margin-bottom: 2px;
-      display: block;
-      text-decoration: none;
+      cursor: pointer; text-decoration: none;
+      margin-bottom: 2px; letter-spacing: .02em;
+      transition: background .15s, color .15s;
     }
     .campaign-btn:hover {
-      background: linear-gradient(90deg,#58C2A8,#4A79D3);
-      color: #fff;
+      background: linear-gradient(90deg,#58C2A8,#4A79D3); color: #fff;
     }
 
-    /* ===== GRID DE PRODUTOS/AFILIADOS ===== */
+    /* =========== GRID DE PRODUTOS/AFILIADOS ============ */
     .card-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin-top: 38px;
-      justify-content: flex-start;
+      display: flex; flex-wrap: wrap; gap: 25px; margin-top: 32px; justify-content: flex-start;
     }
     .card {
-      background: var(--card-bg);
-      border-radius: var(--border-radius);
-      padding: 21px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.13);
-      min-width: 220px;
-      max-width: 330px;
-      color: var(--text-main);
+      background: var(--element-bg); border-radius: var(--border-radius);
+      padding: 24px; box-shadow: 0 2px 16px #1E3B6214;
+      min-width: 222px; max-width: 340px; color: var(--text-main);
       display: flex; flex-direction: column; align-items: center; text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;
-      margin-bottom: 12px;
+      transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; margin-bottom: 12px;
     }
-    .card:hover, .card:focus { transform: translateY(-7px); box-shadow: 0 10px 32px rgba(88,194,168,0.14);}
-    .card img { width: 85px; height: auto; margin-bottom: 13px; border-radius: 12px; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.12)); }
-    .card h3 { font-weight: 800; font-size: 1.12rem; margin-bottom: 12px; color: var(--primary-light);}
-    .card p { font-size: 0.98rem; line-height: 1.28; color: var(--text-muted);}
-    section { margin-bottom: 60px;}
+    .card:hover, .card:focus { transform: translateY(-7px); box-shadow: 0 10px 28px #2adbcb18;}
+    .card img { width: 79px; height: auto; margin-bottom: 13px; border-radius: 15px; filter: drop-shadow(0 2px 4px #11223325);}
+    .card h3 { font-weight: 800; font-size: 1.11rem; margin-bottom: 12px; color: var(--primary-light);}
+    .card p { font-size: 0.98rem; color: var(--text-muted);}
+    section { margin-bottom: 55px;}
 
-    /* ===== RODAPÉ ===== */
-    footer { text-align: center; padding: 27px 12px; color: var(--accent); font-weight: 600; font-size: 1.08rem;}
-
-    /* ===== RESPONSIVIDADE ===== */
+    footer { text-align: center; padding: 32px 16px; color: var(--accent); font-weight: 600; font-size: 1.08rem; border-top: 1.5px solid var(--glass-strong);}
     @media (max-width: 1000px) {
-      .container { padding: 0 11px;}
-      .logo-img { width: 85px;}
-      .menu-list { gap: 8px;}
-      .hero-home { grid-template-columns: 1fr; padding: 32px 4vw; gap: 21px;}
-      .campaign-sidebar { margin-top: 33px;}
-      .card-list { justify-content: center;}
-      main { margin-top: 202px;}
+      .container { padding: 0 6px;}
+      .logo-img { width: 62px; margin-left: 0;}
+      .menu-list { gap: 4px; }
+      .hero-home { grid-template-columns: 1fr; padding: 28px 4vw 38px 4vw; gap: 20px;}
+      .campaign-sidebar { margin-top: 22px;}
       .panel-title, .hero-main-title, .hero-subtitle { text-align: center; }
     }
-    @media (max-width: 600px) {
-      .panel-title { font-size: .98rem;}
-      .campaign-btn { font-size: 0.97rem; padding: 11px 0;}
-      .card h3 { font-size: .98rem; }
-      .hero-main-title { font-size: 1.35rem; }
-      .hero-subtitle { font-size: 1.13rem;}
-      .container { padding: 0 3vw;}
+    @media (max-width: 620px) {
+      .panel-title { font-size: .95rem;}
+      .campaign-btn { font-size: 0.92rem; padding: 12px 0;}
+      .card h3 { font-size: .96rem; }
+      .hero-main-title { font-size: 1.21rem; }
+      .container { padding: 0 1vw;}
+      .hero-home { padding: 10vw 2vw;}
     }
   </style>
 </head>
 <body>
-  <!-- =================== HEADER ==================== -->
+  <!-- =================== HEADER MODERNO E TECH ==================== -->
   <header class="topbar">
-    <!-- Logo centralizada -->
-    <img class="logo-img" src="/assets/Logo.png" alt="Logo Mais Sabiamente" onerror="this.onerror=null;this.src='https://placehold.co/120x50?text=Logo';" />
-    <!-- Menu horizontal -->
+    <div class="logo-box">
+      <img class="logo-img" src="/assets/Logo.png" alt="Logo Mais Sabiamente" onerror="this.onerror=null;this.src='https://placehold.co/120x50?text=Logo';" />
+    </div>
     <nav class="menu-list">
       <a class="active" href="#">Home</a>
       <a href="#departamentos">Departamentos</a>
@@ -291,15 +260,15 @@
   </header>
 
   <main class="container">
-    <!-- ========== HOME (HERO) ========== -->
+    <!-- =================== HERO/GRID - VISUAL TECH ==================== -->
     <section class="hero-home">
       <!-- BLOCO PRINCIPAL À ESQUERDA -->
       <div class="hero-content">
         <h1 class="hero-main-title">Sabiamente</h1>
         <h2 class="hero-subtitle">Curadoria profissional para viver melhor</h2>
         <p class="hero-description">
-          Conteúdo confiável, navegação fácil por departamentos, campanhas e afiliados em destaque.
-          <br> Acesse as melhores oportunidades, produtos e links preservados.
+          Conteúdo confiável, navegação fácil por departamentos, campanhas e afiliados em destaque.<br>
+          Acesse as melhores oportunidades, produtos e links preservados.
         </p>
         <!-- ===== BARRA DE PESQUISA ===== -->
         <form class="search-bar" action="/busca" method="get" autocomplete="off">
@@ -314,7 +283,7 @@
           <a class="btn-card" href="#links">Links preservados</a>
         </div>
       </div>
-      <!-- BLOCO DIREITA: PAINEL DE CAMPANHAS -->
+      <!-- BLOCO À DIREITA: PAINEL DE CAMPANHAS -->
       <aside class="campaign-sidebar">
         <div class="panel-title">Campanhas</div>
         <a href="https://mais.app/jROmOw" class="campaign-btn">Desodorantes</a>
@@ -326,7 +295,7 @@
       </aside>
     </section>
 
-    <!-- ========== GRID DE PRODUTOS/AFILIADOS ========== -->
+    <!-- ========== CARDS DE PRODUTOS/AFILIADOS ========== -->
     <section id="produtos">
       <div class="card-list">
         <article class="card">
@@ -339,37 +308,36 @@
           <h3>Produto Afiliado 2</h3>
           <p>Bastante procurado, breve descrição do produto 2.</p>
         </article>
-        <!-- Adicione outros cards conforme expandir a curadoria -->
+        <!-- Adicione outros cards conforme expansão -->
       </div>
     </section>
 
-    <!-- ========== ÁREAS DE EXPANSÃO PARA MANUTENÇÃO FUTURA ========== -->
+    <!-- ÁREAS EXPANSÍVEIS/EDITÁVEIS PARA SEU PROJETO -->
     <section id="departamentos">
-      <!-- Coloque cards para departamentos, categorias, serviços etc -->
+      <!-- Cards para departamentos, categorias, serviços -->
     </section>
     <section id="cuidados">
-      <!-- Cards/cuidados diários, tópicos de interesse -->
+      <!-- Cards/cuidados diários -->
     </section>
     <section id="tecnologia">
-      <!-- Cards/apps/reviews/ferramentas digitais -->
+      <!-- Cards/apps/reviews/etc. -->
     </section>
     <section id="livros">
       <!-- Cards para livros, ebooks, resenhas -->
     </section>
     <section id="saude">
-      <!-- Dicas, artigos e campanhas de saúde/bem-estar -->
+      <!-- Dicas, campanhas, saúde/bem-estar -->
     </section>
     <section id="marcas">
       <!-- Marcas afiliadas, destaque de parcerias -->
     </section>
     <section id="sobre">
-      <!-- Sobre, missão, equipe, contato, política de privacidade -->
+      <!-- Sobre, missão, equipe, contato, política -->
     </section>
     <section id="contato">
-      <!-- Formulário de contato, e-mail, redes sociais -->
+      <!-- Formulário de contato, redes sociais, e-mails -->
     </section>
   </main>
-  <!-- ========== RODAPÉ - MANTENHA PARA CRÉDITO E DIREITOS ========== -->
   <footer>
     © 2025 Mais Sabiamente — Curadoria profissional.
   </footer>
