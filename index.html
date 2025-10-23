@@ -4,247 +4,279 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mais Sabiamente — Curadoria Profissional</title>
-  <!-- Paleta tech, tons mesclados à logo -->
+  <!--
+    Paleta tech + glass + visual harmônico com a logo.
+    Estrutura MAXIMAMENTE ORGANIZADA e COMENTADA.
+  -->
   <style>
     :root {
-      --primary: #2E59A0;           /* Azul logo */
-      --primary-light: #4A79D3;     /* Azul gradiente/destaque */
-      --accent: #58C2A8;            /* Verde água, da logo */
-      --background: #181E2A;        /* Fundo azul tech */
-      --element-bg: rgba(40,66,104,0.27); /* Cards/menus painel tech */
-      --glass: rgba(44,55,95, 0.72);
-      --glass-strong: rgba(64,120,175,0.18);
+      --primary: #2E59A0;            /* Azul logo */
+      --primary-light: #4A79D3;      /* Azul secundário */
+      --accent: #58C2A8;             /* Verde logo */
+      --background: #181E2A;         /* Fundo escuro tech */
+      --element-bg: rgba(40,66,104,0.29);
+      --glass: rgba(36,51,95,0.78);
       --text-main: #EAF2FF;
       --text-muted: #8ca2bc;
-      --border-radius: 30px;
-      --container-max-width: 1220px;
-      --menu-height: 130px;
-      --neon: 0 0 10px #58C2A8,0 0 4px #4A79D3;
+      --border-radius: 28px;
+      --container-max-width: 1180px;
+      --menu-height: 112px;
+      --neon: 0 0 9px #58C2A8, 0 0 3px #4A79D3;
     }
     *, *::before, *::after { box-sizing: border-box; }
     html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--background) radial-gradient(ellipse at 70% 0, #19355099 0%, transparent 80%);
+      margin: 0; padding: 0;
+      background: var(--background)
+                  radial-gradient(ellipse 90vw 70vw at 70% 0, #22437022 0%, transparent 100%);
       color: var(--text-main);
       font-family: 'Poppins', 'Inter', Arial, sans-serif;
       overflow-x: hidden;
     }
     body::before {
-      /* Matrix Dots/Efeito pattern tech */
+      /* Matrix dots/effect tech background */
       content: '';
       pointer-events: none;
       position: fixed;
       z-index: 0;
       left: 0; top: 0; width: 100vw; height: 100vh;
-      background-image: radial-gradient(rgba(88,194,168,0.075) 1px, transparent 0px), radial-gradient(rgba(46,89,160,0.07) 1.3px, transparent 2px);
-      background-size: 46px 46px, 86px 86px;
-      opacity: 0.5;
+      background-image: radial-gradient(rgba(88,194,168,0.07) 1px, transparent 0px), radial-gradient(rgba(46,89,160,0.06) 1.4px, transparent 2px);
+      background-size: 36px 36px, 90px 90px;
+      opacity: 0.43;
     }
-    a { color: var(--accent); text-decoration: none; transition: color .23s;}
+    a { color: var(--accent); text-decoration: none; transition: color .21s;}
     a:hover, a:focus { color: var(--primary-light); outline: none; }
+    /* ====== CONTAINER CENTRAL ====== */
     .container {
       max-width: var(--container-max-width);
       margin: 0 auto;
-      padding: 0 3vw;
+      padding: 0 2.5vw;
       position: relative;
       z-index: 1;
     }
-
-    /* ========= TOPBAR TECH ========= */
+    /* ====== HEADER FIXO LOGO ESQUERDA, MENU HORIZONTAL ====== */
     .topbar {
       width: 100vw;
-      position: fixed;
-      top: 0; left: 0;
-      z-index: 1000;
-      background: linear-gradient(106deg, #161E30 60%, #193550 99%);
-      box-shadow: 0 5px 38px rgba(88, 194, 168, 0.07);
+      background: linear-gradient(106deg, #19253c 63%, #153150 99%);
+      position: fixed; top: 0; left: 0; z-index: 1000;
+      box-shadow: 0 6px 29px #44c2a827;
       min-height: var(--menu-height);
-      padding: 10px 0 0 0;
-      display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0;
-      border-bottom: 1.5px solid var(--glass-strong);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0; gap: 0;
+      border-bottom: 2px solid rgba(72,228,211,0.07);
+      padding-bottom: 2px;
     }
     .logo-box {
-      display: flex; align-items: center; justify-content: left;
-      height: 80px; padding-left: 34px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: flex-start;
+      height: 76px; min-width: 140px;
+      padding-left: 32px; padding-right: 18px;
     }
     .logo-img {
-      width: 90px; height: auto; border-radius: 15px;
-      background: rgba(249,249,255,0.09);
-      box-shadow: var(--neon);
-      margin-right: 24px;
+      width: 77px; height: 77px; object-fit: contain;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.065);
+      box-shadow: 0px 0px 0px 4px #22304d18, var(--neon);
       border: 2px solid var(--accent);
-      transition: filter .18s;
+      transition: filter .18s, box-shadow .21s;
     }
-    .logo-img:hover { filter: brightness(1.12); }
+    .logo-img:hover { filter: brightness(1.08); box-shadow: 0 0 0 6px #61e3d920;}
+    /* MENU em linha, fluido e centralizado verticalmente */
     .menu-list {
       display: flex;
       gap: 18px;
-      flex: 1;
-      justify-content: flex-start;
       align-items: center;
+      width: 100%;
+      margin-left: 16px;
     }
     .menu-list a {
       background: var(--element-bg);
       color: var(--text-main);
-      padding: 13px 30px; border-radius: 27px;
-      font-weight: 600; font-size: 17px;
+      padding: 14px 30px;
+      border-radius: 23px;
+      font-weight: 600;
+      font-size: 17px;
       margin: 0 1.5px;
-      box-shadow: 0 1px 8px rgba(94,206,224,0.06);
-      letter-spacing: .01em;
+      box-shadow: 0 1px 8px rgba(94,206,224,0.03);
       border: 1px solid transparent;
-      transition: background .18s, color .13s, border .18s;
+      letter-spacing: 0.01em;
+      transition: background .18s, color .14s, border .14s, box-shadow .13s;
     }
     .menu-list a.active, .menu-list a:hover {
-      background: linear-gradient(90deg, var(--primary), var(--accent) 96%);
-      color: #fff; border-color: var(--accent);
-      box-shadow: 0 0 12px #49bce8b0;
+      background: linear-gradient(89deg, var(--primary), var(--accent) 96%);
+      color: #fff;
+      border-color: var(--accent);
+      box-shadow: 0 0 7px #53e5f3ad;
     }
     .menu-list a.contact-btn {
-      background: var(--primary); color: #fff; border: 1.5px solid var(--accent);
-      font-weight: bold; letter-spacing: .06em;
+      background: var(--primary);
+      color: #fff;
+      border: 1.5px solid var(--accent);
+      font-weight: bold; letter-spacing: .05em;
       box-shadow: var(--neon);
     }
-    main { margin-top: calc(var(--menu-height) + 45px);}
-    /* =========== HERO TECH: GRID LAYOUT ============ */
+    main { margin-top: calc(var(--menu-height) + 32px);}
+    /* ======= GRID HERO, EFEITO GLASS E TECH ======= */
     .hero-home {
       display: grid;
-      grid-template-columns: 1.7fr 1.12fr;
-      gap: 58px;
+      grid-template-columns: 1.6fr 1.15fr;
+      gap: 60px;
       align-items: start;
-      background: linear-gradient(116deg, #19263D 68%, #58C2A8 100%);
+      background: linear-gradient(116deg, #18243B 70%, #2E59A088 100%);
       border-radius: 36px;
-      box-shadow: 0 24px 70px rgba(82,225,204,0.09), 0 12px 50px rgba(0,0,0,0.21);
-      min-height: 520px;
+      box-shadow: 0 20px 62px #57e5c712, 0 13px 54px #12344239;
+      min-height: 540px;
       max-width: var(--container-max-width);
-      margin: 44px auto 54px auto;
-      padding: 88px 65px 88px 70px;
-      background-image: radial-gradient(rgba(88,194,168,0.11) 2%, transparent 15%),
-                        radial-gradient(rgba(46,89,160,0.13) 3%, transparent 29%);
-      background-repeat: repeat; background-size: 116px 116px, 150px 120px;
-      position: relative;
-      z-index: 1;
+      margin: 52px auto 50px auto; padding: 90px 68px 90px 74px;
+      background-image: radial-gradient(rgba(46,89,160,0.11) 4%, transparent 12%),
+                        radial-gradient(rgba(88,194,168,0.11) 3%, transparent 24%);
+      background-repeat: repeat; background-size: 116px 110px, 160px 120px;
+      position: relative; z-index: 1;
     }
+    /* BLOCO ESQUERDO HERO: TITULO, SUBTITULO, PESQUISA, BOTOES */
     .hero-content {
-      display: flex; flex-direction: column; justify-content: flex-start; gap: 22px; min-width: 260px;
-      height: 100%;
-      z-index: 1;
+      display: flex; flex-direction: column; align-items: flex-start;
+      gap: 20px; min-width: 270px; z-index: 1;
+      margin-left: 15px;
     }
     .hero-main-title {
-      font-size: clamp(2.7rem, 7vw, 3.5rem);
+      font-size: clamp(2.95rem, 7vw, 4.2rem);
       color: var(--primary-light);
       font-weight: 900;
-      margin: 0 0 2px 0;
-      letter-spacing: -0.017em;
-      line-height: 1.05;
-      text-shadow: 0 5px 44px #10185477, 2px 2px 10px #12235533;
+      margin: 0 0 0 0; letter-spacing: -0.014em; line-height: 1.08;
+      text-shadow: 0 5px 38px #202e6294, 2px 2px 8px #1646882f, var(--neon);
       filter: drop-shadow(0 1px 0 var(--accent));
+      transition: font-size .13s;
     }
-    .hero-subtitle { font-size: 1.5rem; font-weight: 700; margin: 16px 0 0 0; color: var(--accent); letter-spacing: .006em; line-height: 1.16;}
-    .hero-description { color: var(--text-main); font-size: 1.12rem; margin-top: 18px; max-width: 520px;}
-    .search-bar { display: flex; margin-top: 24px;}
+    .hero-subtitle {
+      font-size: 1.32rem;
+      font-weight: 700;
+      margin: 18px 0 0 0;
+      color: var(--accent);
+      letter-spacing: .014em;
+      line-height: 1.24;
+    }
+    .hero-description { color: var(--text-main); font-size: 1.09rem; margin-top: 13px; max-width: 500px;}
+    .search-area {
+      margin-top: 24px; width: 100%;
+    }
+    .search-bar {
+      display: flex; box-shadow: 0 4px 23px #54afbc06; border-radius: 32px; background: var(--glass);
+      border: 1.6px solid #4A79D3;
+      overflow: hidden; margin-bottom: 15px;
+    }
     .search-bar input {
-      flex: 1; font-size: 18px; padding: 19px 25px;
-      border-radius: 32px 0 0 32px; border: none; background: rgba(44,55,95,0.86);
-      color: #eef4ff; box-shadow: 0 0 0 1.5px var(--accent) inset;
-      font-family: inherit; letter-spacing: .02em;
+      flex: 1; font-size: 17.5px; padding: 20px 24px;
+      border: none; background: transparent;
+      color: #eef4ff; font-family: inherit; letter-spacing: .013em;
+      background: transparent;
     }
-    .search-bar input:focus { background: #222b4d; box-shadow: 0 0 0 2px var(--accent) inset;}
+    .search-bar input:focus { background: #212a49; }
     .search-bar button {
-      background: var(--accent);
-      color: #fff; font-weight: 700; font-size: 25px;
-      border-radius: 0 32px 32px 0; border: none;
-      padding: 0 26px; transition: background .16s;
-      box-shadow: 0 4px 15px #44c2a850;
+      background: linear-gradient(93deg,#58C2A8,#4A79D3);
+      color: #fff; font-weight: 700; font-size: 27px;
+      border: none; padding: 0 24px;
+      cursor: pointer; border-radius: 0;
+      transition: filter .13s,background .15s;
+      box-shadow: 0 3px 16px #58c2a824;
     }
-    .search-bar button:hover { background: var(--primary-light);}
-    .cta-row { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 27px;}
+    .search-bar button:hover { filter: brightness(1.09); }
+    /* Botoes principais - destaque, gradiente tech */
+    .cta-row { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 15px;}
     .btn-card {
       background: linear-gradient(99deg, #54bcb1cc 80%, #2e59a0a0);
       color: #fff; font-weight: 700; padding: 13px 0; border-radius: 21px;
-      min-width: 152px; font-size: 1.05rem; text-align: center; flex: 1 1 168px;
-      letter-spacing: .01em; outline: none; border: none;
-      box-shadow: 0 2px 16px #39e0b41c;
+      min-width: 159px; font-size: 1.06rem; text-align: center; flex: 1 1 175px;
+      box-shadow: 0 2px 12px #39e0b41f;
       transition: background .14s;
+      letter-spacing: .011em;
+      outline: none; border: none;
     }
-    .btn-card:hover { background: linear-gradient(90deg, #2E59A0, #58C2A8 96%);}
-    /* =========== PAINEL DE CAMPANHAS À DIREITA ============ */
+    .btn-card:hover { background: linear-gradient(90deg, #2E59A0, #58C2A8 97%);}
+    /* PAINEL LATERAL DE CAMPANHAS - EFEITO CARTAO GLASS */
     .campaign-sidebar {
-      display: flex; flex-direction: column; gap: 24px; align-items: stretch;
-      min-width: 220px; background: var(--glass);
+      display: flex; flex-direction: column; gap: 26px; align-items: stretch; min-width: 220px;
+      background: var(--glass);
       border-radius: 36px;
-      padding: 38px 18px;
-      box-shadow: 0 4px 36px #44AABB0e;
-      justify-content: flex-start; border: 1.5px solid var(--glass-strong);
+      padding: 44px 22px;
+      box-shadow: 0 6px 36px #39e0b413;
+      justify-content: flex-start; border: 1.5px solid #4A79D3;
     }
     .panel-title {
       color: var(--accent);
-      font-size: 1.09rem; font-weight: 900;
-      margin-bottom: 20px;
-      letter-spacing: .11em;
+      font-size: 1.19rem; font-weight: 900;
+      margin-bottom: 22px; letter-spacing: .13em;
       text-transform: uppercase;
       border-bottom: 1.5px solid var(--accent);
-      text-align: center; padding-bottom: 8px;
+      text-align: center; padding-bottom: 9px;
       user-select: none;
     }
     .campaign-btn {
       background: var(--element-bg);
       color: #EAF2FF;
-      border-radius: 22px;
+      border-radius: 24px;
       padding: 23px 0;
       text-align: center;
-      font-weight: 700; font-size: 1.13rem;
-      box-shadow: 0 2px 10px #39e0b410;
+      font-weight: 700; font-size: 1.11rem;
+      box-shadow: 0 2px 9px #2290b218;
       border: none; outline: none;
       cursor: pointer; text-decoration: none;
-      margin-bottom: 2px; letter-spacing: .02em;
-      transition: background .15s, color .15s;
+      margin-bottom: 6px; letter-spacing: .015em;
+      transition: background .14s, color .13s;
     }
     .campaign-btn:hover {
       background: linear-gradient(90deg,#58C2A8,#4A79D3); color: #fff;
     }
-
-    /* =========== GRID DE PRODUTOS/AFILIADOS ============ */
+    /* CARDS DE PRODUTOS AFILIADOS */
     .card-list {
-      display: flex; flex-wrap: wrap; gap: 25px; margin-top: 32px; justify-content: flex-start;
+      display: flex; flex-wrap: wrap; gap: 27px; margin-top: 38px; justify-content: flex-start;
     }
     .card {
-      background: var(--element-bg); border-radius: var(--border-radius);
-      padding: 24px; box-shadow: 0 2px 16px #1E3B6214;
+      background: var(--element-bg);
+      border-radius: var(--border-radius);
+      padding: 26px;
+      box-shadow: 0 4px 19px #23335522, 0 2px 10px #4A79D321;
       min-width: 222px; max-width: 340px; color: var(--text-main);
       display: flex; flex-direction: column; align-items: center; text-align: center;
       transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; margin-bottom: 12px;
     }
-    .card:hover, .card:focus { transform: translateY(-7px); box-shadow: 0 10px 28px #2adbcb18;}
-    .card img { width: 79px; height: auto; margin-bottom: 13px; border-radius: 15px; filter: drop-shadow(0 2px 4px #11223325);}
-    .card h3 { font-weight: 800; font-size: 1.11rem; margin-bottom: 12px; color: var(--primary-light);}
-    .card p { font-size: 0.98rem; color: var(--text-muted);}
-    section { margin-bottom: 55px;}
-
-    footer { text-align: center; padding: 32px 16px; color: var(--accent); font-weight: 600; font-size: 1.08rem; border-top: 1.5px solid var(--glass-strong);}
-    @media (max-width: 1000px) {
-      .container { padding: 0 6px;}
-      .logo-img { width: 62px; margin-left: 0;}
-      .menu-list { gap: 4px; }
-      .hero-home { grid-template-columns: 1fr; padding: 28px 4vw 38px 4vw; gap: 20px;}
-      .campaign-sidebar { margin-top: 22px;}
-      .panel-title, .hero-main-title, .hero-subtitle { text-align: center; }
+    .card:hover, .card:focus {
+      transform: translateY(-7px); box-shadow: 0 11px 28px #2adbcb18;
+      border: 1.6px solid var(--primary-light);
     }
-    @media (max-width: 620px) {
-      .panel-title { font-size: .95rem;}
-      .campaign-btn { font-size: 0.92rem; padding: 12px 0;}
-      .card h3 { font-size: .96rem; }
-      .hero-main-title { font-size: 1.21rem; }
+    .card img { width: 82px; height: auto; margin-bottom: 13px; border-radius: 15px; filter: drop-shadow(0 2px 4px #134e9442);}
+    .card h3 { font-weight: 800; font-size: 1.10rem; margin-bottom: 12px; color: var(--primary-light);}
+    .card p { font-size: 1.02rem; color: var(--text-muted);} section { margin-bottom: 60px;}
+    /* RODAPÉ CLEAN */
+    footer { text-align: center; padding: 36px 24px; color: var(--accent); font-weight: 600; font-size: 1.09rem; border-top: 2px solid #2e59a04a; background: #181E2A;}
+
+    /* RESPONSIVIDADE, MOBILE E TABLET */
+    @media (max-width: 1100px) {
+      .hero-home { grid-template-columns: 1fr; padding: 9vw 3vw 11vw 3vw; gap: 20px;}
+      .campaign-sidebar { margin-top: 22px;}
+      .container { padding: 0 0.5vw;}
+      .logo-box { padding-left: 9px; }
+      .hero-content { margin-left: 1vw;}
+      .menu-list { flex-wrap: wrap; gap: 6px;}
+      main { margin-top: 124px;}
+    }
+    @media (max-width: 630px) {
+      .panel-title { font-size: 1rem;}
+      .campaign-btn { font-size: .96rem; padding: 14px 0;}
+      .card h3 { font-size: .93rem;} .btn-card { min-width: 100px;}
+      .hero-main-title { font-size: 1.23rem;}
       .container { padding: 0 1vw;}
-      .hero-home { padding: 10vw 2vw;}
+      .logo-img { width: 54px; height: 54px;}
+      .hero-home { padding: 7vw 0.7vw;}
     }
   </style>
 </head>
 <body>
-  <!-- =================== HEADER MODERNO E TECH ==================== -->
+  <!-- ========== HEADER MODERNO, LOGO NO CANTO ESQUERDO ========== -->
   <header class="topbar">
     <div class="logo-box">
-      <img class="logo-img" src="/assets/Logo.png" alt="Logo Mais Sabiamente" onerror="this.onerror=null;this.src='https://placehold.co/120x50?text=Logo';" />
+      <img class="logo-img" src="/assets/Logo.png" alt="Logo Mais Sabiamente" onerror="this.onerror=null;this.src='https://placehold.co/88x88?text=Logo';" />
     </div>
     <nav class="menu-list">
       <a class="active" href="#">Home</a>
@@ -258,11 +290,14 @@
       <a href="#contato" class="contact-btn">Contato</a>
     </nav>
   </header>
-
   <main class="container">
-    <!-- =================== HERO/GRID - VISUAL TECH ==================== -->
+    <!-- ========== HERO/GRID ==========
+      Á esquerda: Título, subtítulo e busca
+      À direita: Campanhas
+      Fundo glass, tech premium
+    -->
     <section class="hero-home">
-      <!-- BLOCO PRINCIPAL À ESQUERDA -->
+      <!-- Bloco texto do destaque -->
       <div class="hero-content">
         <h1 class="hero-main-title">Sabiamente</h1>
         <h2 class="hero-subtitle">Curadoria profissional para viver melhor</h2>
@@ -270,20 +305,22 @@
           Conteúdo confiável, navegação fácil por departamentos, campanhas e afiliados em destaque.<br>
           Acesse as melhores oportunidades, produtos e links preservados.
         </p>
-        <!-- ===== BARRA DE PESQUISA ===== -->
-        <form class="search-bar" action="/busca" method="get" autocomplete="off">
-          <input type="search" name="q" placeholder="Pesquise produtos, categorias ou marcas…"/>
-          <button type="submit">🔍</button>
-        </form>
-        <!-- ===== BOTOES DE DESTAQUE ===== -->
-        <div class="cta-row">
-          <a class="btn-card" href="#departamentos">Departamentos</a>
-          <a class="btn-card" href="#cuidados">Cuidados Diários</a>
-          <a class="btn-card" href="#premium">Visual premium</a>
-          <a class="btn-card" href="#links">Links preservados</a>
+        <div class="search-area">
+          <!-- Barra de pesquisa moderna -->
+          <form class="search-bar" action="/busca" method="get" autocomplete="off">
+            <input type="search" name="q" placeholder="Pesquise produtos, categorias ou marcas…" />
+            <button type="submit">🔍</button>
+          </form>
+          <!-- Botões principais tech -->
+          <div class="cta-row">
+            <a class="btn-card" href="#departamentos">Departamentos</a>
+            <a class="btn-card" href="#cuidados">Cuidados Diários</a>
+            <a class="btn-card" href="#premium">Visual premium</a>
+            <a class="btn-card" href="#links">Links preservados</a>
+          </div>
         </div>
       </div>
-      <!-- BLOCO À DIREITA: PAINEL DE CAMPANHAS -->
+      <!-- Painel Campanhas visual glass -->
       <aside class="campaign-sidebar">
         <div class="panel-title">Campanhas</div>
         <a href="https://mais.app/jROmOw" class="campaign-btn">Desodorantes</a>
@@ -294,7 +331,6 @@
         <a href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty" class="campaign-btn">Kits</a>
       </aside>
     </section>
-
     <!-- ========== CARDS DE PRODUTOS/AFILIADOS ========== -->
     <section id="produtos">
       <div class="card-list">
@@ -308,35 +344,18 @@
           <h3>Produto Afiliado 2</h3>
           <p>Bastante procurado, breve descrição do produto 2.</p>
         </article>
-        <!-- Adicione outros cards conforme expansão -->
+        <!-- Adicione outros cards conforme sua curadoria crescer -->
       </div>
     </section>
-
-    <!-- ÁREAS EXPANSÍVEIS/EDITÁVEIS PARA SEU PROJETO -->
-    <section id="departamentos">
-      <!-- Cards para departamentos, categorias, serviços -->
-    </section>
-    <section id="cuidados">
-      <!-- Cards/cuidados diários -->
-    </section>
-    <section id="tecnologia">
-      <!-- Cards/apps/reviews/etc. -->
-    </section>
-    <section id="livros">
-      <!-- Cards para livros, ebooks, resenhas -->
-    </section>
-    <section id="saude">
-      <!-- Dicas, campanhas, saúde/bem-estar -->
-    </section>
-    <section id="marcas">
-      <!-- Marcas afiliadas, destaque de parcerias -->
-    </section>
-    <section id="sobre">
-      <!-- Sobre, missão, equipe, contato, política -->
-    </section>
-    <section id="contato">
-      <!-- Formulário de contato, redes sociais, e-mails -->
-    </section>
+    <!-- ======= ÁREAS DE EXPANSÃO NO PROJETO ======= -->
+    <section id="departamentos"></section>
+    <section id="cuidados"></section>
+    <section id="tecnologia"></section>
+    <section id="livros"></section>
+    <section id="saude"></section>
+    <section id="marcas"></section>
+    <section id="sobre"></section>
+    <section id="contato"></section>
   </main>
   <footer>
     © 2025 Mais Sabiamente — Curadoria profissional.
