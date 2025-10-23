@@ -4,21 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mais Sabiamente — Curadoria Profissional</title>
-  <!-- Fontes premium arredondadas -->
+  <!-- Fonte arredondada premium, inspiração na logo -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&family=Quicksand:wght@600&display=swap" rel="stylesheet">
   <style>
-    /* PALETA e EFEITO BARRA CAMPANHAS */
     :root {
       --main-black: #18191b;
-      --white: #fff;
-      --offwhite: #f7fafb;
-      --gray-light: #e4e8ee;
-      --gray-line: #b6bec9;
+      --white: #eff2f6;
+      --offwhite: #eef5fa;
+      --gray-light: #293441;
+      --gray-line: #2e3443;
       --blue-pool: #41e3d7;
-      --blue-accent: #2eb8be;
-      --blue-dark: #18243A;
-      --blue-superdark: #121c2b;
-      --blue-mesclado: linear-gradient(97deg,#18243A 60%, #283544 100%);
+      --blue-accent: #33b7be;
+      --blue-dark: #16202d;
+      --blue-superdark: #141b22;
+      --blue-mesclado: linear-gradient(93deg,#16202d 60%, #222c36 100%);
       --border-radius: 22px;
     }
     html, body {
@@ -33,181 +32,171 @@
     body::before {
       content:'';
       position:fixed;z-index:0;left:0;top:0;width:100vw;height:100vh;
-      background:radial-gradient(circle at 70% 18%,#2eb8be26 0,#121c2b 70%,#23334a 100%);
-      opacity:.33;pointer-events:none;
+      background:radial-gradient(circle at 70% 18%,#1b93ad33 0,#1d2937 70%,#293441 100%);
+      opacity:.21;pointer-events:none;
     }
     .container {
-      max-width:1200px;
+      max-width:1170px;
       margin:0 auto;
       padding:0 2vw; position:relative; z-index:1;
     }
-    /* ========== HEADER ========== */
+    /* ================= HEADER (LOGO + MENU) ============== */
     .topbar {
-      width:100vw;background:var(--blue-mesclado);
-      border-bottom:2px solid #355a725c;
-      box-shadow: 0 4px 16px #04111a24;
-      position:fixed;top:0;left:0;z-index:1000;
-      display:flex;flex-direction:row;align-items:center;height:88px;
-      padding-left:0;
+      width:100vw;background:var(--blue-superdark);
+      border-bottom:2px solid #3feee555;
+      box-shadow: 0 3px 19px #16202d33;
+      position:fixed;top:0;left:0;z-index:1100;
+      display:flex;align-items:center;min-height:76px;
     }
     .header-inner {
-      max-width:1200px;margin:0 auto;width:100%;
-      display:flex;align-items:center;justify-content:flex-start;height:88px;padding:0 20px;
+      max-width:1170px;
+      margin:0 auto;width:100%;
+      display:flex;align-items:center;justify-content:flex-start;
+      height:76px;
+      padding:0 22px;
     }
     .logo-box {
-      display:flex;align-items:center;min-width:90px;margin-right:26px;height:80px;
+      display:flex;align-items:center;min-width:68px;margin-right:24px;height:70px;
     }
     .logo-img {
-      width:59px;height:59px;object-fit:contain;background:#fff;
-      border-radius:19px;box-shadow:0 2px 16px #41e3d841;
-      border:2.3px solid var(--white);
+      width:51px;height:51px;object-fit:contain;background:var(--white);
+      border-radius:12px;box-shadow:0 2px 16px #33b7be2d;
+      border:2.3px solid #2eb8be;
     }
-    /* ========== MENU EM CAPS ARREDONDADO ========== */
     .menu-list {
       display:flex;gap:19px;align-items:center;width:100%;
     }
     .menu-list a {
       color:var(--white);font-family:'Nunito','Quicksand',sans-serif;
-      font-size:1.13rem;text-transform:uppercase;letter-spacing:.13em;
-      font-weight:bold;background:none;padding:0 4px;
-      border:none;border-radius:14px;transition:color .13s,background .12s;
-      position:relative;line-height:1.68;outline:none;
+      font-size:1.13rem;text-transform:uppercase;letter-spacing:.10em;
+      font-weight:700;background:none;padding:0 3px;
+      border:none;border-radius:12px;transition:color .13s,background .12s;
+      position:relative;line-height:1.65;outline:none;
     }
     .menu-list a.active,.menu-list a:hover {
-      color:var(--blue-pool);background:rgba(65,227,215,.08);box-shadow:0 1px 8px var(--blue-pool);
+      color:var(--blue-pool);background:rgba(65,227,215,.07);
+      box-shadow:0 1px 8px #41e3d728;
     }
     .menu-list a.contact-btn {
-      padding:7.4px 22px;background:var(--white);
-      color:var(--blue-dark);font-weight:900;
-      border-radius:19px;box-shadow:0px 0px 6px #41e3d734;
-      letter-spacing:.13em;border:2px solid var(--blue-pool);
+      padding:7px 21px;background:var(--blue-dark);
+      color:var(--blue-pool);font-weight:900;
+      border-radius:18px;box-shadow:0px 0px 7px #41e3d755;
+      letter-spacing:.11em;border:2px solid var(--blue-pool);
+      font-size:1.04rem;
     }
-    .menu-list a.contact-btn:hover { background:var(--blue-pool);color:var(--blue-superdark);}
-    main{margin-top:130px;}
-    /* ====== CAMPANHAS: BARRA SUPERIOR GRANDE ====== */
+    .menu-list a.contact-btn:hover { background:var(--blue-pool);color:var(--blue-dark);}
+    /* ========== CAMPANHAS: BARRA NO TOPO ========== */
     .campaign-topbar {
-      width:100vw;background:var(--blue-superdark);
-      display:flex;align-items:center;justify-content:center;position:relative;
-      box-shadow:0 2px 12px #182b561e;
-      border-bottom:1.9px solid #41e3d7cc;
-      padding:0;
-      min-height:64px;
+      position:fixed;top:76px;left:0;width:100vw;z-index:1040;
+      background:var(--blue-dark);
+      box-shadow:0 2px 24px #41e3d813;
+      border-bottom:2px solid #33b7be8c;
+      display:flex;align-items:center;justify-content:center;
+      min-height:54px;padding:0;
     }
     .campaign-inner {
-      max-width:1200px;margin:0 auto;width:100%;
-      display:flex;align-items:center;gap:16px;padding:0 18px;
+      max-width:1170px;margin:0 auto;width:100%;
+      display:flex;align-items:center;gap:14px;padding:0 15px;
     }
     .panel-title-camp {
-      color:var(--blue-pool);font-size:1.19rem;
+      color:var(--blue-pool);font-size:1.04rem;
       font-family:'Nunito','Quicksand',sans-serif;
-      font-weight:900;letter-spacing:.15em;text-transform:uppercase;
-      border-bottom:none;margin-right:14px;
+      font-weight:900;letter-spacing:.13em;text-transform:uppercase;
+      border-bottom:none;margin-right:12px;
     }
     .campaign-btn-camp {
-      background:linear-gradient(99deg,#234055 60%, #2eb8be 90%);
+      background:linear-gradient(86deg,#172b3f 40%, #2eb8be 100%);
       color:#fff;font-family:'Nunito','Quicksand',sans-serif;
-      font-weight:800;letter-spacing:.06em;border-radius:14px;
-      font-size:1.03rem;border:none;padding:12px 29px;margin:0 3px;
-      box-shadow:0 1px 4px #41e3d811;outline:none;cursor:pointer;
-      transition:background .15s,color .1s;
+      font-weight:900;letter-spacing:.06em;border-radius:13px;font-size:.99rem;
+      border:none;padding:11px 23px;margin:0 2.5px;
+      box-shadow:0 1px 2px #358d9411;outline:none;cursor:pointer;
+      transition:background .14s,color .13s;
     }
-    .campaign-btn-camp:hover { color:var(--blue-pool);background:var(--white);}
-    /* ========== HERO HOME ========== */
+    .campaign-btn-camp:hover { color:var(--blue-dark);background:var(--blue-pool);}
+    main{margin-top:140px;}
+    /* =========== HERO HOME ========== */
     .hero-home {
-      display:grid;grid-template-columns:1.1fr 0.9fr;align-items:stretch;gap:70px;
-      max-width:990px;margin:0 auto 60px auto;
-      padding:70px 24px 50px 35px;border-radius:25px;
+      max-width:1010px;margin:0 auto 60px auto;padding:80px 24px 46px 65px;border-radius:21px;
       background:var(--blue-mesclado);
       box-shadow:0 8px 44px #41e3d828,0 1px 18px #1111;
-      border:2.4px solid #2eb8be48;
+      border:2.2px solid #2eb8be35;
+      display:block;
     }
     .hero-content {
-      display:flex;flex-direction:column;align-items:flex-start;gap:23px;margin-left:0;z-index:2;
+      display:flex;flex-direction:column;align-items:flex-start;gap:23px;
+      margin-left:0;z-index:2;
     }
     .hero-main-title {
       font-family:'Nunito','Quicksand',sans-serif;text-transform:uppercase;
-      font-size:clamp(2.5rem,7vw,4.1rem);color:var(--white);
-      font-weight:900;letter-spacing:.09em;margin-bottom:13px;line-height:1.09;
-      filter:none;text-shadow:0 2px 14px #41e3d835;
-      background:linear-gradient(94deg,#18243A 44%,#2eb8be 86%);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-      background-clip:text;
+      font-size:clamp(2.36rem,7vw,4.06rem);color:var(--white);
+      font-weight:900;letter-spacing:.08em;margin-bottom:9px;line-height:1.13;
+      background:linear-gradient(91deg,#ffffff 68%,#41e3d7 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
     }
     .hero-subtitle {
-      font-family:'Nunito','Quicksand',sans-serif;font-size:1.1rem;color:var(--blue-pool);
-      font-weight:900;letter-spacing:.04em;margin-bottom:4px;margin-top:-5px;text-transform:none;
-      text-shadow:0 1px 11px #2898a6bd;
+      font-family:'Nunito','Quicksand',sans-serif;font-size:1rem;color:var(--blue-pool);
+      font-weight:800;letter-spacing:.03em;margin-bottom:4px;margin-top:2px;text-shadow:0 1px 9px #2898a6bb;
     }
     .hero-description {
-      color:var(--white);font-size:1.02rem;font-weight:600;
-      background:none;border-radius:14px;padding:0;margin-top:0;
-      letter-spacing:.019em;line-height:1.38;max-width:410px;box-shadow:0 1px 8px #41e3d81b;
+      color:var(--white);font-size:.99rem;font-weight:700;background:none;
+      border-radius:14px;padding:0;margin-top:0;letter-spacing:.019em;line-height:1.38;
+      max-width:410px;box-shadow:0 1px 8px #41e3d81b;
     }
-    /* ========== BARRA DE PESQUISA ========== */
     .search-area{width:99%;margin-bottom:5px;}
     .search-bar {
-      display:flex;align-items:center;width:100%;background:var(--blue-superdark);
-      border-radius:15px;border:2px solid #355a72;
-      box-shadow:0 2px 7px #41e3d81b;margin-top:7px;margin-bottom:6px;
+      display:flex;align-items:center;width:100%;background:var(--blue-dark);
+      border-radius:13px;border:2px solid #33b7be84;
+      box-shadow:0 1.5px 6px #0abcc0bb;margin-top:7px;margin-bottom:6px;
     }
     .search-bar input {
-      flex:1;font-size:1.1rem;padding:18px 21px;background:none;color:#e5fafc;font-family:inherit;
-      border:none;outline:none;font-weight:800;letter-spacing:.01em;border-radius:0;
+      flex:1;font-size:1.08rem;padding:17px 19px;background:none;color:#e1fafb;
+      font-family:inherit;border:none;outline:none;font-weight:700;letter-spacing:.01em;border-radius:0;
     }
-    .search-bar input::placeholder { color: #64e9ed;}
+    .search-bar input::placeholder { color: #33b7be;}
     .search-bar button {
-      background: var(--blue-pool); border:none; font-size:1.9rem;color:var(--blue-dark);
-      cursor:pointer;padding:6px 25px 6px 19px;border-radius:0 15px 15px 0;font-weight:900;
-      transition:background .11s,color .13s;
+      background:var(--blue-pool);border:none;font-size:1.7rem;color:var(--blue-dark);
+      cursor:pointer;padding:4px 18px 4px 17px;border-radius:0 13px 13px 0;font-weight:900;
+      transition:background .13s,color .13s;
     }
-    .search-bar button:hover { background:#2eb8be;color:var(--white);}
-    .cta-row { display:flex;flex-wrap:wrap;gap:16px;margin-top:9px;}
+    .search-bar button:hover { background:var(--blue-accent);color:var(--white);}
+    .cta-row { display:flex;flex-wrap:wrap;gap:12px;margin-top:9px;}
     .btn-card {
-      background:var(--blue-dark);color:var(--blue-pool);
-      font-weight:700;padding:14px 0;border-radius:15px;font-size:1rem;
-      border:2px solid var(--blue-pool);min-width:140px;font-family:'Nunito','Quicksand',sans-serif;
-      letter-spacing:.09em;box-shadow:0 1px 8px #41e3d81b;text-align:center;flex:1 1 120px;outline:none;
-      transition:background .15s,color .15s,border .15s;
+      background:var(--blue-dark);color:var(--blue-pool);font-weight:700;padding:12px 0;
+      border-radius:14px;font-size:.97rem;border:2px solid var(--blue-pool);
+      min-width:120px;font-family:'Nunito','Quicksand',sans-serif;letter-spacing:.075em;
+      box-shadow:0 1px 5px #41e3d81a;text-align:center;flex:1 1 98px;outline:none;transition:background .14s,color .14s,border .15s;
     }
-    .btn-card:hover,.btn-card:focus { background:var(--blue-pool);color:#121c2b;border:2px solid var(--white);}
-    /* ========== CAMPANHAS (RETORNO AOS CARDS VERTICAIS SE NECESSÁRIO) ========== */
-    .campaign-sidebar {
-      display:none;
-    }
+    .btn-card:hover,.btn-card:focus { background:var(--blue-pool);color:#16202d;border:2px solid var(--white);}
     /* ========== GRID PRODUTOS ========== */
     .card-list { display:flex;flex-wrap:wrap;gap:21px;margin-top:30px;}
     .card {
-      background:var(--blue-superdark);
-      border-radius:17px;box-shadow:0 2px 13px #41e3d814;
-      min-width:190px;max-width:280px;color:var(--blue-pool);
+      background:var(--blue-dark);border-radius:14px;box-shadow:0 2px 13px #41e3d814;
+      min-width:140px;max-width:210px;color:var(--blue-pool);
       display:flex;flex-direction:column;align-items:center;text-align:center;
-      border:2px solid #3ed8ce;transition:box-shadow .19s;
+      border:2px solid #26293a;transition:box-shadow .19s;
     }
-    .card:hover,.card:focus { box-shadow:0 8px 24px #41e3d835;background:var(--blue-pool);color:#121c2b;}
-    .card img { width:59px;height:auto;margin-bottom:12px;border-radius:9px;}
-    .card h3 { font-weight:800;font-size:1rem;margin-bottom:9px;color:var(--white);}
-    .card p { font-size:0.93rem;color:#e2f9f8;}
-    section {margin-bottom:30px;}
+    .card:hover,.card:focus { box-shadow:0 8px 24px #41e3d83b;background:var(--blue-pool);color:#16202d;}
+    .card img { width:47px;height:auto;margin-bottom:9px;border-radius:8px;}
+    .card h3 { font-weight:800;font-size:1rem;margin-bottom:8px;color:var(--white);}
+    .card p { font-size:0.92rem;color:#e0f9f8;}
+    section {margin-bottom:26px;}
     /* ========== FOOTER ========== */
     footer {
-      text-align:center;color:#41e3d7;background:none;padding:29px 11px 19px 11px;
-      font-weight:700;font-size:1rem;border-top:2px solid #355a72;
+      text-align:center;color:#41e3d7;background:none;padding:19px 8px 13px 8px;
+      font-weight:700;font-size:.925rem;border-top:2px solid #2eb8be2a;
       font-family:'Nunito',Arial,sans-serif;
     }
-    /* ========== MOBILE ========== */
+    /* ===== MOBILE ===== */
     @media(max-width:900px) {
-      .hero-home{grid-template-columns:1fr;padding:8vw 1vw;gap:49px;}
-      .panel-title,.hero-main-title,.hero-subtitle{text-align:center;}
-      .header-inner{padding:0 6px;}
-      main{margin-top:170px;}
-      .campaign-topbar{padding:0;}
+      .header-inner{padding:0 4px;}
+      .campaign-inner{padding:0 4px;}
+      .hero-home{padding:9vw 1.9vw;}
+      main{margin-top:183px;}
     }
     @media(max-width:650px) {
-      .container{padding:0 2vw;}
-      .logo-img{width:35px;height:35px;}
-      .header-inner{padding:0 2px;}
-      .hero-home{padding:11vw 0.5vw;}
-      .card-list{gap:7px;}
+      .logo-img{width:29px;height:29px;}
+      .hero-home{padding:9vw 0vw;}
+      .card-list{gap:5px;}
     }
   </style>
 </head>
@@ -231,7 +220,7 @@
       </nav>
     </div>
   </header>
-  <!-- ========== CAMPANHAS NO TOP, BARRA HORIZONTAL TECH ========== -->
+  <!-- ========== CAMPANHAS NO TOPO, BARRA HORIZONTAL ========== -->
   <div class="campaign-topbar">
     <div class="campaign-inner">
       <span class="panel-title-camp">Campanhas</span>
@@ -243,7 +232,7 @@
       <a href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty" class="campaign-btn-camp">Kits</a>
     </div>
   </div>
-  <!-- ========== HOME GRID ========== -->
+  <!-- ========== HOME (HERO) ========== -->
   <main class="container">
     <section class="hero-home">
       <div class="hero-content">
@@ -266,8 +255,6 @@
           </div>
         </div>
       </div>
-      <!-- (oculto painel lateral de campanhas - agora na barra superior) -->
-      <aside class="campaign-sidebar"></aside>
     </section>
     <!-- PRODUTOS/AFILIADOS -->
     <section id="produtos">
