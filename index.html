@@ -4,21 +4,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mais Sabiamente — Curadoria Profissional</title>
-  <!-- Fontes: Serif elegante para título + Sans moderna para texto -->
+  <!-- 
+    Fontes: Serif elegante + Sans arredondada baseada na logo
+  -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     /* ===================== PALETA BASEADA NA LOGO ===================== */
     :root {
-      --dark-bg: #1a2332;
-      --darker-bg: #141b26;
+      --dark-bg: #16202d;
+      --darker-bg: #141b22;
       --blue-pool: #41e3d7;
       --blue-accent: #2eb8be;
       --white: #ffffff;
       --text-light: #e8f0f7;
       --text-muted: #a6b8c9;
+      --card-bg: rgba(255,255,255,0.08);
       --border-radius: 18px;
+      --transition-speed: 0.18s;
     }
-    /* ===================== RESET E LAYOUT BASE ===================== */
+    /* ===================== RESET & BASE ===================== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
       margin: 0; padding: 0;
@@ -28,145 +32,263 @@
       min-height: 100vh;
       overflow-x: hidden;
       font-size: 18px;
+      scroll-behavior: smooth;
     }
-    /* Textura sutil de fundo */
+    /* Textura de fundo sutil */
     body::before {
       content: '';
       position: fixed; z-index: 0; left: 0; top: 0;
       width: 100vw; height: 100vh;
-      background: radial-gradient(circle at 30% 20%, #1f4a5e22 0%, transparent 60%);
-      pointer-events: none;
+      background: radial-gradient(circle at 70% 18%, #1b93ad1a 0, #1d2937 70%, #293441 100%);
+      opacity: .25; pointer-events: none;
     }
-    /* ===================== HEADER MINIMALISTA ===================== */
-    .header {
-      position: fixed; top: 0; left: 0; width: 100vw;
-      background: rgba(20, 27, 38, 0.95);
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2vw;
+      position: relative;
+      z-index: 1;
+    }
+    /* ===================== HEADER (LOGO + MENU) ===================== */
+    .topbar {
+      width: 100vw;
+      background: rgba(20, 27, 38, 0.96);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(65, 227, 215, 0.15);
-      z-index: 1000;
-      padding: 18px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      border-bottom: 2px solid rgba(65, 227, 215, 0.2);
+      box-shadow: 0 3px 19px #16202d44;
+      position: fixed; top: 0; left: 0; z-index: 1100;
+      display: flex; align-items: center; min-height: 76px;
     }
-    .logo-header {
-      width: 120px; height: auto;
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto; width: 100%;
+      display: flex; align-items: center; justify-content: flex-start;
+      height: 76px; padding: 0 22px;
     }
-    .nav-links {
-      display: flex; gap: 28px; align-items: center;
+    .logo-box {
+      display: flex; align-items: center; min-width: 68px; margin-right: 24px; height: 70px;
     }
-    .nav-links a {
-      color: var(--text-light);
-      font-size: 1rem;
-      font-weight: 600;
+    .logo-img {
+      width: 68px; height: 68px; object-fit: contain; background: var(--white);
+      border-radius: 14px; box-shadow: 0 3px 18px #33b7be3d;
+      border: 2.5px solid var(--blue-pool);
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .logo-img:hover {
+      transform: scale(1.06);
+      box-shadow: 0 5px 24px #41e3d766;
+    }
+    .menu-list {
+      display: flex; gap: 19px; align-items: center; width: 100%;
+    }
+    .menu-list a {
+      color: var(--white); font-family: 'Nunito', sans-serif;
+      font-size: 1.13rem; text-transform: uppercase; letter-spacing: .10em;
+      font-weight: 700; background: none; padding: 0 5px;
+      border: none; border-radius: 12px;
+      transition: color var(--transition-speed), background var(--transition-speed);
+      position: relative; line-height: 1.65; outline: none;
       text-decoration: none;
-      letter-spacing: 0.02em;
-      transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--blue-pool); }
-    .nav-links .btn-login {
-      padding: 8px 22px;
-      border: 1.5px solid var(--blue-pool);
-      border-radius: 20px;
+    .menu-list a.active, .menu-list a:hover {
       color: var(--blue-pool);
-      font-weight: 700;
-      transition: background 0.2s, color 0.2s;
+      background: rgba(65, 227, 215, .09);
+      box-shadow: 0 2px 10px #41e3d738;
     }
-    .nav-links .btn-login:hover {
+    .menu-list a.contact-btn {
+      padding: 8px 22px; background: var(--dark-bg);
+      color: var(--blue-pool); font-weight: 900;
+      border-radius: 18px; box-shadow: 0px 0px 9px #41e3d766;
+      letter-spacing: .11em; border: 2px solid var(--blue-pool);
+      font-size: 1.04rem;
+    }
+    .menu-list a.contact-btn:hover {
       background: var(--blue-pool);
-      color: var(--darker-bg);
+      color: var(--dark-bg);
+      transform: translateY(-2px);
     }
-    /* ===================== HERO PRINCIPAL TIPO SQUARESPACE ===================== */
-    .hero-wrapper {
+    /* ===================== BARRA DE CAMPANHAS (TOPO) ===================== */
+    .campaign-topbar {
+      position: fixed; top: 76px; left: 0; width: 100vw; z-index: 1040;
+      background: var(--dark-bg);
+      box-shadow: 0 3px 26px #41e3d818;
+      border-bottom: 2px solid #33b7be9c;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 56px; padding: 0;
+      backdrop-filter: blur(6px);
+    }
+    .campaign-inner {
+      max-width: 1200px; margin: 0 auto; width: 100%;
+      display: flex; align-items: center; gap: 15px; padding: 0 16px;
+      flex-wrap: wrap;
+    }
+    .panel-title-camp {
+      color: var(--blue-pool); font-size: 1.08rem;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900; letter-spacing: .14em; text-transform: uppercase;
+      border-bottom: none; margin-right: 13px;
+      user-select: none;
+    }
+    .campaign-btn-camp {
+      background: linear-gradient(86deg, #172b3f 40%, #2eb8be 100%);
+      color: #fff; font-family: 'Nunito', sans-serif;
+      font-weight: 900; letter-spacing: .07em; border-radius: 14px; font-size: 1rem;
+      border: none; padding: 12px 24px; margin: 0 3px;
+      box-shadow: 0 2px 8px #358d9422; outline: none; cursor: pointer;
+      transition: background var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .campaign-btn-camp:hover {
+      color: var(--dark-bg);
+      background: var(--blue-pool);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px #41e3d755;
+    }
+    main { margin-top: 145px; }
+    /* ===================== HERO HOME (GRID: TEXTO + VISUAL) ===================== */
+    .hero-home {
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
       gap: 60px;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 140px 40px 80px 40px;
-      min-height: 100vh;
+      max-width: 1200px;
+      margin: 0 auto 65px auto;
+      padding: 85px 28px 50px 68px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+      box-shadow: 0 10px 48px #41e3d833, 0 2px 20px #1111;
+      border: 2.4px solid #2eb8be40;
       position: relative;
-      z-index: 1;
+      overflow: hidden;
     }
-    /* Lado esquerdo: Texto e busca */
+    /* Efeito de brilho/reflexo sutil no hero */
+    .hero-home::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(65, 227, 215, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
     .hero-content {
       display: flex;
       flex-direction: column;
-      gap: 28px;
+      align-items: flex-start;
+      gap: 24px;
+      margin-left: 0;
+      z-index: 2;
+      position: relative;
     }
-    .hero-title {
+    /* Título principal com gradiente */
+    .hero-main-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 7vw, 5rem);
-      font-weight: 700;
-      line-height: 1.1;
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
       color: var(--white);
+      font-weight: 700;
       letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      line-height: 1.12;
     }
     .hero-subtitle {
-      font-size: 1.2rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-      max-width: 500px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.15rem;
+      color: var(--blue-pool);
+      font-weight: 800;
+      letter-spacing: .04em;
+      margin-bottom: 5px;
+      margin-top: 3px;
+      text-shadow: 0 2px 11px #2898a6cc;
     }
-    /* Campo de busca grande */
-    .search-box {
+    .hero-description {
+      color: var(--white);
+      font-size: 1.02rem;
+      font-weight: 700;
+      background: none;
+      border-radius: 14px;
+      padding: 0;
+      margin-top: 0;
+      letter-spacing: .021em;
+      line-height: 1.42;
+      max-width: 450px;
+    }
+    /* Barra de pesquisa avançada */
+    .search-area { width: 100%; margin-bottom: 6px; }
+    .search-bar {
       display: flex;
       align-items: center;
-      background: rgba(255, 255, 255, 0.08);
-      border: 2px solid rgba(65, 227, 215, 0.3);
-      border-radius: 50px;
-      padding: 6px 6px 6px 26px;
-      margin-top: 20px;
-      box-shadow: 0 4px 24px rgba(65, 227, 215, 0.15);
-      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%;
+      background: var(--dark-bg);
+      border-radius: 15px;
+      border: 2px solid #33b7be94;
+      box-shadow: 0 2px 10px #0abcc0dd;
+      margin-top: 9px;
+      margin-bottom: 7px;
+      transition: box-shadow var(--transition-speed);
     }
-    .search-box:focus-within {
+    .search-bar:focus-within {
+      box-shadow: 0 4px 18px #41e3d7aa;
       border-color: var(--blue-pool);
-      box-shadow: 0 6px 32px rgba(65, 227, 215, 0.3);
     }
-    .search-box input {
+    .search-bar input {
       flex: 1;
+      font-size: 1.1rem;
+      padding: 18px 20px;
       background: none;
+      color: #e5fafb;
+      font-family: inherit;
       border: none;
       outline: none;
-      color: var(--white);
-      font-size: 1.1rem;
-      font-weight: 600;
-      padding: 14px 10px;
-      font-family: inherit;
+      font-weight: 700;
+      letter-spacing: .012em;
+      border-radius: 0;
     }
-    .search-box input::placeholder {
-      color: var(--text-muted);
-    }
-    .search-box button {
+    .search-bar input::placeholder { color: #33b7be; }
+    .search-bar button {
       background: var(--blue-pool);
-      color: var(--darker-bg);
       border: none;
-      border-radius: 50px;
-      padding: 14px 32px;
-      font-size: 1.1rem;
-      font-weight: 900;
+      font-size: 1.8rem;
+      color: var(--dark-bg);
       cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
+      padding: 5px 20px 5px 19px;
+      border-radius: 0 15px 15px 0;
+      font-weight: 900;
+      transition: background var(--transition-speed), color var(--transition-speed);
     }
-    .search-box button:hover {
+    .search-bar button:hover {
       background: var(--blue-accent);
-      transform: translateY(-2px);
+      color: var(--white);
     }
-    /* Link auxiliar */
-    .helper-link {
-      margin-top: 12px;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-    .helper-link a {
+    /* Botões de ação principais */
+    .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 11px; }
+    .btn-card {
+      background: var(--dark-bg);
       color: var(--blue-pool);
-      text-decoration: underline;
-      font-weight: 600;
+      font-weight: 700;
+      padding: 13px 0;
+      border-radius: 15px;
+      font-size: 1rem;
+      border: 2px solid var(--blue-pool);
+      min-width: 130px;
+      font-family: 'Nunito', sans-serif;
+      letter-spacing: .08em;
+      box-shadow: 0 2px 8px #41e3d822;
+      text-align: center;
+      flex: 1 1 105px;
+      outline: none;
+      transition: background var(--transition-speed), color var(--transition-speed), border var(--transition-speed), transform var(--transition-speed);
+      text-decoration: none;
+      display: inline-block;
     }
-    .helper-link a:hover {
-      color: var(--blue-accent);
+    .btn-card:hover, .btn-card:focus {
+      background: var(--blue-pool);
+      color: #16202d;
+      border: 2px solid var(--white);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px #41e3d755;
     }
     /* Lado direito: Mockup mobile */
     .hero-visual {
@@ -174,29 +296,61 @@
       justify-content: center;
       align-items: center;
       position: relative;
+      z-index: 2;
     }
     .mockup-phone {
-      max-width: 450px;
+      max-width: 420px;
       width: 100%;
       height: auto;
       border-radius: 40px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
       object-fit: cover;
     }
+    /* ===================== GRID DE PRODUTOS/AFILIADOS ===================== */
+    .card-list { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 35px; }
+    .card {
+      background: var(--dark-bg);
+      border-radius: 16px;
+      box-shadow: 0 3px 16px #41e3d819;
+      min-width: 160px;
+      max-width: 230px;
+      color: var(--blue-pool);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border: 2px solid #2a2f42;
+      transition: box-shadow var(--transition-speed), transform var(--transition-speed), background var(--transition-speed);
+      padding: 18px;
+    }
+    .card:hover, .card:focus {
+      box-shadow: 0 10px 28px #41e3d844;
+      background: var(--blue-pool);
+      color: #16202d;
+      transform: translateY(-6px);
+    }
+    .card img { width: 54px; height: auto; margin-bottom: 11px; border-radius: 10px; }
+    .card h3 { font-weight: 800; font-size: 1.04rem; margin-bottom: 9px; color: var(--white); }
+    .card p { font-size: 0.95rem; color: #e2f9f8; }
+    section { margin-bottom: 32px; }
     /* ===================== FOOTER ===================== */
     footer {
       text-align: center;
-      padding: 30px 20px;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      border-top: 1px solid rgba(65, 227, 215, 0.15);
+      color: #41e3d7;
+      background: none;
+      padding: 22px 10px 16px 10px;
+      font-weight: 700;
+      font-size: 0.97rem;
+      border-top: 2px solid #2eb8be33;
+      font-family: 'Nunito', Arial, sans-serif;
     }
     /* ===================== RESPONSIVIDADE ===================== */
     @media (max-width: 1000px) {
-      .hero-wrapper {
+      .header-inner { padding: 0 6px; }
+      .campaign-inner { padding: 0 5px; }
+      .hero-home {
         grid-template-columns: 1fr;
-        padding: 120px 24px 60px 24px;
-        gap: 40px;
+        padding: 10vw 2vw;
       }
       .hero-visual {
         order: -1;
@@ -204,70 +358,102 @@
       .mockup-phone {
         max-width: 320px;
       }
+      main { margin-top: 188px; }
+      .menu-list { gap: 10px; flex-wrap: wrap; justify-content: center; }
     }
     @media (max-width: 650px) {
-      .header {
-        padding: 14px 20px;
-      }
-      .logo-header {
-        width: 90px;
-      }
-      .nav-links {
-        gap: 12px;
-      }
-      .nav-links a {
-        font-size: 0.9rem;
-      }
-      .hero-title {
-        font-size: 2.2rem;
-      }
-      .search-box {
-        flex-direction: column;
-        padding: 12px;
-        gap: 8px;
-      }
-      .search-box input {
-        text-align: center;
-      }
-      .search-box button {
-        width: 100%;
-      }
+      .logo-img { width: 34px; height: 34px; }
+      .hero-home { padding: 10vw 1vw; }
+      .card-list { gap: 8px; }
+      .menu-list a { font-size: 0.95rem; padding: 0 2px; }
+      .campaign-btn-camp { font-size: 0.88rem; padding: 9px 16px; }
     }
   </style>
 </head>
 <body>
-  <!-- ===================== HEADER ===================== -->
-  <header class="header">
-    <img class="logo-header" src="/assets/Logo.png" alt="Logo Mais Sabiamente" onerror="this.onerror=null;this.src='https://placehold.co/120x40?text=Sabiamente';" />
-    <nav class="nav-links">
-      <a href="#sobre">Sobre</a>
-      <a href="#departamentos">Departamentos</a>
-      <a href="#contato">Contato</a>
-      <a href="#login" class="btn-login">Fazer Login</a>
-    </nav>
-  </header>
-  <!-- ===================== HERO PRINCIPAL ===================== -->
-  <main class="hero-wrapper">
-    <!-- Lado esquerdo: Texto -->
-    <div class="hero-content">
-      <h1 class="hero-title">Curadoria profissional para viver melhor</h1>
-      <p class="hero-subtitle">
-        Navegação fácil por departamentos, campanhas e afiliados em destaque. 
-        Acesse as melhores oportunidades, produtos e links preservados.
-      </p>
-      <!-- Campo de busca grande -->
-      <form class="search-box" action="/busca" method="get">
-        <input type="search" name="q" placeholder="Comece sua busca aqui" aria-label="Campo de busca" />
-        <button type="submit">→</button>
-      </form>
-      <div class="helper-link">
-        Precisa de inspiração? <a href="#ideias">Use IA para gerar ideias</a>
+  <!-- ===================== HEADER: LOGO + MENU ===================== -->
+  <header class="topbar">
+    <div class="header-inner">
+      <div class="logo-box">
+        <img class="logo-img" src="/assets/Logo.png" alt="Logo Mais Sabiamente" onerror="this.onerror=null;this.src='https://placehold.co/68x68?text=Logo';" />
       </div>
+      <nav class="menu-list">
+        <a class="active" href="#">Home</a>
+        <a href="#departamentos">Departamentos</a>
+        <a href="#cuidados">Cuidados Diários</a>
+        <a href="#tecnologia">Tecnologia</a>
+        <a href="#livros">Livros</a>
+        <a href="#saude">Saúde</a>
+        <a href="#marcas">Marcas</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato" class="contact-btn">Contato</a>
+      </nav>
     </div>
-    <!-- Lado direito: Mockup mobile -->
-    <div class="hero-visual">
-      <img class="mockup-phone" src="/assets/mockup-phone.png" alt="Mockup visual do site" onerror="this.onerror=null;this.src='https://placehold.co/450x900/1a2332/41e3d7?text=Visual+Premium';" />
+  </header>
+  <!-- ===================== BARRA DE CAMPANHAS (TOPO) ===================== -->
+  <div class="campaign-topbar">
+    <div class="campaign-inner">
+      <span class="panel-title-camp">Campanhas</span>
+      <a href="https://mais.app/jROmOw" class="campaign-btn-camp">Desodorantes</a>
+      <a href="https://mais.app/rAxpKd" class="campaign-btn-camp">Cabelos</a>
+      <a href="https://mais.app/nX49Uz" class="campaign-btn-camp">Bucal</a>
+      <a href="https://mais.app/BeCrvg" class="campaign-btn-camp">Corpo</a>
+      <a href="https://mais.app/QleArk" class="campaign-btn-camp">Lançamentos</a>
+      <a href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty" class="campaign-btn-camp">Kits</a>
     </div>
+  </div>
+  <!-- ===================== HERO HOME (GRID: TEXTO + VISUAL) ===================== -->
+  <main class="container">
+    <section class="hero-home">
+      <div class="hero-content">
+        <h1 class="hero-main-title">Curadoria profissional para viver melhor</h1>
+        <div class="hero-subtitle">Mais Sabiamente</div>
+        <div class="hero-description">
+          Conteúdo confiável, navegação fácil por departamentos, campanhas e afiliados em destaque.<br>
+          Acesse as melhores oportunidades, produtos e links preservados.
+        </div>
+        <div class="search-area">
+          <form class="search-bar" action="/busca" method="get" autocomplete="off">
+            <input type="search" name="q" placeholder="Pesquise produtos, categorias ou marcas…" aria-label="Campo de busca" />
+            <button type="submit" title="Buscar" aria-label="Botão buscar">➜</button>
+          </form>
+          <div class="cta-row">
+            <a class="btn-card" href="#departamentos">Departamentos</a>
+            <a class="btn-card" href="#cuidados">Cuidados Diários</a>
+            <a class="btn-card" href="#premium">Visual premium</a>
+            <a class="btn-card" href="#links">Links preservados</a>
+          </div>
+        </div>
+      </div>
+      <!-- Lado direito: Mockup mobile -->
+      <div class="hero-visual">
+        <img class="mockup-phone" src="/assets/mockup-phone.png" alt="Mockup visual do site" onerror="this.onerror=null;this.src='https://placehold.co/420x840/16202d/41e3d7?text=Visual+Premium';" />
+      </div>
+    </section>
+    <!-- ===================== GRID DE PRODUTOS/AFILIADOS ===================== -->
+    <section id="produtos">
+      <div class="card-list">
+        <article class="card">
+          <img src="/assets/produto1.png" alt="Produto afiliado 1" onerror="this.onerror=null;this.src='https://placehold.co/54x54?text=P1';" />
+          <h3>Produto Afiliado 1</h3>
+          <p>Destaque, breve descrição do produto 1.</p>
+        </article>
+        <article class="card">
+          <img src="/assets/produto2.png" alt="Produto afiliado 2" onerror="this.onerror=null;this.src='https://placehold.co/54x54?text=P2';" />
+          <h3>Produto Afiliado 2</h3>
+          <p>Bastante procurado, breve descrição do produto 2.</p>
+        </article>
+      </div>
+    </section>
+    <!-- ===================== SEÇÕES EXPANSÍVEIS ===================== -->
+    <section id="departamentos"></section>
+    <section id="cuidados"></section>
+    <section id="tecnologia"></section>
+    <section id="livros"></section>
+    <section id="saude"></section>
+    <section id="marcas"></section>
+    <section id="sobre"></section>
+    <section id="contato"></section>
   </main>
   <!-- ===================== FOOTER ===================== -->
   <footer>
