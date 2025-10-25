@@ -1,743 +1,921 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Mais Sabiamente - Curadoria profissional de produtos, departamentos, campanhas e links preservados." />
-  <title>Mais Sabiamente — Curadoria Profissional</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mais Sabiamente - Curadoria profissional de produtos, departamentos, campanhas e links preservados com inteligência e elegância.">
+  <meta name="theme-color" content="#41e3d7">
+  <title>Mais Sabiamente — Curadoria Profissional Inteligente</title>
+  
   <!-- 
     ============================================================
-    FONTES: Serif elegante para títulos + Sans arredondada
-    Baseadas na identidade visual da logo
+    FONTES PREMIUM E MODERNAS
+    Inter: Sans-serif moderna, elegante e legível
+    Playfair Display: Serif sofisticada para títulos
     ============================================================
   -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  
   <style>
-    /* ===================== PALETA DE CORES BASEADA NA LOGO ===================== */
+    /* ============================================================
+       VARIÁVEIS CSS - DESIGN SYSTEM PROFISSIONAL
+       Baseado na identidade da logo (preto, branco, azul piscina)
+       ============================================================ */
     :root {
-      --preto-logo: #18191b;           /* Preto principal da logo */
-      --branco: #ffffff;               /* Branco puro */
-      --azul-piscina: #41e3d7;         /* Azul piscina/verde água */
-      --azul-escuro: #0d1117;          /* Azul marinho super escuro */
-      --cinza-escuro: #1a1f2e;         /* Cinza azulado escuro */
-      --cinza-medio: #2a3141;          /* Cinza médio para cards */
-      --texto-claro: #e8f0f7;          /* Texto claro */
-      --texto-muted: #a6b8c9;          /* Texto secundário */
-      --card-bg: rgba(255,255,255,0.04); /* Fundo translúcido cards */
-      --border-radius: 18px;
-      --transition-speed: 0.25s;
-      --container-max: 1100px;         /* Reduzido para evitar scroll horizontal */
-    }
-
-    /* ===================== RESET & BASE ===================== */
-    *, *::before, *::after { 
-      box-sizing: border-box; 
-      margin: 0; 
-      padding: 0; 
+      /* Cores principais */
+      --color-black: #0a0e14;
+      --color-dark: #141920;
+      --color-charcoal: #1a2028;
+      --color-slate: #2a3441;
+      --color-cyan: #41e3d7;
+      --color-cyan-light: #5ef0e4;
+      --color-cyan-dark: #2eb8be;
+      --color-white: #ffffff;
+      --color-offwhite: #f8f9fa;
+      --color-gray-100: #e8eaed;
+      --color-gray-200: #c5c8cc;
+      --color-gray-300: #9ea3a8;
+      --color-gray-400: #6c7278;
+      --color-gray-500: #4a5057;
+      
+      /* Tipografia */
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-display: 'Playfair Display', Georgia, serif;
+      
+      /* Tamanhos de fonte */
+      --font-xs: 0.75rem;
+      --font-sm: 0.875rem;
+      --font-base: 1rem;
+      --font-lg: 1.125rem;
+      --font-xl: 1.25rem;
+      --font-2xl: 1.5rem;
+      --font-3xl: 2rem;
+      --font-4xl: 2.5rem;
+      --font-5xl: 3rem;
+      --font-6xl: 4rem;
+      
+      /* Espaçamento */
+      --spacing-xs: 0.25rem;
+      --spacing-sm: 0.5rem;
+      --spacing-md: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2rem;
+      --spacing-2xl: 3rem;
+      --spacing-3xl: 4rem;
+      
+      /* Border radius */
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-2xl: 1.5rem;
+      --radius-full: 9999px;
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+      --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+      --shadow-glow: 0 0 20px rgba(65, 227, 215, 0.3);
+      
+      /* Transitions */
+      --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+      
+      /* Z-index */
+      --z-dropdown: 1000;
+      --z-sticky: 1020;
+      --z-fixed: 1030;
+      --z-modal-backdrop: 1040;
+      --z-modal: 1050;
+      --z-popover: 1060;
+      --z-tooltip: 1070;
+      
+      /* Layout */
+      --container-max: 1280px;
+      --header-height: 80px;
+      --campaign-bar-height: 72px;
     }
     
-    html, body {
-      margin: 0; 
+    /* ============================================================
+       RESET & BASE STYLES
+       ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--cinza-escuro) 100%);
-      color: var(--texto-claro);
-      font-family: 'Nunito', Arial, sans-serif;
+    }
+    
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: var(--font-primary);
+      font-size: var(--font-base);
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--color-gray-100);
+      background: linear-gradient(135deg, var(--color-black) 0%, var(--color-dark) 50%, var(--color-charcoal) 100%);
       min-height: 100vh;
       overflow-x: hidden;
-      font-size: 18px;
-      scroll-behavior: smooth;
-      line-height: 1.6;
+      position: relative;
     }
-
-    /* Textura de fundo sutil com efeito radial */
+    
+    /* Textura animada de fundo */
     body::before {
       content: '';
-      position: fixed; 
-      z-index: 0; 
-      left: 0; 
+      position: fixed;
       top: 0;
-      width: 100vw; 
-      height: 100vh;
-      background: radial-gradient(circle at 70% 20%, rgba(65,227,215,0.08) 0%, transparent 60%),
-                  radial-gradient(circle at 30% 80%, rgba(65,227,215,0.05) 0%, transparent 50%);
-      opacity: 0.6;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(65, 227, 215, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(65, 227, 215, 0.03) 0%, transparent 50%);
       pointer-events: none;
+      z-index: 0;
+      animation: subtleFloat 20s ease-in-out infinite;
     }
-
-    /* Container centralizado com largura controlada */
+    
+    @keyframes subtleFloat {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-10px, -10px); }
+    }
+    
+    /* ============================================================
+       UTILITY CLASSES
+       ============================================================ */
     .container {
       max-width: var(--container-max);
       margin: 0 auto;
-      padding: 0 20px;
+      padding-left: var(--spacing-xl);
+      padding-right: var(--spacing-xl);
       position: relative;
       z-index: 1;
     }
-
-    /* ===================== HEADER (LOGO + MENU PRINCIPAL) ===================== */
-    .topbar {
-      width: 100vw;
-      background: rgba(13, 17, 23, 0.98);
-      backdrop-filter: blur(12px) saturate(180%);
-      border-bottom: 2px solid rgba(65, 227, 215, 0.15);
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-      position: fixed; 
-      top: 0; 
-      left: 0; 
-      z-index: 1100;
-      display: flex; 
-      align-items: center; 
-      min-height: 90px;
+    
+    /* ============================================================
+       HEADER MODERNO E SOFISTICADO
+       ============================================================ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      background: rgba(10, 14, 20, 0.95);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(65, 227, 215, 0.1);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 20px rgba(65, 227, 215, 0.05);
+      z-index: var(--z-fixed);
+      transition: all var(--transition-base);
     }
-
-    .header-inner {
+    
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
       max-width: var(--container-max);
-      margin: 0 auto; 
-      width: 100%;
-      display: flex; 
-      align-items: center; 
-      justify-content: flex-start;
-      height: 90px; 
-      padding: 0 24px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-xl);
     }
-
-    /* Logo aumentada e com efeito hover */
-    .logo-box {
-      display: flex; 
-      align-items: center; 
-      min-width: 95px; 
-      margin-right: 28px; 
-      height: 80px;
-    }
-
-    .logo-img {
-      width: 88px; 
-      height: 88px; 
-      object-fit: contain; 
-      background: var(--branco);
-      border-radius: 16px; 
-      box-shadow: 0 4px 20px rgba(65, 227, 215, 0.4);
-      border: 3px solid var(--azul-piscina);
-      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-      cursor: pointer;
-    }
-
-    .logo-img:hover {
-      transform: scale(1.08) rotate(2deg);
-      box-shadow: 0 8px 32px rgba(65, 227, 215, 0.6);
-    }
-
-    /* Menu horizontal com espaçamento adequado */
-    .menu-list {
-      display: flex; 
-      gap: 22px; 
-      align-items: center; 
-      width: 100%;
-      flex-wrap: wrap;
-    }
-
-    .menu-list a {
-      color: var(--branco); 
-      font-family: 'Nunito', sans-serif;
-      font-size: 1.08rem; 
-      text-transform: uppercase; 
-      letter-spacing: 0.08em;
-      font-weight: 700; 
-      background: none; 
-      padding: 10px 12px;
-      border: none; 
-      border-radius: 12px;
-      transition: color var(--transition-speed), background var(--transition-speed), transform var(--transition-speed);
-      position: relative; 
-      line-height: 1.5; 
-      outline: none;
+    
+    /* Logo com animação sofisticada */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
       text-decoration: none;
+      transition: transform var(--transition-base);
     }
-
-    .menu-list a::after {
+    
+    .logo:hover {
+      transform: translateY(-2px);
+    }
+    
+    .logo-image {
+      width: 60px;
+      height: 60px;
+      border-radius: var(--radius-lg);
+      background: var(--color-white);
+      padding: var(--spacing-xs);
+      box-shadow: 0 4px 12px rgba(65, 227, 215, 0.2), var(--shadow-glow);
+      transition: all var(--transition-base);
+      border: 2px solid rgba(65, 227, 215, 0.3);
+    }
+    
+    .logo:hover .logo-image {
+      box-shadow: 0 6px 16px rgba(65, 227, 215, 0.4), 0 0 30px rgba(65, 227, 215, 0.2);
+      transform: rotate(-3deg) scale(1.05);
+    }
+    
+    /* Navegação horizontal moderna */
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+    
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      padding: var(--spacing-sm) var(--spacing-md);
+      font-size: var(--font-sm);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--color-gray-200);
+      text-decoration: none;
+      border-radius: var(--radius-md);
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+    }
+    
+    .nav-link::before {
       content: '';
       position: absolute;
       bottom: 0;
       left: 50%;
-      transform: translateX(-50%) scaleX(0);
-      width: 80%;
+      width: 0;
       height: 2px;
-      background: var(--azul-piscina);
-      transition: transform var(--transition-speed);
+      background: var(--color-cyan);
+      transform: translateX(-50%);
+      transition: width var(--transition-base);
     }
-
-    .menu-list a.active, 
-    .menu-list a:hover {
-      color: var(--azul-piscina);
-      background: rgba(65, 227, 215, 0.08);
-      transform: translateY(-2px);
+    
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--color-cyan);
+      background: rgba(65, 227, 215, 0.05);
     }
-
-    .menu-list a:hover::after {
-      transform: translateX(-50%) scaleX(1);
+    
+    .nav-link:hover::before,
+    .nav-link.active::before {
+      width: 80%;
     }
-
-    .menu-list a.contact-btn {
-      padding: 10px 26px; 
-      background: var(--azul-piscina);
-      color: var(--preto-logo); 
-      font-weight: 900;
-      border-radius: 20px; 
-      box-shadow: 0 4px 16px rgba(65, 227, 215, 0.4);
-      letter-spacing: 0.1em; 
-      border: 2px solid var(--azul-piscina);
-      margin-left: 8px;
+    
+    .nav-link-cta {
+      background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-cyan-dark) 100%);
+      color: var(--color-black);
+      font-weight: 700;
+      padding: var(--spacing-sm) var(--spacing-lg);
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 12px rgba(65, 227, 215, 0.3);
+      margin-left: var(--spacing-sm);
     }
-
-    .menu-list a.contact-btn:hover {
-      background: var(--branco);
-      color: var(--preto-logo);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(65, 227, 215, 0.6);
-    }
-
-    .menu-list a.contact-btn::after {
+    
+    .nav-link-cta::before {
       display: none;
     }
-
-    /* ===================== BARRA DE CAMPANHAS (TOPO FIXO) ===================== */
-    .campaign-topbar {
-      position: fixed; 
-      top: 90px; 
-      left: 0; 
-      width: 100vw; 
-      z-index: 1040;
-      background: rgba(26, 31, 46, 0.96);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 3px 20px rgba(65, 227, 215, 0.12);
-      border-bottom: 2px solid rgba(65, 227, 215, 0.2);
-      display: flex; 
-      align-items: center; 
-      justify-content: center;
-      min-height: 64px; 
-      padding: 8px 0;
+    
+    .nav-link-cta:hover {
+      background: linear-gradient(135deg, var(--color-cyan-light) 0%, var(--color-cyan) 100%);
+      color: var(--color-black);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(65, 227, 215, 0.5);
     }
-
-    .campaign-inner {
-      max-width: var(--container-max); 
-      margin: 0 auto; 
-      width: 100%;
-      display: flex; 
-      align-items: center; 
-      gap: 16px; 
-      padding: 0 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .panel-title-camp {
-      color: var(--azul-piscina); 
-      font-size: 1.12rem;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 900; 
-      letter-spacing: 0.15em; 
-      text-transform: uppercase;
-      margin-right: 16px;
-      user-select: none;
-      position: relative;
-      padding-bottom: 4px;
-    }
-
-    .panel-title-camp::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
+    
+    /* ============================================================
+       BARRA DE CAMPANHAS ELEGANTE
+       ============================================================ */
+    .campaign-bar {
+      position: fixed;
+      top: var(--header-height);
       left: 0;
       width: 100%;
-      height: 2px;
-      background: var(--azul-piscina);
+      min-height: var(--campaign-bar-height);
+      background: rgba(20, 25, 32, 0.98);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(65, 227, 215, 0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      z-index: calc(var(--z-fixed) - 1);
+      padding: var(--spacing-md) 0;
     }
-
-    .campaign-btn-camp {
-      background: linear-gradient(90deg, rgba(65, 227, 215, 0.15) 0%, rgba(42, 49, 65, 0.4) 100%);
-      color: var(--branco); 
-      font-family: 'Nunito', sans-serif;
-      font-weight: 800; 
-      letter-spacing: 0.06em; 
-      border-radius: 16px; 
-      font-size: 1rem;
-      border: 2px solid rgba(65, 227, 215, 0.3); 
-      padding: 12px 26px; 
-      margin: 4px;
-      box-shadow: 0 2px 10px rgba(65, 227, 215, 0.15); 
-      outline: none; 
-      cursor: pointer;
-      transition: all var(--transition-speed);
+    
+    .campaign-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--spacing-xl);
+    }
+    
+    .campaign-title {
+      font-size: var(--font-sm);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-cyan);
+      padding-right: var(--spacing-lg);
+      border-right: 2px solid rgba(65, 227, 215, 0.2);
+      margin-right: var(--spacing-sm);
+    }
+    
+    .campaign-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: var(--spacing-sm) var(--spacing-lg);
+      font-size: var(--font-sm);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--color-gray-100);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(65, 227, 215, 0.2);
+      border-radius: var(--radius-lg);
       text-decoration: none;
-      display: inline-block;
+      transition: all var(--transition-base);
+      white-space: nowrap;
     }
-
-    .campaign-btn-camp:hover {
-      background: var(--azul-piscina);
-      color: var(--preto-logo);
-      border-color: var(--azul-piscina);
-      transform: translateY(-4px) scale(1.03);
-      box-shadow: 0 8px 24px rgba(65, 227, 215, 0.4);
+    
+    .campaign-btn:hover {
+      background: var(--color-cyan);
+      color: var(--color-black);
+      border-color: var(--color-cyan);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(65, 227, 215, 0.3);
     }
-
-    /* Espaço para conteúdo após headers fixos */
-    main { 
-      margin-top: 170px; 
-      padding-bottom: 60px;
+    
+    /* ============================================================
+       HERO SECTION - ULTRA MODERNO
+       ============================================================ */
+    main {
+      margin-top: calc(var(--header-height) + var(--campaign-bar-height) + var(--spacing-3xl));
+      padding-bottom: var(--spacing-3xl);
     }
-
-    /* ===================== HERO HOME (TEXTO + VISUAL) ===================== */
-    .hero-home {
+    
+    .hero {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
+      gap: var(--spacing-3xl);
       align-items: center;
-      gap: 70px;
       max-width: var(--container-max);
-      margin: 0 auto 70px auto;
-      padding: 90px 40px 70px 50px;
-      border-radius: 28px;
-      background: linear-gradient(135deg, rgba(13, 17, 23, 0.6) 0%, rgba(26, 31, 46, 0.8) 100%);
-      backdrop-filter: blur(20px) saturate(180%);
-      box-shadow: 0 12px 48px rgba(65, 227, 215, 0.15), 
-                  0 4px 24px rgba(0, 0, 0, 0.3),
-                  inset 0 1px 0 rgba(255, 255, 255, 0.05);
-      border: 2px solid rgba(65, 227, 215, 0.2);
+      margin: 0 auto var(--spacing-3xl);
+      padding: var(--spacing-3xl);
+      background: linear-gradient(135deg, 
+        rgba(26, 32, 40, 0.8) 0%, 
+        rgba(20, 25, 32, 0.6) 100%);
+      backdrop-filter: blur(20px) saturate(120%);
+      border-radius: var(--radius-2xl);
+      border: 1px solid rgba(65, 227, 215, 0.1);
+      box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 0 40px rgba(65, 227, 215, 0.05);
       position: relative;
       overflow: hidden;
     }
-
-    /* Efeito de brilho/reflexo no hero */
-    .hero-home::before {
+    
+    /* Efeito de luz animado */
+    .hero::before {
       content: '';
       position: absolute;
-      top: -60%;
-      left: -60%;
-      width: 220%;
-      height: 220%;
-      background: radial-gradient(circle, rgba(65, 227, 215, 0.12) 0%, transparent 65%);
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(65, 227, 215, 0.08) 0%, transparent 70%);
+      animation: rotateLight 15s linear infinite;
       pointer-events: none;
-      z-index: 0;
-      animation: pulse 8s ease-in-out infinite;
     }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 0.5; transform: scale(1); }
-      50% { opacity: 0.8; transform: scale(1.05); }
+    
+    @keyframes rotateLight {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
-
+    
     .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 26px;
-      z-index: 2;
       position: relative;
+      z-index: 2;
     }
-
-    /* Subtítulo/marca acima do título principal */
-    .hero-brand {
-      font-family: 'Nunito', sans-serif;
-      font-size: 1.15rem;
-      color: var(--azul-piscina);
-      font-weight: 900;
-      letter-spacing: 0.18em;
+    
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      font-size: var(--font-sm);
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: -10px;
-      text-shadow: 0 2px 12px rgba(65, 227, 215, 0.6);
+      color: var(--color-cyan);
+      margin-bottom: var(--spacing-lg);
+      padding: var(--spacing-sm) var(--spacing-md);
+      background: rgba(65, 227, 215, 0.08);
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(65, 227, 215, 0.2);
+      width: fit-content;
     }
-
-    /* Título principal com gradiente e sombra */
-    .hero-main-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      color: var(--branco);
+    
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(var(--font-4xl), 6vw, var(--font-6xl));
       font-weight: 900;
+      line-height: 1.1;
       letter-spacing: -0.02em;
-      margin-bottom: 8px;
-      line-height: 1.15;
-      background: linear-gradient(135deg, #ffffff 0%, var(--azul-piscina) 100%);
+      color: var(--color-white);
+      margin-bottom: var(--spacing-lg);
+      background: linear-gradient(135deg, 
+        var(--color-white) 0%, 
+        var(--color-gray-100) 50%,
+        var(--color-cyan-light) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      text-shadow: 0 4px 24px rgba(65, 227, 215, 0.3);
-      filter: drop-shadow(0 2px 8px rgba(65, 227, 215, 0.4));
+      animation: gradientShift 8s ease infinite;
     }
-
+    
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
     .hero-description {
-      color: var(--texto-claro);
-      font-size: 1.08rem;
-      font-weight: 600;
-      line-height: 1.6;
-      max-width: 480px;
-      margin-top: 4px;
+      font-size: var(--font-lg);
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--color-gray-200);
+      margin-bottom: var(--spacing-2xl);
+      max-width: 540px;
     }
-
-    /* Barra de pesquisa com glassmorphism */
-    .search-area { 
-      width: 100%; 
-      margin-top: 8px;
+    
+    /* Search bar moderna */
+    .search-wrapper {
+      position: relative;
+      margin-bottom: var(--spacing-xl);
     }
-
-    .search-bar {
+    
+    .search-form {
+      position: relative;
       display: flex;
       align-items: center;
-      width: 100%;
-      background: rgba(42, 49, 65, 0.6);
+      background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(10px);
-      border-radius: 50px;
-      border: 2px solid rgba(65, 227, 215, 0.4);
-      box-shadow: 0 4px 20px rgba(65, 227, 215, 0.2);
-      margin-bottom: 12px;
-      transition: all var(--transition-speed);
+      border: 2px solid rgba(65, 227, 215, 0.2);
+      border-radius: var(--radius-full);
+      padding: var(--spacing-xs);
+      transition: all var(--transition-base);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-
-    .search-bar:focus-within {
-      border-color: var(--azul-piscina);
-      box-shadow: 0 8px 32px rgba(65, 227, 215, 0.4);
-      transform: translateY(-2px);
+    
+    .search-form:focus-within {
+      border-color: var(--color-cyan);
+      box-shadow: 0 8px 24px rgba(65, 227, 215, 0.2), var(--shadow-glow);
     }
-
-    .search-bar input {
+    
+    .search-input {
       flex: 1;
-      font-size: 1.08rem;
-      padding: 20px 28px;
-      background: none;
-      color: var(--branco);
-      font-family: inherit;
-      border: none;
-      outline: none;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
-
-    .search-bar input::placeholder { 
-      color: var(--texto-muted);
+      font-family: var(--font-primary);
+      font-size: var(--font-base);
       font-weight: 500;
-    }
-
-    .search-bar button {
-      background: var(--azul-piscina);
+      color: var(--color-white);
+      background: none;
       border: none;
-      font-size: 1.8rem;
-      color: var(--preto-logo);
-      cursor: pointer;
-      padding: 18px 32px;
-      border-radius: 50px;
-      font-weight: 900;
-      transition: all var(--transition-speed);
-      margin: 4px;
-    }
-
-    .search-bar button:hover {
-      background: var(--branco);
-      transform: scale(1.05);
-      box-shadow: 0 4px 16px rgba(65, 227, 215, 0.5);
-    }
-
-    /* Botões de navegação rápida */
-    .cta-row { 
-      display: flex; 
-      flex-wrap: wrap; 
-      gap: 14px; 
-      margin-top: 12px;
-    }
-
-    .btn-card {
-      background: rgba(42, 49, 65, 0.5);
-      backdrop-filter: blur(8px);
-      color: var(--azul-piscina);
-      font-weight: 700;
-      padding: 14px 24px;
-      border-radius: 18px;
-      font-size: 1rem;
-      border: 2px solid rgba(65, 227, 215, 0.3);
-      font-family: 'Nunito', sans-serif;
-      letter-spacing: 0.05em;
-      box-shadow: 0 2px 12px rgba(65, 227, 215, 0.15);
-      text-align: center;
-      min-width: 140px;
       outline: none;
-      transition: all var(--transition-speed);
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
+      padding: var(--spacing-md) var(--spacing-lg);
     }
-
-    .btn-card:hover {
-      background: var(--azul-piscina);
-      color: var(--preto-logo);
-      border-color: var(--azul-piscina);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(65, 227, 215, 0.4);
+    
+    .search-input::placeholder {
+      color: var(--color-gray-400);
     }
-
-    /* Mockup/Visual à direita */
-    .hero-visual {
+    
+    .search-btn {
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-cyan-dark) 100%);
+      border: none;
+      border-radius: 50%;
+      color: var(--color-black);
+      font-size: var(--font-xl);
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--transition-base);
+      box-shadow: 0 4px 12px rgba(65, 227, 215, 0.3);
+    }
+    
+    .search-btn:hover {
+      transform: scale(1.1) rotate(90deg);
+      box-shadow: 0 6px 20px rgba(65, 227, 215, 0.5);
+    }
+    
+    /* Botões de ação */
+    .cta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-xl);
+    }
+    
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--spacing-md) var(--spacing-lg);
+      font-size: var(--font-base);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--color-cyan);
+      background: rgba(65, 227, 215, 0.08);
+      border: 1px solid rgba(65, 227, 215, 0.3);
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      transition: all var(--transition-base);
+      white-space: nowrap;
+    }
+    
+    .cta-btn:hover {
+      background: var(--color-cyan);
+      color: var(--color-black);
+      border-color: var(--color-cyan);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(65, 227, 215, 0.3);
+    }
+    
+    /* Visual mockup */
+    .hero-visual {
       position: relative;
       z-index: 2;
-    }
-
-    .mockup-phone {
-      max-width: 100%;
-      width: 420px;
-      height: auto;
-      border-radius: 40px;
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5),
-                  0 8px 32px rgba(65, 227, 215, 0.3);
-      object-fit: cover;
-      border: 3px solid rgba(65, 227, 215, 0.2);
-      transition: transform var(--transition-speed);
-    }
-
-    .mockup-phone:hover {
-      transform: scale(1.02) translateY(-8px);
-      box-shadow: 0 32px 100px rgba(0, 0, 0, 0.6),
-                  0 12px 48px rgba(65, 227, 215, 0.5);
-    }
-
-    /* ===================== GRID DE PRODUTOS/CARDS ===================== */
-    .card-list { 
-      display: flex; 
-      flex-wrap: wrap; 
-      gap: 24px; 
-      margin-top: 40px;
-      justify-content: flex-start;
-    }
-
-    .card {
-      background: rgba(42, 49, 65, 0.5);
-      backdrop-filter: blur(12px);
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(65, 227, 215, 0.12);
-      min-width: 180px;
-      max-width: 260px;
-      color: var(--texto-claro);
       display: flex;
-      flex-direction: column;
       align-items: center;
-      text-align: center;
-      border: 2px solid rgba(65, 227, 215, 0.15);
-      transition: all var(--transition-speed);
-      padding: 24px;
-      cursor: pointer;
+      justify-content: center;
     }
-
+    
+    .mockup {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      border-radius: var(--radius-2xl);
+      box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(65, 227, 215, 0.2);
+      border: 3px solid rgba(65, 227, 215, 0.2);
+      transition: transform var(--transition-slow);
+    }
+    
+    .mockup:hover {
+      transform: scale(1.02) translateY(-8px);
+      box-shadow: 
+        0 40px 80px rgba(0, 0, 0, 0.5),
+        0 0 60px rgba(65, 227, 215, 0.3);
+    }
+    
+    /* ============================================================
+       CARDS GRID - PRODUTOS/AFILIADOS
+       ============================================================ */
+    .products-section {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--spacing-xl);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: var(--spacing-3xl);
+    }
+    
+    .section-title {
+      font-family: var(--font-display);
+      font-size: var(--font-4xl);
+      font-weight: 900;
+      color: var(--color-white);
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .section-subtitle {
+      font-size: var(--font-lg);
+      color: var(--color-gray-300);
+    }
+    
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--spacing-xl);
+      margin-bottom: var(--spacing-3xl);
+    }
+    
+    .card {
+      background: rgba(26, 32, 40, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(65, 227, 215, 0.1);
+      border-radius: var(--radius-xl);
+      padding: var(--spacing-xl);
+      text-align: center;
+      transition: all var(--transition-slow);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(65, 227, 215, 0.05) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+    
     .card:hover {
-      background: rgba(65, 227, 215, 0.15);
-      border-color: var(--azul-piscina);
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 12px 40px rgba(65, 227, 215, 0.3);
+      transform: translateY(-8px);
+      border-color: var(--color-cyan);
+      box-shadow: 0 20px 40px rgba(65, 227, 215, 0.2);
     }
-
-    .card img { 
-      width: 64px; 
-      height: auto; 
-      margin-bottom: 14px; 
-      border-radius: 12px;
-      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+    
+    .card:hover::before {
+      opacity: 1;
     }
-
-    .card h3 { 
-      font-weight: 800; 
-      font-size: 1.08rem; 
-      margin-bottom: 10px; 
-      color: var(--azul-piscina);
+    
+    .card-image {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto var(--spacing-lg);
+      border-radius: var(--radius-lg);
+      object-fit: cover;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
     }
-
-    .card p { 
-      font-size: 0.96rem; 
-      color: var(--texto-muted);
-      line-height: 1.5;
-    }
-
-    /* Seções expansíveis */
-    section { 
-      margin-bottom: 40px;
-      scroll-margin-top: 180px;
-    }
-
-    /* ===================== FOOTER ===================== */
-    footer {
-      text-align: center;
-      color: var(--azul-piscina);
-      background: rgba(13, 17, 23, 0.95);
-      padding: 32px 20px;
+    
+    .card-title {
+      font-size: var(--font-lg);
       font-weight: 700;
-      font-size: 0.98rem;
-      border-top: 2px solid rgba(65, 227, 215, 0.2);
-      font-family: 'Nunito', Arial, sans-serif;
-      margin-top: 60px;
+      color: var(--color-cyan);
+      margin-bottom: var(--spacing-sm);
     }
-
-    /* ===================== RESPONSIVIDADE MOBILE ===================== */
-    @media (max-width: 1000px) {
-      .header-inner { padding: 0 12px; }
-      .campaign-inner { padding: 0 12px; }
-      .hero-home {
-        grid-template-columns: 1fr;
-        padding: 60px 24px;
-        gap: 40px;
+    
+    .card-description {
+      font-size: var(--font-sm);
+      color: var(--color-gray-300);
+      line-height: 1.6;
+    }
+    
+    /* ============================================================
+       FOOTER MODERNO
+       ============================================================ */
+    .footer {
+      background: var(--color-black);
+      border-top: 1px solid rgba(65, 227, 215, 0.1);
+      padding: var(--spacing-2xl) 0;
+      margin-top: var(--spacing-3xl);
+    }
+    
+    .footer-content {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--spacing-xl);
+      text-align: center;
+    }
+    
+    .footer-text {
+      font-size: var(--font-sm);
+      color: var(--color-gray-400);
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .footer-brand {
+      font-weight: 700;
+      color: var(--color-cyan);
+    }
+    
+    /* ============================================================
+       RESPONSIVIDADE
+       ============================================================ */
+    @media (max-width: 1024px) {
+      :root {
+        --header-height: 70px;
+        --campaign-bar-height: auto;
       }
+      
+      .hero {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+        padding: var(--spacing-2xl);
+      }
+      
       .hero-visual {
         order: -1;
       }
-      .mockup-phone {
-        max-width: 340px;
+      
+      .mockup {
+        max-width: 360px;
       }
-      main { margin-top: 190px; }
-      .menu-list { 
-        gap: 10px; 
+      
+      .nav-list {
+        flex-wrap: wrap;
         justify-content: center;
+      }
+      
+      .campaign-content {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .campaign-title {
+        border-right: none;
+        border-bottom: 2px solid rgba(65, 227, 215, 0.2);
+        padding-bottom: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
       }
     }
-
-    @media (max-width: 650px) {
-      .logo-img { 
-        width: 58px; 
-        height: 58px; 
-      }
-      .hero-home { 
-        padding: 40px 16px; 
-      }
-      .card-list { 
-        gap: 12px; 
-        justify-content: center;
-      }
-      .menu-list a { 
-        font-size: 0.9rem; 
-        padding: 8px 10px; 
-      }
-      .campaign-btn-camp { 
-        font-size: 0.88rem; 
-        padding: 10px 18px; 
-      }
-      .hero-main-title {
-        font-size: 2rem;
-      }
+    
+    @media (max-width: 768px) {
       .container {
-        padding: 0 12px;
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+      }
+      
+      .header-content {
+        padding: 0 var(--spacing-md);
+      }
+      
+      .logo-image {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .nav-link {
+        font-size: 0.75rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+      }
+      
+      .hero-title {
+        font-size: var(--font-3xl);
+      }
+      
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+      }
+      
+      .cta-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <!-- ===================== HEADER: LOGO + MENU PRINCIPAL ===================== -->
-  <header class="topbar">
-    <div class="header-inner">
-      <!-- Logo à esquerda, aumentada e com hover -->
-      <div class="logo-box">
-        <img class="logo-img" src="/assets/Logo.png" alt="Logo Mais Sabiamente" onerror="this.onerror=null;this.src='https://placehold.co/88x88/ffffff/18191b?text=Logo';" />
-      </div>
-      <!-- Menu horizontal navegável -->
-      <nav class="menu-list">
-        <a class="active" href="#">Home</a>
-        <a href="#departamentos">Departamentos</a>
-        <a href="#cuidados">Cuidados Diários</a>
-        <a href="#tecnologia">Tecnologia</a>
-        <a href="#livros">Livros</a>
-        <a href="#saude">Saúde</a>
-        <a href="#marcas">Marcas</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato" class="contact-btn">Contato</a>
+  
+  <!-- ============================================================
+       HEADER PRINCIPAL
+       ============================================================ -->
+  <header class="header">
+    <div class="header-content">
+      <!-- Logo -->
+      <a href="#" class="logo">
+        <img src="/assets/Logo.png" alt="Mais Sabiamente" class="logo-image" 
+             onerror="this.src='https://placehold.co/60x60/ffffff/0a0e14?text=MS&font=raleway'">
+      </a>
+      
+      <!-- Navegação -->
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#" class="nav-link active">Home</a></li>
+          <li><a href="#departamentos" class="nav-link">Departamentos</a></li>
+          <li><a href="#cuidados" class="nav-link">Cuidados Diários</a></li>
+          <li><a href="#tecnologia" class="nav-link">Tecnologia</a></li>
+          <li><a href="#livros" class="nav-link">Livros</a></li>
+          <li><a href="#saude" class="nav-link">Saúde</a></li>
+          <li><a href="#marcas" class="nav-link">Marcas</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#contato" class="nav-link nav-link-cta">Contato</a></li>
+        </ul>
       </nav>
     </div>
   </header>
-
-  <!-- ===================== BARRA DE CAMPANHAS (TOPO FIXO) ===================== -->
-  <div class="campaign-topbar">
-    <div class="campaign-inner">
-      <span class="panel-title-camp">Campanhas</span>
-      <a href="https://mais.app/jROmOw" class="campaign-btn-camp">Desodorantes</a>
-      <a href="https://mais.app/rAxpKd" class="campaign-btn-camp">Cabelos</a>
-      <a href="https://mais.app/nX49Uz" class="campaign-btn-camp">Bucal</a>
-      <a href="https://mais.app/BeCrvg" class="campaign-btn-camp">Corpo</a>
-      <a href="https://mais.app/QleArk" class="campaign-btn-camp">Lançamentos</a>
-      <a href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty" class="campaign-btn-camp">Kits</a>
+  
+  <!-- ============================================================
+       BARRA DE CAMPANHAS
+       ============================================================ -->
+  <div class="campaign-bar">
+    <div class="campaign-content">
+      <span class="campaign-title">Campanhas</span>
+      <a href="https://mais.app/jROmOw" class="campaign-btn">Desodorantes</a>
+      <a href="https://mais.app/rAxpKd" class="campaign-btn">Cabelos</a>
+      <a href="https://mais.app/nX49Uz" class="campaign-btn">Bucal</a>
+      <a href="https://mais.app/BeCrvg" class="campaign-btn">Corpo</a>
+      <a href="https://mais.app/QleArk" class="campaign-btn">Lançamentos</a>
+      <a href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty" class="campaign-btn">Kits</a>
     </div>
   </div>
-
-  <!-- ===================== HERO HOME (GRID: TEXTO + VISUAL) ===================== -->
-  <main class="container">
-    <section class="hero-home">
-      <!-- Lado esquerdo: Texto e CTAs -->
+  
+  <!-- ============================================================
+       CONTEÚDO PRINCIPAL
+       ============================================================ -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
       <div class="hero-content">
-        <div class="hero-brand">Mais Sabiamente</div>
-        <h1 class="hero-main-title">Curadoria profissional para viver melhor</h1>
+        <div class="hero-eyebrow">✨ Mais Sabiamente</div>
+        <h1 class="hero-title">Curadoria profissional para viver melhor</h1>
         <p class="hero-description">
-          Conteúdo confiável, navegação fácil por departamentos, campanhas e afiliados em destaque.<br>
+          Conteúdo confiável, navegação fácil por departamentos, campanhas e afiliados em destaque. 
           Acesse as melhores oportunidades, produtos e links preservados.
         </p>
-        <!-- Barra de pesquisa com glassmorphism -->
-        <div class="search-area">
-          <form class="search-bar" action="/busca" method="get" autocomplete="off">
-            <input type="search" name="q" placeholder="Pesquise produtos, categorias ou marcas…" aria-label="Campo de busca" />
-            <button type="submit" title="Buscar" aria-label="Botão buscar">→</button>
+        
+        <!-- Search -->
+        <div class="search-wrapper">
+          <form class="search-form" action="/busca" method="get">
+            <input type="search" name="q" class="search-input" 
+                   placeholder="Pesquise produtos, categorias ou marcas…" 
+                   aria-label="Campo de busca">
+            <button type="submit" class="search-btn" aria-label="Buscar">→</button>
           </form>
-          <!-- Botões de navegação rápida -->
-          <div class="cta-row">
-            <a class="btn-card" href="#departamentos">Departamentos</a>
-            <a class="btn-card" href="#cuidados">Cuidados Diários</a>
-            <a class="btn-card" href="#premium">Visual Premium</a>
-            <a class="btn-card" href="#links">Links Preservados</a>
-          </div>
+        </div>
+        
+        <!-- CTAs -->
+        <div class="cta-grid">
+          <a href="#departamentos" class="cta-btn">Departamentos</a>
+          <a href="#cuidados" class="cta-btn">Cuidados Diários</a>
+          <a href="#premium" class="cta-btn">Visual Premium</a>
+          <a href="#links" class="cta-btn">Links Preservados</a>
         </div>
       </div>
-      <!-- Lado direito: Mockup/Visual -->
+      
+      <!-- Mockup Visual -->
       <div class="hero-visual">
-        <img class="mockup-phone" src="/assets/mockup-phone.png" alt="Visual Premium do site" onerror="this.onerror=null;this.src='https://placehold.co/420x840/0d1117/41e3d7?text=Visual+Premium';" />
+        <img src="/assets/mockup-phone.png" alt="Visual Premium" class="mockup"
+             onerror="this.src='https://placehold.co/480x960/0a0e14/41e3d7?text=Visual+Premium&font=raleway'">
       </div>
     </section>
-
-    <!-- ===================== GRID DE PRODUTOS/AFILIADOS ===================== -->
-    <section id="produtos">
-      <div class="card-list">
+    
+    <!-- Products Section -->
+    <section class="products-section" id="produtos">
+      <div class="section-header">
+        <h2 class="section-title">Produtos em Destaque</h2>
+        <p class="section-subtitle">Seleção curada dos melhores produtos afiliados</p>
+      </div>
+      
+      <div class="cards-grid">
         <article class="card">
-          <img src="/assets/produto1.png" alt="Produto afiliado 1" onerror="this.onerror=null;this.src='https://placehold.co/64x64/41e3d7/18191b?text=P1';" />
-          <h3>Produto Afiliado 1</h3>
-          <p>Destaque, breve descrição do produto 1.</p>
+          <img src="/assets/produto1.png" alt="Produto 1" class="card-image"
+               onerror="this.src='https://placehold.co/80x80/41e3d7/0a0e14?text=P1'">
+          <h3 class="card-title">Produto Afiliado 1</h3>
+          <p class="card-description">Destaque premium com benefícios exclusivos e qualidade garantida.</p>
         </article>
+        
         <article class="card">
-          <img src="/assets/produto2.png" alt="Produto afiliado 2" onerror="this.onerror=null;this.src='https://placehold.co/64x64/41e3d7/18191b?text=P2';" />
-          <h3>Produto Afiliado 2</h3>
-          <p>Bastante procurado, breve descrição do produto 2.</p>
+          <img src="/assets/produto2.png" alt="Produto 2" class="card-image"
+               onerror="this.src='https://placehold.co/80x80/41e3d7/0a0e14?text=P2'">
+          <h3 class="card-title">Produto Afiliado 2</h3>
+          <p class="card-description">Mais procurado pelos usuários com avaliações positivas.</p>
         </article>
-        <!-- Adicione mais cards conforme necessário -->
+        
+        <article class="card">
+          <img src="/assets/produto3.png" alt="Produto 3" class="card-image"
+               onerror="this.src='https://placehold.co/80x80/41e3d7/0a0e14?text=P3'">
+          <h3 class="card-title">Produto Afiliado 3</h3>
+          <p class="card-description">Novidade exclusiva com tecnologia avançada e design moderno.</p>
+        </article>
       </div>
     </section>
-
-    <!-- ===================== SEÇÕES EXPANSÍVEIS PARA MANUTENÇÃO ===================== -->
-    <section id="departamentos">
-      <!-- Adicione conteúdo para departamentos -->
-    </section>
-    <section id="cuidados">
-      <!-- Adicione conteúdo para cuidados diários -->
-    </section>
-    <section id="tecnologia">
-      <!-- Adicione conteúdo para tecnologia -->
-    </section>
-    <section id="livros">
-      <!-- Adicione conteúdo para livros -->
-    </section>
-    <section id="saude">
-      <!-- Adicione conteúdo para saúde -->
-    </section>
-    <section id="marcas">
-      <!-- Adicione conteúdo para marcas -->
-    </section>
-    <section id="sobre">
-      <!-- Adicione conteúdo sobre a curadoria -->
-    </section>
-    <section id="contato">
-      <!-- Adicione formulário de contato -->
-    </section>
+    
+    <!-- Seções expansíveis para manutenção futura -->
+    <section id="departamentos"></section>
+    <section id="cuidados"></section>
+    <section id="tecnologia"></section>
+    <section id="livros"></section>
+    <section id="saude"></section>
+    <section id="marcas"></section>
+    <section id="sobre"></section>
+    <section id="contato"></section>
   </main>
-
-  <!-- ===================== FOOTER ===================== -->
-  <footer>
-    © 2025 Mais Sabiamente — Curadoria profissional.<br>
-    Desenvolvido com foco em usabilidade e identidade visual.
+  
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-text">
+        © 2025 <span class="footer-brand">Mais Sabiamente</span> — Curadoria profissional inteligente.
+      </p>
+      <p class="footer-text">
+        Desenvolvido com excelência, elegância e modernidade.
+      </p>
+    </div>
   </footer>
+  
 </body>
 </html>
