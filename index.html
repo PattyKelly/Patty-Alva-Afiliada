@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mais Sabiamente - Curadoria profissional de produtos, departamentos, campanhas e links preservados com inteligência e elegância.">
+  <meta name="description" content="Mais Sabiamente - Curadoria profissional de produtos, departamentos e campanhas com inteligência e elegância.">
   <meta name="theme-color" content="#41e3d7">
   <title>Mais Sabiamente — Curadoria Profissional Inteligente</title>
   
@@ -20,8 +20,8 @@
   
   <style>
     /* ============================================================
-       VARIÁVEIS CSS - DESIGN SYSTEM PROFISSIONAL
-       Baseado na identidade da logo (preto, branco, azul piscina)
+       VARIÁVEIS CSS - DESIGN SYSTEM PROFISSIONAL EXPANDIDO
+       Paleta baseada na logo: preto, branco, azul piscina + PRATA
        ============================================================ */
     :root {
       /* Cores principais */
@@ -29,9 +29,21 @@
       --color-dark: #141920;
       --color-charcoal: #1a2028;
       --color-slate: #2a3441;
+      
+      /* Paleta azul-ciano (da logo) */
       --color-cyan: #41e3d7;
       --color-cyan-light: #5ef0e4;
       --color-cyan-dark: #2eb8be;
+      --color-cyan-vibrant: #00fff7;
+      
+      /* Paleta prata/metálica (nova) */
+      --color-silver: #c0c5ce;
+      --color-silver-light: #e1e4e8;
+      --color-silver-dark: #8b929e;
+      --color-platinum: #d4d7dc;
+      --color-metal: #a8b2bf;
+      
+      /* Branco e cinzas */
       --color-white: #ffffff;
       --color-offwhite: #f8f9fa;
       --color-gray-100: #e8eaed;
@@ -39,6 +51,12 @@
       --color-gray-300: #9ea3a8;
       --color-gray-400: #6c7278;
       --color-gray-500: #4a5057;
+      
+      /* Gradientes metálicos */
+      --gradient-silver: linear-gradient(135deg, #c0c5ce 0%, #8b929e 100%);
+      --gradient-platinum: linear-gradient(135deg, #e1e4e8 0%, #c0c5ce 100%);
+      --gradient-cyan: linear-gradient(135deg, #41e3d7 0%, #2eb8be 100%);
+      --gradient-logo: linear-gradient(135deg, #c0c5ce 0%, #41e3d7 50%, #8b929e 100%);
       
       /* Tipografia */
       --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -64,6 +82,7 @@
       --spacing-xl: 2rem;
       --spacing-2xl: 3rem;
       --spacing-3xl: 4rem;
+      --spacing-4xl: 5rem;
       
       /* Border radius */
       --radius-sm: 0.375rem;
@@ -71,20 +90,24 @@
       --radius-lg: 0.75rem;
       --radius-xl: 1rem;
       --radius-2xl: 1.5rem;
+      --radius-3xl: 2rem;
       --radius-full: 9999px;
       
-      /* Shadows */
+      /* Shadows premium */
       --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
       --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
       --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
       --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
       --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
-      --shadow-glow: 0 0 20px rgba(65, 227, 215, 0.3);
+      --shadow-glow-cyan: 0 0 25px rgba(65, 227, 215, 0.4);
+      --shadow-glow-silver: 0 0 20px rgba(192, 197, 206, 0.3);
+      --shadow-metal: 0 8px 32px rgba(192, 197, 206, 0.2);
       
       /* Transitions */
       --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
       --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
       --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-smooth: 500ms cubic-bezier(0.4, 0, 0.2, 1);
       
       /* Z-index */
       --z-dropdown: 1000;
@@ -96,9 +119,9 @@
       --z-tooltip: 1070;
       
       /* Layout */
-      --container-max: 1280px;
-      --header-height: 80px;
-      --campaign-bar-height: 72px;
+      --container-max: 1320px;
+      --header-height: 90px;
+      --campaign-bar-height: 76px;
     }
     
     /* ============================================================
@@ -123,13 +146,17 @@
       font-weight: 400;
       line-height: 1.6;
       color: var(--color-gray-100);
-      background: linear-gradient(135deg, var(--color-black) 0%, var(--color-dark) 50%, var(--color-charcoal) 100%);
+      background: linear-gradient(135deg, 
+        var(--color-black) 0%, 
+        var(--color-dark) 40%, 
+        var(--color-charcoal) 80%,
+        #1a232e 100%);
       min-height: 100vh;
       overflow-x: hidden;
       position: relative;
     }
     
-    /* Textura animada de fundo */
+    /* Textura animada premium com prata e ciano */
     body::before {
       content: '';
       position: fixed;
@@ -138,16 +165,47 @@
       width: 100%;
       height: 100%;
       background: 
-        radial-gradient(circle at 20% 30%, rgba(65, 227, 215, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(65, 227, 215, 0.03) 0%, transparent 50%);
+        radial-gradient(circle at 20% 30%, rgba(192, 197, 206, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(65, 227, 215, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(192, 197, 206, 0.03) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0;
-      animation: subtleFloat 20s ease-in-out infinite;
+      animation: subtleFloat 25s ease-in-out infinite;
     }
     
     @keyframes subtleFloat {
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(-10px, -10px); }
+      0%, 100% { 
+        transform: translate(0, 0) scale(1); 
+        opacity: 0.6;
+      }
+      50% { 
+        transform: translate(-15px, -15px) scale(1.02); 
+        opacity: 0.8;
+      }
+    }
+    
+    /* Brilho metálico sutil */
+    body::after {
+      content: '';
+      position: fixed;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 200%;
+      background: conic-gradient(from 0deg at 50% 50%, 
+        transparent, 
+        rgba(192, 197, 206, 0.03), 
+        transparent 90deg,
+        rgba(65, 227, 215, 0.02),
+        transparent 180deg);
+      animation: rotateShine 30s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    @keyframes rotateShine {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
     
     /* ============================================================
@@ -163,7 +221,7 @@
     }
     
     /* ============================================================
-       HEADER MODERNO E SOFISTICADO
+       HEADER MODERNO COM FAIXA ESQUERDA COMBINANDO COM LOGO
        ============================================================ */
     .header {
       position: fixed;
@@ -171,12 +229,33 @@
       left: 0;
       width: 100%;
       height: var(--header-height);
-      background: rgba(10, 14, 20, 0.95);
-      backdrop-filter: blur(20px) saturate(180%);
-      border-bottom: 1px solid rgba(65, 227, 215, 0.1);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 20px rgba(65, 227, 215, 0.05);
+      background: rgba(10, 14, 20, 0.97);
+      backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid rgba(192, 197, 206, 0.15);
+      box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.15), 
+        0 1px 24px rgba(65, 227, 215, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
       z-index: var(--z-fixed);
       transition: all var(--transition-base);
+    }
+    
+    /* Faixa esquerda com gradiente combinando com a logo */
+    .header::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 140px;
+      height: 100%;
+      background: var(--gradient-logo);
+      opacity: 0.08;
+      pointer-events: none;
+      transition: opacity var(--transition-base);
+    }
+    
+    .header:hover::before {
+      opacity: 0.12;
     }
     
     .header-content {
@@ -187,35 +266,84 @@
       max-width: var(--container-max);
       margin: 0 auto;
       padding: 0 var(--spacing-xl);
+      position: relative;
+      z-index: 2;
     }
     
-    /* Logo com animação sofisticada */
+    /* Logo aumentada e premium com efeito metálico */
     .logo {
       display: flex;
       align-items: center;
       gap: var(--spacing-md);
       text-decoration: none;
-      transition: transform var(--transition-base);
+      transition: transform var(--transition-smooth);
+      position: relative;
+    }
+    
+    .logo::before {
+      content: '';
+      position: absolute;
+      left: -16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 60px;
+      background: var(--gradient-cyan);
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-glow-cyan);
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+    
+    .logo:hover::before {
+      opacity: 1;
     }
     
     .logo:hover {
-      transform: translateY(-2px);
+      transform: translateX(8px);
     }
     
     .logo-image {
-      width: 60px;
-      height: 60px;
-      border-radius: var(--radius-lg);
-      background: var(--color-white);
-      padding: var(--spacing-xs);
-      box-shadow: 0 4px 12px rgba(65, 227, 215, 0.2), var(--shadow-glow);
-      transition: all var(--transition-base);
-      border: 2px solid rgba(65, 227, 215, 0.3);
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, #ffffff 0%, #f0f2f5 100%);
+      padding: var(--spacing-sm);
+      box-shadow: 
+        0 8px 24px rgba(65, 227, 215, 0.25),
+        0 4px 12px rgba(192, 197, 206, 0.2),
+        var(--shadow-glow-cyan),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      transition: all var(--transition-smooth);
+      border: 3px solid rgba(65, 227, 215, 0.4);
+      position: relative;
+    }
+    
+    .logo-image::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: var(--radius-xl);
+      padding: 2px;
+      background: var(--gradient-logo);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity var(--transition-base);
     }
     
     .logo:hover .logo-image {
-      box-shadow: 0 6px 16px rgba(65, 227, 215, 0.4), 0 0 30px rgba(65, 227, 215, 0.2);
-      transform: rotate(-3deg) scale(1.05);
+      box-shadow: 
+        0 12px 32px rgba(65, 227, 215, 0.4),
+        0 6px 16px rgba(192, 197, 206, 0.3),
+        0 0 40px rgba(65, 227, 215, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      transform: rotate(-5deg) scale(1.08);
+    }
+    
+    .logo:hover .logo-image::after {
+      opacity: 1;
     }
     
     /* Navegação horizontal moderna */
@@ -241,9 +369,9 @@
       padding: var(--spacing-sm) var(--spacing-md);
       font-size: var(--font-sm);
       font-weight: 600;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
       text-transform: uppercase;
-      color: var(--color-gray-200);
+      color: var(--color-silver);
       text-decoration: none;
       border-radius: var(--radius-md);
       transition: all var(--transition-fast);
@@ -253,19 +381,20 @@
     .nav-link::before {
       content: '';
       position: absolute;
-      bottom: 0;
+      bottom: 2px;
       left: 50%;
       width: 0;
       height: 2px;
-      background: var(--color-cyan);
+      background: var(--gradient-cyan);
       transform: translateX(-50%);
       transition: width var(--transition-base);
+      box-shadow: var(--shadow-glow-cyan);
     }
     
     .nav-link:hover,
     .nav-link.active {
-      color: var(--color-cyan);
-      background: rgba(65, 227, 215, 0.05);
+      color: var(--color-cyan-light);
+      background: rgba(65, 227, 215, 0.06);
     }
     
     .nav-link:hover::before,
@@ -274,13 +403,16 @@
     }
     
     .nav-link-cta {
-      background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-cyan-dark) 100%);
+      background: var(--gradient-cyan);
       color: var(--color-black);
-      font-weight: 700;
-      padding: var(--spacing-sm) var(--spacing-lg);
+      font-weight: 800;
+      padding: var(--spacing-sm) var(--spacing-xl);
       border-radius: var(--radius-full);
-      box-shadow: 0 4px 12px rgba(65, 227, 215, 0.3);
-      margin-left: var(--spacing-sm);
+      box-shadow: 
+        0 4px 16px rgba(65, 227, 215, 0.35),
+        var(--shadow-glow-cyan);
+      margin-left: var(--spacing-md);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
     
     .nav-link-cta::before {
@@ -288,14 +420,16 @@
     }
     
     .nav-link-cta:hover {
-      background: linear-gradient(135deg, var(--color-cyan-light) 0%, var(--color-cyan) 100%);
+      background: linear-gradient(135deg, #5ef0e4 0%, #41e3d7 100%);
       color: var(--color-black);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(65, 227, 215, 0.5);
+      transform: translateY(-3px);
+      box-shadow: 
+        0 8px 24px rgba(65, 227, 215, 0.5),
+        0 0 40px rgba(65, 227, 215, 0.3);
     }
     
     /* ============================================================
-       BARRA DE CAMPANHAS ELEGANTE
+       BARRA DE CAMPANHAS ELEGANTE COM PRATA
        ============================================================ */
     .campaign-bar {
       position: fixed;
@@ -303,12 +437,16 @@
       left: 0;
       width: 100%;
       min-height: var(--campaign-bar-height);
-      background: rgba(20, 25, 32, 0.98);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(65, 227, 215, 0.08);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(135deg, 
+        rgba(20, 25, 32, 0.98) 0%, 
+        rgba(26, 30, 38, 0.96) 100%);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(192, 197, 206, 0.12);
+      box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.02);
       z-index: calc(var(--z-fixed) - 1);
-      padding: var(--spacing-md) 0;
+      padding: var(--spacing-lg) 0;
     }
     
     .campaign-content {
@@ -324,79 +462,120 @@
     
     .campaign-title {
       font-size: var(--font-sm);
-      font-weight: 700;
-      letter-spacing: 0.1em;
+      font-weight: 800;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--color-cyan);
-      padding-right: var(--spacing-lg);
-      border-right: 2px solid rgba(65, 227, 215, 0.2);
+      background: var(--gradient-logo);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding-right: var(--spacing-xl);
+      border-right: 2px solid rgba(192, 197, 206, 0.25);
       margin-right: var(--spacing-sm);
+      position: relative;
+    }
+    
+    .campaign-title::after {
+      content: '';
+      position: absolute;
+      right: -2px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: 60%;
+      background: var(--gradient-cyan);
+      box-shadow: var(--shadow-glow-cyan);
     }
     
     .campaign-btn {
       display: inline-flex;
       align-items: center;
-      padding: var(--spacing-sm) var(--spacing-lg);
+      padding: var(--spacing-sm) var(--spacing-xl);
       font-size: var(--font-sm);
       font-weight: 600;
-      letter-spacing: 0.02em;
-      color: var(--color-gray-100);
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(65, 227, 215, 0.2);
-      border-radius: var(--radius-lg);
+      letter-spacing: 0.03em;
+      color: var(--color-silver-light);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(192, 197, 206, 0.2);
+      border-radius: var(--radius-xl);
       text-decoration: none;
-      transition: all var(--transition-base);
+      transition: all var(--transition-smooth);
       white-space: nowrap;
-    }
-    
-    .campaign-btn:hover {
-      background: var(--color-cyan);
-      color: var(--color-black);
-      border-color: var(--color-cyan);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(65, 227, 215, 0.3);
-    }
-    
-    /* ============================================================
-       HERO SECTION - ULTRA MODERNO
-       ============================================================ */
-    main {
-      margin-top: calc(var(--header-height) + var(--campaign-bar-height) + var(--spacing-3xl));
-      padding-bottom: var(--spacing-3xl);
-    }
-    
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: var(--spacing-3xl);
-      align-items: center;
-      max-width: var(--container-max);
-      margin: 0 auto var(--spacing-3xl);
-      padding: var(--spacing-3xl);
-      background: linear-gradient(135deg, 
-        rgba(26, 32, 40, 0.8) 0%, 
-        rgba(20, 25, 32, 0.6) 100%);
-      backdrop-filter: blur(20px) saturate(120%);
-      border-radius: var(--radius-2xl);
-      border: 1px solid rgba(65, 227, 215, 0.1);
-      box-shadow: 
-        0 20px 60px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05),
-        0 0 40px rgba(65, 227, 215, 0.05);
       position: relative;
       overflow: hidden;
     }
     
-    /* Efeito de luz animado */
+    .campaign-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gradient-cyan);
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+    
+    .campaign-btn span {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .campaign-btn:hover {
+      color: var(--color-black);
+      border-color: var(--color-cyan);
+      transform: translateY(-3px);
+      box-shadow: 
+        0 8px 20px rgba(65, 227, 215, 0.35),
+        var(--shadow-glow-cyan);
+    }
+    
+    .campaign-btn:hover::before {
+      opacity: 1;
+    }
+    
+    /* ============================================================
+       HERO SECTION - ULTRA PREMIUM
+       ============================================================ */
+    main {
+      margin-top: calc(var(--header-height) + var(--campaign-bar-height) + var(--spacing-4xl));
+      padding-bottom: var(--spacing-4xl);
+    }
+    
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--spacing-4xl);
+      align-items: center;
+      max-width: var(--container-max);
+      margin: 0 auto var(--spacing-4xl);
+      padding: var(--spacing-4xl);
+      background: linear-gradient(135deg, 
+        rgba(26, 32, 40, 0.85) 0%, 
+        rgba(20, 25, 32, 0.75) 50%,
+        rgba(26, 30, 38, 0.8) 100%);
+      backdrop-filter: blur(24px) saturate(140%);
+      border-radius: var(--radius-3xl);
+      border: 1px solid rgba(192, 197, 206, 0.15);
+      box-shadow: 
+        0 24px 72px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 0 60px rgba(65, 227, 215, 0.08),
+        0 8px 32px rgba(192, 197, 206, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Efeito de luz premium com prata e ciano */
     .hero::before {
       content: '';
       position: absolute;
-      top: -50%;
-      right: -50%;
-      width: 100%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(65, 227, 215, 0.08) 0%, transparent 70%);
-      animation: rotateLight 15s linear infinite;
+      top: -60%;
+      right: -60%;
+      width: 120%;
+      height: 220%;
+      background: 
+        radial-gradient(circle, rgba(192, 197, 206, 0.08) 0%, transparent 60%),
+        radial-gradient(circle, rgba(65, 227, 215, 0.06) 20%, transparent 70%);
+      animation: rotateLight 20s linear infinite;
       pointer-events: none;
     }
     
@@ -415,72 +594,89 @@
       align-items: center;
       gap: var(--spacing-sm);
       font-size: var(--font-sm);
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      font-weight: 800;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--color-cyan);
-      margin-bottom: var(--spacing-lg);
-      padding: var(--spacing-sm) var(--spacing-md);
-      background: rgba(65, 227, 215, 0.08);
+      background: var(--gradient-logo);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: var(--spacing-xl);
+      padding: var(--spacing-sm) var(--spacing-lg);
+      background-color: rgba(65, 227, 215, 0.08);
+      background-blend-mode: overlay;
       border-radius: var(--radius-full);
-      border: 1px solid rgba(65, 227, 215, 0.2);
+      border: 1px solid rgba(192, 197, 206, 0.25);
       width: fit-content;
+      box-shadow: 
+        0 4px 12px rgba(65, 227, 215, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
     
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(var(--font-4xl), 6vw, var(--font-6xl));
+      font-size: clamp(var(--font-4xl), 7vw, var(--font-6xl));
       font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
       color: var(--color-white);
-      margin-bottom: var(--spacing-lg);
+      margin-bottom: var(--spacing-xl);
       background: linear-gradient(135deg, 
         var(--color-white) 0%, 
-        var(--color-gray-100) 50%,
-        var(--color-cyan-light) 100%);
+        var(--color-silver-light) 40%,
+        var(--color-cyan-light) 70%,
+        var(--color-silver) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      animation: gradientShift 8s ease infinite;
+      background-size: 200% 200%;
+      animation: gradientShiftPremium 10s ease infinite;
+      filter: drop-shadow(0 2px 8px rgba(65, 227, 215, 0.3));
     }
     
-    @keyframes gradientShift {
+    @keyframes gradientShiftPremium {
       0%, 100% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
     }
     
     .hero-description {
       font-size: var(--font-lg);
-      font-weight: 400;
-      line-height: 1.7;
-      color: var(--color-gray-200);
+      font-weight: 500;
+      line-height: 1.75;
+      color: var(--color-silver-light);
       margin-bottom: var(--spacing-2xl);
-      max-width: 540px;
+      max-width: 560px;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     }
     
-    /* Search bar moderna */
+    /* Search bar ultra premium */
     .search-wrapper {
       position: relative;
-      margin-bottom: var(--spacing-xl);
+      margin-bottom: var(--spacing-2xl);
     }
     
     .search-form {
       position: relative;
       display: flex;
       align-items: center;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(65, 227, 215, 0.2);
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(12px);
+      border: 2px solid rgba(192, 197, 206, 0.25);
       border-radius: var(--radius-full);
       padding: var(--spacing-xs);
-      transition: all var(--transition-base);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all var(--transition-smooth);
+      box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
     
     .search-form:focus-within {
       border-color: var(--color-cyan);
-      box-shadow: 0 8px 24px rgba(65, 227, 215, 0.2), var(--shadow-glow);
+      box-shadow: 
+        0 12px 32px rgba(65, 227, 215, 0.25),
+        var(--shadow-glow-cyan),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
     }
     
     .search-input {
@@ -492,39 +688,63 @@
       background: none;
       border: none;
       outline: none;
-      padding: var(--spacing-md) var(--spacing-lg);
+      padding: var(--spacing-lg) var(--spacing-xl);
     }
     
     .search-input::placeholder {
-      color: var(--color-gray-400);
+      color: var(--color-silver-dark);
     }
     
     .search-btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-cyan-dark) 100%);
+      width: 52px;
+      height: 52px;
+      background: var(--gradient-cyan);
       border: none;
       border-radius: 50%;
       color: var(--color-black);
-      font-size: var(--font-xl);
-      font-weight: 700;
+      font-size: var(--font-2xl);
+      font-weight: 800;
       cursor: pointer;
-      transition: all var(--transition-base);
-      box-shadow: 0 4px 12px rgba(65, 227, 215, 0.3);
+      transition: all var(--transition-smooth);
+      box-shadow: 
+        0 6px 16px rgba(65, 227, 215, 0.35),
+        var(--shadow-glow-cyan);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .search-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #5ef0e4 0%, #2eb8be 100%);
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+    
+    .search-btn span {
+      position: relative;
+      z-index: 1;
     }
     
     .search-btn:hover {
-      transform: scale(1.1) rotate(90deg);
-      box-shadow: 0 6px 20px rgba(65, 227, 215, 0.5);
+      transform: scale(1.12) rotate(90deg);
+      box-shadow: 
+        0 10px 28px rgba(65, 227, 215, 0.5),
+        0 0 50px rgba(65, 227, 215, 0.4);
     }
     
-    /* Botões de ação */
+    .search-btn:hover::before {
+      opacity: 1;
+    }
+    
+    /* Botões de ação premium */
     .cta-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
       gap: var(--spacing-md);
       margin-top: var(--spacing-xl);
     }
@@ -533,28 +753,49 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: var(--spacing-md) var(--spacing-lg);
+      padding: var(--spacing-md) var(--spacing-xl);
       font-size: var(--font-base);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      color: var(--color-cyan);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: var(--color-cyan-light);
       background: rgba(65, 227, 215, 0.08);
-      border: 1px solid rgba(65, 227, 215, 0.3);
-      border-radius: var(--radius-lg);
+      border: 1px solid rgba(192, 197, 206, 0.3);
+      border-radius: var(--radius-xl);
       text-decoration: none;
-      transition: all var(--transition-base);
+      transition: all var(--transition-smooth);
       white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gradient-cyan);
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+    
+    .cta-btn span {
+      position: relative;
+      z-index: 1;
     }
     
     .cta-btn:hover {
-      background: var(--color-cyan);
       color: var(--color-black);
       border-color: var(--color-cyan);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(65, 227, 215, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 
+        0 12px 28px rgba(65, 227, 215, 0.35),
+        var(--shadow-glow-cyan);
     }
     
-    /* Visual mockup */
+    .cta-btn:hover::before {
+      opacity: 1;
+    }
+    
+    /* Visual mockup premium */
     .hero-visual {
       position: relative;
       z-index: 2;
@@ -565,25 +806,47 @@
     
     .mockup {
       width: 100%;
-      max-width: 480px;
+      max-width: 500px;
       height: auto;
-      border-radius: var(--radius-2xl);
+      border-radius: var(--radius-3xl);
       box-shadow: 
-        0 30px 60px rgba(0, 0, 0, 0.4),
-        0 0 40px rgba(65, 227, 215, 0.2);
-      border: 3px solid rgba(65, 227, 215, 0.2);
-      transition: transform var(--transition-slow);
+        0 40px 100px rgba(0, 0, 0, 0.5),
+        0 20px 60px rgba(65, 227, 215, 0.25),
+        0 8px 32px rgba(192, 197, 206, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      border: 4px solid rgba(192, 197, 206, 0.25);
+      transition: transform var(--transition-smooth);
+      position: relative;
+    }
+    
+    .mockup::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: var(--radius-3xl);
+      padding: 4px;
+      background: var(--gradient-logo);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity var(--transition-smooth);
     }
     
     .mockup:hover {
-      transform: scale(1.02) translateY(-8px);
+      transform: scale(1.03) translateY(-12px) rotate(-2deg);
       box-shadow: 
-        0 40px 80px rgba(0, 0, 0, 0.5),
-        0 0 60px rgba(65, 227, 215, 0.3);
+        0 50px 120px rgba(0, 0, 0, 0.6),
+        0 30px 80px rgba(65, 227, 215, 0.35),
+        0 12px 48px rgba(192, 197, 206, 0.3);
+    }
+    
+    .mockup:hover::after {
+      opacity: 1;
     }
     
     /* ============================================================
-       CARDS GRID - PRODUTOS/AFILIADOS
+       CARDS GRID - PRODUTOS PREMIUM
        ============================================================ */
     .products-section {
       max-width: var(--container-max);
@@ -593,37 +856,40 @@
     
     .section-header {
       text-align: center;
-      margin-bottom: var(--spacing-3xl);
+      margin-bottom: var(--spacing-4xl);
     }
     
     .section-title {
       font-family: var(--font-display);
       font-size: var(--font-4xl);
       font-weight: 900;
-      color: var(--color-white);
+      background: var(--gradient-logo);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       margin-bottom: var(--spacing-md);
     }
     
     .section-subtitle {
       font-size: var(--font-lg);
-      color: var(--color-gray-300);
+      color: var(--color-silver);
     }
     
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: var(--spacing-xl);
-      margin-bottom: var(--spacing-3xl);
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--spacing-2xl);
+      margin-bottom: var(--spacing-4xl);
     }
     
     .card {
-      background: rgba(26, 32, 40, 0.6);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(65, 227, 215, 0.1);
-      border-radius: var(--radius-xl);
-      padding: var(--spacing-xl);
+      background: rgba(26, 32, 40, 0.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(192, 197, 206, 0.12);
+      border-radius: var(--radius-2xl);
+      padding: var(--spacing-2xl);
       text-align: center;
-      transition: all var(--transition-slow);
+      transition: all var(--transition-smooth);
       position: relative;
       overflow: hidden;
     }
@@ -631,19 +897,21 @@
     .card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(65, 227, 215, 0.05) 0%, transparent 100%);
+      inset: 0;
+      background: linear-gradient(135deg, 
+        rgba(192, 197, 206, 0.05) 0%, 
+        rgba(65, 227, 215, 0.08) 100%);
       opacity: 0;
       transition: opacity var(--transition-base);
     }
     
     .card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-12px);
       border-color: var(--color-cyan);
-      box-shadow: 0 20px 40px rgba(65, 227, 215, 0.2);
+      box-shadow: 
+        0 24px 48px rgba(65, 227, 215, 0.25),
+        var(--shadow-glow-cyan),
+        var(--shadow-metal);
     }
     
     .card:hover::before {
@@ -651,35 +919,38 @@
     }
     
     .card-image {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto var(--spacing-lg);
-      border-radius: var(--radius-lg);
+      width: 90px;
+      height: 90px;
+      margin: 0 auto var(--spacing-xl);
+      border-radius: var(--radius-xl);
       object-fit: cover;
-      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
     }
     
     .card-title {
-      font-size: var(--font-lg);
-      font-weight: 700;
-      color: var(--color-cyan);
-      margin-bottom: var(--spacing-sm);
+      font-size: var(--font-xl);
+      font-weight: 800;
+      background: var(--gradient-cyan);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: var(--spacing-md);
     }
     
     .card-description {
-      font-size: var(--font-sm);
-      color: var(--color-gray-300);
-      line-height: 1.6;
+      font-size: var(--font-base);
+      color: var(--color-silver-light);
+      line-height: 1.7;
     }
     
     /* ============================================================
-       FOOTER MODERNO
+       FOOTER PREMIUM
        ============================================================ */
     .footer {
-      background: var(--color-black);
-      border-top: 1px solid rgba(65, 227, 215, 0.1);
-      padding: var(--spacing-2xl) 0;
-      margin-top: var(--spacing-3xl);
+      background: linear-gradient(135deg, var(--color-black) 0%, var(--color-dark) 100%);
+      border-top: 1px solid rgba(192, 197, 206, 0.12);
+      padding: var(--spacing-3xl) 0;
+      margin-top: var(--spacing-4xl);
     }
     
     .footer-content {
@@ -690,29 +961,33 @@
     }
     
     .footer-text {
-      font-size: var(--font-sm);
-      color: var(--color-gray-400);
+      font-size: var(--font-base);
+      color: var(--color-silver-dark);
       margin-bottom: var(--spacing-sm);
+      line-height: 1.8;
     }
     
     .footer-brand {
-      font-weight: 700;
-      color: var(--color-cyan);
+      font-weight: 800;
+      background: var(--gradient-logo);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     
     /* ============================================================
-       RESPONSIVIDADE
+       RESPONSIVIDADE TOTAL
        ============================================================ */
     @media (max-width: 1024px) {
       :root {
-        --header-height: 70px;
+        --header-height: 75px;
         --campaign-bar-height: auto;
       }
       
       .hero {
         grid-template-columns: 1fr;
-        gap: var(--spacing-2xl);
-        padding: var(--spacing-2xl);
+        gap: var(--spacing-3xl);
+        padding: var(--spacing-3xl) var(--spacing-xl);
       }
       
       .hero-visual {
@@ -720,7 +995,7 @@
       }
       
       .mockup {
-        max-width: 360px;
+        max-width: 400px;
       }
       
       .nav-list {
@@ -735,9 +1010,10 @@
       
       .campaign-title {
         border-right: none;
-        border-bottom: 2px solid rgba(65, 227, 215, 0.2);
+        border-bottom: 2px solid rgba(192, 197, 206, 0.25);
         padding-bottom: var(--spacing-sm);
         margin-bottom: var(--spacing-sm);
+        padding-right: 0;
       }
     }
     
@@ -752,8 +1028,8 @@
       }
       
       .logo-image {
-        width: 50px;
-        height: 50px;
+        width: 64px;
+        height: 64px;
       }
       
       .nav-link {
@@ -767,7 +1043,7 @@
       
       .cards-grid {
         grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+        gap: var(--spacing-xl);
       }
       
       .cta-grid {
@@ -779,14 +1055,14 @@
 <body>
   
   <!-- ============================================================
-       HEADER PRINCIPAL
+       HEADER PRINCIPAL COM FAIXA COMBINANDO COM LOGO
        ============================================================ -->
   <header class="header">
     <div class="header-content">
-      <!-- Logo -->
+      <!-- Logo aumentada 80px -->
       <a href="#" class="logo">
         <img src="/assets/Logo.png" alt="Mais Sabiamente" class="logo-image" 
-             onerror="this.src='https://placehold.co/60x60/ffffff/0a0e14?text=MS&font=raleway'">
+             onerror="this.src='https://placehold.co/80x80/ffffff/0a0e14?text=MS&font=raleway'">
       </a>
       
       <!-- Navegação -->
@@ -807,17 +1083,17 @@
   </header>
   
   <!-- ============================================================
-       BARRA DE CAMPANHAS
+       BARRA DE CAMPANHAS COM PRATA
        ============================================================ -->
   <div class="campaign-bar">
     <div class="campaign-content">
       <span class="campaign-title">Campanhas</span>
-      <a href="https://mais.app/jROmOw" class="campaign-btn">Desodorantes</a>
-      <a href="https://mais.app/rAxpKd" class="campaign-btn">Cabelos</a>
-      <a href="https://mais.app/nX49Uz" class="campaign-btn">Bucal</a>
-      <a href="https://mais.app/BeCrvg" class="campaign-btn">Corpo</a>
-      <a href="https://mais.app/QleArk" class="campaign-btn">Lançamentos</a>
-      <a href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty" class="campaign-btn">Kits</a>
+      <a href="https://mais.app/jROmOw" class="campaign-btn"><span>Desodorantes</span></a>
+      <a href="https://mais.app/rAxpKd" class="campaign-btn"><span>Cabelos</span></a>
+      <a href="https://mais.app/nX49Uz" class="campaign-btn"><span>Bucal</span></a>
+      <a href="https://mais.app/BeCrvg" class="campaign-btn"><span>Corpo</span></a>
+      <a href="https://mais.app/QleArk" class="campaign-btn"><span>Lançamentos</span></a>
+      <a href="https://alvapersonalcare.com.br/pages/loja?utm_source=mais&utm_medium=maisplataforma&utm_campaign=patty" class="campaign-btn"><span>Kits</span></a>
     </div>
   </div>
   
@@ -831,7 +1107,7 @@
         <div class="hero-eyebrow">✨ Mais Sabiamente</div>
         <h1 class="hero-title">Curadoria profissional para viver melhor</h1>
         <p class="hero-description">
-          Conteúdo confiável, navegação fácil por departamentos, campanhas e afiliados em destaque. 
+          Conteúdo confiável, navegação fácil por departamentos e campanhas em destaque. 
           Acesse as melhores oportunidades, produtos e links preservados.
         </p>
         
@@ -841,23 +1117,23 @@
             <input type="search" name="q" class="search-input" 
                    placeholder="Pesquise produtos, categorias ou marcas…" 
                    aria-label="Campo de busca">
-            <button type="submit" class="search-btn" aria-label="Buscar">→</button>
+            <button type="submit" class="search-btn" aria-label="Buscar"><span>→</span></button>
           </form>
         </div>
         
         <!-- CTAs -->
         <div class="cta-grid">
-          <a href="#departamentos" class="cta-btn">Departamentos</a>
-          <a href="#cuidados" class="cta-btn">Cuidados Diários</a>
-          <a href="#premium" class="cta-btn">Visual Premium</a>
-          <a href="#links" class="cta-btn">Links Preservados</a>
+          <a href="#departamentos" class="cta-btn"><span>Departamentos</span></a>
+          <a href="#cuidados" class="cta-btn"><span>Cuidados Diários</span></a>
+          <a href="#premium" class="cta-btn"><span>Visual Premium</span></a>
+          <a href="#links" class="cta-btn"><span>Links Preservados</span></a>
         </div>
       </div>
       
       <!-- Mockup Visual -->
       <div class="hero-visual">
         <img src="/assets/mockup-phone.png" alt="Visual Premium" class="mockup"
-             onerror="this.src='https://placehold.co/480x960/0a0e14/41e3d7?text=Visual+Premium&font=raleway'">
+             onerror="this.src='https://placehold.co/500x1000/0a0e14/41e3d7?text=Visual+Premium&font=raleway'">
       </div>
     </section>
     
@@ -865,34 +1141,34 @@
     <section class="products-section" id="produtos">
       <div class="section-header">
         <h2 class="section-title">Produtos em Destaque</h2>
-        <p class="section-subtitle">Seleção curada dos melhores produtos afiliados</p>
+        <p class="section-subtitle">Seleção curada dos melhores produtos</p>
       </div>
       
       <div class="cards-grid">
         <article class="card">
           <img src="/assets/produto1.png" alt="Produto 1" class="card-image"
-               onerror="this.src='https://placehold.co/80x80/41e3d7/0a0e14?text=P1'">
-          <h3 class="card-title">Produto Afiliado 1</h3>
+               onerror="this.src='https://placehold.co/90x90/41e3d7/0a0e14?text=P1'">
+          <h3 class="card-title">Produto Premium 1</h3>
           <p class="card-description">Destaque premium com benefícios exclusivos e qualidade garantida.</p>
         </article>
         
         <article class="card">
           <img src="/assets/produto2.png" alt="Produto 2" class="card-image"
-               onerror="this.src='https://placehold.co/80x80/41e3d7/0a0e14?text=P2'">
-          <h3 class="card-title">Produto Afiliado 2</h3>
+               onerror="this.src='https://placehold.co/90x90/c0c5ce/0a0e14?text=P2'">
+          <h3 class="card-title">Produto Premium 2</h3>
           <p class="card-description">Mais procurado pelos usuários com avaliações positivas.</p>
         </article>
         
         <article class="card">
           <img src="/assets/produto3.png" alt="Produto 3" class="card-image"
-               onerror="this.src='https://placehold.co/80x80/41e3d7/0a0e14?text=P3'">
-          <h3 class="card-title">Produto Afiliado 3</h3>
+               onerror="this.src='https://placehold.co/90x90/41e3d7/0a0e14?text=P3'">
+          <h3 class="card-title">Produto Premium 3</h3>
           <p class="card-description">Novidade exclusiva com tecnologia avançada e design moderno.</p>
         </article>
       </div>
     </section>
     
-    <!-- Seções expansíveis para manutenção futura -->
+    <!-- Seções expansíveis -->
     <section id="departamentos"></section>
     <section id="cuidados"></section>
     <section id="tecnologia"></section>
@@ -904,7 +1180,7 @@
   </main>
   
   <!-- ============================================================
-       FOOTER
+       FOOTER PREMIUM
        ============================================================ -->
   <footer class="footer">
     <div class="footer-content">
@@ -912,7 +1188,7 @@
         © 2025 <span class="footer-brand">Mais Sabiamente</span> — Curadoria profissional inteligente.
       </p>
       <p class="footer-text">
-        Desenvolvido com excelência, elegância e modernidade.
+        Desenvolvido com excelência, elegância e sofisticação metálica.
       </p>
     </div>
   </footer>
