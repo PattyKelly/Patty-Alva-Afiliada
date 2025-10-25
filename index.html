@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mais Sabiamente - Curadoria profissional de produtos, departamentos e campanhas com inteligência e elegância.">
+  <meta name="description" content="Mais Sabiamente - Curadoria profissional inteligente com visual premium, tons dourados e efeitos cristalinos.">
   <meta name="theme-color" content="#41e3d7">
-  <title>Mais Sabiamente — Curadoria Profissional Inteligente</title>
+  <title>Mais Sabiamente — Curadoria Profissional Suprema</title>
   
   <!-- 
     ============================================================
     FONTES PREMIUM E MODERNAS
-    Inter: Sans-serif moderna, elegante e legível
-    Playfair Display: Serif sofisticada para títulos
+    Inter: Sans-serif elegante
+    Playfair Display: Serif sofisticada
     ============================================================
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,8 +20,7 @@
   
   <style>
     /* ============================================================
-       VARIÁVEIS CSS - DESIGN SYSTEM PROFISSIONAL EXPANDIDO
-       Paleta baseada na logo: preto, branco, azul piscina + PRATA
+       DESIGN SYSTEM ULTRA PREMIUM - OURO + PRATA + CRISTAL
        ============================================================ */
     :root {
       /* Cores principais */
@@ -35,13 +34,26 @@
       --color-cyan-light: #5ef0e4;
       --color-cyan-dark: #2eb8be;
       --color-cyan-vibrant: #00fff7;
+      --color-cyan-crystal: rgba(65, 227, 215, 0.15);
       
-      /* Paleta prata/metálica (nova) */
+      /* Paleta prata/metálica */
       --color-silver: #c0c5ce;
       --color-silver-light: #e1e4e8;
+      --color-silver-bright: #f0f3f7;
       --color-silver-dark: #8b929e;
       --color-platinum: #d4d7dc;
       --color-metal: #a8b2bf;
+      --color-chrome: #b8bec7;
+      --color-steel: #9ba3ae;
+      
+      /* Paleta DOURADO/OURO (NOVA) */
+      --color-gold: #ffd700;
+      --color-gold-light: #ffe44d;
+      --color-gold-dark: #d4af37;
+      --color-gold-rose: #e6c9a8;
+      --color-gold-bright: #fff9e6;
+      --color-amber: #ffbf00;
+      --color-bronze: #cd7f32;
       
       /* Branco e cinzas */
       --color-white: #ffffff;
@@ -52,11 +64,28 @@
       --color-gray-400: #6c7278;
       --color-gray-500: #4a5057;
       
-      /* Gradientes metálicos */
-      --gradient-silver: linear-gradient(135deg, #c0c5ce 0%, #8b929e 100%);
-      --gradient-platinum: linear-gradient(135deg, #e1e4e8 0%, #c0c5ce 100%);
+      /* Gradientes premium avançados */
+      --gradient-silver: linear-gradient(135deg, #e1e4e8 0%, #c0c5ce 50%, #8b929e 100%);
+      --gradient-platinum: linear-gradient(135deg, #f0f3f7 0%, #d4d7dc 50%, #c0c5ce 100%);
       --gradient-cyan: linear-gradient(135deg, #41e3d7 0%, #2eb8be 100%);
-      --gradient-logo: linear-gradient(135deg, #c0c5ce 0%, #41e3d7 50%, #8b929e 100%);
+      --gradient-gold: linear-gradient(135deg, #ffd700 0%, #d4af37 50%, #ffbf00 100%);
+      --gradient-crystal: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(65, 227, 215, 0.08) 50%,
+        rgba(255, 215, 0, 0.06) 100%);
+      --gradient-logo-advanced: linear-gradient(135deg, 
+        #e1e4e8 0%, 
+        #41e3d7 20%, 
+        #ffd700 40%,
+        #c0c5ce 60%, 
+        #41e3d7 80%,
+        #d4af37 100%);
+      --gradient-header-bar: linear-gradient(135deg,
+        rgba(240, 243, 247, 0.95) 0%,
+        rgba(225, 228, 232, 0.92) 30%,
+        rgba(65, 227, 215, 0.15) 50%,
+        rgba(255, 215, 0, 0.12) 70%,
+        rgba(212, 215, 220, 0.90) 100%);
       
       /* Tipografia */
       --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -93,21 +122,26 @@
       --radius-3xl: 2rem;
       --radius-full: 9999px;
       
-      /* Shadows premium */
+      /* Shadows ultra premium com cristal e ouro */
       --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
       --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
       --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
       --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
       --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
-      --shadow-glow-cyan: 0 0 25px rgba(65, 227, 215, 0.4);
-      --shadow-glow-silver: 0 0 20px rgba(192, 197, 206, 0.3);
-      --shadow-metal: 0 8px 32px rgba(192, 197, 206, 0.2);
+      --shadow-glow-cyan: 0 0 35px rgba(65, 227, 215, 0.6);
+      --shadow-glow-silver: 0 0 30px rgba(225, 228, 232, 0.5);
+      --shadow-glow-gold: 0 0 40px rgba(255, 215, 0, 0.5);
+      --shadow-metal: 0 8px 32px rgba(192, 197, 206, 0.35);
+      --shadow-chrome: 0 12px 40px rgba(225, 228, 232, 0.3);
+      --shadow-crystal: 0 8px 32px rgba(255, 255, 255, 0.15), 
+                         0 4px 16px rgba(65, 227, 215, 0.2);
       
       /* Transitions */
       --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
       --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
       --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
       --transition-smooth: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-elastic: 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
       
       /* Z-index */
       --z-dropdown: 1000;
@@ -119,13 +153,13 @@
       --z-tooltip: 1070;
       
       /* Layout */
-      --container-max: 1320px;
-      --header-height: 90px;
-      --campaign-bar-height: 76px;
+      --container-max: 1360px;
+      --header-height: 110px;
+      --campaign-bar-height: 80px;
     }
     
     /* ============================================================
-       RESET & BASE STYLES
+       RESET & BASE
        ============================================================ */
     *, *::before, *::after {
       box-sizing: border-box;
@@ -148,15 +182,15 @@
       color: var(--color-gray-100);
       background: linear-gradient(135deg, 
         var(--color-black) 0%, 
-        var(--color-dark) 40%, 
-        var(--color-charcoal) 80%,
+        var(--color-dark) 35%, 
+        var(--color-charcoal) 70%,
         #1a232e 100%);
       min-height: 100vh;
       overflow-x: hidden;
       position: relative;
     }
     
-    /* Textura animada premium com prata e ciano */
+    /* EFEITO VIVO DE FUNDO - MANTIDO E INTENSIFICADO */
     body::before {
       content: '';
       position: fixed;
@@ -165,47 +199,71 @@
       width: 100%;
       height: 100%;
       background: 
-        radial-gradient(circle at 20% 30%, rgba(192, 197, 206, 0.06) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(65, 227, 215, 0.04) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(192, 197, 206, 0.03) 0%, transparent 70%);
+        radial-gradient(circle at 25% 35%, rgba(255, 215, 0, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 75% 65%, rgba(65, 227, 215, 0.10) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(225, 228, 232, 0.08) 0%, transparent 60%);
       pointer-events: none;
       z-index: 0;
-      animation: subtleFloat 25s ease-in-out infinite;
+      animation: pulseVivo 8s ease-in-out infinite;
     }
     
-    @keyframes subtleFloat {
+    @keyframes pulseVivo {
       0%, 100% { 
-        transform: translate(0, 0) scale(1); 
-        opacity: 0.6;
+        opacity: 0.7;
+        transform: scale(1) translate(0, 0);
       }
       50% { 
-        transform: translate(-15px, -15px) scale(1.02); 
-        opacity: 0.8;
+        opacity: 1;
+        transform: scale(1.05) translate(-10px, -10px);
       }
     }
     
-    /* Brilho metálico sutil */
+    /* Brilho metálico + cristal + ouro */
     body::after {
       content: '';
       position: fixed;
       top: -50%;
       right: -50%;
-      width: 100%;
-      height: 200%;
+      width: 120%;
+      height: 220%;
       background: conic-gradient(from 0deg at 50% 50%, 
         transparent, 
-        rgba(192, 197, 206, 0.03), 
-        transparent 90deg,
-        rgba(65, 227, 215, 0.02),
+        rgba(255, 215, 0, 0.08), 
+        transparent 60deg,
+        rgba(225, 228, 232, 0.06),
+        transparent 120deg,
+        rgba(65, 227, 215, 0.05),
         transparent 180deg);
-      animation: rotateShine 30s linear infinite;
+      animation: rotateShineAdvanced 40s linear infinite;
       pointer-events: none;
       z-index: 0;
     }
     
-    @keyframes rotateShine {
+    @keyframes rotateShineAdvanced {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
+    }
+    
+    /* Partículas cristalinas flutuantes */
+    body::after {
+      content: '';
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(2px 2px at 20% 30%, rgba(255, 215, 0, 0.3), transparent),
+        radial-gradient(2px 2px at 60% 70%, rgba(65, 227, 215, 0.3), transparent),
+        radial-gradient(1px 1px at 50% 50%, rgba(225, 228, 232, 0.3), transparent);
+      background-size: 200px 200px, 300px 300px, 150px 150px;
+      animation: floatParticles 20s linear infinite;
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    @keyframes floatParticles {
+      0% { background-position: 0 0, 0 0, 0 0; }
+      100% { background-position: 200px 200px, -300px 300px, 150px -150px; }
     }
     
     /* ============================================================
@@ -221,7 +279,7 @@
     }
     
     /* ============================================================
-       HEADER MODERNO COM FAIXA ESQUERDA COMBINANDO COM LOGO
+       HEADER COM FAIXA DA COR DA LOGO E LOGO GIGANTE (120PX)
        ============================================================ */
     .header {
       position: fixed;
@@ -229,33 +287,40 @@
       left: 0;
       width: 100%;
       height: var(--header-height);
-      background: rgba(10, 14, 20, 0.97);
-      backdrop-filter: blur(24px) saturate(180%);
-      border-bottom: 1px solid rgba(192, 197, 206, 0.15);
+      background: var(--gradient-header-bar);
+      backdrop-filter: blur(30px) saturate(200%);
+      border-bottom: 2px solid rgba(255, 215, 0, 0.25);
       box-shadow: 
-        0 2px 8px rgba(0, 0, 0, 0.15), 
-        0 1px 24px rgba(65, 227, 215, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+        0 4px 20px rgba(0, 0, 0, 0.15), 
+        0 2px 40px rgba(65, 227, 215, 0.2),
+        0 1px 60px rgba(255, 215, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
       z-index: var(--z-fixed);
       transition: all var(--transition-base);
     }
     
-    /* Faixa esquerda com gradiente combinando com a logo */
+    /* Efeito cristalino na faixa do header */
     .header::before {
       content: '';
       position: absolute;
       left: 0;
       top: 0;
-      width: 140px;
+      width: 100%;
       height: 100%;
-      background: var(--gradient-logo);
-      opacity: 0.08;
+      background: 
+        linear-gradient(135deg,
+          rgba(255, 255, 255, 0.15) 0%,
+          transparent 30%,
+          rgba(65, 227, 215, 0.10) 50%,
+          transparent 70%,
+          rgba(255, 215, 0, 0.08) 100%);
       pointer-events: none;
-      transition: opacity var(--transition-base);
+      animation: shimmerCrystal 6s ease-in-out infinite;
     }
     
-    .header:hover::before {
-      opacity: 0.12;
+    @keyframes shimmerCrystal {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
     }
     
     .header-content {
@@ -270,83 +335,152 @@
       z-index: 2;
     }
     
-    /* Logo aumentada e premium com efeito metálico */
-    .logo {
+    /* Logo GIGANTE (120px) com efeito cristal + ouro */
+    .logo-wrapper {
       display: flex;
       align-items: center;
-      gap: var(--spacing-md);
+      gap: var(--spacing-xl);
       text-decoration: none;
-      transition: transform var(--transition-smooth);
+      transition: transform var(--transition-elastic);
       position: relative;
+      padding-right: var(--spacing-2xl);
     }
     
-    .logo::before {
+    /* Barra vertical ouro + ciano ao lado da logo */
+    .logo-wrapper::before {
       content: '';
       position: absolute;
-      left: -16px;
+      right: 0;
       top: 50%;
       transform: translateY(-50%);
       width: 4px;
-      height: 60px;
-      background: var(--gradient-cyan);
+      height: 85px;
+      background: linear-gradient(180deg, 
+        var(--color-cyan) 0%, 
+        var(--color-gold) 50%, 
+        var(--color-cyan) 100%);
       border-radius: var(--radius-full);
-      box-shadow: var(--shadow-glow-cyan);
-      opacity: 0;
+      box-shadow: 
+        var(--shadow-glow-cyan),
+        var(--shadow-glow-gold);
+      opacity: 0.7;
       transition: opacity var(--transition-base);
+      animation: pulseBar 3s ease-in-out infinite;
     }
     
-    .logo:hover::before {
+    @keyframes pulseBar {
+      0%, 100% { opacity: 0.7; height: 85px; }
+      50% { opacity: 1; height: 95px; }
+    }
+    
+    .logo-wrapper:hover::before {
       opacity: 1;
     }
     
-    .logo:hover {
-      transform: translateX(8px);
+    .logo-wrapper:hover {
+      transform: translateX(15px) scale(1.03);
+    }
+    
+    /* Animação de clique MANTIDA */
+    .logo-wrapper:active {
+      animation: logoClickAdvanced 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    @keyframes logoClickAdvanced {
+      0%, 100% { transform: translateX(15px) scale(1.03); }
+      25% { transform: translateX(20px) scale(1.08) rotate(-5deg); }
+      75% { transform: translateX(20px) scale(1.08) rotate(5deg); }
     }
     
     .logo-image {
-      width: 80px;
-      height: 80px;
-      border-radius: var(--radius-xl);
-      background: linear-gradient(135deg, #ffffff 0%, #f0f2f5 100%);
+      width: 120px;
+      height: 120px;
+      border-radius: var(--radius-2xl);
+      background: 
+        linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%),
+        var(--gradient-crystal);
+      background-blend-mode: overlay;
       padding: var(--spacing-sm);
       box-shadow: 
-        0 8px 24px rgba(65, 227, 215, 0.25),
-        0 4px 12px rgba(192, 197, 206, 0.2),
+        0 16px 40px rgba(65, 227, 215, 0.35),
+        0 8px 24px rgba(255, 215, 0, 0.30),
         var(--shadow-glow-cyan),
-        inset 0 1px 0 rgba(255, 255, 255, 0.5);
-      transition: all var(--transition-smooth);
-      border: 3px solid rgba(65, 227, 215, 0.4);
+        var(--shadow-glow-gold),
+        var(--shadow-crystal),
+        inset 0 2px 0 rgba(255, 255, 255, 0.7);
+      transition: all var(--transition-elastic);
+      border: 5px solid;
+      border-image: var(--gradient-logo-advanced) 1;
       position: relative;
     }
     
+    /* Brilho cristalino animado na logo */
     .logo-image::after {
       content: '';
       position: absolute;
-      inset: -2px;
-      border-radius: var(--radius-xl);
-      padding: 2px;
-      background: var(--gradient-logo);
+      inset: -4px;
+      border-radius: var(--radius-2xl);
+      padding: 4px;
+      background: var(--gradient-logo-advanced);
       -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
       opacity: 0;
       transition: opacity var(--transition-base);
+      animation: rotateBorder 8s linear infinite;
     }
     
-    .logo:hover .logo-image {
+    @keyframes rotateBorder {
+      from { filter: hue-rotate(0deg); }
+      to { filter: hue-rotate(360deg); }
+    }
+    
+    .logo-wrapper:hover .logo-image {
       box-shadow: 
-        0 12px 32px rgba(65, 227, 215, 0.4),
-        0 6px 16px rgba(192, 197, 206, 0.3),
-        0 0 40px rgba(65, 227, 215, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.7);
-      transform: rotate(-5deg) scale(1.08);
+        0 20px 50px rgba(65, 227, 215, 0.5),
+        0 12px 32px rgba(255, 215, 0, 0.45),
+        0 0 60px rgba(65, 227, 215, 0.4),
+        0 0 80px rgba(255, 215, 0, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.9);
+      transform: rotate(-8deg) scale(1.15);
     }
     
-    .logo:hover .logo-image::after {
+    .logo-wrapper:hover .logo-image::after {
       opacity: 1;
     }
     
-    /* Navegação horizontal moderna */
+    /* Nome do site visível */
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+    
+    .logo-title {
+      font-family: var(--font-display);
+      font-size: var(--font-3xl);
+      font-weight: 900;
+      background: var(--gradient-logo-advanced);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      filter: drop-shadow(0 2px 8px rgba(255, 215, 0, 0.4));
+    }
+    
+    .logo-subtitle {
+      font-size: var(--font-sm);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: var(--gradient-silver);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Navegação com dropdown COMPLETO */
     .nav {
       display: flex;
       align-items: center;
@@ -362,20 +496,26 @@
       padding: 0;
     }
     
+    .nav-item {
+      position: relative;
+    }
+    
     .nav-link {
       position: relative;
       display: inline-flex;
       align-items: center;
+      gap: var(--spacing-xs);
       padding: var(--spacing-sm) var(--spacing-md);
       font-size: var(--font-sm);
-      font-weight: 600;
-      letter-spacing: 0.03em;
+      font-weight: 700;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: var(--color-silver);
+      color: var(--color-slate);
       text-decoration: none;
       border-radius: var(--radius-md);
       transition: all var(--transition-fast);
       white-space: nowrap;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
     }
     
     .nav-link::before {
@@ -384,35 +524,124 @@
       bottom: 2px;
       left: 50%;
       width: 0;
-      height: 2px;
-      background: var(--gradient-cyan);
+      height: 3px;
+      background: var(--gradient-gold);
       transform: translateX(-50%);
       transition: width var(--transition-base);
-      box-shadow: var(--shadow-glow-cyan);
+      box-shadow: var(--shadow-glow-gold);
+      border-radius: var(--radius-full);
     }
     
     .nav-link:hover,
     .nav-link.active {
-      color: var(--color-cyan-light);
-      background: rgba(65, 227, 215, 0.06);
+      color: var(--color-cyan-dark);
+      background: rgba(65, 227, 215, 0.12);
+      text-shadow: 0 2px 8px rgba(65, 227, 215, 0.5);
     }
     
     .nav-link:hover::before,
     .nav-link.active::before {
-      width: 80%;
+      width: 85%;
+    }
+    
+    /* Dropdown arrow */
+    .nav-link.has-dropdown::after {
+      content: '▼';
+      font-size: 0.65em;
+      margin-left: var(--spacing-xs);
+      transition: transform var(--transition-elastic);
+    }
+    
+    .nav-item:hover .nav-link.has-dropdown::after {
+      transform: rotate(180deg) scale(1.2);
+    }
+    
+    /* Dropdown menu cristalino */
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 0;
+      min-width: 220px;
+      background: rgba(240, 243, 247, 0.98);
+      backdrop-filter: blur(24px) saturate(180%);
+      border: 2px solid rgba(255, 215, 0, 0.35);
+      border-radius: var(--radius-xl);
+      padding: var(--spacing-md);
+      box-shadow: 
+        0 16px 48px rgba(0, 0, 0, 0.25),
+        0 8px 24px rgba(65, 227, 215, 0.2),
+        var(--shadow-crystal),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-15px) scale(0.95);
+      transition: all var(--transition-elastic);
+      z-index: var(--z-dropdown);
+    }
+    
+    .nav-item:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+    
+    .dropdown-item {
+      display: block;
+      padding: var(--spacing-sm) var(--spacing-lg);
+      font-size: var(--font-base);
+      font-weight: 700;
+      color: var(--color-slate);
+      text-decoration: none;
+      border-radius: var(--radius-md);
+      transition: all var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .dropdown-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gradient-cyan);
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+    
+    .dropdown-item span {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .dropdown-item:hover {
+      color: var(--color-black);
+      transform: translateX(6px);
+    }
+    
+    .dropdown-item:hover::before {
+      opacity: 1;
+    }
+    
+    /* Separador de categoria no dropdown */
+    .dropdown-category {
+      font-weight: 900;
+      color: var(--color-gold-dark);
+      border-bottom: 2px solid var(--color-gold);
+      margin-bottom: var(--spacing-sm);
+      padding-bottom: var(--spacing-sm);
+      text-shadow: 0 1px 3px rgba(255, 215, 0, 0.5);
     }
     
     .nav-link-cta {
       background: var(--gradient-cyan);
       color: var(--color-black);
-      font-weight: 800;
-      padding: var(--spacing-sm) var(--spacing-xl);
+      font-weight: 900;
+      padding: var(--spacing-md) var(--spacing-2xl);
       border-radius: var(--radius-full);
       box-shadow: 
-        0 4px 16px rgba(65, 227, 215, 0.35),
+        0 6px 20px rgba(65, 227, 215, 0.45),
         var(--shadow-glow-cyan);
-      margin-left: var(--spacing-md);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      margin-left: var(--spacing-lg);
+      border: 2px solid rgba(255, 255, 255, 0.4);
     }
     
     .nav-link-cta::before {
@@ -420,16 +649,16 @@
     }
     
     .nav-link-cta:hover {
-      background: linear-gradient(135deg, #5ef0e4 0%, #41e3d7 100%);
+      background: var(--gradient-gold);
       color: var(--color-black);
-      transform: translateY(-3px);
+      transform: translateY(-4px) scale(1.05);
       box-shadow: 
-        0 8px 24px rgba(65, 227, 215, 0.5),
-        0 0 40px rgba(65, 227, 215, 0.3);
+        0 12px 32px rgba(255, 215, 0, 0.6),
+        0 0 50px rgba(65, 227, 215, 0.4);
     }
     
     /* ============================================================
-       BARRA DE CAMPANHAS ELEGANTE COM PRATA
+       BARRA DE CAMPANHAS COM CRISTAL + OURO
        ============================================================ */
     .campaign-bar {
       position: fixed;
@@ -438,15 +667,15 @@
       width: 100%;
       min-height: var(--campaign-bar-height);
       background: linear-gradient(135deg, 
-        rgba(20, 25, 32, 0.98) 0%, 
-        rgba(26, 30, 38, 0.96) 100%);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(192, 197, 206, 0.12);
+        rgba(26, 32, 40, 0.98) 0%, 
+        rgba(20, 25, 32, 0.95) 100%);
+      backdrop-filter: blur(24px);
+      border-bottom: 2px solid rgba(255, 215, 0, 0.3);
       box-shadow: 
-        0 4px 16px rgba(0, 0, 0, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.02);
+        0 6px 24px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
       z-index: calc(var(--z-fixed) - 1);
-      padding: var(--spacing-lg) 0;
+      padding: var(--spacing-xl) 0;
     }
     
     .campaign-content {
@@ -454,52 +683,53 @@
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      gap: var(--spacing-md);
+      gap: var(--spacing-lg);
       max-width: var(--container-max);
       margin: 0 auto;
       padding: 0 var(--spacing-xl);
     }
     
     .campaign-title {
-      font-size: var(--font-sm);
-      font-weight: 800;
-      letter-spacing: 0.12em;
+      font-size: var(--font-base);
+      font-weight: 900;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      background: var(--gradient-logo);
+      background: var(--gradient-logo-advanced);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      padding-right: var(--spacing-xl);
-      border-right: 2px solid rgba(192, 197, 206, 0.25);
-      margin-right: var(--spacing-sm);
+      padding-right: var(--spacing-2xl);
+      border-right: 3px solid var(--color-gold);
+      margin-right: var(--spacing-md);
       position: relative;
     }
     
     .campaign-title::after {
       content: '';
       position: absolute;
-      right: -2px;
+      right: -3px;
       top: 50%;
       transform: translateY(-50%);
-      width: 2px;
-      height: 60%;
+      width: 3px;
+      height: 70%;
       background: var(--gradient-cyan);
       box-shadow: var(--shadow-glow-cyan);
+      animation: pulseBar 2s ease-in-out infinite;
     }
     
     .campaign-btn {
       display: inline-flex;
       align-items: center;
-      padding: var(--spacing-sm) var(--spacing-xl);
-      font-size: var(--font-sm);
-      font-weight: 600;
-      letter-spacing: 0.03em;
+      padding: var(--spacing-md) var(--spacing-2xl);
+      font-size: var(--font-base);
+      font-weight: 700;
+      letter-spacing: 0.04em;
       color: var(--color-silver-light);
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(192, 197, 206, 0.2);
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 215, 0, 0.3);
       border-radius: var(--radius-xl);
       text-decoration: none;
-      transition: all var(--transition-smooth);
+      transition: all var(--transition-elastic);
       white-space: nowrap;
       position: relative;
       overflow: hidden;
@@ -509,7 +739,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: var(--gradient-cyan);
+      background: var(--gradient-gold);
       opacity: 0;
       transition: opacity var(--transition-base);
     }
@@ -521,11 +751,11 @@
     
     .campaign-btn:hover {
       color: var(--color-black);
-      border-color: var(--color-cyan);
-      transform: translateY(-3px);
+      border-color: var(--color-gold);
+      transform: translateY(-5px) scale(1.05);
       box-shadow: 
-        0 8px 20px rgba(65, 227, 215, 0.35),
-        var(--shadow-glow-cyan);
+        0 12px 28px rgba(255, 215, 0, 0.5),
+        var(--shadow-glow-gold);
     }
     
     .campaign-btn:hover::before {
@@ -533,7 +763,7 @@
     }
     
     /* ============================================================
-       HERO SECTION - ULTRA PREMIUM
+       HERO SECTION
        ============================================================ */
     main {
       margin-top: calc(var(--header-height) + var(--campaign-bar-height) + var(--spacing-4xl));
@@ -542,40 +772,45 @@
     
     .hero {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: var(--spacing-4xl);
       align-items: center;
       max-width: var(--container-max);
       margin: 0 auto var(--spacing-4xl);
       padding: var(--spacing-4xl);
-      background: linear-gradient(135deg, 
-        rgba(26, 32, 40, 0.85) 0%, 
-        rgba(20, 25, 32, 0.75) 50%,
-        rgba(26, 30, 38, 0.8) 100%);
-      backdrop-filter: blur(24px) saturate(140%);
+      background: 
+        var(--gradient-crystal),
+        linear-gradient(135deg, 
+          rgba(26, 32, 40, 0.9) 0%, 
+          rgba(20, 25, 32, 0.85) 100%);
+      backdrop-filter: blur(28px) saturate(160%);
       border-radius: var(--radius-3xl);
-      border: 1px solid rgba(192, 197, 206, 0.15);
+      border: 2px solid;
+      border-image: linear-gradient(135deg, 
+        rgba(225, 228, 232, 0.3) 0%,
+        rgba(65, 227, 215, 0.4) 50%,
+        rgba(255, 215, 0, 0.3) 100%) 1;
       box-shadow: 
-        0 24px 72px rgba(0, 0, 0, 0.35),
-        inset 0 1px 0 rgba(255, 255, 255, 0.06),
-        0 0 60px rgba(65, 227, 215, 0.08),
-        0 8px 32px rgba(192, 197, 206, 0.12);
+        0 30px 80px rgba(0, 0, 0, 0.4),
+        var(--shadow-crystal),
+        0 0 80px rgba(65, 227, 215, 0.15),
+        0 0 100px rgba(255, 215, 0, 0.12);
       position: relative;
       overflow: hidden;
     }
     
-    /* Efeito de luz premium com prata e ciano */
+    /* Efeito de luz VIVO rotativo com ouro */
     .hero::before {
       content: '';
       position: absolute;
-      top: -60%;
-      right: -60%;
-      width: 120%;
-      height: 220%;
+      top: -70%;
+      right: -70%;
+      width: 140%;
+      height: 240%;
       background: 
-        radial-gradient(circle, rgba(192, 197, 206, 0.08) 0%, transparent 60%),
-        radial-gradient(circle, rgba(65, 227, 215, 0.06) 20%, transparent 70%);
-      animation: rotateLight 20s linear infinite;
+        radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 55%),
+        radial-gradient(circle, rgba(65, 227, 215, 0.12) 25%, transparent 65%);
+      animation: rotateLight 25s linear infinite;
       pointer-events: none;
     }
     
@@ -593,63 +828,63 @@
       display: inline-flex;
       align-items: center;
       gap: var(--spacing-sm);
-      font-size: var(--font-sm);
-      font-weight: 800;
-      letter-spacing: 0.14em;
+      font-size: var(--font-base);
+      font-weight: 900;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      background: var(--gradient-logo);
+      background: var(--gradient-logo-advanced);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: var(--spacing-xl);
-      padding: var(--spacing-sm) var(--spacing-lg);
-      background-color: rgba(65, 227, 215, 0.08);
+      margin-bottom: var(--spacing-2xl);
+      padding: var(--spacing-md) var(--spacing-xl);
+      background-color: rgba(255, 215, 0, 0.10);
       background-blend-mode: overlay;
       border-radius: var(--radius-full);
-      border: 1px solid rgba(192, 197, 206, 0.25);
+      border: 2px solid rgba(255, 215, 0, 0.4);
       width: fit-content;
       box-shadow: 
-        0 4px 12px rgba(65, 227, 215, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        0 6px 16px rgba(255, 215, 0, 0.25),
+        var(--shadow-crystal);
     }
     
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(var(--font-4xl), 7vw, var(--font-6xl));
+      font-size: clamp(var(--font-4xl), 8vw, var(--font-6xl));
       font-weight: 900;
-      line-height: 1.08;
-      letter-spacing: -0.025em;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
       color: var(--color-white);
-      margin-bottom: var(--spacing-xl);
+      margin-bottom: var(--spacing-2xl);
       background: linear-gradient(135deg, 
         var(--color-white) 0%, 
-        var(--color-silver-light) 40%,
-        var(--color-cyan-light) 70%,
-        var(--color-silver) 100%);
+        var(--color-gold-light) 30%,
+        var(--color-cyan-light) 60%,
+        var(--color-silver-light) 85%,
+        var(--color-gold) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      background-size: 200% 200%;
-      animation: gradientShiftPremium 10s ease infinite;
-      filter: drop-shadow(0 2px 8px rgba(65, 227, 215, 0.3));
+      background-size: 250% 250%;
+      animation: gradientShiftSupreme 12s ease infinite;
+      filter: drop-shadow(0 4px 16px rgba(255, 215, 0, 0.4));
     }
     
-    @keyframes gradientShiftPremium {
+    @keyframes gradientShiftSupreme {
       0%, 100% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
     }
     
     .hero-description {
-      font-size: var(--font-lg);
-      font-weight: 500;
-      line-height: 1.75;
+      font-size: var(--font-xl);
+      font-weight: 600;
+      line-height: 1.8;
       color: var(--color-silver-light);
-      margin-bottom: var(--spacing-2xl);
-      max-width: 560px;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      margin-bottom: var(--spacing-3xl);
+      max-width: 600px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     }
     
-    /* Search bar ultra premium */
     .search-wrapper {
       position: relative;
       margin-bottom: var(--spacing-2xl);
@@ -659,59 +894,60 @@
       position: relative;
       display: flex;
       align-items: center;
-      background: rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(12px);
-      border: 2px solid rgba(192, 197, 206, 0.25);
+      background: var(--gradient-crystal);
+      backdrop-filter: blur(16px);
+      border: 3px solid;
+      border-image: var(--gradient-logo-advanced) 1;
       border-radius: var(--radius-full);
-      padding: var(--spacing-xs);
-      transition: all var(--transition-smooth);
+      padding: var(--spacing-sm);
+      transition: all var(--transition-elastic);
       box-shadow: 
-        0 4px 16px rgba(0, 0, 0, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        0 6px 20px rgba(0, 0, 0, 0.2),
+        var(--shadow-crystal);
     }
     
     .search-form:focus-within {
-      border-color: var(--color-cyan);
       box-shadow: 
-        0 12px 32px rgba(65, 227, 215, 0.25),
+        0 16px 48px rgba(65, 227, 215, 0.35),
+        0 8px 24px rgba(255, 215, 0, 0.3),
         var(--shadow-glow-cyan),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
-      transform: translateY(-2px);
+        var(--shadow-glow-gold);
+      transform: translateY(-4px) scale(1.02);
     }
     
     .search-input {
       flex: 1;
       font-family: var(--font-primary);
-      font-size: var(--font-base);
-      font-weight: 500;
+      font-size: var(--font-lg);
+      font-weight: 600;
       color: var(--color-white);
       background: none;
       border: none;
       outline: none;
-      padding: var(--spacing-lg) var(--spacing-xl);
+      padding: var(--spacing-lg) var(--spacing-2xl);
     }
     
     .search-input::placeholder {
-      color: var(--color-silver-dark);
+      color: var(--color-silver);
     }
     
     .search-btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 52px;
-      height: 52px;
-      background: var(--gradient-cyan);
+      width: 58px;
+      height: 58px;
+      background: var(--gradient-gold);
       border: none;
       border-radius: 50%;
       color: var(--color-black);
       font-size: var(--font-2xl);
-      font-weight: 800;
+      font-weight: 900;
       cursor: pointer;
-      transition: all var(--transition-smooth);
+      transition: all var(--transition-elastic);
       box-shadow: 
-        0 6px 16px rgba(65, 227, 215, 0.35),
-        var(--shadow-glow-cyan);
+        0 8px 24px rgba(255, 215, 0, 0.5),
+        var(--shadow-glow-gold);
       position: relative;
       overflow: hidden;
     }
@@ -720,7 +956,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, #5ef0e4 0%, #2eb8be 100%);
+      background: var(--gradient-cyan);
       opacity: 0;
       transition: opacity var(--transition-base);
     }
@@ -731,38 +967,37 @@
     }
     
     .search-btn:hover {
-      transform: scale(1.12) rotate(90deg);
+      transform: scale(1.2) rotate(180deg);
       box-shadow: 
-        0 10px 28px rgba(65, 227, 215, 0.5),
-        0 0 50px rgba(65, 227, 215, 0.4);
+        0 12px 36px rgba(255, 215, 0, 0.7),
+        0 0 60px rgba(255, 215, 0, 0.5);
     }
     
     .search-btn:hover::before {
       opacity: 1;
     }
     
-    /* Botões de ação premium */
     .cta-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: var(--spacing-md);
-      margin-top: var(--spacing-xl);
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-2xl);
     }
     
     .cta-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: var(--spacing-md) var(--spacing-xl);
-      font-size: var(--font-base);
-      font-weight: 700;
-      letter-spacing: 0.03em;
+      padding: var(--spacing-lg) var(--spacing-xl);
+      font-size: var(--font-lg);
+      font-weight: 800;
+      letter-spacing: 0.04em;
       color: var(--color-cyan-light);
-      background: rgba(65, 227, 215, 0.08);
-      border: 1px solid rgba(192, 197, 206, 0.3);
+      background: rgba(65, 227, 215, 0.10);
+      border: 2px solid rgba(255, 215, 0, 0.4);
       border-radius: var(--radius-xl);
       text-decoration: none;
-      transition: all var(--transition-smooth);
+      transition: all var(--transition-elastic);
       white-space: nowrap;
       position: relative;
       overflow: hidden;
@@ -772,7 +1007,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: var(--gradient-cyan);
+      background: var(--gradient-gold);
       opacity: 0;
       transition: opacity var(--transition-base);
     }
@@ -784,18 +1019,17 @@
     
     .cta-btn:hover {
       color: var(--color-black);
-      border-color: var(--color-cyan);
-      transform: translateY(-4px);
+      border-color: var(--color-gold);
+      transform: translateY(-6px) scale(1.05);
       box-shadow: 
-        0 12px 28px rgba(65, 227, 215, 0.35),
-        var(--shadow-glow-cyan);
+        0 16px 36px rgba(255, 215, 0, 0.5),
+        var(--shadow-glow-gold);
     }
     
     .cta-btn:hover::before {
       opacity: 1;
     }
     
-    /* Visual mockup premium */
     .hero-visual {
       position: relative;
       z-index: 2;
@@ -806,39 +1040,42 @@
     
     .mockup {
       width: 100%;
-      max-width: 500px;
+      max-width: 520px;
       height: auto;
       border-radius: var(--radius-3xl);
       box-shadow: 
-        0 40px 100px rgba(0, 0, 0, 0.5),
-        0 20px 60px rgba(65, 227, 215, 0.25),
-        0 8px 32px rgba(192, 197, 206, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      border: 4px solid rgba(192, 197, 206, 0.25);
-      transition: transform var(--transition-smooth);
+        0 50px 120px rgba(0, 0, 0, 0.6),
+        0 30px 80px rgba(65, 227, 215, 0.35),
+        0 20px 60px rgba(255, 215, 0, 0.3),
+        var(--shadow-chrome),
+        inset 0 2px 0 rgba(255, 255, 255, 0.15);
+      border: 5px solid;
+      border-image: var(--gradient-logo-advanced) 1;
+      transition: transform var(--transition-elastic);
       position: relative;
     }
     
     .mockup::after {
       content: '';
       position: absolute;
-      inset: -4px;
+      inset: -5px;
       border-radius: var(--radius-3xl);
-      padding: 4px;
-      background: var(--gradient-logo);
+      padding: 5px;
+      background: var(--gradient-logo-advanced);
       -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
       opacity: 0;
       transition: opacity var(--transition-smooth);
+      animation: rotateBorder 10s linear infinite;
     }
     
     .mockup:hover {
-      transform: scale(1.03) translateY(-12px) rotate(-2deg);
+      transform: scale(1.05) translateY(-15px) rotate(-3deg);
       box-shadow: 
-        0 50px 120px rgba(0, 0, 0, 0.6),
-        0 30px 80px rgba(65, 227, 215, 0.35),
-        0 12px 48px rgba(192, 197, 206, 0.3);
+        0 60px 140px rgba(0, 0, 0, 0.7),
+        0 40px 100px rgba(65, 227, 215, 0.5),
+        0 30px 80px rgba(255, 215, 0, 0.45);
     }
     
     .mockup:hover::after {
@@ -846,7 +1083,7 @@
     }
     
     /* ============================================================
-       CARDS GRID - PRODUTOS PREMIUM
+       PRODUTOS COM CRISTAL
        ============================================================ */
     .products-section {
       max-width: var(--container-max);
@@ -861,35 +1098,39 @@
     
     .section-title {
       font-family: var(--font-display);
-      font-size: var(--font-4xl);
+      font-size: var(--font-5xl);
       font-weight: 900;
-      background: var(--gradient-logo);
+      background: var(--gradient-logo-advanced);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+      filter: drop-shadow(0 4px 16px rgba(255, 215, 0, 0.4));
     }
     
     .section-subtitle {
-      font-size: var(--font-lg);
-      color: var(--color-silver);
+      font-size: var(--font-xl);
+      color: var(--color-silver-light);
     }
     
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: var(--spacing-2xl);
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: var(--spacing-3xl);
       margin-bottom: var(--spacing-4xl);
     }
     
     .card {
-      background: rgba(26, 32, 40, 0.7);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(192, 197, 206, 0.12);
+      background: var(--gradient-crystal);
+      backdrop-filter: blur(20px);
+      border: 2px solid;
+      border-image: linear-gradient(135deg,
+        rgba(225, 228, 232, 0.3) 0%,
+        rgba(255, 215, 0, 0.4) 100%) 1;
       border-radius: var(--radius-2xl);
-      padding: var(--spacing-2xl);
+      padding: var(--spacing-3xl);
       text-align: center;
-      transition: all var(--transition-smooth);
+      transition: all var(--transition-elastic);
       position: relative;
       overflow: hidden;
     }
@@ -899,19 +1140,22 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(135deg, 
-        rgba(192, 197, 206, 0.05) 0%, 
-        rgba(65, 227, 215, 0.08) 100%);
+        rgba(255, 215, 0, 0.08) 0%, 
+        rgba(65, 227, 215, 0.12) 100%);
       opacity: 0;
       transition: opacity var(--transition-base);
     }
     
     .card:hover {
-      transform: translateY(-12px);
-      border-color: var(--color-cyan);
+      transform: translateY(-16px) scale(1.03);
+      border-image: linear-gradient(135deg,
+        rgba(65, 227, 215, 0.6) 0%,
+        rgba(255, 215, 0, 0.6) 100%) 1;
       box-shadow: 
-        0 24px 48px rgba(65, 227, 215, 0.25),
+        0 30px 60px rgba(65, 227, 215, 0.35),
+        0 20px 40px rgba(255, 215, 0, 0.3),
         var(--shadow-glow-cyan),
-        var(--shadow-metal);
+        var(--shadow-glow-gold);
     }
     
     .card:hover::before {
@@ -919,17 +1163,17 @@
     }
     
     .card-image {
-      width: 90px;
-      height: 90px;
+      width: 100px;
+      height: 100px;
       margin: 0 auto var(--spacing-xl);
       border-radius: var(--radius-xl);
       object-fit: cover;
-      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
     }
     
     .card-title {
-      font-size: var(--font-xl);
-      font-weight: 800;
+      font-size: var(--font-2xl);
+      font-weight: 900;
       background: var(--gradient-cyan);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -938,18 +1182,18 @@
     }
     
     .card-description {
-      font-size: var(--font-base);
+      font-size: var(--font-lg);
       color: var(--color-silver-light);
-      line-height: 1.7;
+      line-height: 1.8;
     }
     
     /* ============================================================
-       FOOTER PREMIUM
+       FOOTER
        ============================================================ */
     .footer {
       background: linear-gradient(135deg, var(--color-black) 0%, var(--color-dark) 100%);
-      border-top: 1px solid rgba(192, 197, 206, 0.12);
-      padding: var(--spacing-3xl) 0;
+      border-top: 2px solid rgba(255, 215, 0, 0.3);
+      padding: var(--spacing-4xl) 0;
       margin-top: var(--spacing-4xl);
     }
     
@@ -961,27 +1205,35 @@
     }
     
     .footer-text {
-      font-size: var(--font-base);
-      color: var(--color-silver-dark);
-      margin-bottom: var(--spacing-sm);
-      line-height: 1.8;
+      font-size: var(--font-lg);
+      color: var(--color-silver);
+      margin-bottom: var(--spacing-md);
+      line-height: 1.9;
     }
     
     .footer-brand {
-      font-weight: 800;
-      background: var(--gradient-logo);
+      font-weight: 900;
+      background: var(--gradient-logo-advanced);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     
     /* ============================================================
-       RESPONSIVIDADE TOTAL
+       RESPONSIVIDADE
        ============================================================ */
     @media (max-width: 1024px) {
       :root {
-        --header-height: 75px;
-        --campaign-bar-height: auto;
+        --header-height: 90px;
+      }
+      
+      .logo-image {
+        width: 90px;
+        height: 90px;
+      }
+      
+      .logo-title {
+        font-size: var(--font-2xl);
       }
       
       .hero {
@@ -995,7 +1247,18 @@
       }
       
       .mockup {
-        max-width: 400px;
+        max-width: 420px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .logo-image {
+        width: 70px;
+        height: 70px;
+      }
+      
+      .logo-text {
+        display: none;
       }
       
       .nav-list {
@@ -1003,47 +1266,14 @@
         justify-content: center;
       }
       
-      .campaign-content {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .campaign-title {
-        border-right: none;
-        border-bottom: 2px solid rgba(192, 197, 206, 0.25);
-        padding-bottom: var(--spacing-sm);
-        margin-bottom: var(--spacing-sm);
-        padding-right: 0;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .container {
-        padding-left: var(--spacing-md);
-        padding-right: var(--spacing-md);
-      }
-      
-      .header-content {
-        padding: 0 var(--spacing-md);
-      }
-      
-      .logo-image {
-        width: 64px;
-        height: 64px;
-      }
-      
       .nav-link {
         font-size: 0.75rem;
         padding: var(--spacing-xs) var(--spacing-sm);
       }
       
-      .hero-title {
-        font-size: var(--font-3xl);
-      }
-      
       .cards-grid {
         grid-template-columns: 1fr;
-        gap: var(--spacing-xl);
+        gap: var(--spacing-2xl);
       }
       
       .cta-grid {
@@ -1055,35 +1285,59 @@
 <body>
   
   <!-- ============================================================
-       HEADER PRINCIPAL COM FAIXA COMBINANDO COM LOGO
+       HEADER COM FAIXA DA COR DA LOGO E LOGO GIGANTE (120PX)
        ============================================================ -->
   <header class="header">
     <div class="header-content">
-      <!-- Logo aumentada 80px -->
-      <a href="#" class="logo">
+      <!-- Logo 120px com nome e animação de clique -->
+      <a href="#" class="logo-wrapper">
         <img src="/assets/Logo.png" alt="Mais Sabiamente" class="logo-image" 
-             onerror="this.src='https://placehold.co/80x80/ffffff/0a0e14?text=MS&font=raleway'">
+             onerror="this.src='https://placehold.co/120x120/ffffff/0a0e14?text=MS&font=raleway'">
+        <div class="logo-text">
+          <div class="logo-title">Sabiamente</div>
+          <div class="logo-subtitle">Curadoria Profissional</div>
+        </div>
       </a>
       
-      <!-- Navegação -->
+      <!-- Navegação com dropdowns COMPLETOS -->
       <nav class="nav">
         <ul class="nav-list">
-          <li><a href="#" class="nav-link active">Home</a></li>
-          <li><a href="#departamentos" class="nav-link">Departamentos</a></li>
-          <li><a href="#cuidados" class="nav-link">Cuidados Diários</a></li>
-          <li><a href="#tecnologia" class="nav-link">Tecnologia</a></li>
-          <li><a href="#livros" class="nav-link">Livros</a></li>
-          <li><a href="#saude" class="nav-link">Saúde</a></li>
-          <li><a href="#marcas" class="nav-link">Marcas</a></li>
-          <li><a href="#sobre" class="nav-link">Sobre</a></li>
-          <li><a href="#contato" class="nav-link nav-link-cta">Contato</a></li>
+          <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#departamentos" class="nav-link">Departamentos</a></li>
+          <li class="nav-item"><a href="#cuidados" class="nav-link">Cuidados Diários</a></li>
+          
+          <!-- Tecnologia com dropdown Consultoria -->
+          <li class="nav-item">
+            <a href="#tecnologia" class="nav-link has-dropdown">Tecnologia</a>
+            <div class="dropdown-menu">
+              <a href="#consultoria" class="dropdown-item dropdown-category">Consultoria</a>
+              <a href="#looker" class="dropdown-item"><span>Looker</span></a>
+              <a href="#sheets" class="dropdown-item"><span>Google Sheets</span></a>
+              <a href="#appsheet" class="dropdown-item"><span>AppSheet</span></a>
+            </div>
+          </li>
+          
+          <li class="nav-item"><a href="#livros" class="nav-link">Livros</a></li>
+          <li class="nav-item"><a href="#saude" class="nav-link">Saúde</a></li>
+          
+          <!-- Sua Casa com dropdown Home Assistant -->
+          <li class="nav-item">
+            <a href="#casa" class="nav-link has-dropdown">Sua Casa</a>
+            <div class="dropdown-menu">
+              <a href="#home-assistant" class="dropdown-item"><span>Home Assistant</span></a>
+            </div>
+          </li>
+          
+          <li class="nav-item"><a href="#marcas" class="nav-link">Marcas</a></li>
+          <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li class="nav-item"><a href="#contato" class="nav-link nav-link-cta">Contato</a></li>
         </ul>
       </nav>
     </div>
   </header>
   
   <!-- ============================================================
-       BARRA DE CAMPANHAS COM PRATA
+       BARRA DE CAMPANHAS
        ============================================================ -->
   <div class="campaign-bar">
     <div class="campaign-content">
@@ -1098,10 +1352,9 @@
   </div>
   
   <!-- ============================================================
-       CONTEÚDO PRINCIPAL
+       HERO COM EFEITO VIVO
        ============================================================ -->
   <main>
-    <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
         <div class="hero-eyebrow">✨ Mais Sabiamente</div>
@@ -1111,7 +1364,6 @@
           Acesse as melhores oportunidades, produtos e links preservados.
         </p>
         
-        <!-- Search -->
         <div class="search-wrapper">
           <form class="search-form" action="/busca" method="get">
             <input type="search" name="q" class="search-input" 
@@ -1121,7 +1373,6 @@
           </form>
         </div>
         
-        <!-- CTAs -->
         <div class="cta-grid">
           <a href="#departamentos" class="cta-btn"><span>Departamentos</span></a>
           <a href="#cuidados" class="cta-btn"><span>Cuidados Diários</span></a>
@@ -1130,65 +1381,70 @@
         </div>
       </div>
       
-      <!-- Mockup Visual -->
       <div class="hero-visual">
         <img src="/assets/mockup-phone.png" alt="Visual Premium" class="mockup"
-             onerror="this.src='https://placehold.co/500x1000/0a0e14/41e3d7?text=Visual+Premium&font=raleway'">
+             onerror="this.src='https://placehold.co/520x1040/0a0e14/ffd700?text=Visual+Premium+Supremo&font=raleway'">
       </div>
     </section>
     
-    <!-- Products Section -->
+    <!-- Produtos com cristal -->
     <section class="products-section" id="produtos">
       <div class="section-header">
         <h2 class="section-title">Produtos em Destaque</h2>
-        <p class="section-subtitle">Seleção curada dos melhores produtos</p>
+        <p class="section-subtitle">Seleção curada premium suprema</p>
       </div>
       
       <div class="cards-grid">
         <article class="card">
           <img src="/assets/produto1.png" alt="Produto 1" class="card-image"
-               onerror="this.src='https://placehold.co/90x90/41e3d7/0a0e14?text=P1'">
+               onerror="this.src='https://placehold.co/100x100/41e3d7/0a0e14?text=P1'">
           <h3 class="card-title">Produto Premium 1</h3>
           <p class="card-description">Destaque premium com benefícios exclusivos e qualidade garantida.</p>
         </article>
         
         <article class="card">
           <img src="/assets/produto2.png" alt="Produto 2" class="card-image"
-               onerror="this.src='https://placehold.co/90x90/c0c5ce/0a0e14?text=P2'">
+               onerror="this.src='https://placehold.co/100x100/ffd700/0a0e14?text=P2'">
           <h3 class="card-title">Produto Premium 2</h3>
           <p class="card-description">Mais procurado pelos usuários com avaliações positivas.</p>
         </article>
         
         <article class="card">
           <img src="/assets/produto3.png" alt="Produto 3" class="card-image"
-               onerror="this.src='https://placehold.co/90x90/41e3d7/0a0e14?text=P3'">
+               onerror="this.src='https://placehold.co/100x100/e1e4e8/0a0e14?text=P3'">
           <h3 class="card-title">Produto Premium 3</h3>
           <p class="card-description">Novidade exclusiva com tecnologia avançada e design moderno.</p>
         </article>
       </div>
     </section>
     
-    <!-- Seções expansíveis -->
+    <!-- Seções -->
     <section id="departamentos"></section>
     <section id="cuidados"></section>
     <section id="tecnologia"></section>
+    <section id="consultoria"></section>
+    <section id="looker"></section>
+    <section id="sheets"></section>
+    <section id="appsheet"></section>
     <section id="livros"></section>
     <section id="saude"></section>
+    <section id="casa"></section>
+    <section id="home-assistant"></section>
     <section id="marcas"></section>
     <section id="sobre"></section>
     <section id="contato"></section>
   </main>
   
   <!-- ============================================================
-       FOOTER PREMIUM
+       FOOTER
        ============================================================ -->
   <footer class="footer">
     <div class="footer-content">
       <p class="footer-text">
-        © 2025 <span class="footer-brand">Mais Sabiamente</span> — Curadoria profissional inteligente.
+        © 2025 <span class="footer-brand">Mais Sabiamente</span> — Curadoria profissional inteligente suprema.
       </p>
       <p class="footer-text">
-        Desenvolvido com excelência, elegância e sofisticação metálica.
+        Desenvolvido com excelência, elegância e sofisticação cristalina dourada.
       </p>
     </div>
   </footer>
