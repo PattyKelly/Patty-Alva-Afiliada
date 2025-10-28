@@ -3,105 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mais Sabiamente - Curadoria profissional inteligente com visual premium, tons dourados e efeitos cristalinos.">
+  <meta name="description" content="Mais Sabiamente - Curadoria profissional com visual cinematográfico e animações revolucionárias.">
   <meta name="theme-color" content="#41e3d7">
-  <title>Mais Sabiamente — Curadoria Profissional Suprema</title>
+  <title>Mais Sabiamente — Curadoria Profissional Revolucionária</title>
   
   <!-- 
     ============================================================
-    FONTES PREMIUM E MODERNAS
-    Inter: Sans-serif elegante
-    Playfair Display: Serif sofisticada
+    FONTES ULTRA PREMIUM
     ============================================================
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
   
   <style>
     /* ============================================================
-       DESIGN SYSTEM ULTRA PREMIUM - OURO + PRATA + CRISTAL
+       DESIGN SYSTEM REVOLUCIONÁRIO
+       Verde da logo + Dourado vibrante + Animações tipo GIF
        ============================================================ */
     :root {
-      /* Cores principais */
+      /* Verde da logo (DOMINANTE) */
+      --color-green-dark: #1a3d3a;
+      --color-green-medium: #2a5551;
+      --color-green-teal: #326b65;
+      --color-green-bright: #3d8077;
+      --color-green-light: #4a9a8e;
+      
+      /* Dourado vibrante (COMPLEMENTAR) */
+      --color-gold: #ffd700;
+      --color-gold-light: #ffe135;
+      --color-gold-dark: #d4af37;
+      --color-gold-copper: #c9a959;
+      --color-amber: #ffbf00;
+      
+      /* Ciano da logo (ACENTO) */
+      --color-cyan: #41e3d7;
+      --color-cyan-light: #5ef0e4;
+      --color-cyan-bright: #7ffef2;
+      
+      /* Base escura */
       --color-black: #0a0e14;
       --color-dark: #141920;
       --color-charcoal: #1a2028;
-      --color-slate: #2a3441;
       
-      /* Paleta azul-ciano (da logo) */
-      --color-cyan: #41e3d7;
-      --color-cyan-light: #5ef0e4;
-      --color-cyan-dark: #2eb8be;
-      --color-cyan-vibrant: #00fff7;
-      --color-cyan-crystal: rgba(65, 227, 215, 0.15);
-      
-      /* Paleta prata/metálica */
-      --color-silver: #c0c5ce;
-      --color-silver-light: #e1e4e8;
-      --color-silver-bright: #f0f3f7;
-      --color-silver-dark: #8b929e;
-      --color-platinum: #d4d7dc;
-      --color-metal: #a8b2bf;
-      --color-chrome: #b8bec7;
-      --color-steel: #9ba3ae;
-      
-      /* Paleta DOURADO/OURO (NOVA) */
-      --color-gold: #ffd700;
-      --color-gold-light: #ffe44d;
-      --color-gold-dark: #d4af37;
-      --color-gold-rose: #e6c9a8;
-      --color-gold-bright: #fff9e6;
-      --color-amber: #ffbf00;
-      --color-bronze: #cd7f32;
-      
-      /* Branco e cinzas */
+      /* Claridade */
       --color-white: #ffffff;
-      --color-offwhite: #f8f9fa;
-      --color-gray-100: #e8eaed;
-      --color-gray-200: #c5c8cc;
-      --color-gray-300: #9ea3a8;
-      --color-gray-400: #6c7278;
-      --color-gray-500: #4a5057;
+      --color-cream: #fffef0;
       
-      /* Gradientes premium avançados */
-      --gradient-silver: linear-gradient(135deg, #e1e4e8 0%, #c0c5ce 50%, #8b929e 100%);
-      --gradient-platinum: linear-gradient(135deg, #f0f3f7 0%, #d4d7dc 50%, #c0c5ce 100%);
-      --gradient-cyan: linear-gradient(135deg, #41e3d7 0%, #2eb8be 100%);
-      --gradient-gold: linear-gradient(135deg, #ffd700 0%, #d4af37 50%, #ffbf00 100%);
-      --gradient-crystal: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.1) 0%, 
-        rgba(65, 227, 215, 0.08) 50%,
-        rgba(255, 215, 0, 0.06) 100%);
-      --gradient-logo-advanced: linear-gradient(135deg, 
-        #e1e4e8 0%, 
-        #41e3d7 20%, 
-        #ffd700 40%,
-        #c0c5ce 60%, 
-        #41e3d7 80%,
-        #d4af37 100%);
-      --gradient-header-bar: linear-gradient(135deg,
-        rgba(240, 243, 247, 0.95) 0%,
-        rgba(225, 228, 232, 0.92) 30%,
-        rgba(65, 227, 215, 0.15) 50%,
-        rgba(255, 215, 0, 0.12) 70%,
-        rgba(212, 215, 220, 0.90) 100%);
+      /* Gradientes cinematográficos */
+      --gradient-bg: linear-gradient(135deg,
+        #0d1a18 0%,
+        #1a3d3a 25%,
+        #2a5551 50%,
+        #1a3d3a 75%,
+        #0d1a18 100%);
+      --gradient-gold-shine: linear-gradient(135deg,
+        #ffe135 0%,
+        #ffd700 25%,
+        #d4af37 50%,
+        #ffd700 75%,
+        #ffe135 100%);
+      --gradient-green-gold: linear-gradient(135deg,
+        #3d8077 0%,
+        #ffd700 50%,
+        #41e3d7 100%);
       
       /* Tipografia */
-      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-primary: 'Inter', -apple-system, sans-serif;
       --font-display: 'Playfair Display', Georgia, serif;
       
-      /* Tamanhos de fonte */
+      /* Tamanhos */
       --font-xs: 0.75rem;
       --font-sm: 0.875rem;
       --font-base: 1rem;
       --font-lg: 1.125rem;
       --font-xl: 1.25rem;
       --font-2xl: 1.5rem;
-      --font-3xl: 2rem;
-      --font-4xl: 2.5rem;
-      --font-5xl: 3rem;
-      --font-6xl: 4rem;
+      --font-3xl: 2.2rem;
+      --font-4xl: 3rem;
+      --font-5xl: 4rem;
       
       /* Espaçamento */
       --spacing-xs: 0.25rem;
@@ -113,53 +93,42 @@
       --spacing-3xl: 4rem;
       --spacing-4xl: 5rem;
       
-      /* Border radius */
+      /* Radius */
       --radius-sm: 0.375rem;
       --radius-md: 0.5rem;
       --radius-lg: 0.75rem;
       --radius-xl: 1rem;
       --radius-2xl: 1.5rem;
-      --radius-3xl: 2rem;
       --radius-full: 9999px;
       
-      /* Shadows ultra premium com cristal e ouro */
-      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-      --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
-      --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
-      --shadow-glow-cyan: 0 0 35px rgba(65, 227, 215, 0.6);
-      --shadow-glow-silver: 0 0 30px rgba(225, 228, 232, 0.5);
-      --shadow-glow-gold: 0 0 40px rgba(255, 215, 0, 0.5);
-      --shadow-metal: 0 8px 32px rgba(192, 197, 206, 0.35);
-      --shadow-chrome: 0 12px 40px rgba(225, 228, 232, 0.3);
-      --shadow-crystal: 0 8px 32px rgba(255, 255, 255, 0.15), 
-                         0 4px 16px rgba(65, 227, 215, 0.2);
+      /* Shadows cinematográficos */
+      --shadow-gold-glow: 0 0 40px rgba(255, 215, 0, 0.7),
+                          0 0 80px rgba(255, 215, 0, 0.5),
+                          0 0 120px rgba(255, 215, 0, 0.3);
+      --shadow-cyan-glow: 0 0 35px rgba(65, 227, 215, 0.6),
+                          0 0 70px rgba(65, 227, 215, 0.4);
+      --shadow-green-glow: 0 0 30px rgba(61, 128, 119, 0.5);
       
       /* Transitions */
       --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-      --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
-      --transition-smooth: 500ms cubic-bezier(0.4, 0, 0.2, 1);
-      --transition-elastic: 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-elastic: 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
       
       /* Z-index */
+      --z-particles: 0;
+      --z-base: 1;
       --z-dropdown: 1000;
-      --z-sticky: 1020;
       --z-fixed: 1030;
-      --z-modal-backdrop: 1040;
-      --z-modal: 1050;
-      --z-popover: 1060;
-      --z-tooltip: 1070;
       
       /* Layout */
-      --container-max: 1360px;
-      --header-height: 110px;
-      --campaign-bar-height: 80px;
+      --container-max: 1400px;
+      --header-height: 90px;
+      --campaign-height: 88px;
     }
     
     /* ============================================================
-       RESET & BASE
+       RESET
        ============================================================ */
     *, *::before, *::after {
       box-sizing: border-box;
@@ -170,7 +139,6 @@
     html {
       font-size: 16px;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       scroll-behavior: smooth;
     }
     
@@ -179,18 +147,25 @@
       font-size: var(--font-base);
       font-weight: 400;
       line-height: 1.6;
-      color: var(--color-gray-100);
-      background: linear-gradient(135deg, 
-        var(--color-black) 0%, 
-        var(--color-dark) 35%, 
-        var(--color-charcoal) 70%,
-        #1a232e 100%);
+      color: var(--color-cream);
+      background: var(--gradient-bg);
+      background-size: 400% 400%;
+      animation: gradientMove 20s ease infinite;
       min-height: 100vh;
       overflow-x: hidden;
       position: relative;
     }
     
-    /* EFEITO VIVO DE FUNDO - MANTIDO E INTENSIFICADO */
+    @keyframes gradientMove {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
+    /* ============================================================
+       ANIMAÇÕES TIPO GIF - OBJETOS SE MOVENDO
+       ============================================================ */
+    
+    /* Camada 1: Partículas douradas tipo Matrix caindo */
     body::before {
       content: '';
       position: fixed;
@@ -198,88 +173,158 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: 
-        radial-gradient(circle at 25% 35%, rgba(255, 215, 0, 0.12) 0%, transparent 45%),
-        radial-gradient(circle at 75% 65%, rgba(65, 227, 215, 0.10) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(225, 228, 232, 0.08) 0%, transparent 60%);
+      background-image:
+        linear-gradient(0deg, transparent 0%, var(--color-gold) 50%, transparent 100%),
+        linear-gradient(0deg, transparent 0%, var(--color-cyan) 50%, transparent 100%);
+      background-size: 2px 100px, 2px 150px;
+      background-position: 10% 0, 30% 0, 50% 0, 70% 0, 90% 0;
+      background-repeat: repeat-x;
+      animation: matrixRain 8s linear infinite;
       pointer-events: none;
-      z-index: 0;
-      animation: pulseVivo 8s ease-in-out infinite;
+      z-index: var(--z-particles);
+      opacity: 0.15;
     }
     
-    @keyframes pulseVivo {
-      0%, 100% { 
-        opacity: 0.7;
-        transform: scale(1) translate(0, 0);
-      }
-      50% { 
-        opacity: 1;
-        transform: scale(1.05) translate(-10px, -10px);
-      }
+    @keyframes matrixRain {
+      from { background-position: 10% -100px, 30% -150px, 50% -120px, 70% -180px, 90% -140px; }
+      to { background-position: 10% 100vh, 30% 100vh, 50% 100vh, 70% 100vh, 90% 100vh; }
     }
     
-    /* Brilho metálico + cristal + ouro */
+    /* Camada 2: Partículas flutuantes douradas INTENSAS */
     body::after {
       content: '';
       position: fixed;
-      top: -50%;
-      right: -50%;
-      width: 120%;
-      height: 220%;
-      background: conic-gradient(from 0deg at 50% 50%, 
-        transparent, 
-        rgba(255, 215, 0, 0.08), 
-        transparent 60deg,
-        rgba(225, 228, 232, 0.06),
-        transparent 120deg,
-        rgba(65, 227, 215, 0.05),
-        transparent 180deg);
-      animation: rotateShineAdvanced 40s linear infinite;
-      pointer-events: none;
-      z-index: 0;
-    }
-    
-    @keyframes rotateShineAdvanced {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    
-    /* Partículas cristalinas flutuantes */
-    body::after {
-      content: '';
-      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      background-image: 
-        radial-gradient(2px 2px at 20% 30%, rgba(255, 215, 0, 0.3), transparent),
-        radial-gradient(2px 2px at 60% 70%, rgba(65, 227, 215, 0.3), transparent),
-        radial-gradient(1px 1px at 50% 50%, rgba(225, 228, 232, 0.3), transparent);
-      background-size: 200px 200px, 300px 300px, 150px 150px;
-      animation: floatParticles 20s linear infinite;
-      opacity: 0.4;
+      background-image:
+        radial-gradient(circle, var(--color-gold) 2px, transparent 2px),
+        radial-gradient(circle, var(--color-cyan) 1px, transparent 1px),
+        radial-gradient(circle, var(--color-gold-light) 3px, transparent 3px),
+        radial-gradient(circle, var(--color-cyan-bright) 1px, transparent 1px),
+        radial-gradient(circle, var(--color-gold) 2px, transparent 2px);
+      background-size: 300px 300px, 400px 400px, 250px 250px, 350px 350px, 450px 450px;
+      background-position: 0 0, 50px 50px, 100px 30px, 150px 80px, 200px 20px;
+      animation: floatParticlesIntense 15s linear infinite,
+                 pulseParticles 5s ease-in-out infinite;
       pointer-events: none;
-      z-index: 0;
+      z-index: var(--z-particles);
+      opacity: 0.4;
     }
     
-    @keyframes floatParticles {
-      0% { background-position: 0 0, 0 0, 0 0; }
-      100% { background-position: 200px 200px, -300px 300px, 150px -150px; }
+    @keyframes floatParticlesIntense {
+      0% {
+        background-position: 0 0, 50px 50px, 100px 30px, 150px 80px, 200px 20px;
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        transform: translateY(-50px) scale(1.05);
+      }
+      100% {
+        background-position: 300px 300px, 350px 350px, 400px 330px, 450px 380px, 500px 320px;
+        transform: translateY(0) scale(1);
+      }
+    }
+    
+    @keyframes pulseParticles {
+      0%, 100% { opacity: 0.4; filter: blur(0); }
+      50% { opacity: 0.7; filter: blur(1px); }
+    }
+    
+    /* Camada 3: Ondas luminosas SE MOVENDO */
+    .wave-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: var(--z-particles);
+      overflow: hidden;
+    }
+    
+    .wave {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center,
+        rgba(255, 215, 0, 0.15) 0%,
+        rgba(65, 227, 215, 0.10) 30%,
+        transparent 60%);
+      animation: waveMove 12s ease-in-out infinite;
+    }
+    
+    .wave:nth-child(1) {
+      top: -50%;
+      left: -50%;
+      animation-delay: 0s;
+    }
+    
+    .wave:nth-child(2) {
+      bottom: -50%;
+      right: -50%;
+      animation-delay: 6s;
+    }
+    
+    @keyframes waveMove {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.5;
+      }
+      50% {
+        transform: translate(30px, 30px) scale(1.1);
+        opacity: 0.8;
+      }
+    }
+    
+    /* Camada 4: Linhas douradas orgânicas FLUINDO */
+    .flowing-lines {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: var(--z-particles);
+    }
+    
+    .flowing-line {
+      position: absolute;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(180deg,
+        transparent 0%,
+        var(--color-gold) 30%,
+        var(--color-cyan) 70%,
+        transparent 100%);
+      animation: flowLine 10s linear infinite;
+      opacity: 0.3;
+    }
+    
+    .flowing-line:nth-child(1) { left: 15%; animation-delay: 0s; }
+    .flowing-line:nth-child(2) { left: 35%; animation-delay: 3s; }
+    .flowing-line:nth-child(3) { right: 20%; animation-delay: 6s; }
+    
+    @keyframes flowLine {
+      0% { transform: translateY(-100%); opacity: 0; }
+      50% { opacity: 0.3; }
+      100% { transform: translateY(100%); opacity: 0; }
     }
     
     /* ============================================================
-       UTILITY CLASSES
+       CONTAINER
        ============================================================ */
     .container {
       max-width: var(--container-max);
       margin: 0 auto;
-      padding-left: var(--spacing-xl);
-      padding-right: var(--spacing-xl);
+      padding: 0 var(--spacing-xl);
       position: relative;
-      z-index: 1;
+      z-index: var(--z-base);
     }
     
     /* ============================================================
-       HEADER COM FAIXA DA COR DA LOGO E LOGO GIGANTE (120PX)
+       HEADER COM VERDE DA LOGO
        ============================================================ */
     .header {
       position: fixed;
@@ -287,40 +332,38 @@
       left: 0;
       width: 100%;
       height: var(--header-height);
-      background: var(--gradient-header-bar);
-      backdrop-filter: blur(30px) saturate(200%);
-      border-bottom: 2px solid rgba(255, 215, 0, 0.25);
-      box-shadow: 
-        0 4px 20px rgba(0, 0, 0, 0.15), 
-        0 2px 40px rgba(65, 227, 215, 0.2),
-        0 1px 60px rgba(255, 215, 0, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      background: linear-gradient(135deg,
+        rgba(26, 61, 58, 0.98) 0%,
+        rgba(42, 85, 81, 0.95) 50%,
+        rgba(26, 61, 58, 0.98) 100%);
+      backdrop-filter: blur(25px) saturate(180%);
+      border-bottom: 3px solid var(--color-gold);
+      box-shadow:
+        0 5px 30px rgba(0, 0, 0, 0.4),
+        0 2px 60px rgba(255, 215, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
       z-index: var(--z-fixed);
       transition: all var(--transition-base);
     }
     
-    /* Efeito cristalino na faixa do header */
+    /* Shimmer dourado no header */
     .header::before {
       content: '';
       position: absolute;
-      left: 0;
       top: 0;
+      left: -100%;
       width: 100%;
       height: 100%;
-      background: 
-        linear-gradient(135deg,
-          rgba(255, 255, 255, 0.15) 0%,
-          transparent 30%,
-          rgba(65, 227, 215, 0.10) 50%,
-          transparent 70%,
-          rgba(255, 215, 0, 0.08) 100%);
-      pointer-events: none;
-      animation: shimmerCrystal 6s ease-in-out infinite;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255, 215, 0, 0.2) 50%,
+        transparent 100%);
+      animation: shimmer 6s ease-in-out infinite;
     }
     
-    @keyframes shimmerCrystal {
-      0%, 100% { opacity: 0.6; }
-      50% { opacity: 1; }
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 200%; }
     }
     
     .header-content {
@@ -335,7 +378,7 @@
       z-index: 2;
     }
     
-    /* Logo GIGANTE (120px) com efeito cristal + ouro */
+    /* Logo wrapper */
     .logo-wrapper {
       display: flex;
       align-items: center;
@@ -343,113 +386,50 @@
       text-decoration: none;
       transition: transform var(--transition-elastic);
       position: relative;
-      padding-right: var(--spacing-2xl);
-    }
-    
-    /* Barra vertical ouro + ciano ao lado da logo */
-    .logo-wrapper::before {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 4px;
-      height: 85px;
-      background: linear-gradient(180deg, 
-        var(--color-cyan) 0%, 
-        var(--color-gold) 50%, 
-        var(--color-cyan) 100%);
-      border-radius: var(--radius-full);
-      box-shadow: 
-        var(--shadow-glow-cyan),
-        var(--shadow-glow-gold);
-      opacity: 0.7;
-      transition: opacity var(--transition-base);
-      animation: pulseBar 3s ease-in-out infinite;
-    }
-    
-    @keyframes pulseBar {
-      0%, 100% { opacity: 0.7; height: 85px; }
-      50% { opacity: 1; height: 95px; }
-    }
-    
-    .logo-wrapper:hover::before {
-      opacity: 1;
     }
     
     .logo-wrapper:hover {
-      transform: translateX(15px) scale(1.03);
+      transform: translateX(12px) scale(1.03);
     }
     
-    /* Animação de clique MANTIDA */
     .logo-wrapper:active {
-      animation: logoClickAdvanced 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      animation: logoClick 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
     
-    @keyframes logoClickAdvanced {
-      0%, 100% { transform: translateX(15px) scale(1.03); }
-      25% { transform: translateX(20px) scale(1.08) rotate(-5deg); }
-      75% { transform: translateX(20px) scale(1.08) rotate(5deg); }
+    @keyframes logoClick {
+      0%, 100% { transform: translateX(12px) scale(1.03); }
+      25% { transform: translateX(18px) scale(1.1) rotate(-6deg); }
+      50% { transform: translateX(24px) scale(1.15); }
+      75% { transform: translateX(18px) scale(1.1) rotate(6deg); }
     }
     
     .logo-image {
-      width: 120px;
-      height: 120px;
-      border-radius: var(--radius-2xl);
-      background: 
-        linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%),
-        var(--gradient-crystal);
-      background-blend-mode: overlay;
-      padding: var(--spacing-sm);
-      box-shadow: 
-        0 16px 40px rgba(65, 227, 215, 0.35),
-        0 8px 24px rgba(255, 215, 0, 0.30),
-        var(--shadow-glow-cyan),
-        var(--shadow-glow-gold),
-        var(--shadow-crystal),
-        inset 0 2px 0 rgba(255, 255, 255, 0.7);
+      width: 75px;
+      height: 75px;
+      border-radius: var(--radius-xl);
+      background: var(--color-white);
+      padding: var(--spacing-xs);
+      box-shadow:
+        0 10px 30px rgba(255, 215, 0, 0.5),
+        var(--shadow-gold-glow);
+      border: 4px solid var(--color-gold);
       transition: all var(--transition-elastic);
-      border: 5px solid;
-      border-image: var(--gradient-logo-advanced) 1;
-      position: relative;
+      animation: logoPulse 4s ease-in-out infinite;
     }
     
-    /* Brilho cristalino animado na logo */
-    .logo-image::after {
-      content: '';
-      position: absolute;
-      inset: -4px;
-      border-radius: var(--radius-2xl);
-      padding: 4px;
-      background: var(--gradient-logo-advanced);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      opacity: 0;
-      transition: opacity var(--transition-base);
-      animation: rotateBorder 8s linear infinite;
-    }
-    
-    @keyframes rotateBorder {
-      from { filter: hue-rotate(0deg); }
-      to { filter: hue-rotate(360deg); }
+    @keyframes logoPulse {
+      0%, 100% { box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5), var(--shadow-gold-glow); }
+      50% { box-shadow: 0 15px 40px rgba(255, 215, 0, 0.8), var(--shadow-gold-glow); }
     }
     
     .logo-wrapper:hover .logo-image {
-      box-shadow: 
-        0 20px 50px rgba(65, 227, 215, 0.5),
-        0 12px 32px rgba(255, 215, 0, 0.45),
-        0 0 60px rgba(65, 227, 215, 0.4),
-        0 0 80px rgba(255, 215, 0, 0.3),
-        inset 0 2px 0 rgba(255, 255, 255, 0.9);
       transform: rotate(-8deg) scale(1.15);
+      box-shadow:
+        0 20px 50px rgba(255, 215, 0, 0.9),
+        var(--shadow-gold-glow);
     }
     
-    .logo-wrapper:hover .logo-image::after {
-      opacity: 1;
-    }
-    
-    /* Nome do site visível */
+    /* SABIAMENTE em dourado gigante */
     .logo-text {
       display: flex;
       flex-direction: column;
@@ -458,42 +438,45 @@
     
     .logo-title {
       font-family: var(--font-display);
-      font-size: var(--font-3xl);
+      font-size: var(--font-4xl);
       font-weight: 900;
-      background: var(--gradient-logo-advanced);
+      background: var(--gradient-gold-shine);
+      background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       line-height: 1;
-      letter-spacing: -0.02em;
-      filter: drop-shadow(0 2px 8px rgba(255, 215, 0, 0.4));
+      letter-spacing: 0.03em;
+      animation: goldShine 4s ease-in-out infinite;
+      filter: drop-shadow(0 5px 20px rgba(255, 215, 0, 0.7));
+    }
+    
+    @keyframes goldShine {
+      0%, 100% { background-position: 0% center; }
+      50% { background-position: 200% center; }
     }
     
     .logo-subtitle {
       font-size: var(--font-sm);
-      font-weight: 800;
-      letter-spacing: 0.14em;
+      font-weight: 700;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      background: var(--gradient-silver);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--color-cyan-light);
+      text-shadow: var(--shadow-cyan-glow);
     }
     
-    /* Navegação com dropdown COMPLETO */
+    /* Navegação */
     .nav {
       display: flex;
       align-items: center;
-      gap: var(--spacing-sm);
+      gap: var(--spacing-md);
     }
     
     .nav-list {
       display: flex;
       align-items: center;
-      gap: var(--spacing-xs);
+      gap: var(--spacing-sm);
       list-style: none;
-      margin: 0;
-      padding: 0;
     }
     
     .nav-item {
@@ -505,49 +488,47 @@
       display: inline-flex;
       align-items: center;
       gap: var(--spacing-xs);
-      padding: var(--spacing-sm) var(--spacing-md);
+      padding: var(--spacing-sm) var(--spacing-lg);
       font-size: var(--font-sm);
       font-weight: 700;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--color-slate);
+      color: var(--color-cream);
       text-decoration: none;
       border-radius: var(--radius-md);
-      transition: all var(--transition-fast);
+      transition: all var(--transition-base);
       white-space: nowrap;
-      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
     }
     
     .nav-link::before {
       content: '';
       position: absolute;
-      bottom: 2px;
+      bottom: 0;
       left: 50%;
       width: 0;
       height: 3px;
-      background: var(--gradient-gold);
+      background: var(--gradient-gold-shine);
       transform: translateX(-50%);
       transition: width var(--transition-base);
-      box-shadow: var(--shadow-glow-gold);
+      box-shadow: var(--shadow-gold-glow);
       border-radius: var(--radius-full);
     }
     
     .nav-link:hover,
     .nav-link.active {
-      color: var(--color-cyan-dark);
-      background: rgba(65, 227, 215, 0.12);
-      text-shadow: 0 2px 8px rgba(65, 227, 215, 0.5);
+      color: var(--color-gold-light);
+      background: rgba(255, 215, 0, 0.15);
+      transform: translateY(-2px);
     }
     
     .nav-link:hover::before,
     .nav-link.active::before {
-      width: 85%;
+      width: 92%;
     }
     
-    /* Dropdown arrow */
     .nav-link.has-dropdown::after {
       content: '▼';
-      font-size: 0.65em;
+      font-size: 0.6em;
       margin-left: var(--spacing-xs);
       transition: transform var(--transition-elastic);
     }
@@ -556,25 +537,22 @@
       transform: rotate(180deg) scale(1.2);
     }
     
-    /* Dropdown menu cristalino */
     .dropdown-menu {
       position: absolute;
-      top: calc(100% + 12px);
+      top: calc(100% + 14px);
       left: 0;
-      min-width: 220px;
-      background: rgba(240, 243, 247, 0.98);
-      backdrop-filter: blur(24px) saturate(180%);
-      border: 2px solid rgba(255, 215, 0, 0.35);
+      min-width: 250px;
+      background: rgba(26, 61, 58, 0.98);
+      backdrop-filter: blur(25px);
+      border: 3px solid var(--color-gold);
       border-radius: var(--radius-xl);
-      padding: var(--spacing-md);
-      box-shadow: 
-        0 16px 48px rgba(0, 0, 0, 0.25),
-        0 8px 24px rgba(65, 227, 215, 0.2),
-        var(--shadow-crystal),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      padding: var(--spacing-xl);
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        var(--shadow-gold-glow);
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-15px) scale(0.95);
+      transform: translateY(-20px) scale(0.9);
       transition: all var(--transition-elastic);
       z-index: var(--z-dropdown);
     }
@@ -587,13 +565,13 @@
     
     .dropdown-item {
       display: block;
-      padding: var(--spacing-sm) var(--spacing-lg);
+      padding: var(--spacing-md) var(--spacing-xl);
       font-size: var(--font-base);
       font-weight: 700;
-      color: var(--color-slate);
+      color: var(--color-cream);
       text-decoration: none;
       border-radius: var(--radius-md);
-      transition: all var(--transition-fast);
+      transition: all var(--transition-base);
       position: relative;
       overflow: hidden;
     }
@@ -602,7 +580,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: var(--gradient-cyan);
+      background: var(--gradient-gold-shine);
       opacity: 0;
       transition: opacity var(--transition-base);
     }
@@ -614,34 +592,33 @@
     
     .dropdown-item:hover {
       color: var(--color-black);
-      transform: translateX(6px);
+      transform: translateX(10px);
     }
     
     .dropdown-item:hover::before {
       opacity: 1;
     }
     
-    /* Separador de categoria no dropdown */
     .dropdown-category {
       font-weight: 900;
-      color: var(--color-gold-dark);
-      border-bottom: 2px solid var(--color-gold);
-      margin-bottom: var(--spacing-sm);
+      color: var(--color-gold-light);
+      border-bottom: 3px solid var(--color-gold);
+      margin-bottom: var(--spacing-md);
       padding-bottom: var(--spacing-sm);
-      text-shadow: 0 1px 3px rgba(255, 215, 0, 0.5);
+      text-shadow: var(--shadow-gold-glow);
     }
     
     .nav-link-cta {
-      background: var(--gradient-cyan);
+      background: var(--gradient-gold-shine);
+      background-size: 200% auto;
       color: var(--color-black);
       font-weight: 900;
       padding: var(--spacing-md) var(--spacing-2xl);
       border-radius: var(--radius-full);
-      box-shadow: 
-        0 6px 20px rgba(65, 227, 215, 0.45),
-        var(--shadow-glow-cyan);
+      box-shadow: var(--shadow-gold-glow);
       margin-left: var(--spacing-lg);
-      border: 2px solid rgba(255, 255, 255, 0.4);
+      border: 3px solid var(--color-gold-light);
+      animation: goldShine 4s ease-in-out infinite;
     }
     
     .nav-link-cta::before {
@@ -649,31 +626,30 @@
     }
     
     .nav-link-cta:hover {
-      background: var(--gradient-gold);
       color: var(--color-black);
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 
-        0 12px 32px rgba(255, 215, 0, 0.6),
-        0 0 50px rgba(65, 227, 215, 0.4);
+      transform: translateY(-5px) scale(1.08);
+      box-shadow:
+        0 15px 40px rgba(255, 215, 0, 0.8),
+        var(--shadow-gold-glow);
     }
     
     /* ============================================================
-       BARRA DE CAMPANHAS COM CRISTAL + OURO
+       BARRA CAMPANHAS
        ============================================================ */
     .campaign-bar {
       position: fixed;
       top: var(--header-height);
       left: 0;
       width: 100%;
-      min-height: var(--campaign-bar-height);
-      background: linear-gradient(135deg, 
-        rgba(26, 32, 40, 0.98) 0%, 
-        rgba(20, 25, 32, 0.95) 100%);
-      backdrop-filter: blur(24px);
-      border-bottom: 2px solid rgba(255, 215, 0, 0.3);
-      box-shadow: 
-        0 6px 24px rgba(0, 0, 0, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      min-height: var(--campaign-height);
+      background: linear-gradient(135deg,
+        rgba(20, 25, 32, 0.98) 0%,
+        rgba(26, 30, 38, 0.96) 100%);
+      backdrop-filter: blur(22px);
+      border-bottom: 3px solid var(--color-gold);
+      box-shadow:
+        0 7px 28px rgba(0, 0, 0, 0.3),
+        0 3px 56px rgba(255, 215, 0, 0.2);
       z-index: calc(var(--z-fixed) - 1);
       padding: var(--spacing-xl) 0;
     }
@@ -683,38 +659,45 @@
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      gap: var(--spacing-lg);
+      gap: var(--spacing-xl);
       max-width: var(--container-max);
       margin: 0 auto;
       padding: 0 var(--spacing-xl);
     }
     
     .campaign-title {
-      font-size: var(--font-base);
+      font-size: var(--font-xl);
       font-weight: 900;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      background: var(--gradient-logo-advanced);
+      background: var(--gradient-gold-shine);
+      background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       padding-right: var(--spacing-2xl);
-      border-right: 3px solid var(--color-gold);
+      border-right: 4px solid var(--color-gold);
       margin-right: var(--spacing-md);
+      animation: goldShine 4s ease-in-out infinite;
       position: relative;
     }
     
     .campaign-title::after {
       content: '';
       position: absolute;
-      right: -3px;
+      right: -4px;
       top: 50%;
       transform: translateY(-50%);
-      width: 3px;
-      height: 70%;
-      background: var(--gradient-cyan);
-      box-shadow: var(--shadow-glow-cyan);
-      animation: pulseBar 2s ease-in-out infinite;
+      width: 4px;
+      height: 75%;
+      background: var(--gradient-gold-shine);
+      box-shadow: var(--shadow-gold-glow);
+      animation: pulseBar 3s ease-in-out infinite;
+    }
+    
+    @keyframes pulseBar {
+      0%, 100% { opacity: 0.7; height: 75%; }
+      50% { opacity: 1; height: 90%; }
     }
     
     .campaign-btn {
@@ -722,11 +705,11 @@
       align-items: center;
       padding: var(--spacing-md) var(--spacing-2xl);
       font-size: var(--font-base);
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      color: var(--color-silver-light);
-      background: rgba(255, 255, 255, 0.05);
-      border: 2px solid rgba(255, 215, 0, 0.3);
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: var(--color-cream);
+      background: rgba(255, 215, 0, 0.1);
+      border: 3px solid var(--color-gold);
       border-radius: var(--radius-xl);
       text-decoration: none;
       transition: all var(--transition-elastic);
@@ -739,7 +722,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: var(--gradient-gold);
+      background: var(--gradient-gold-shine);
       opacity: 0;
       transition: opacity var(--transition-base);
     }
@@ -751,11 +734,9 @@
     
     .campaign-btn:hover {
       color: var(--color-black);
-      border-color: var(--color-gold);
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 
-        0 12px 28px rgba(255, 215, 0, 0.5),
-        var(--shadow-glow-gold);
+      border-color: var(--color-gold-light);
+      transform: translateY(-7px) scale(1.08);
+      box-shadow: var(--shadow-gold-glow);
     }
     
     .campaign-btn:hover::before {
@@ -763,58 +744,51 @@
     }
     
     /* ============================================================
-       HERO SECTION
+       HERO REVOLUCIONÁRIO
        ============================================================ */
     main {
-      margin-top: calc(var(--header-height) + var(--campaign-bar-height) + var(--spacing-4xl));
+      margin-top: calc(var(--header-height) + var(--campaign-height) + var(--spacing-4xl) + var(--spacing-xl));
       padding-bottom: var(--spacing-4xl);
     }
     
     .hero {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1fr 1fr;
       gap: var(--spacing-4xl);
       align-items: center;
       max-width: var(--container-max);
       margin: 0 auto var(--spacing-4xl);
       padding: var(--spacing-4xl);
-      background: 
-        var(--gradient-crystal),
-        linear-gradient(135deg, 
-          rgba(26, 32, 40, 0.9) 0%, 
-          rgba(20, 25, 32, 0.85) 100%);
-      backdrop-filter: blur(28px) saturate(160%);
-      border-radius: var(--radius-3xl);
-      border: 2px solid;
-      border-image: linear-gradient(135deg, 
-        rgba(225, 228, 232, 0.3) 0%,
-        rgba(65, 227, 215, 0.4) 50%,
-        rgba(255, 215, 0, 0.3) 100%) 1;
-      box-shadow: 
-        0 30px 80px rgba(0, 0, 0, 0.4),
-        var(--shadow-crystal),
-        0 0 80px rgba(65, 227, 215, 0.15),
-        0 0 100px rgba(255, 215, 0, 0.12);
+      background: linear-gradient(135deg,
+        rgba(26, 32, 40, 0.88) 0%,
+        rgba(20, 25, 32, 0.85) 100%);
+      backdrop-filter: blur(30px) saturate(150%);
+      border-radius: var(--radius-2xl);
+      border: 4px solid var(--color-gold);
+      box-shadow:
+        0 50px 120px rgba(0, 0, 0, 0.6),
+        var(--shadow-gold-glow),
+        inset 0 2px 0 rgba(255, 255, 255, 0.1);
       position: relative;
       overflow: hidden;
     }
     
-    /* Efeito de luz VIVO rotativo com ouro */
+    /* Luz rotativa dourada */
     .hero::before {
       content: '';
       position: absolute;
-      top: -70%;
-      right: -70%;
-      width: 140%;
-      height: 240%;
-      background: 
-        radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 55%),
-        radial-gradient(circle, rgba(65, 227, 215, 0.12) 25%, transparent 65%);
-      animation: rotateLight 25s linear infinite;
+      top: -90%;
+      right: -90%;
+      width: 180%;
+      height: 280%;
+      background:
+        radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 45%),
+        radial-gradient(circle, rgba(65, 227, 215, 0.15) 35%, transparent 65%);
+      animation: rotateHero 30s linear infinite;
       pointer-events: none;
     }
     
-    @keyframes rotateLight {
+    @keyframes rotateHero {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
@@ -830,171 +804,144 @@
       gap: var(--spacing-sm);
       font-size: var(--font-base);
       font-weight: 900;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      background: var(--gradient-logo-advanced);
+      background: var(--gradient-gold-shine);
+      background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       margin-bottom: var(--spacing-2xl);
-      padding: var(--spacing-md) var(--spacing-xl);
-      background-color: rgba(255, 215, 0, 0.10);
+      padding: var(--spacing-md) var(--spacing-2xl);
+      background-color: rgba(255, 215, 0, 0.15);
       background-blend-mode: overlay;
       border-radius: var(--radius-full);
-      border: 2px solid rgba(255, 215, 0, 0.4);
+      border: 3px solid var(--color-gold);
       width: fit-content;
-      box-shadow: 
-        0 6px 16px rgba(255, 215, 0, 0.25),
-        var(--shadow-crystal);
+      box-shadow: var(--shadow-gold-glow);
+      animation: goldShine 4s ease-in-out infinite;
     }
     
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(var(--font-4xl), 8vw, var(--font-6xl));
+      font-size: clamp(var(--font-3xl), 9vw, var(--font-5xl));
       font-weight: 900;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+      line-height: 1;
+      letter-spacing: -0.015em;
       color: var(--color-white);
       margin-bottom: var(--spacing-2xl);
-      background: linear-gradient(135deg, 
-        var(--color-white) 0%, 
-        var(--color-gold-light) 30%,
-        var(--color-cyan-light) 60%,
-        var(--color-silver-light) 85%,
-        var(--color-gold) 100%);
+      background: linear-gradient(135deg,
+        var(--color-gold-light) 0%,
+        var(--color-gold) 30%,
+        var(--color-gold-dark) 60%,
+        var(--color-gold-light) 100%);
+      background-size: 300% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      background-size: 250% 250%;
-      animation: gradientShiftSupreme 12s ease infinite;
-      filter: drop-shadow(0 4px 16px rgba(255, 215, 0, 0.4));
+      animation: goldShiftTitle 8s ease infinite;
+      filter: drop-shadow(0 10px 30px rgba(255, 215, 0, 0.8));
     }
     
-    @keyframes gradientShiftSupreme {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+    @keyframes goldShiftTitle {
+      0%, 100% { background-position: 0% center; }
+      50% { background-position: 100% center; }
     }
     
     .hero-description {
       font-size: var(--font-xl);
-      font-weight: 600;
-      line-height: 1.8;
-      color: var(--color-silver-light);
+      font-weight: 500;
+      line-height: 1.85;
+      color: var(--color-cream);
       margin-bottom: var(--spacing-3xl);
-      max-width: 600px;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      max-width: 640px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
     
     .search-wrapper {
       position: relative;
-      margin-bottom: var(--spacing-2xl);
+      margin-bottom: var(--spacing-3xl);
     }
     
     .search-form {
       position: relative;
       display: flex;
       align-items: center;
-      background: var(--gradient-crystal);
-      backdrop-filter: blur(16px);
-      border: 3px solid;
-      border-image: var(--gradient-logo-advanced) 1;
+      background: rgba(255, 215, 0, 0.1);
+      backdrop-filter: blur(18px);
+      border: 4px solid var(--color-gold);
       border-radius: var(--radius-full);
       padding: var(--spacing-sm);
       transition: all var(--transition-elastic);
-      box-shadow: 
-        0 6px 20px rgba(0, 0, 0, 0.2),
-        var(--shadow-crystal);
+      box-shadow: var(--shadow-gold-glow);
     }
     
     .search-form:focus-within {
-      box-shadow: 
-        0 16px 48px rgba(65, 227, 215, 0.35),
-        0 8px 24px rgba(255, 215, 0, 0.3),
-        var(--shadow-glow-cyan),
-        var(--shadow-glow-gold);
-      transform: translateY(-4px) scale(1.02);
+      transform: translateY(-5px) scale(1.03);
+      box-shadow:
+        0 20px 50px rgba(255, 215, 0, 0.5),
+        var(--shadow-gold-glow);
     }
     
     .search-input {
       flex: 1;
       font-family: var(--font-primary);
-      font-size: var(--font-lg);
-      font-weight: 600;
+      font-size: var(--font-xl);
+      font-weight: 700;
       color: var(--color-white);
       background: none;
       border: none;
       outline: none;
-      padding: var(--spacing-lg) var(--spacing-2xl);
+      padding: var(--spacing-xl) var(--spacing-2xl);
     }
     
     .search-input::placeholder {
-      color: var(--color-silver);
+      color: rgba(255, 215, 0, 0.5);
     }
     
     .search-btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 58px;
-      height: 58px;
-      background: var(--gradient-gold);
+      width: 70px;
+      height: 70px;
+      background: var(--gradient-gold-shine);
+      background-size: 200% auto;
       border: none;
       border-radius: 50%;
       color: var(--color-black);
-      font-size: var(--font-2xl);
+      font-size: var(--font-3xl);
       font-weight: 900;
       cursor: pointer;
       transition: all var(--transition-elastic);
-      box-shadow: 
-        0 8px 24px rgba(255, 215, 0, 0.5),
-        var(--shadow-glow-gold);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .search-btn::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--gradient-cyan);
-      opacity: 0;
-      transition: opacity var(--transition-base);
-    }
-    
-    .search-btn span {
-      position: relative;
-      z-index: 1;
+      box-shadow: var(--shadow-gold-glow);
+      animation: goldShine 4s ease-in-out infinite;
     }
     
     .search-btn:hover {
-      transform: scale(1.2) rotate(180deg);
-      box-shadow: 
-        0 12px 36px rgba(255, 215, 0, 0.7),
-        0 0 60px rgba(255, 215, 0, 0.5);
-    }
-    
-    .search-btn:hover::before {
-      opacity: 1;
+      transform: scale(1.3) rotate(180deg);
+      box-shadow:
+        0 15px 40px rgba(255, 215, 0, 0.9),
+        var(--shadow-gold-glow);
     }
     
     .cta-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: var(--spacing-lg);
-      margin-top: var(--spacing-2xl);
     }
     
     .cta-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: var(--spacing-lg) var(--spacing-xl);
+      padding: var(--spacing-xl) var(--spacing-2xl);
       font-size: var(--font-lg);
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      color: var(--color-cyan-light);
-      background: rgba(65, 227, 215, 0.10);
-      border: 2px solid rgba(255, 215, 0, 0.4);
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      color: var(--color-cream);
+      background: rgba(255, 215, 0, 0.12);
+      border: 3px solid var(--color-gold);
       border-radius: var(--radius-xl);
       text-decoration: none;
       transition: all var(--transition-elastic);
@@ -1007,7 +954,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: var(--gradient-gold);
+      background: var(--gradient-gold-shine);
       opacity: 0;
       transition: opacity var(--transition-base);
     }
@@ -1019,11 +966,9 @@
     
     .cta-btn:hover {
       color: var(--color-black);
-      border-color: var(--color-gold);
-      transform: translateY(-6px) scale(1.05);
-      box-shadow: 
-        0 16px 36px rgba(255, 215, 0, 0.5),
-        var(--shadow-glow-gold);
+      border-color: var(--color-gold-light);
+      transform: translateY(-10px) scale(1.08);
+      box-shadow: var(--shadow-gold-glow);
     }
     
     .cta-btn:hover::before {
@@ -1040,50 +985,33 @@
     
     .mockup {
       width: 100%;
-      max-width: 520px;
+      max-width: 580px;
       height: auto;
-      border-radius: var(--radius-3xl);
-      box-shadow: 
-        0 50px 120px rgba(0, 0, 0, 0.6),
-        0 30px 80px rgba(65, 227, 215, 0.35),
-        0 20px 60px rgba(255, 215, 0, 0.3),
-        var(--shadow-chrome),
-        inset 0 2px 0 rgba(255, 255, 255, 0.15);
-      border: 5px solid;
-      border-image: var(--gradient-logo-advanced) 1;
+      border-radius: var(--radius-2xl);
+      box-shadow:
+        0 70px 150px rgba(0, 0, 0, 0.8),
+        0 35px 90px rgba(255, 215, 0, 0.5),
+        var(--shadow-gold-glow);
+      border: 6px solid var(--color-gold);
       transition: transform var(--transition-elastic);
-      position: relative;
+      animation: mockupFloat 8s ease-in-out infinite;
     }
     
-    .mockup::after {
-      content: '';
-      position: absolute;
-      inset: -5px;
-      border-radius: var(--radius-3xl);
-      padding: 5px;
-      background: var(--gradient-logo-advanced);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      opacity: 0;
-      transition: opacity var(--transition-smooth);
-      animation: rotateBorder 10s linear infinite;
+    @keyframes mockupFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
     }
     
     .mockup:hover {
-      transform: scale(1.05) translateY(-15px) rotate(-3deg);
-      box-shadow: 
-        0 60px 140px rgba(0, 0, 0, 0.7),
-        0 40px 100px rgba(65, 227, 215, 0.5),
-        0 30px 80px rgba(255, 215, 0, 0.45);
-    }
-    
-    .mockup:hover::after {
-      opacity: 1;
+      transform: scale(1.08) translateY(-25px) rotate(-5deg);
+      box-shadow:
+        0 90px 180px rgba(0, 0, 0, 0.9),
+        0 45px 110px rgba(255, 215, 0, 0.7),
+        var(--shadow-gold-glow);
     }
     
     /* ============================================================
-       PRODUTOS COM CRISTAL
+       PRODUTOS
        ============================================================ */
     .products-section {
       max-width: var(--container-max);
@@ -1100,33 +1028,33 @@
       font-family: var(--font-display);
       font-size: var(--font-5xl);
       font-weight: 900;
-      background: var(--gradient-logo-advanced);
+      background: var(--gradient-gold-shine);
+      background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       margin-bottom: var(--spacing-lg);
-      filter: drop-shadow(0 4px 16px rgba(255, 215, 0, 0.4));
+      animation: goldShine 4s ease-in-out infinite;
+      filter: drop-shadow(0 8px 28px rgba(255, 215, 0, 0.7));
     }
     
     .section-subtitle {
-      font-size: var(--font-xl);
-      color: var(--color-silver-light);
+      font-size: var(--font-2xl);
+      color: var(--color-cyan-light);
+      text-shadow: var(--shadow-cyan-glow);
     }
     
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
       gap: var(--spacing-3xl);
       margin-bottom: var(--spacing-4xl);
     }
     
     .card {
-      background: var(--gradient-crystal);
-      backdrop-filter: blur(20px);
-      border: 2px solid;
-      border-image: linear-gradient(135deg,
-        rgba(225, 228, 232, 0.3) 0%,
-        rgba(255, 215, 0, 0.4) 100%) 1;
+      background: rgba(26, 32, 40, 0.75);
+      backdrop-filter: blur(22px);
+      border: 4px solid var(--color-gold);
       border-radius: var(--radius-2xl);
       padding: var(--spacing-3xl);
       text-align: center;
@@ -1139,23 +1067,17 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, 
-        rgba(255, 215, 0, 0.08) 0%, 
-        rgba(65, 227, 215, 0.12) 100%);
+      background: radial-gradient(circle at center,
+        rgba(255, 215, 0, 0.2) 0%,
+        transparent 70%);
       opacity: 0;
       transition: opacity var(--transition-base);
     }
     
     .card:hover {
-      transform: translateY(-16px) scale(1.03);
-      border-image: linear-gradient(135deg,
-        rgba(65, 227, 215, 0.6) 0%,
-        rgba(255, 215, 0, 0.6) 100%) 1;
-      box-shadow: 
-        0 30px 60px rgba(65, 227, 215, 0.35),
-        0 20px 40px rgba(255, 215, 0, 0.3),
-        var(--shadow-glow-cyan),
-        var(--shadow-glow-gold);
+      transform: translateY(-25px) scale(1.08);
+      border-color: var(--color-gold-light);
+      box-shadow: var(--shadow-gold-glow);
     }
     
     .card:hover::before {
@@ -1163,28 +1085,30 @@
     }
     
     .card-image {
-      width: 100px;
-      height: 100px;
-      margin: 0 auto var(--spacing-xl);
+      width: 120px;
+      height: 120px;
+      margin: 0 auto var(--spacing-2xl);
       border-radius: var(--radius-xl);
       object-fit: cover;
-      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+      filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.6));
     }
     
     .card-title {
       font-size: var(--font-2xl);
       font-weight: 900;
-      background: var(--gradient-cyan);
+      background: var(--gradient-gold-shine);
+      background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+      animation: goldShine 4s ease-in-out infinite;
     }
     
     .card-description {
       font-size: var(--font-lg);
-      color: var(--color-silver-light);
-      line-height: 1.8;
+      color: var(--color-cream);
+      line-height: 1.85;
     }
     
     /* ============================================================
@@ -1192,9 +1116,10 @@
        ============================================================ */
     .footer {
       background: linear-gradient(135deg, var(--color-black) 0%, var(--color-dark) 100%);
-      border-top: 2px solid rgba(255, 215, 0, 0.3);
+      border-top: 4px solid var(--color-gold);
       padding: var(--spacing-4xl) 0;
       margin-top: var(--spacing-4xl);
+      box-shadow: var(--shadow-gold-glow);
     }
     
     .footer-content {
@@ -1205,108 +1130,82 @@
     }
     
     .footer-text {
-      font-size: var(--font-lg);
-      color: var(--color-silver);
+      font-size: var(--font-xl);
+      color: var(--color-cream);
       margin-bottom: var(--spacing-md);
-      line-height: 1.9;
+      line-height: 2.1;
     }
     
     .footer-brand {
       font-weight: 900;
-      background: var(--gradient-logo-advanced);
+      background: var(--gradient-gold-shine);
+      background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      animation: goldShine 4s ease-in-out infinite;
     }
     
     /* ============================================================
        RESPONSIVIDADE
        ============================================================ */
     @media (max-width: 1024px) {
-      :root {
-        --header-height: 90px;
-      }
-      
-      .logo-image {
-        width: 90px;
-        height: 90px;
-      }
-      
-      .logo-title {
-        font-size: var(--font-2xl);
-      }
-      
+      .logo-image { width: 65px; height: 65px; }
+      .logo-title { font-size: var(--font-3xl); }
       .hero {
         grid-template-columns: 1fr;
         gap: var(--spacing-3xl);
         padding: var(--spacing-3xl) var(--spacing-xl);
       }
-      
-      .hero-visual {
-        order: -1;
-      }
-      
-      .mockup {
-        max-width: 420px;
-      }
+      .hero-visual { order: -1; }
+      .mockup { max-width: 480px; }
     }
     
     @media (max-width: 768px) {
-      .logo-image {
-        width: 70px;
-        height: 70px;
-      }
-      
-      .logo-text {
-        display: none;
-      }
-      
-      .nav-list {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      
-      .nav-link {
-        font-size: 0.75rem;
-        padding: var(--spacing-xs) var(--spacing-sm);
-      }
-      
-      .cards-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-2xl);
-      }
-      
-      .cta-grid {
-        grid-template-columns: 1fr;
-      }
+      .logo-image { width: 55px; height: 55px; }
+      .logo-text { display: none; }
+      .nav-list { flex-wrap: wrap; justify-content: center; }
+      .nav-link { font-size: 0.75rem; padding: var(--spacing-xs) var(--spacing-sm); }
+      .cards-grid { grid-template-columns: 1fr; gap: var(--spacing-2xl); }
+      .cta-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   
+  <!-- Ondas luminosas -->
+  <div class="wave-container">
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>
+  
+  <!-- Linhas fluindo -->
+  <div class="flowing-lines">
+    <div class="flowing-line"></div>
+    <div class="flowing-line"></div>
+    <div class="flowing-line"></div>
+  </div>
+  
   <!-- ============================================================
-       HEADER COM FAIXA DA COR DA LOGO E LOGO GIGANTE (120PX)
+       HEADER VERDE DA LOGO COM DOURADO
        ============================================================ -->
   <header class="header">
     <div class="header-content">
-      <!-- Logo 120px com nome e animação de clique -->
       <a href="#" class="logo-wrapper">
         <img src="/assets/Logo.png" alt="Mais Sabiamente" class="logo-image" 
-             onerror="this.src='https://placehold.co/120x120/ffffff/0a0e14?text=MS&font=raleway'">
+             onerror="this.src='https://placehold.co/75x75/ffffff/0a0e14?text=MS&font=raleway'">
         <div class="logo-text">
           <div class="logo-title">Sabiamente</div>
           <div class="logo-subtitle">Curadoria Profissional</div>
         </div>
       </a>
       
-      <!-- Navegação com dropdowns COMPLETOS -->
       <nav class="nav">
         <ul class="nav-list">
           <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
           <li class="nav-item"><a href="#departamentos" class="nav-link">Departamentos</a></li>
           <li class="nav-item"><a href="#cuidados" class="nav-link">Cuidados Diários</a></li>
           
-          <!-- Tecnologia com dropdown Consultoria -->
           <li class="nav-item">
             <a href="#tecnologia" class="nav-link has-dropdown">Tecnologia</a>
             <div class="dropdown-menu">
@@ -1320,7 +1219,6 @@
           <li class="nav-item"><a href="#livros" class="nav-link">Livros</a></li>
           <li class="nav-item"><a href="#saude" class="nav-link">Saúde</a></li>
           
-          <!-- Sua Casa com dropdown Home Assistant -->
           <li class="nav-item">
             <a href="#casa" class="nav-link has-dropdown">Sua Casa</a>
             <div class="dropdown-menu">
@@ -1337,7 +1235,7 @@
   </header>
   
   <!-- ============================================================
-       BARRA DE CAMPANHAS
+       BARRA CAMPANHAS
        ============================================================ -->
   <div class="campaign-bar">
     <div class="campaign-content">
@@ -1352,7 +1250,7 @@
   </div>
   
   <!-- ============================================================
-       HERO COM EFEITO VIVO
+       HERO REVOLUCIONÁRIO
        ============================================================ -->
   <main>
     <section class="hero">
@@ -1369,7 +1267,7 @@
             <input type="search" name="q" class="search-input" 
                    placeholder="Pesquise produtos, categorias ou marcas…" 
                    aria-label="Campo de busca">
-            <button type="submit" class="search-btn" aria-label="Buscar"><span>→</span></button>
+            <button type="submit" class="search-btn" aria-label="Buscar">→</button>
           </form>
         </div>
         
@@ -1382,36 +1280,36 @@
       </div>
       
       <div class="hero-visual">
-        <img src="/assets/mockup-phone.png" alt="Visual Premium" class="mockup"
-             onerror="this.src='https://placehold.co/520x1040/0a0e14/ffd700?text=Visual+Premium+Supremo&font=raleway'">
+        <img src="/assets/mockup-phone.png" alt="Visual Premium Supremo Revolucionário" class="mockup"
+             onerror="this.src='https://placehold.co/580x1160/0a0e14/ffd700?text=Visual+Premium+Revolucionário&font=raleway'">
       </div>
     </section>
     
-    <!-- Produtos com cristal -->
+    <!-- Produtos -->
     <section class="products-section" id="produtos">
       <div class="section-header">
         <h2 class="section-title">Produtos em Destaque</h2>
-        <p class="section-subtitle">Seleção curada premium suprema</p>
+        <p class="section-subtitle">Seleção curada revolucionária dourada</p>
       </div>
       
       <div class="cards-grid">
         <article class="card">
           <img src="/assets/produto1.png" alt="Produto 1" class="card-image"
-               onerror="this.src='https://placehold.co/100x100/41e3d7/0a0e14?text=P1'">
+               onerror="this.src='https://placehold.co/120x120/ffd700/0a0e14?text=P1'">
           <h3 class="card-title">Produto Premium 1</h3>
           <p class="card-description">Destaque premium com benefícios exclusivos e qualidade garantida.</p>
         </article>
         
         <article class="card">
           <img src="/assets/produto2.png" alt="Produto 2" class="card-image"
-               onerror="this.src='https://placehold.co/100x100/ffd700/0a0e14?text=P2'">
+               onerror="this.src='https://placehold.co/120x120/41e3d7/0a0e14?text=P2'">
           <h3 class="card-title">Produto Premium 2</h3>
           <p class="card-description">Mais procurado pelos usuários com avaliações positivas.</p>
         </article>
         
         <article class="card">
           <img src="/assets/produto3.png" alt="Produto 3" class="card-image"
-               onerror="this.src='https://placehold.co/100x100/e1e4e8/0a0e14?text=P3'">
+               onerror="this.src='https://placehold.co/120x120/ffd700/0a0e14?text=P3'">
           <h3 class="card-title">Produto Premium 3</h3>
           <p class="card-description">Novidade exclusiva com tecnologia avançada e design moderno.</p>
         </article>
@@ -1436,15 +1334,15 @@
   </main>
   
   <!-- ============================================================
-       FOOTER
+       FOOTER DOURADO
        ============================================================ -->
   <footer class="footer">
     <div class="footer-content">
       <p class="footer-text">
-        © 2025 <span class="footer-brand">Mais Sabiamente</span> — Curadoria profissional inteligente suprema.
+        © 2025 <span class="footer-brand">Mais Sabiamente</span> — Curadoria profissional revolucionária dourada.
       </p>
       <p class="footer-text">
-        Desenvolvido com excelência, elegância e sofisticação cristalina dourada.
+        Desenvolvido com excelência, elegância e inovação cinematográfica.
       </p>
     </div>
   </footer>
