@@ -3,70 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mais Sabiamente - Curadoria profissional com visual ouro e prata premium.">
-  <meta name="theme-color" content="#D4AF37">
-  <title>Mais Sabiamente — Curadoria Profissional Premium</title>
+  <meta name="description" content="Mais Sabiamente - Curadoria profissional com visual azul escuro premium e tipografia cinematográfica.">
+  <meta name="theme-color" content="#0A1929">
+  <title>Mais Sabiamente — Curadoria Profissional Masterpiece</title>
   
   <!-- 
     ============================================================
-    FONTES ULTRA PREMIUM
+    FONTES CINEMATOGRÁFICAS ULTRA AVANÇADAS
     ============================================================
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
   
   <style>
     /* ============================================================
-       DESIGN SYSTEM OURO + PRATA PREMIUM
+       DESIGN SYSTEM AZUL ESCURO + OURO CINEMATOGRÁFICO
        ============================================================ */
     :root {
-      /* OURO/DOURADO (DOMINANTE) */
+      /* AZUL ESCURO SOFISTICADO (DOMINANTE) */
+      --blue-deepest: #0A1929;
+      --blue-deep: #0D2137;
+      --blue-dark: #1E3A5F;
+      --blue-navy: #2A4A73;
+      --blue-ocean: #3D5A80;
+      --blue-steel: #4A6885;
+      
+      /* OURO PREMIUM (ACENTO) */
       --gold-primary: #D4AF37;
       --gold-light: #F4D03F;
       --gold-bright: #FFD700;
       --gold-dark: #B8860B;
       --gold-metallic: #DAA520;
-      --gold-champagne: #F7E7CE;
       
-      /* PRATA/CINZA (COMPLEMENTAR) */
+      /* PRATA ELEGANTE (COMPLEMENTAR) */
       --silver-primary: #C0C0C0;
       --silver-light: #E5E5E5;
-      --silver-bright: #F0F0F0;
+      --silver-bright: #F5F5F5;
       --silver-dark: #A8A8A8;
-      --silver-metallic: #B0B0B0;
-      --silver-platinum: #E0E0E0;
       
-      /* Base escura refinada */
-      --dark-primary: #1a1a1a;
-      --dark-secondary: #2a2a2a;
-      --dark-tertiary: #3a3a3a;
-      --black: #0d0d0d;
+      /* CIANO/AQUA (ACENTO SECUNDÁRIO) */
+      --cyan-primary: #00D9FF;
+      --cyan-light: #5CE1E6;
+      --cyan-bright: #7FFFD4;
       
-      /* Claridade */
-      --white: #ffffff;
-      --cream: #FFFEF7;
+      /* Base */
+      --black: #000000;
+      --white: #FFFFFF;
+      --cream: #FFFEF9;
       
-      /* Gradientes premium */
+      /* Gradientes cinematográficos */
+      --gradient-blue-gold: linear-gradient(135deg, 
+        #0A1929 0%, 
+        #1E3A5F 30%,
+        #D4AF37 60%,
+        #1E3A5F 85%,
+        #0A1929 100%);
       --gradient-gold: linear-gradient(135deg, #F4D03F 0%, #D4AF37 50%, #B8860B 100%);
-      --gradient-silver: linear-gradient(135deg, #E5E5E5 0%, #C0C0C0 50%, #A8A8A8 100%);
-      --gradient-gold-silver: linear-gradient(135deg, #D4AF37 0%, #C0C0C0 50%, #D4AF37 100%);
-      --gradient-bg: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+      --gradient-blue: linear-gradient(135deg, #0A1929 0%, #1E3A5F 50%, #2A4A73 100%);
+      --gradient-cyan-gold: linear-gradient(135deg, #00D9FF 0%, #D4AF37 50%, #5CE1E6 100%);
       
-      /* Tipografia */
-      --font-primary: 'Inter', -apple-system, sans-serif;
+      /* Tipografia cinematográfica */
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-display: 'Playfair Display', Georgia, serif;
+      --font-headline: 'Montserrat', 'Inter', sans-serif;
       
-      /* Tamanhos */
+      /* Tamanhos responsivos */
       --font-xs: 0.75rem;
       --font-sm: 0.875rem;
       --font-base: 1rem;
       --font-lg: 1.125rem;
-      --font-xl: 1.25rem;
-      --font-2xl: 1.5rem;
-      --font-3xl: 2.25rem;
-      --font-4xl: 3rem;
-      --font-5xl: 4rem;
+      --font-xl: 1.375rem;
+      --font-2xl: 1.75rem;
+      --font-3xl: 2.5rem;
+      --font-4xl: 3.5rem;
+      --font-5xl: 4.5rem;
+      --font-6xl: 6rem;
       
       /* Espaçamento */
       --spacing-xs: 0.25rem;
@@ -75,41 +87,46 @@
       --spacing-lg: 1.5rem;
       --spacing-xl: 2rem;
       --spacing-2xl: 3rem;
-      --spacing-3xl: 4rem;
-      --spacing-4xl: 5rem;
+      --spacing-3xl: 4.5rem;
+      --spacing-4xl: 6rem;
+      --spacing-5xl: 8rem;
       
       /* Radius */
       --radius-sm: 0.375rem;
       --radius-md: 0.5rem;
-      --radius-lg: 0.75rem;
-      --radius-xl: 1rem;
-      --radius-2xl: 1.5rem;
+      --radius-lg: 0.875rem;
+      --radius-xl: 1.25rem;
+      --radius-2xl: 2rem;
+      --radius-3xl: 3rem;
       --radius-full: 9999px;
       
-      /* Shadows premium */
-      --shadow-gold: 0 0 40px rgba(212, 175, 55, 0.6),
-                     0 0 80px rgba(212, 175, 55, 0.4);
-      --shadow-silver: 0 0 35px rgba(192, 192, 192, 0.5),
-                       0 0 70px rgba(192, 192, 192, 0.3);
-      --shadow-combined: 0 0 40px rgba(212, 175, 55, 0.5),
-                         0 0 80px rgba(192, 192, 192, 0.3);
+      /* Shadows cinematográficos */
+      --shadow-gold: 0 0 50px rgba(212, 175, 55, 0.7),
+                     0 0 100px rgba(212, 175, 55, 0.5);
+      --shadow-blue: 0 0 40px rgba(30, 58, 95, 0.6),
+                     0 0 80px rgba(30, 58, 95, 0.4);
+      --shadow-cyan: 0 0 45px rgba(0, 217, 255, 0.6),
+                     0 0 90px rgba(0, 217, 255, 0.4);
+      --shadow-combined: 0 0 50px rgba(212, 175, 55, 0.6),
+                         0 0 100px rgba(30, 58, 95, 0.5);
       
       /* Transitions */
       --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-      --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
-      --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
-      --transition-elastic: 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      --transition-base: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 550ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-elastic: 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
       
       /* Z-index */
       --z-particles: 0;
       --z-base: 1;
       --z-dropdown: 1000;
+      --z-sticky: 1020;
       --z-fixed: 1030;
       
       /* Layout */
-      --container-max: 1420px;
-      --header-height: 90px;
-      --campaign-height: 90px;
+      --container-max: 1440px;
+      --header-height: 95px;
+      --campaign-height: 92px;
     }
     
     /* ============================================================
@@ -124,6 +141,7 @@
     html {
       font-size: 16px;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       scroll-behavior: smooth;
     }
     
@@ -131,23 +149,23 @@
       font-family: var(--font-primary);
       font-size: var(--font-base);
       font-weight: 400;
-      line-height: 1.6;
+      line-height: 1.7;
       color: var(--cream);
-      background: var(--gradient-bg);
+      background: var(--gradient-blue);
       background-size: 400% 400%;
-      animation: gradientMove 20s ease infinite;
+      animation: gradientMoveBlue 22s ease infinite;
       min-height: 100vh;
       overflow-x: hidden;
       position: relative;
     }
     
-    @keyframes gradientMove {
+    @keyframes gradientMoveBlue {
       0%, 100% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
     }
     
     /* ============================================================
-       ANIMAÇÕES TIPO GIF - PARTÍCULAS OURO E PRATA
+       ANIMAÇÕES CINEMATOGRÁFICAS - PARTÍCULAS AZUL + OURO
        ============================================================ */
     body::before {
       content: '';
@@ -157,57 +175,59 @@
       width: 100%;
       height: 100%;
       background-image:
-        radial-gradient(circle, var(--gold-bright) 2px, transparent 2px),
-        radial-gradient(circle, var(--silver-light) 1.5px, transparent 1.5px),
-        radial-gradient(circle, var(--gold-metallic) 2.5px, transparent 2.5px),
-        radial-gradient(circle, var(--silver-metallic) 1px, transparent 1px);
-      background-size: 350px 350px, 450px 450px, 300px 300px, 400px 400px;
-      background-position: 0 0, 60px 60px, 120px 40px, 180px 100px;
-      animation: floatParticlesGoldSilver 18s linear infinite,
-                 pulseGlow 6s ease-in-out infinite;
+        radial-gradient(circle, var(--gold-bright) 2.5px, transparent 2.5px),
+        radial-gradient(circle, var(--cyan-primary) 1.5px, transparent 1.5px),
+        radial-gradient(circle, var(--gold-metallic) 3px, transparent 3px),
+        radial-gradient(circle, var(--cyan-light) 1px, transparent 1px),
+        radial-gradient(circle, var(--silver-light) 2px, transparent 2px);
+      background-size: 380px 380px, 480px 480px, 320px 320px, 420px 420px, 360px 360px;
+      background-position: 0 0, 70px 70px, 140px 50px, 210px 120px, 280px 30px;
+      animation: floatParticlesCinematic 20s linear infinite,
+                 pulseGlowCinematic 7s ease-in-out infinite;
       pointer-events: none;
       z-index: var(--z-particles);
-      opacity: 0.35;
+      opacity: 0.4;
     }
     
-    @keyframes floatParticlesGoldSilver {
+    @keyframes floatParticlesCinematic {
       0% {
-        background-position: 0 0, 60px 60px, 120px 40px, 180px 100px;
-        transform: translateY(0);
+        background-position: 0 0, 70px 70px, 140px 50px, 210px 120px, 280px 30px;
+        transform: translateY(0) translateX(0);
       }
       50% {
-        transform: translateY(-40px);
+        transform: translateY(-50px) translateX(20px);
       }
       100% {
-        background-position: 350px 350px, 410px 410px, 420px 340px, 580px 500px;
-        transform: translateY(0);
+        background-position: 380px 380px, 450px 450px, 460px 370px, 590px 540px, 640px 410px;
+        transform: translateY(0) translateX(0);
       }
     }
     
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.35; filter: blur(0); }
-      50% { opacity: 0.6; filter: blur(1px); }
+    @keyframes pulseGlowCinematic {
+      0%, 100% { opacity: 0.4; filter: blur(0); }
+      50% { opacity: 0.7; filter: blur(1.5px); }
     }
     
-    /* Ondas luminosas ouro/prata */
+    /* Ondas luminosas azul + ouro */
     body::after {
       content: '';
       position: fixed;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
+      top: -60%;
+      left: -60%;
+      width: 220%;
+      height: 220%;
       background:
-        radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 70% 60%, rgba(192, 192, 192, 0.12) 0%, transparent 55%);
-      animation: rotateWavesGoldSilver 28s linear infinite;
+        radial-gradient(circle at 35% 45%, rgba(212, 175, 55, 0.18) 0%, transparent 52%),
+        radial-gradient(circle at 65% 55%, rgba(30, 58, 95, 0.16) 0%, transparent 58%),
+        radial-gradient(circle at 50% 50%, rgba(0, 217, 255, 0.12) 20%, transparent 65%);
+      animation: rotateWavesCinematic 35s linear infinite;
       pointer-events: none;
       z-index: var(--z-particles);
     }
     
-    @keyframes rotateWavesGoldSilver {
+    @keyframes rotateWavesCinematic {
       from { transform: rotate(0deg) scale(1); }
-      50% { transform: rotate(180deg) scale(1.08); }
+      50% { transform: rotate(180deg) scale(1.1); }
       to { transform: rotate(360deg) scale(1); }
     }
     
@@ -217,13 +237,13 @@
     .container {
       max-width: var(--container-max);
       margin: 0 auto;
-      padding: 0 var(--spacing-xl);
+      padding: 0 var(--spacing-2xl);
       position: relative;
       z-index: var(--z-base);
     }
     
     /* ============================================================
-       HEADER OURO E PRATA
+       HEADER AZUL ESCURO + OURO
        ============================================================ */
     .header {
       position: fixed;
@@ -232,20 +252,20 @@
       width: 100%;
       height: var(--header-height);
       background: linear-gradient(135deg,
-        rgba(26, 26, 26, 0.98) 0%,
-        rgba(42, 42, 42, 0.96) 50%,
-        rgba(26, 26, 26, 0.98) 100%);
-      backdrop-filter: blur(28px) saturate(180%);
-      border-bottom: 2px solid var(--gold-primary);
+        rgba(10, 25, 41, 0.98) 0%,
+        rgba(30, 58, 95, 0.95) 50%,
+        rgba(10, 25, 41, 0.98) 100%);
+      backdrop-filter: blur(32px) saturate(190%);
+      border-bottom: 3px solid var(--gold-primary);
       box-shadow:
-        0 6px 32px rgba(0, 0, 0, 0.4),
-        0 3px 64px rgba(212, 175, 55, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        0 8px 40px rgba(0, 0, 0, 0.5),
+        0 4px 80px rgba(212, 175, 55, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
       z-index: var(--z-fixed);
       transition: all var(--transition-base);
     }
     
-    /* Shimmer ouro passando */
+    /* Shimmer ouro cinematográfico */
     .header::before {
       content: '';
       position: absolute;
@@ -255,12 +275,12 @@
       height: 100%;
       background: linear-gradient(90deg,
         transparent 0%,
-        rgba(212, 175, 55, 0.15) 50%,
+        rgba(212, 175, 55, 0.2) 50%,
         transparent 100%);
-      animation: shimmerGold 7s ease-in-out infinite;
+      animation: shimmerCinematic 8s ease-in-out infinite;
     }
     
-    @keyframes shimmerGold {
+    @keyframes shimmerCinematic {
       0% { left: -100%; }
       100% { left: 200%; }
     }
@@ -281,65 +301,65 @@
     .logo-wrapper {
       display: flex;
       align-items: center;
-      gap: var(--spacing-xl);
+      gap: var(--spacing-2xl);
       text-decoration: none;
       transition: transform var(--transition-elastic);
       position: relative;
     }
     
     .logo-wrapper:hover {
-      transform: translateX(14px) scale(1.04);
+      transform: translateX(16px) scale(1.05);
     }
     
     .logo-wrapper:active {
-      animation: logoClickGold 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      animation: logoClickCinematic 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
     
-    @keyframes logoClickGold {
-      0%, 100% { transform: translateX(14px) scale(1.04); }
-      25% { transform: translateX(20px) scale(1.12) rotate(-7deg); }
-      50% { transform: translateX(26px) scale(1.16); }
-      75% { transform: translateX(20px) scale(1.12) rotate(7deg); }
+    @keyframes logoClickCinematic {
+      0%, 100% { transform: translateX(16px) scale(1.05); }
+      25% { transform: translateX(24px) scale(1.15) rotate(-8deg); }
+      50% { transform: translateX(32px) scale(1.2); }
+      75% { transform: translateX(24px) scale(1.15) rotate(8deg); }
     }
     
     .logo-image {
-      width: 78px;
-      height: 78px;
+      width: 82px;
+      height: 82px;
       border-radius: var(--radius-xl);
       background: var(--white);
       padding: var(--spacing-xs);
       box-shadow:
-        0 12px 36px rgba(212, 175, 55, 0.5),
+        0 16px 48px rgba(212, 175, 55, 0.6),
         var(--shadow-gold);
-      border: 3px solid var(--gold-primary);
+      border: 4px solid var(--gold-primary);
       transition: all var(--transition-elastic);
-      animation: logoPulseGold 5s ease-in-out infinite;
+      animation: logoPulseCinematic 6s ease-in-out infinite;
     }
     
-    @keyframes logoPulseGold {
+    @keyframes logoPulseCinematic {
       0%, 100% { 
-        box-shadow: 0 12px 36px rgba(212, 175, 55, 0.5), var(--shadow-gold);
+        box-shadow: 0 16px 48px rgba(212, 175, 55, 0.6), var(--shadow-gold);
         transform: scale(1);
       }
       50% { 
-        box-shadow: 0 18px 48px rgba(212, 175, 55, 0.8), var(--shadow-gold);
-        transform: scale(1.05);
+        box-shadow: 0 24px 64px rgba(212, 175, 55, 0.9), var(--shadow-gold);
+        transform: scale(1.08);
       }
     }
     
     .logo-wrapper:hover .logo-image {
-      transform: rotate(-10deg) scale(1.18);
+      transform: rotate(-12deg) scale(1.22);
       box-shadow:
-        0 24px 60px rgba(212, 175, 55, 0.9),
+        0 32px 80px rgba(212, 175, 55, 1),
         var(--shadow-gold);
       border-color: var(--gold-bright);
     }
     
-    /* SABIAMENTE em ouro gigante */
+    /* SABIAMENTE tipografia cinematográfica */
     .logo-text {
       display: flex;
       flex-direction: column;
-      gap: var(--spacing-xs);
+      gap: var(--spacing-sm);
     }
     
     .logo-title {
@@ -351,39 +371,41 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      line-height: 1;
-      letter-spacing: 0.04em;
-      animation: goldShineText 5s ease-in-out infinite;
-      filter: drop-shadow(0 6px 24px rgba(212, 175, 55, 0.8));
+      line-height: 0.95;
+      letter-spacing: 0.05em;
+      animation: goldShineCinematic 6s ease-in-out infinite;
+      filter: drop-shadow(0 8px 32px rgba(212, 175, 55, 1));
+      text-transform: uppercase;
     }
     
-    @keyframes goldShineText {
+    @keyframes goldShineCinematic {
       0%, 100% { background-position: 0% center; }
       50% { background-position: 200% center; }
     }
     
     .logo-subtitle {
+      font-family: var(--font-headline);
       font-size: var(--font-sm);
-      font-weight: 700;
-      letter-spacing: 0.2em;
+      font-weight: 800;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      background: var(--gradient-silver);
+      background: var(--gradient-cyan-gold);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     
-    /* Navegação CORRIGIDA */
+    /* Navegação CORRIGIDA - dropdown não corta */
     .nav {
       display: flex;
       align-items: center;
-      gap: var(--spacing-lg);
+      gap: var(--spacing-xl);
     }
     
     .nav-list {
       display: flex;
       align-items: center;
-      gap: var(--spacing-md);
+      gap: var(--spacing-lg);
       list-style: none;
     }
     
@@ -395,15 +417,16 @@
       position: relative;
       display: inline-flex;
       align-items: center;
-      gap: var(--spacing-xs);
+      gap: var(--spacing-sm);
       padding: var(--spacing-md) var(--spacing-xl);
+      font-family: var(--font-headline);
       font-size: var(--font-sm);
-      font-weight: 700;
-      letter-spacing: 0.07em;
+      font-weight: 800;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--silver-light);
+      color: var(--silver-bright);
       text-decoration: none;
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-lg);
       transition: all var(--transition-base);
       white-space: nowrap;
     }
@@ -425,13 +448,13 @@
     .nav-link:hover,
     .nav-link.active {
       color: var(--gold-light);
-      background: rgba(212, 175, 55, 0.12);
-      transform: translateY(-2px);
+      background: rgba(212, 175, 55, 0.15);
+      transform: translateY(-3px);
     }
     
     .nav-link:hover::before,
     .nav-link.active::before {
-      width: 88%;
+      width: 90%;
     }
     
     .nav-link.has-dropdown::after {
@@ -442,25 +465,26 @@
     }
     
     .nav-item:hover .nav-link.has-dropdown::after {
-      transform: rotate(180deg) scale(1.2);
+      transform: rotate(180deg) scale(1.3);
     }
     
+    /* Dropdown CORRIGIDO - não corta mais */
     .dropdown-menu {
       position: absolute;
-      top: calc(100% + 16px);
-      left: 0;
-      min-width: 260px;
-      background: rgba(26, 26, 26, 0.98);
-      backdrop-filter: blur(28px);
-      border: 2px solid var(--gold-primary);
-      border-radius: var(--radius-xl);
-      padding: var(--spacing-xl);
+      top: calc(100% + 18px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-28px) scale(0.9);
+      min-width: 280px;
+      background: rgba(10, 25, 41, 0.98);
+      backdrop-filter: blur(32px);
+      border: 3px solid var(--gold-primary);
+      border-radius: var(--radius-2xl);
+      padding: var(--spacing-2xl);
       box-shadow:
-        0 24px 64px rgba(0, 0, 0, 0.5),
+        0 32px 80px rgba(0, 0, 0, 0.6),
         var(--shadow-gold);
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-24px) scale(0.92);
       transition: all var(--transition-elastic);
       z-index: var(--z-dropdown);
     }
@@ -468,17 +492,18 @@
     .nav-item:hover .dropdown-menu {
       opacity: 1;
       visibility: visible;
-      transform: translateY(0) scale(1);
+      transform: translateX(-50%) translateY(0) scale(1);
     }
     
     .dropdown-item {
       display: block;
-      padding: var(--spacing-md) var(--spacing-xl);
+      padding: var(--spacing-lg) var(--spacing-xl);
+      font-family: var(--font-headline);
       font-size: var(--font-base);
       font-weight: 700;
-      color: var(--silver-light);
+      color: var(--silver-bright);
       text-decoration: none;
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-lg);
       transition: all var(--transition-base);
       position: relative;
       overflow: hidden;
@@ -500,7 +525,7 @@
     
     .dropdown-item:hover {
       color: var(--black);
-      transform: translateX(10px);
+      transform: translateX(12px);
     }
     
     .dropdown-item:hover::before {
@@ -509,10 +534,11 @@
     
     .dropdown-category {
       font-weight: 900;
+      font-size: var(--font-lg);
       color: var(--gold-bright);
-      border-bottom: 2px solid var(--gold-primary);
-      margin-bottom: var(--spacing-md);
-      padding-bottom: var(--spacing-sm);
+      border-bottom: 3px solid var(--gold-primary);
+      margin-bottom: var(--spacing-lg);
+      padding-bottom: var(--spacing-md);
       text-shadow: var(--shadow-gold);
     }
     
@@ -521,12 +547,12 @@
       background-size: 200% auto;
       color: var(--black);
       font-weight: 900;
-      padding: var(--spacing-md) var(--spacing-2xl);
+      padding: var(--spacing-lg) var(--spacing-3xl);
       border-radius: var(--radius-full);
       box-shadow: var(--shadow-gold);
-      margin-left: var(--spacing-xl);
-      border: 2px solid var(--gold-bright);
-      animation: goldShineText 5s ease-in-out infinite;
+      margin-left: var(--spacing-2xl);
+      border: 3px solid var(--gold-bright);
+      animation: goldShineCinematic 6s ease-in-out infinite;
     }
     
     .nav-link-cta::before {
@@ -535,14 +561,14 @@
     
     .nav-link-cta:hover {
       color: var(--black);
-      transform: translateY(-6px) scale(1.1);
+      transform: translateY(-8px) scale(1.12);
       box-shadow:
-        0 18px 48px rgba(212, 175, 55, 0.9),
+        0 24px 64px rgba(212, 175, 55, 1),
         var(--shadow-gold);
     }
     
     /* ============================================================
-       BARRA CAMPANHAS OURO
+       BARRA CAMPANHAS
        ============================================================ */
     .campaign-bar {
       position: fixed;
@@ -551,13 +577,13 @@
       width: 100%;
       min-height: var(--campaign-height);
       background: linear-gradient(135deg,
-        rgba(26, 26, 26, 0.98) 0%,
-        rgba(34, 34, 34, 0.96) 100%);
-      backdrop-filter: blur(24px);
-      border-bottom: 2px solid var(--gold-primary);
+        rgba(10, 25, 41, 0.98) 0%,
+        rgba(30, 58, 95, 0.96) 100%);
+      backdrop-filter: blur(28px);
+      border-bottom: 3px solid var(--gold-primary);
       box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        0 4px 64px rgba(212, 175, 55, 0.2);
+        0 10px 40px rgba(0, 0, 0, 0.4),
+        0 5px 80px rgba(212, 175, 55, 0.3);
       z-index: calc(var(--z-fixed) - 1);
       padding: var(--spacing-xl) 0;
     }
@@ -567,57 +593,59 @@
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      gap: var(--spacing-xl);
+      gap: var(--spacing-2xl);
       max-width: var(--container-max);
       margin: 0 auto;
       padding: 0 var(--spacing-2xl);
     }
     
     .campaign-title {
+      font-family: var(--font-headline);
       font-size: var(--font-xl);
       font-weight: 900;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       background: var(--gradient-gold);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      padding-right: var(--spacing-2xl);
-      border-right: 3px solid var(--gold-primary);
-      margin-right: var(--spacing-lg);
-      animation: goldShineText 5s ease-in-out infinite;
+      padding-right: var(--spacing-3xl);
+      border-right: 4px solid var(--gold-primary);
+      margin-right: var(--spacing-xl);
+      animation: goldShineCinematic 6s ease-in-out infinite;
       position: relative;
     }
     
     .campaign-title::after {
       content: '';
       position: absolute;
-      right: -3px;
+      right: -4px;
       top: 50%;
       transform: translateY(-50%);
-      width: 3px;
-      height: 70%;
+      width: 4px;
+      height: 75%;
       background: var(--gradient-gold);
       box-shadow: var(--shadow-gold);
-      animation: pulseBarGold 3s ease-in-out infinite;
+      animation: pulseBarCinematic 4s ease-in-out infinite;
     }
     
-    @keyframes pulseBarGold {
-      0%, 100% { opacity: 0.7; height: 70%; }
-      50% { opacity: 1; height: 88%; }
+    @keyframes pulseBarCinematic {
+      0%, 100% { opacity: 0.7; height: 75%; }
+      50% { opacity: 1; height: 92%; }
     }
     
     .campaign-btn {
       display: inline-flex;
       align-items: center;
-      padding: var(--spacing-md) var(--spacing-2xl);
+      padding: var(--spacing-lg) var(--spacing-2xl);
+      font-family: var(--font-headline);
       font-size: var(--font-base);
       font-weight: 800;
-      letter-spacing: 0.07em;
-      color: var(--silver-light);
-      background: rgba(212, 175, 55, 0.08);
-      border: 2px solid var(--gold-primary);
+      letter-spacing: 0.08em;
+      color: var(--silver-bright);
+      background: rgba(212, 175, 55, 0.1);
+      border: 3px solid var(--gold-primary);
       border-radius: var(--radius-xl);
       text-decoration: none;
       transition: all var(--transition-elastic);
@@ -643,7 +671,7 @@
     .campaign-btn:hover {
       color: var(--black);
       border-color: var(--gold-bright);
-      transform: translateY(-8px) scale(1.08);
+      transform: translateY(-10px) scale(1.1);
       box-shadow: var(--shadow-gold);
     }
     
@@ -652,51 +680,52 @@
     }
     
     /* ============================================================
-       HERO OURO E PRATA
+       HERO CINEMATOGRÁFICO ULTRA PERSONALIZADO
        ============================================================ */
     main {
-      margin-top: calc(var(--header-height) + var(--campaign-height) + var(--spacing-4xl) + var(--spacing-2xl));
-      padding-bottom: var(--spacing-4xl);
+      margin-top: calc(var(--header-height) + var(--campaign-height) + var(--spacing-5xl));
+      padding-bottom: var(--spacing-5xl);
     }
     
     .hero {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--spacing-4xl);
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: var(--spacing-5xl);
       align-items: center;
       max-width: var(--container-max);
-      margin: 0 auto var(--spacing-4xl);
-      padding: var(--spacing-4xl);
+      margin: 0 auto var(--spacing-5xl);
+      padding: var(--spacing-5xl);
       background: linear-gradient(135deg,
-        rgba(26, 26, 26, 0.9) 0%,
-        rgba(34, 34, 34, 0.88) 100%);
-      backdrop-filter: blur(32px) saturate(150%);
-      border-radius: var(--radius-2xl);
-      border: 2px solid var(--gold-primary);
+        rgba(10, 25, 41, 0.92) 0%,
+        rgba(30, 58, 95, 0.88) 100%);
+      backdrop-filter: blur(40px) saturate(160%);
+      border-radius: var(--radius-3xl);
+      border: 3px solid var(--gold-primary);
       box-shadow:
-        0 60px 140px rgba(0, 0, 0, 0.6),
+        0 80px 180px rgba(0, 0, 0, 0.7),
         var(--shadow-combined),
-        inset 0 2px 0 rgba(255, 255, 255, 0.08);
+        inset 0 3px 0 rgba(255, 255, 255, 0.1);
       position: relative;
       overflow: hidden;
     }
     
-    /* Luz rotativa ouro/prata */
+    /* Luz rotativa cinematográfica */
     .hero::before {
       content: '';
       position: absolute;
-      top: -100%;
-      right: -100%;
-      width: 200%;
-      height: 300%;
+      top: -120%;
+      right: -120%;
+      width: 240%;
+      height: 340%;
       background:
-        radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, transparent 48%),
-        radial-gradient(circle, rgba(192, 192, 192, 0.14) 38%, transparent 68%);
-      animation: rotateHeroGoldSilver 32s linear infinite;
+        radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, transparent 50%),
+        radial-gradient(circle, rgba(30, 58, 95, 0.18) 40%, transparent 70%),
+        radial-gradient(circle, rgba(0, 217, 255, 0.14) 30%, transparent 60%);
+      animation: rotateHeroCinematic 40s linear infinite;
       pointer-events: none;
     }
     
-    @keyframes rotateHeroGoldSilver {
+    @keyframes rotateHeroCinematic {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
@@ -709,76 +738,79 @@
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: var(--spacing-sm);
-      font-size: var(--font-base);
+      gap: var(--spacing-md);
+      font-family: var(--font-headline);
+      font-size: var(--font-lg);
       font-weight: 900;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
       background: var(--gradient-gold);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: var(--spacing-2xl);
-      padding: var(--spacing-md) var(--spacing-2xl);
-      background-color: rgba(212, 175, 55, 0.12);
+      margin-bottom: var(--spacing-3xl);
+      padding: var(--spacing-lg) var(--spacing-3xl);
+      background-color: rgba(212, 175, 55, 0.15);
       background-blend-mode: overlay;
       border-radius: var(--radius-full);
-      border: 2px solid var(--gold-primary);
+      border: 3px solid var(--gold-primary);
       width: fit-content;
       box-shadow: var(--shadow-gold);
-      animation: goldShineText 5s ease-in-out infinite;
+      animation: goldShineCinematic 6s ease-in-out infinite;
     }
     
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(var(--font-3xl), 9vw, var(--font-5xl));
+      font-size: clamp(var(--font-3xl), 10vw, var(--font-6xl));
       font-weight: 900;
-      line-height: 1;
+      line-height: 0.95;
       letter-spacing: -0.01em;
       color: var(--white);
-      margin-bottom: var(--spacing-2xl);
+      margin-bottom: var(--spacing-3xl);
       background: linear-gradient(135deg,
         var(--gold-light) 0%,
-        var(--gold-primary) 30%,
-        var(--silver-light) 60%,
-        var(--gold-primary) 85%,
+        var(--gold-primary) 25%,
+        var(--cyan-light) 50%,
+        var(--gold-primary) 75%,
         var(--gold-light) 100%);
       background-size: 300% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      animation: goldSilverShift 9s ease infinite;
-      filter: drop-shadow(0 12px 36px rgba(212, 175, 55, 0.9));
+      animation: goldCyanShift 10s ease infinite;
+      filter: drop-shadow(0 16px 48px rgba(212, 175, 55, 1));
+      text-transform: capitalize;
     }
     
-    @keyframes goldSilverShift {
+    @keyframes goldCyanShift {
       0%, 100% { background-position: 0% center; }
       50% { background-position: 100% center; }
     }
     
     .hero-description {
+      font-family: var(--font-primary);
       font-size: var(--font-xl);
       font-weight: 500;
-      line-height: 1.9;
-      color: var(--silver-light);
-      margin-bottom: var(--spacing-3xl);
-      max-width: 660px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      line-height: 2;
+      color: var(--silver-bright);
+      margin-bottom: var(--spacing-4xl);
+      max-width: 700px;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
     }
     
     .search-wrapper {
       position: relative;
-      margin-bottom: var(--spacing-3xl);
+      margin-bottom: var(--spacing-4xl);
     }
     
     .search-form {
       position: relative;
       display: flex;
       align-items: center;
-      background: rgba(212, 175, 55, 0.08);
-      backdrop-filter: blur(20px);
-      border: 2px solid var(--gold-primary);
+      background: rgba(212, 175, 55, 0.1);
+      backdrop-filter: blur(24px);
+      border: 3px solid var(--gold-primary);
       border-radius: var(--radius-full);
       padding: var(--spacing-sm);
       transition: all var(--transition-elastic);
@@ -786,23 +818,23 @@
     }
     
     .search-form:focus-within {
-      transform: translateY(-6px) scale(1.03);
+      transform: translateY(-8px) scale(1.04);
       box-shadow:
-        0 24px 56px rgba(212, 175, 55, 0.5),
+        0 32px 72px rgba(212, 175, 55, 0.6),
         var(--shadow-gold);
       border-color: var(--gold-bright);
     }
     
     .search-input {
       flex: 1;
-      font-family: var(--font-primary);
-      font-size: var(--font-xl);
+      font-family: var(--font-headline);
+      font-size: var(--font-2xl);
       font-weight: 700;
       color: var(--white);
       background: none;
       border: none;
       outline: none;
-      padding: var(--spacing-xl) var(--spacing-2xl);
+      padding: var(--spacing-xl) var(--spacing-3xl);
     }
     
     .search-input::placeholder {
@@ -813,31 +845,31 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 72px;
-      height: 72px;
+      width: 78px;
+      height: 78px;
       background: var(--gradient-gold);
       background-size: 200% auto;
       border: none;
       border-radius: 50%;
       color: var(--black);
-      font-size: var(--font-3xl);
+      font-size: var(--font-4xl);
       font-weight: 900;
       cursor: pointer;
       transition: all var(--transition-elastic);
       box-shadow: var(--shadow-gold);
-      animation: goldShineText 5s ease-in-out infinite;
+      animation: goldShineCinematic 6s ease-in-out infinite;
     }
     
     .search-btn:hover {
-      transform: scale(1.35) rotate(180deg);
+      transform: scale(1.4) rotate(180deg);
       box-shadow:
-        0 18px 48px rgba(212, 175, 55, 1),
+        0 24px 64px rgba(212, 175, 55, 1),
         var(--shadow-gold);
     }
     
     .cta-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: var(--spacing-xl);
     }
     
@@ -845,14 +877,15 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: var(--spacing-xl) var(--spacing-2xl);
+      padding: var(--spacing-xl) var(--spacing-3xl);
+      font-family: var(--font-headline);
       font-size: var(--font-lg);
       font-weight: 900;
-      letter-spacing: 0.07em;
-      color: var(--silver-light);
-      background: rgba(212, 175, 55, 0.1);
-      border: 2px solid var(--gold-primary);
-      border-radius: var(--radius-xl);
+      letter-spacing: 0.08em;
+      color: var(--silver-bright);
+      background: rgba(212, 175, 55, 0.12);
+      border: 3px solid var(--gold-primary);
+      border-radius: var(--radius-2xl);
       text-decoration: none;
       transition: all var(--transition-elastic);
       white-space: nowrap;
@@ -877,7 +910,7 @@
     .cta-btn:hover {
       color: var(--black);
       border-color: var(--gold-bright);
-      transform: translateY(-12px) scale(1.1);
+      transform: translateY(-14px) scale(1.12);
       box-shadow: var(--shadow-gold);
     }
     
@@ -895,34 +928,34 @@
     
     .mockup {
       width: 100%;
-      max-width: 600px;
+      max-width: 640px;
       height: auto;
-      border-radius: var(--radius-2xl);
+      border-radius: var(--radius-3xl);
       box-shadow:
-        0 80px 160px rgba(0, 0, 0, 0.8),
-        0 40px 100px rgba(212, 175, 55, 0.5),
+        0 100px 200px rgba(0, 0, 0, 0.9),
+        0 50px 120px rgba(212, 175, 55, 0.6),
         var(--shadow-gold);
-      border: 3px solid var(--gold-primary);
+      border: 4px solid var(--gold-primary);
       transition: transform var(--transition-elastic);
-      animation: mockupFloatGold 9s ease-in-out infinite;
+      animation: mockupFloatCinematic 10s ease-in-out infinite;
     }
     
-    @keyframes mockupFloatGold {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-24px); }
+    @keyframes mockupFloatCinematic {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(2deg); }
     }
     
     .mockup:hover {
-      transform: scale(1.1) translateY(-30px) rotate(-6deg);
+      transform: scale(1.12) translateY(-40px) rotate(-8deg);
       box-shadow:
-        0 100px 200px rgba(0, 0, 0, 0.9),
-        0 50px 120px rgba(212, 175, 55, 0.7),
+        0 120px 240px rgba(0, 0, 0, 1),
+        0 60px 140px rgba(212, 175, 55, 0.8),
         var(--shadow-gold);
       border-color: var(--gold-bright);
     }
     
     /* ============================================================
-       PRODUTOS
+       PRODUTOS ULTRA PERSONALIZADOS
        ============================================================ */
     .products-section {
       max-width: var(--container-max);
@@ -932,7 +965,7 @@
     
     .section-header {
       text-align: center;
-      margin-bottom: var(--spacing-4xl);
+      margin-bottom: var(--spacing-5xl);
     }
     
     .section-title {
@@ -944,14 +977,16 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: var(--spacing-lg);
-      animation: goldShineText 5s ease-in-out infinite;
-      filter: drop-shadow(0 10px 32px rgba(212, 175, 55, 0.8));
+      margin-bottom: var(--spacing-xl);
+      animation: goldShineCinematic 6s ease-in-out infinite;
+      filter: drop-shadow(0 12px 40px rgba(212, 175, 55, 1));
     }
     
     .section-subtitle {
+      font-family: var(--font-headline);
       font-size: var(--font-2xl);
-      background: var(--gradient-silver);
+      font-weight: 700;
+      background: var(--gradient-cyan-gold);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -959,17 +994,17 @@
     
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-      gap: var(--spacing-3xl);
-      margin-bottom: var(--spacing-4xl);
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: var(--spacing-4xl);
+      margin-bottom: var(--spacing-5xl);
     }
     
     .card {
-      background: rgba(26, 26, 26, 0.78);
-      backdrop-filter: blur(24px);
-      border: 2px solid var(--gold-primary);
+      background: rgba(10, 25, 41, 0.8);
+      backdrop-filter: blur(28px);
+      border: 3px solid var(--gold-primary);
       border-radius: var(--radius-2xl);
-      padding: var(--spacing-3xl);
+      padding: var(--spacing-4xl);
       text-align: center;
       transition: all var(--transition-elastic);
       position: relative;
@@ -981,14 +1016,14 @@
       position: absolute;
       inset: 0;
       background: radial-gradient(circle at center,
-        rgba(212, 175, 55, 0.2) 0%,
-        transparent 75%);
+        rgba(212, 175, 55, 0.25) 0%,
+        transparent 70%);
       opacity: 0;
       transition: opacity var(--transition-base);
     }
     
     .card:hover {
-      transform: translateY(-28px) scale(1.1);
+      transform: translateY(-32px) scale(1.12);
       border-color: var(--gold-bright);
       box-shadow: var(--shadow-gold);
     }
@@ -998,40 +1033,42 @@
     }
     
     .card-image {
-      width: 128px;
-      height: 128px;
-      margin: 0 auto var(--spacing-2xl);
-      border-radius: var(--radius-xl);
+      width: 140px;
+      height: 140px;
+      margin: 0 auto var(--spacing-3xl);
+      border-radius: var(--radius-2xl);
       object-fit: cover;
-      filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.6));
+      filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.7));
     }
     
     .card-title {
-      font-size: var(--font-2xl);
+      font-family: var(--font-headline);
+      font-size: var(--font-3xl);
       font-weight: 900;
       background: var(--gradient-gold);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: var(--spacing-lg);
-      animation: goldShineText 5s ease-in-out infinite;
+      margin-bottom: var(--spacing-xl);
+      animation: goldShineCinematic 6s ease-in-out infinite;
     }
     
     .card-description {
-      font-size: var(--font-lg);
-      color: var(--silver-light);
-      line-height: 1.9;
+      font-family: var(--font-primary);
+      font-size: var(--font-xl);
+      color: var(--silver-bright);
+      line-height: 2;
     }
     
     /* ============================================================
        FOOTER
        ============================================================ */
     .footer {
-      background: linear-gradient(135deg, var(--black) 0%, var(--dark-primary) 100%);
-      border-top: 2px solid var(--gold-primary);
-      padding: var(--spacing-4xl) 0;
-      margin-top: var(--spacing-4xl);
+      background: linear-gradient(135deg, var(--black) 0%, var(--blue-deepest) 100%);
+      border-top: 3px solid var(--gold-primary);
+      padding: var(--spacing-5xl) 0;
+      margin-top: var(--spacing-5xl);
       box-shadow: var(--shadow-gold);
     }
     
@@ -1043,43 +1080,45 @@
     }
     
     .footer-text {
+      font-family: var(--font-primary);
       font-size: var(--font-xl);
-      color: var(--silver-light);
-      margin-bottom: var(--spacing-md);
-      line-height: 2.2;
+      color: var(--silver-bright);
+      margin-bottom: var(--spacing-lg);
+      line-height: 2.3;
     }
     
     .footer-brand {
+      font-family: var(--font-headline);
       font-weight: 900;
       background: var(--gradient-gold);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      animation: goldShineText 5s ease-in-out infinite;
+      animation: goldShineCinematic 6s ease-in-out infinite;
     }
     
     /* ============================================================
        RESPONSIVIDADE
        ============================================================ */
-    @media (max-width: 1024px) {
-      .logo-image { width: 68px; height: 68px; }
+    @media (max-width: 1200px) {
+      .logo-image { width: 72px; height: 72px; }
       .logo-title { font-size: var(--font-3xl); }
       .hero {
         grid-template-columns: 1fr;
-        gap: var(--spacing-3xl);
-        padding: var(--spacing-3xl) var(--spacing-xl);
+        gap: var(--spacing-4xl);
+        padding: var(--spacing-4xl) var(--spacing-2xl);
       }
       .hero-visual { order: -1; }
-      .mockup { max-width: 500px; }
+      .mockup { max-width: 540px; }
     }
     
     @media (max-width: 768px) {
-      .logo-image { width: 58px; height: 58px; }
+      .logo-image { width: 62px; height: 62px; }
       .logo-text { display: none; }
-      .nav-list { flex-wrap: wrap; justify-content: center; gap: var(--spacing-sm); }
+      .nav-list { flex-wrap: wrap; justify-content: center; gap: var(--spacing-md); }
       .nav-link { font-size: 0.8rem; padding: var(--spacing-sm) var(--spacing-md); }
-      .cards-grid { grid-template-columns: 1fr; gap: var(--spacing-2xl); }
+      .cards-grid { grid-template-columns: 1fr; gap: var(--spacing-3xl); }
       .cta-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -1087,13 +1126,13 @@
 <body>
   
   <!-- ============================================================
-       HEADER OURO E PRATA
+       HEADER AZUL ESCURO + OURO
        ============================================================ -->
   <header class="header">
     <div class="header-content">
       <a href="#" class="logo-wrapper">
         <img src="/assets/Logo.png" alt="Mais Sabiamente" class="logo-image" 
-             onerror="this.src='https://placehold.co/78x78/ffffff/0a0e14?text=MS&font=raleway'">
+             onerror="this.src='https://placehold.co/82x82/ffffff/0a0e14?text=MS&font=raleway'">
         <div class="logo-text">
           <div class="logo-title">Sabiamente</div>
           <div class="logo-subtitle">Curadoria Profissional</div>
@@ -1150,7 +1189,7 @@
   </div>
   
   <!-- ============================================================
-       HERO OURO E PRATA
+       HERO CINEMATOGRÁFICO
        ============================================================ -->
   <main>
     <section class="hero">
@@ -1180,8 +1219,8 @@
       </div>
       
       <div class="hero-visual">
-        <img src="/assets/mockup-phone.png" alt="Visual Premium Ouro Prata" class="mockup"
-             onerror="this.src='https://placehold.co/600x1200/0a0e14/D4AF37?text=Visual+Premium+Ouro&font=raleway'">
+        <img src="/assets/mockup-phone.png" alt="Visual Premium Cinematográfico" class="mockup"
+             onerror="this.src='https://placehold.co/640x1280/0A1929/D4AF37?text=Visual+Premium+Masterpiece&font=raleway'">
       </div>
     </section>
     
@@ -1189,27 +1228,27 @@
     <section class="products-section" id="produtos">
       <div class="section-header">
         <h2 class="section-title">Produtos em Destaque</h2>
-        <p class="section-subtitle">Seleção curada premium ouro e prata</p>
+        <p class="section-subtitle">Seleção curada cinematográfica premium</p>
       </div>
       
       <div class="cards-grid">
         <article class="card">
           <img src="/assets/produto1.png" alt="Produto 1" class="card-image"
-               onerror="this.src='https://placehold.co/128x128/D4AF37/0a0e14?text=P1'">
+               onerror="this.src='https://placehold.co/140x140/D4AF37/0a0e14?text=P1'">
           <h3 class="card-title">Produto Premium 1</h3>
           <p class="card-description">Destaque premium com benefícios exclusivos e qualidade garantida.</p>
         </article>
         
         <article class="card">
           <img src="/assets/produto2.png" alt="Produto 2" class="card-image"
-               onerror="this.src='https://placehold.co/128x128/C0C0C0/0a0e14?text=P2'">
+               onerror="this.src='https://placehold.co/140x140/00D9FF/0a0e14?text=P2'">
           <h3 class="card-title">Produto Premium 2</h3>
           <p class="card-description">Mais procurado pelos usuários com avaliações positivas.</p>
         </article>
         
         <article class="card">
           <img src="/assets/produto3.png" alt="Produto 3" class="card-image"
-               onerror="this.src='https://placehold.co/128x128/FFD700/0a0e14?text=P3'">
+               onerror="this.src='https://placehold.co/140x140/FFD700/0a0e14?text=P3'">
           <h3 class="card-title">Produto Premium 3</h3>
           <p class="card-description">Novidade exclusiva com tecnologia avançada e design moderno.</p>
         </article>
@@ -1223,10 +1262,10 @@
   <footer class="footer">
     <div class="footer-content">
       <p class="footer-text">
-        © 2025 <span class="footer-brand">Mais Sabiamente</span> — Curadoria profissional premium ouro e prata.
+        © 2025 <span class="footer-brand">Mais Sabiamente</span> — Curadoria profissional cinematográfica premium.
       </p>
       <p class="footer-text">
-        Desenvolvido com excelência, elegância e sofisticação dourada.
+        Desenvolvido com excelência, elegância e sofisticação azul escuro + ouro.
       </p>
     </div>
   </footer>
