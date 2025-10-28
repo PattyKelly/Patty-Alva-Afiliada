@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mais Sabiamente - Curadoria profissional com visual cinematográfico e animações revolucionárias.">
-  <meta name="theme-color" content="#41e3d7">
-  <title>Mais Sabiamente — Curadoria Profissional Revolucionária</title>
+  <meta name="description" content="Mais Sabiamente - Curadoria profissional com visual ouro e prata premium.">
+  <meta name="theme-color" content="#D4AF37">
+  <title>Mais Sabiamente — Curadoria Profissional Premium</title>
   
   <!-- 
     ============================================================
@@ -18,55 +18,40 @@
   
   <style>
     /* ============================================================
-       DESIGN SYSTEM REVOLUCIONÁRIO
-       Verde da logo + Dourado vibrante + Animações tipo GIF
+       DESIGN SYSTEM OURO + PRATA PREMIUM
        ============================================================ */
     :root {
-      /* Verde da logo (DOMINANTE) */
-      --color-green-dark: #1a3d3a;
-      --color-green-medium: #2a5551;
-      --color-green-teal: #326b65;
-      --color-green-bright: #3d8077;
-      --color-green-light: #4a9a8e;
+      /* OURO/DOURADO (DOMINANTE) */
+      --gold-primary: #D4AF37;
+      --gold-light: #F4D03F;
+      --gold-bright: #FFD700;
+      --gold-dark: #B8860B;
+      --gold-metallic: #DAA520;
+      --gold-champagne: #F7E7CE;
       
-      /* Dourado vibrante (COMPLEMENTAR) */
-      --color-gold: #ffd700;
-      --color-gold-light: #ffe135;
-      --color-gold-dark: #d4af37;
-      --color-gold-copper: #c9a959;
-      --color-amber: #ffbf00;
+      /* PRATA/CINZA (COMPLEMENTAR) */
+      --silver-primary: #C0C0C0;
+      --silver-light: #E5E5E5;
+      --silver-bright: #F0F0F0;
+      --silver-dark: #A8A8A8;
+      --silver-metallic: #B0B0B0;
+      --silver-platinum: #E0E0E0;
       
-      /* Ciano da logo (ACENTO) */
-      --color-cyan: #41e3d7;
-      --color-cyan-light: #5ef0e4;
-      --color-cyan-bright: #7ffef2;
-      
-      /* Base escura */
-      --color-black: #0a0e14;
-      --color-dark: #141920;
-      --color-charcoal: #1a2028;
+      /* Base escura refinada */
+      --dark-primary: #1a1a1a;
+      --dark-secondary: #2a2a2a;
+      --dark-tertiary: #3a3a3a;
+      --black: #0d0d0d;
       
       /* Claridade */
-      --color-white: #ffffff;
-      --color-cream: #fffef0;
+      --white: #ffffff;
+      --cream: #FFFEF7;
       
-      /* Gradientes cinematográficos */
-      --gradient-bg: linear-gradient(135deg,
-        #0d1a18 0%,
-        #1a3d3a 25%,
-        #2a5551 50%,
-        #1a3d3a 75%,
-        #0d1a18 100%);
-      --gradient-gold-shine: linear-gradient(135deg,
-        #ffe135 0%,
-        #ffd700 25%,
-        #d4af37 50%,
-        #ffd700 75%,
-        #ffe135 100%);
-      --gradient-green-gold: linear-gradient(135deg,
-        #3d8077 0%,
-        #ffd700 50%,
-        #41e3d7 100%);
+      /* Gradientes premium */
+      --gradient-gold: linear-gradient(135deg, #F4D03F 0%, #D4AF37 50%, #B8860B 100%);
+      --gradient-silver: linear-gradient(135deg, #E5E5E5 0%, #C0C0C0 50%, #A8A8A8 100%);
+      --gradient-gold-silver: linear-gradient(135deg, #D4AF37 0%, #C0C0C0 50%, #D4AF37 100%);
+      --gradient-bg: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
       
       /* Tipografia */
       --font-primary: 'Inter', -apple-system, sans-serif;
@@ -79,7 +64,7 @@
       --font-lg: 1.125rem;
       --font-xl: 1.25rem;
       --font-2xl: 1.5rem;
-      --font-3xl: 2.2rem;
+      --font-3xl: 2.25rem;
       --font-4xl: 3rem;
       --font-5xl: 4rem;
       
@@ -101,13 +86,13 @@
       --radius-2xl: 1.5rem;
       --radius-full: 9999px;
       
-      /* Shadows cinematográficos */
-      --shadow-gold-glow: 0 0 40px rgba(255, 215, 0, 0.7),
-                          0 0 80px rgba(255, 215, 0, 0.5),
-                          0 0 120px rgba(255, 215, 0, 0.3);
-      --shadow-cyan-glow: 0 0 35px rgba(65, 227, 215, 0.6),
-                          0 0 70px rgba(65, 227, 215, 0.4);
-      --shadow-green-glow: 0 0 30px rgba(61, 128, 119, 0.5);
+      /* Shadows premium */
+      --shadow-gold: 0 0 40px rgba(212, 175, 55, 0.6),
+                     0 0 80px rgba(212, 175, 55, 0.4);
+      --shadow-silver: 0 0 35px rgba(192, 192, 192, 0.5),
+                       0 0 70px rgba(192, 192, 192, 0.3);
+      --shadow-combined: 0 0 40px rgba(212, 175, 55, 0.5),
+                         0 0 80px rgba(192, 192, 192, 0.3);
       
       /* Transitions */
       --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -122,9 +107,9 @@
       --z-fixed: 1030;
       
       /* Layout */
-      --container-max: 1400px;
+      --container-max: 1420px;
       --header-height: 90px;
-      --campaign-height: 88px;
+      --campaign-height: 90px;
     }
     
     /* ============================================================
@@ -147,7 +132,7 @@
       font-size: var(--font-base);
       font-weight: 400;
       line-height: 1.6;
-      color: var(--color-cream);
+      color: var(--cream);
       background: var(--gradient-bg);
       background-size: 400% 400%;
       animation: gradientMove 20s ease infinite;
@@ -162,10 +147,8 @@
     }
     
     /* ============================================================
-       ANIMAÇÕES TIPO GIF - OBJETOS SE MOVENDO
+       ANIMAÇÕES TIPO GIF - PARTÍCULAS OURO E PRATA
        ============================================================ */
-    
-    /* Camada 1: Partículas douradas tipo Matrix caindo */
     body::before {
       content: '';
       position: fixed;
@@ -174,142 +157,58 @@
       width: 100%;
       height: 100%;
       background-image:
-        linear-gradient(0deg, transparent 0%, var(--color-gold) 50%, transparent 100%),
-        linear-gradient(0deg, transparent 0%, var(--color-cyan) 50%, transparent 100%);
-      background-size: 2px 100px, 2px 150px;
-      background-position: 10% 0, 30% 0, 50% 0, 70% 0, 90% 0;
-      background-repeat: repeat-x;
-      animation: matrixRain 8s linear infinite;
+        radial-gradient(circle, var(--gold-bright) 2px, transparent 2px),
+        radial-gradient(circle, var(--silver-light) 1.5px, transparent 1.5px),
+        radial-gradient(circle, var(--gold-metallic) 2.5px, transparent 2.5px),
+        radial-gradient(circle, var(--silver-metallic) 1px, transparent 1px);
+      background-size: 350px 350px, 450px 450px, 300px 300px, 400px 400px;
+      background-position: 0 0, 60px 60px, 120px 40px, 180px 100px;
+      animation: floatParticlesGoldSilver 18s linear infinite,
+                 pulseGlow 6s ease-in-out infinite;
       pointer-events: none;
       z-index: var(--z-particles);
-      opacity: 0.15;
+      opacity: 0.35;
     }
     
-    @keyframes matrixRain {
-      from { background-position: 10% -100px, 30% -150px, 50% -120px, 70% -180px, 90% -140px; }
-      to { background-position: 10% 100vh, 30% 100vh, 50% 100vh, 70% 100vh, 90% 100vh; }
+    @keyframes floatParticlesGoldSilver {
+      0% {
+        background-position: 0 0, 60px 60px, 120px 40px, 180px 100px;
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-40px);
+      }
+      100% {
+        background-position: 350px 350px, 410px 410px, 420px 340px, 580px 500px;
+        transform: translateY(0);
+      }
     }
     
-    /* Camada 2: Partículas flutuantes douradas INTENSAS */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.35; filter: blur(0); }
+      50% { opacity: 0.6; filter: blur(1px); }
+    }
+    
+    /* Ondas luminosas ouro/prata */
     body::after {
       content: '';
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image:
-        radial-gradient(circle, var(--color-gold) 2px, transparent 2px),
-        radial-gradient(circle, var(--color-cyan) 1px, transparent 1px),
-        radial-gradient(circle, var(--color-gold-light) 3px, transparent 3px),
-        radial-gradient(circle, var(--color-cyan-bright) 1px, transparent 1px),
-        radial-gradient(circle, var(--color-gold) 2px, transparent 2px);
-      background-size: 300px 300px, 400px 400px, 250px 250px, 350px 350px, 450px 450px;
-      background-position: 0 0, 50px 50px, 100px 30px, 150px 80px, 200px 20px;
-      animation: floatParticlesIntense 15s linear infinite,
-                 pulseParticles 5s ease-in-out infinite;
-      pointer-events: none;
-      z-index: var(--z-particles);
-      opacity: 0.4;
-    }
-    
-    @keyframes floatParticlesIntense {
-      0% {
-        background-position: 0 0, 50px 50px, 100px 30px, 150px 80px, 200px 20px;
-        transform: translateY(0) scale(1);
-      }
-      50% {
-        transform: translateY(-50px) scale(1.05);
-      }
-      100% {
-        background-position: 300px 300px, 350px 350px, 400px 330px, 450px 380px, 500px 320px;
-        transform: translateY(0) scale(1);
-      }
-    }
-    
-    @keyframes pulseParticles {
-      0%, 100% { opacity: 0.4; filter: blur(0); }
-      50% { opacity: 0.7; filter: blur(1px); }
-    }
-    
-    /* Camada 3: Ondas luminosas SE MOVENDO */
-    .wave-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: var(--z-particles);
-      overflow: hidden;
-    }
-    
-    .wave {
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at center,
-        rgba(255, 215, 0, 0.15) 0%,
-        rgba(65, 227, 215, 0.10) 30%,
-        transparent 60%);
-      animation: waveMove 12s ease-in-out infinite;
-    }
-    
-    .wave:nth-child(1) {
       top: -50%;
       left: -50%;
-      animation-delay: 0s;
-    }
-    
-    .wave:nth-child(2) {
-      bottom: -50%;
-      right: -50%;
-      animation-delay: 6s;
-    }
-    
-    @keyframes waveMove {
-      0%, 100% {
-        transform: translate(0, 0) scale(1);
-        opacity: 0.5;
-      }
-      50% {
-        transform: translate(30px, 30px) scale(1.1);
-        opacity: 0.8;
-      }
-    }
-    
-    /* Camada 4: Linhas douradas orgânicas FLUINDO */
-    .flowing-lines {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      width: 200%;
+      height: 200%;
+      background:
+        radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(192, 192, 192, 0.12) 0%, transparent 55%);
+      animation: rotateWavesGoldSilver 28s linear infinite;
       pointer-events: none;
       z-index: var(--z-particles);
     }
     
-    .flowing-line {
-      position: absolute;
-      width: 3px;
-      height: 100%;
-      background: linear-gradient(180deg,
-        transparent 0%,
-        var(--color-gold) 30%,
-        var(--color-cyan) 70%,
-        transparent 100%);
-      animation: flowLine 10s linear infinite;
-      opacity: 0.3;
-    }
-    
-    .flowing-line:nth-child(1) { left: 15%; animation-delay: 0s; }
-    .flowing-line:nth-child(2) { left: 35%; animation-delay: 3s; }
-    .flowing-line:nth-child(3) { right: 20%; animation-delay: 6s; }
-    
-    @keyframes flowLine {
-      0% { transform: translateY(-100%); opacity: 0; }
-      50% { opacity: 0.3; }
-      100% { transform: translateY(100%); opacity: 0; }
+    @keyframes rotateWavesGoldSilver {
+      from { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.08); }
+      to { transform: rotate(360deg) scale(1); }
     }
     
     /* ============================================================
@@ -324,7 +223,7 @@
     }
     
     /* ============================================================
-       HEADER COM VERDE DA LOGO
+       HEADER OURO E PRATA
        ============================================================ */
     .header {
       position: fixed;
@@ -333,20 +232,20 @@
       width: 100%;
       height: var(--header-height);
       background: linear-gradient(135deg,
-        rgba(26, 61, 58, 0.98) 0%,
-        rgba(42, 85, 81, 0.95) 50%,
-        rgba(26, 61, 58, 0.98) 100%);
-      backdrop-filter: blur(25px) saturate(180%);
-      border-bottom: 3px solid var(--color-gold);
+        rgba(26, 26, 26, 0.98) 0%,
+        rgba(42, 42, 42, 0.96) 50%,
+        rgba(26, 26, 26, 0.98) 100%);
+      backdrop-filter: blur(28px) saturate(180%);
+      border-bottom: 2px solid var(--gold-primary);
       box-shadow:
-        0 5px 30px rgba(0, 0, 0, 0.4),
-        0 2px 60px rgba(255, 215, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        0 6px 32px rgba(0, 0, 0, 0.4),
+        0 3px 64px rgba(212, 175, 55, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
       z-index: var(--z-fixed);
       transition: all var(--transition-base);
     }
     
-    /* Shimmer dourado no header */
+    /* Shimmer ouro passando */
     .header::before {
       content: '';
       position: absolute;
@@ -356,12 +255,12 @@
       height: 100%;
       background: linear-gradient(90deg,
         transparent 0%,
-        rgba(255, 215, 0, 0.2) 50%,
+        rgba(212, 175, 55, 0.15) 50%,
         transparent 100%);
-      animation: shimmer 6s ease-in-out infinite;
+      animation: shimmerGold 7s ease-in-out infinite;
     }
     
-    @keyframes shimmer {
+    @keyframes shimmerGold {
       0% { left: -100%; }
       100% { left: 200%; }
     }
@@ -373,7 +272,7 @@
       height: 100%;
       max-width: var(--container-max);
       margin: 0 auto;
-      padding: 0 var(--spacing-xl);
+      padding: 0 var(--spacing-2xl);
       position: relative;
       z-index: 2;
     }
@@ -389,47 +288,54 @@
     }
     
     .logo-wrapper:hover {
-      transform: translateX(12px) scale(1.03);
+      transform: translateX(14px) scale(1.04);
     }
     
     .logo-wrapper:active {
-      animation: logoClick 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      animation: logoClickGold 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
     
-    @keyframes logoClick {
-      0%, 100% { transform: translateX(12px) scale(1.03); }
-      25% { transform: translateX(18px) scale(1.1) rotate(-6deg); }
-      50% { transform: translateX(24px) scale(1.15); }
-      75% { transform: translateX(18px) scale(1.1) rotate(6deg); }
+    @keyframes logoClickGold {
+      0%, 100% { transform: translateX(14px) scale(1.04); }
+      25% { transform: translateX(20px) scale(1.12) rotate(-7deg); }
+      50% { transform: translateX(26px) scale(1.16); }
+      75% { transform: translateX(20px) scale(1.12) rotate(7deg); }
     }
     
     .logo-image {
-      width: 75px;
-      height: 75px;
+      width: 78px;
+      height: 78px;
       border-radius: var(--radius-xl);
-      background: var(--color-white);
+      background: var(--white);
       padding: var(--spacing-xs);
       box-shadow:
-        0 10px 30px rgba(255, 215, 0, 0.5),
-        var(--shadow-gold-glow);
-      border: 4px solid var(--color-gold);
+        0 12px 36px rgba(212, 175, 55, 0.5),
+        var(--shadow-gold);
+      border: 3px solid var(--gold-primary);
       transition: all var(--transition-elastic);
-      animation: logoPulse 4s ease-in-out infinite;
+      animation: logoPulseGold 5s ease-in-out infinite;
     }
     
-    @keyframes logoPulse {
-      0%, 100% { box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5), var(--shadow-gold-glow); }
-      50% { box-shadow: 0 15px 40px rgba(255, 215, 0, 0.8), var(--shadow-gold-glow); }
+    @keyframes logoPulseGold {
+      0%, 100% { 
+        box-shadow: 0 12px 36px rgba(212, 175, 55, 0.5), var(--shadow-gold);
+        transform: scale(1);
+      }
+      50% { 
+        box-shadow: 0 18px 48px rgba(212, 175, 55, 0.8), var(--shadow-gold);
+        transform: scale(1.05);
+      }
     }
     
     .logo-wrapper:hover .logo-image {
-      transform: rotate(-8deg) scale(1.15);
+      transform: rotate(-10deg) scale(1.18);
       box-shadow:
-        0 20px 50px rgba(255, 215, 0, 0.9),
-        var(--shadow-gold-glow);
+        0 24px 60px rgba(212, 175, 55, 0.9),
+        var(--shadow-gold);
+      border-color: var(--gold-bright);
     }
     
-    /* SABIAMENTE em dourado gigante */
+    /* SABIAMENTE em ouro gigante */
     .logo-text {
       display: flex;
       flex-direction: column;
@@ -440,18 +346,18 @@
       font-family: var(--font-display);
       font-size: var(--font-4xl);
       font-weight: 900;
-      background: var(--gradient-gold-shine);
+      background: var(--gradient-gold);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       line-height: 1;
-      letter-spacing: 0.03em;
-      animation: goldShine 4s ease-in-out infinite;
-      filter: drop-shadow(0 5px 20px rgba(255, 215, 0, 0.7));
+      letter-spacing: 0.04em;
+      animation: goldShineText 5s ease-in-out infinite;
+      filter: drop-shadow(0 6px 24px rgba(212, 175, 55, 0.8));
     }
     
-    @keyframes goldShine {
+    @keyframes goldShineText {
       0%, 100% { background-position: 0% center; }
       50% { background-position: 200% center; }
     }
@@ -459,23 +365,25 @@
     .logo-subtitle {
       font-size: var(--font-sm);
       font-weight: 700;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--color-cyan-light);
-      text-shadow: var(--shadow-cyan-glow);
+      background: var(--gradient-silver);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     
-    /* Navegação */
+    /* Navegação CORRIGIDA */
     .nav {
       display: flex;
       align-items: center;
-      gap: var(--spacing-md);
+      gap: var(--spacing-lg);
     }
     
     .nav-list {
       display: flex;
       align-items: center;
-      gap: var(--spacing-sm);
+      gap: var(--spacing-md);
       list-style: none;
     }
     
@@ -488,12 +396,12 @@
       display: inline-flex;
       align-items: center;
       gap: var(--spacing-xs);
-      padding: var(--spacing-sm) var(--spacing-lg);
+      padding: var(--spacing-md) var(--spacing-xl);
       font-size: var(--font-sm);
       font-weight: 700;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
-      color: var(--color-cream);
+      color: var(--silver-light);
       text-decoration: none;
       border-radius: var(--radius-md);
       transition: all var(--transition-base);
@@ -507,29 +415,29 @@
       left: 50%;
       width: 0;
       height: 3px;
-      background: var(--gradient-gold-shine);
+      background: var(--gradient-gold);
       transform: translateX(-50%);
       transition: width var(--transition-base);
-      box-shadow: var(--shadow-gold-glow);
+      box-shadow: var(--shadow-gold);
       border-radius: var(--radius-full);
     }
     
     .nav-link:hover,
     .nav-link.active {
-      color: var(--color-gold-light);
-      background: rgba(255, 215, 0, 0.15);
+      color: var(--gold-light);
+      background: rgba(212, 175, 55, 0.12);
       transform: translateY(-2px);
     }
     
     .nav-link:hover::before,
     .nav-link.active::before {
-      width: 92%;
+      width: 88%;
     }
     
     .nav-link.has-dropdown::after {
       content: '▼';
       font-size: 0.6em;
-      margin-left: var(--spacing-xs);
+      margin-left: var(--spacing-sm);
       transition: transform var(--transition-elastic);
     }
     
@@ -539,20 +447,20 @@
     
     .dropdown-menu {
       position: absolute;
-      top: calc(100% + 14px);
+      top: calc(100% + 16px);
       left: 0;
-      min-width: 250px;
-      background: rgba(26, 61, 58, 0.98);
-      backdrop-filter: blur(25px);
-      border: 3px solid var(--color-gold);
+      min-width: 260px;
+      background: rgba(26, 26, 26, 0.98);
+      backdrop-filter: blur(28px);
+      border: 2px solid var(--gold-primary);
       border-radius: var(--radius-xl);
       padding: var(--spacing-xl);
       box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.5),
-        var(--shadow-gold-glow);
+        0 24px 64px rgba(0, 0, 0, 0.5),
+        var(--shadow-gold);
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-20px) scale(0.9);
+      transform: translateY(-24px) scale(0.92);
       transition: all var(--transition-elastic);
       z-index: var(--z-dropdown);
     }
@@ -568,7 +476,7 @@
       padding: var(--spacing-md) var(--spacing-xl);
       font-size: var(--font-base);
       font-weight: 700;
-      color: var(--color-cream);
+      color: var(--silver-light);
       text-decoration: none;
       border-radius: var(--radius-md);
       transition: all var(--transition-base);
@@ -580,7 +488,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: var(--gradient-gold-shine);
+      background: var(--gradient-gold);
       opacity: 0;
       transition: opacity var(--transition-base);
     }
@@ -591,7 +499,7 @@
     }
     
     .dropdown-item:hover {
-      color: var(--color-black);
+      color: var(--black);
       transform: translateX(10px);
     }
     
@@ -601,24 +509,24 @@
     
     .dropdown-category {
       font-weight: 900;
-      color: var(--color-gold-light);
-      border-bottom: 3px solid var(--color-gold);
+      color: var(--gold-bright);
+      border-bottom: 2px solid var(--gold-primary);
       margin-bottom: var(--spacing-md);
       padding-bottom: var(--spacing-sm);
-      text-shadow: var(--shadow-gold-glow);
+      text-shadow: var(--shadow-gold);
     }
     
     .nav-link-cta {
-      background: var(--gradient-gold-shine);
+      background: var(--gradient-gold);
       background-size: 200% auto;
-      color: var(--color-black);
+      color: var(--black);
       font-weight: 900;
       padding: var(--spacing-md) var(--spacing-2xl);
       border-radius: var(--radius-full);
-      box-shadow: var(--shadow-gold-glow);
-      margin-left: var(--spacing-lg);
-      border: 3px solid var(--color-gold-light);
-      animation: goldShine 4s ease-in-out infinite;
+      box-shadow: var(--shadow-gold);
+      margin-left: var(--spacing-xl);
+      border: 2px solid var(--gold-bright);
+      animation: goldShineText 5s ease-in-out infinite;
     }
     
     .nav-link-cta::before {
@@ -626,15 +534,15 @@
     }
     
     .nav-link-cta:hover {
-      color: var(--color-black);
-      transform: translateY(-5px) scale(1.08);
+      color: var(--black);
+      transform: translateY(-6px) scale(1.1);
       box-shadow:
-        0 15px 40px rgba(255, 215, 0, 0.8),
-        var(--shadow-gold-glow);
+        0 18px 48px rgba(212, 175, 55, 0.9),
+        var(--shadow-gold);
     }
     
     /* ============================================================
-       BARRA CAMPANHAS
+       BARRA CAMPANHAS OURO
        ============================================================ */
     .campaign-bar {
       position: fixed;
@@ -643,13 +551,13 @@
       width: 100%;
       min-height: var(--campaign-height);
       background: linear-gradient(135deg,
-        rgba(20, 25, 32, 0.98) 0%,
-        rgba(26, 30, 38, 0.96) 100%);
-      backdrop-filter: blur(22px);
-      border-bottom: 3px solid var(--color-gold);
+        rgba(26, 26, 26, 0.98) 0%,
+        rgba(34, 34, 34, 0.96) 100%);
+      backdrop-filter: blur(24px);
+      border-bottom: 2px solid var(--gold-primary);
       box-shadow:
-        0 7px 28px rgba(0, 0, 0, 0.3),
-        0 3px 56px rgba(255, 215, 0, 0.2);
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 4px 64px rgba(212, 175, 55, 0.2);
       z-index: calc(var(--z-fixed) - 1);
       padding: var(--spacing-xl) 0;
     }
@@ -662,42 +570,42 @@
       gap: var(--spacing-xl);
       max-width: var(--container-max);
       margin: 0 auto;
-      padding: 0 var(--spacing-xl);
+      padding: 0 var(--spacing-2xl);
     }
     
     .campaign-title {
       font-size: var(--font-xl);
       font-weight: 900;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      background: var(--gradient-gold-shine);
+      background: var(--gradient-gold);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       padding-right: var(--spacing-2xl);
-      border-right: 4px solid var(--color-gold);
-      margin-right: var(--spacing-md);
-      animation: goldShine 4s ease-in-out infinite;
+      border-right: 3px solid var(--gold-primary);
+      margin-right: var(--spacing-lg);
+      animation: goldShineText 5s ease-in-out infinite;
       position: relative;
     }
     
     .campaign-title::after {
       content: '';
       position: absolute;
-      right: -4px;
+      right: -3px;
       top: 50%;
       transform: translateY(-50%);
-      width: 4px;
-      height: 75%;
-      background: var(--gradient-gold-shine);
-      box-shadow: var(--shadow-gold-glow);
-      animation: pulseBar 3s ease-in-out infinite;
+      width: 3px;
+      height: 70%;
+      background: var(--gradient-gold);
+      box-shadow: var(--shadow-gold);
+      animation: pulseBarGold 3s ease-in-out infinite;
     }
     
-    @keyframes pulseBar {
-      0%, 100% { opacity: 0.7; height: 75%; }
-      50% { opacity: 1; height: 90%; }
+    @keyframes pulseBarGold {
+      0%, 100% { opacity: 0.7; height: 70%; }
+      50% { opacity: 1; height: 88%; }
     }
     
     .campaign-btn {
@@ -706,10 +614,10 @@
       padding: var(--spacing-md) var(--spacing-2xl);
       font-size: var(--font-base);
       font-weight: 800;
-      letter-spacing: 0.06em;
-      color: var(--color-cream);
-      background: rgba(255, 215, 0, 0.1);
-      border: 3px solid var(--color-gold);
+      letter-spacing: 0.07em;
+      color: var(--silver-light);
+      background: rgba(212, 175, 55, 0.08);
+      border: 2px solid var(--gold-primary);
       border-radius: var(--radius-xl);
       text-decoration: none;
       transition: all var(--transition-elastic);
@@ -722,7 +630,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: var(--gradient-gold-shine);
+      background: var(--gradient-gold);
       opacity: 0;
       transition: opacity var(--transition-base);
     }
@@ -733,10 +641,10 @@
     }
     
     .campaign-btn:hover {
-      color: var(--color-black);
-      border-color: var(--color-gold-light);
-      transform: translateY(-7px) scale(1.08);
-      box-shadow: var(--shadow-gold-glow);
+      color: var(--black);
+      border-color: var(--gold-bright);
+      transform: translateY(-8px) scale(1.08);
+      box-shadow: var(--shadow-gold);
     }
     
     .campaign-btn:hover::before {
@@ -744,10 +652,10 @@
     }
     
     /* ============================================================
-       HERO REVOLUCIONÁRIO
+       HERO OURO E PRATA
        ============================================================ */
     main {
-      margin-top: calc(var(--header-height) + var(--campaign-height) + var(--spacing-4xl) + var(--spacing-xl));
+      margin-top: calc(var(--header-height) + var(--campaign-height) + var(--spacing-4xl) + var(--spacing-2xl));
       padding-bottom: var(--spacing-4xl);
     }
     
@@ -760,35 +668,35 @@
       margin: 0 auto var(--spacing-4xl);
       padding: var(--spacing-4xl);
       background: linear-gradient(135deg,
-        rgba(26, 32, 40, 0.88) 0%,
-        rgba(20, 25, 32, 0.85) 100%);
-      backdrop-filter: blur(30px) saturate(150%);
+        rgba(26, 26, 26, 0.9) 0%,
+        rgba(34, 34, 34, 0.88) 100%);
+      backdrop-filter: blur(32px) saturate(150%);
       border-radius: var(--radius-2xl);
-      border: 4px solid var(--color-gold);
+      border: 2px solid var(--gold-primary);
       box-shadow:
-        0 50px 120px rgba(0, 0, 0, 0.6),
-        var(--shadow-gold-glow),
-        inset 0 2px 0 rgba(255, 255, 255, 0.1);
+        0 60px 140px rgba(0, 0, 0, 0.6),
+        var(--shadow-combined),
+        inset 0 2px 0 rgba(255, 255, 255, 0.08);
       position: relative;
       overflow: hidden;
     }
     
-    /* Luz rotativa dourada */
+    /* Luz rotativa ouro/prata */
     .hero::before {
       content: '';
       position: absolute;
-      top: -90%;
-      right: -90%;
-      width: 180%;
-      height: 280%;
+      top: -100%;
+      right: -100%;
+      width: 200%;
+      height: 300%;
       background:
-        radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 45%),
-        radial-gradient(circle, rgba(65, 227, 215, 0.15) 35%, transparent 65%);
-      animation: rotateHero 30s linear infinite;
+        radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, transparent 48%),
+        radial-gradient(circle, rgba(192, 192, 192, 0.14) 38%, transparent 68%);
+      animation: rotateHeroGoldSilver 32s linear infinite;
       pointer-events: none;
     }
     
-    @keyframes rotateHero {
+    @keyframes rotateHeroGoldSilver {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
@@ -804,22 +712,22 @@
       gap: var(--spacing-sm);
       font-size: var(--font-base);
       font-weight: 900;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      background: var(--gradient-gold-shine);
+      background: var(--gradient-gold);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       margin-bottom: var(--spacing-2xl);
       padding: var(--spacing-md) var(--spacing-2xl);
-      background-color: rgba(255, 215, 0, 0.15);
+      background-color: rgba(212, 175, 55, 0.12);
       background-blend-mode: overlay;
       border-radius: var(--radius-full);
-      border: 3px solid var(--color-gold);
+      border: 2px solid var(--gold-primary);
       width: fit-content;
-      box-shadow: var(--shadow-gold-glow);
-      animation: goldShine 4s ease-in-out infinite;
+      box-shadow: var(--shadow-gold);
+      animation: goldShineText 5s ease-in-out infinite;
     }
     
     .hero-title {
@@ -827,23 +735,24 @@
       font-size: clamp(var(--font-3xl), 9vw, var(--font-5xl));
       font-weight: 900;
       line-height: 1;
-      letter-spacing: -0.015em;
-      color: var(--color-white);
+      letter-spacing: -0.01em;
+      color: var(--white);
       margin-bottom: var(--spacing-2xl);
       background: linear-gradient(135deg,
-        var(--color-gold-light) 0%,
-        var(--color-gold) 30%,
-        var(--color-gold-dark) 60%,
-        var(--color-gold-light) 100%);
+        var(--gold-light) 0%,
+        var(--gold-primary) 30%,
+        var(--silver-light) 60%,
+        var(--gold-primary) 85%,
+        var(--gold-light) 100%);
       background-size: 300% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      animation: goldShiftTitle 8s ease infinite;
-      filter: drop-shadow(0 10px 30px rgba(255, 215, 0, 0.8));
+      animation: goldSilverShift 9s ease infinite;
+      filter: drop-shadow(0 12px 36px rgba(212, 175, 55, 0.9));
     }
     
-    @keyframes goldShiftTitle {
+    @keyframes goldSilverShift {
       0%, 100% { background-position: 0% center; }
       50% { background-position: 100% center; }
     }
@@ -851,11 +760,11 @@
     .hero-description {
       font-size: var(--font-xl);
       font-weight: 500;
-      line-height: 1.85;
-      color: var(--color-cream);
+      line-height: 1.9;
+      color: var(--silver-light);
       margin-bottom: var(--spacing-3xl);
-      max-width: 640px;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      max-width: 660px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
     
     .search-wrapper {
@@ -867,20 +776,21 @@
       position: relative;
       display: flex;
       align-items: center;
-      background: rgba(255, 215, 0, 0.1);
-      backdrop-filter: blur(18px);
-      border: 4px solid var(--color-gold);
+      background: rgba(212, 175, 55, 0.08);
+      backdrop-filter: blur(20px);
+      border: 2px solid var(--gold-primary);
       border-radius: var(--radius-full);
       padding: var(--spacing-sm);
       transition: all var(--transition-elastic);
-      box-shadow: var(--shadow-gold-glow);
+      box-shadow: var(--shadow-gold);
     }
     
     .search-form:focus-within {
-      transform: translateY(-5px) scale(1.03);
+      transform: translateY(-6px) scale(1.03);
       box-shadow:
-        0 20px 50px rgba(255, 215, 0, 0.5),
-        var(--shadow-gold-glow);
+        0 24px 56px rgba(212, 175, 55, 0.5),
+        var(--shadow-gold);
+      border-color: var(--gold-bright);
     }
     
     .search-input {
@@ -888,7 +798,7 @@
       font-family: var(--font-primary);
       font-size: var(--font-xl);
       font-weight: 700;
-      color: var(--color-white);
+      color: var(--white);
       background: none;
       border: none;
       outline: none;
@@ -896,39 +806,39 @@
     }
     
     .search-input::placeholder {
-      color: rgba(255, 215, 0, 0.5);
+      color: rgba(212, 175, 55, 0.5);
     }
     
     .search-btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 70px;
-      height: 70px;
-      background: var(--gradient-gold-shine);
+      width: 72px;
+      height: 72px;
+      background: var(--gradient-gold);
       background-size: 200% auto;
       border: none;
       border-radius: 50%;
-      color: var(--color-black);
+      color: var(--black);
       font-size: var(--font-3xl);
       font-weight: 900;
       cursor: pointer;
       transition: all var(--transition-elastic);
-      box-shadow: var(--shadow-gold-glow);
-      animation: goldShine 4s ease-in-out infinite;
+      box-shadow: var(--shadow-gold);
+      animation: goldShineText 5s ease-in-out infinite;
     }
     
     .search-btn:hover {
-      transform: scale(1.3) rotate(180deg);
+      transform: scale(1.35) rotate(180deg);
       box-shadow:
-        0 15px 40px rgba(255, 215, 0, 0.9),
-        var(--shadow-gold-glow);
+        0 18px 48px rgba(212, 175, 55, 1),
+        var(--shadow-gold);
     }
     
     .cta-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: var(--spacing-lg);
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--spacing-xl);
     }
     
     .cta-btn {
@@ -938,10 +848,10 @@
       padding: var(--spacing-xl) var(--spacing-2xl);
       font-size: var(--font-lg);
       font-weight: 900;
-      letter-spacing: 0.06em;
-      color: var(--color-cream);
-      background: rgba(255, 215, 0, 0.12);
-      border: 3px solid var(--color-gold);
+      letter-spacing: 0.07em;
+      color: var(--silver-light);
+      background: rgba(212, 175, 55, 0.1);
+      border: 2px solid var(--gold-primary);
       border-radius: var(--radius-xl);
       text-decoration: none;
       transition: all var(--transition-elastic);
@@ -954,7 +864,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: var(--gradient-gold-shine);
+      background: var(--gradient-gold);
       opacity: 0;
       transition: opacity var(--transition-base);
     }
@@ -965,10 +875,10 @@
     }
     
     .cta-btn:hover {
-      color: var(--color-black);
-      border-color: var(--color-gold-light);
-      transform: translateY(-10px) scale(1.08);
-      box-shadow: var(--shadow-gold-glow);
+      color: var(--black);
+      border-color: var(--gold-bright);
+      transform: translateY(-12px) scale(1.1);
+      box-shadow: var(--shadow-gold);
     }
     
     .cta-btn:hover::before {
@@ -985,29 +895,30 @@
     
     .mockup {
       width: 100%;
-      max-width: 580px;
+      max-width: 600px;
       height: auto;
       border-radius: var(--radius-2xl);
       box-shadow:
-        0 70px 150px rgba(0, 0, 0, 0.8),
-        0 35px 90px rgba(255, 215, 0, 0.5),
-        var(--shadow-gold-glow);
-      border: 6px solid var(--color-gold);
+        0 80px 160px rgba(0, 0, 0, 0.8),
+        0 40px 100px rgba(212, 175, 55, 0.5),
+        var(--shadow-gold);
+      border: 3px solid var(--gold-primary);
       transition: transform var(--transition-elastic);
-      animation: mockupFloat 8s ease-in-out infinite;
+      animation: mockupFloatGold 9s ease-in-out infinite;
     }
     
-    @keyframes mockupFloat {
+    @keyframes mockupFloatGold {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+      50% { transform: translateY(-24px); }
     }
     
     .mockup:hover {
-      transform: scale(1.08) translateY(-25px) rotate(-5deg);
+      transform: scale(1.1) translateY(-30px) rotate(-6deg);
       box-shadow:
-        0 90px 180px rgba(0, 0, 0, 0.9),
-        0 45px 110px rgba(255, 215, 0, 0.7),
-        var(--shadow-gold-glow);
+        0 100px 200px rgba(0, 0, 0, 0.9),
+        0 50px 120px rgba(212, 175, 55, 0.7),
+        var(--shadow-gold);
+      border-color: var(--gold-bright);
     }
     
     /* ============================================================
@@ -1016,7 +927,7 @@
     .products-section {
       max-width: var(--container-max);
       margin: 0 auto;
-      padding: 0 var(--spacing-xl);
+      padding: 0 var(--spacing-2xl);
     }
     
     .section-header {
@@ -1028,33 +939,35 @@
       font-family: var(--font-display);
       font-size: var(--font-5xl);
       font-weight: 900;
-      background: var(--gradient-gold-shine);
+      background: var(--gradient-gold);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       margin-bottom: var(--spacing-lg);
-      animation: goldShine 4s ease-in-out infinite;
-      filter: drop-shadow(0 8px 28px rgba(255, 215, 0, 0.7));
+      animation: goldShineText 5s ease-in-out infinite;
+      filter: drop-shadow(0 10px 32px rgba(212, 175, 55, 0.8));
     }
     
     .section-subtitle {
       font-size: var(--font-2xl);
-      color: var(--color-cyan-light);
-      text-shadow: var(--shadow-cyan-glow);
+      background: var(--gradient-silver);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
       gap: var(--spacing-3xl);
       margin-bottom: var(--spacing-4xl);
     }
     
     .card {
-      background: rgba(26, 32, 40, 0.75);
-      backdrop-filter: blur(22px);
-      border: 4px solid var(--color-gold);
+      background: rgba(26, 26, 26, 0.78);
+      backdrop-filter: blur(24px);
+      border: 2px solid var(--gold-primary);
       border-radius: var(--radius-2xl);
       padding: var(--spacing-3xl);
       text-align: center;
@@ -1068,16 +981,16 @@
       position: absolute;
       inset: 0;
       background: radial-gradient(circle at center,
-        rgba(255, 215, 0, 0.2) 0%,
-        transparent 70%);
+        rgba(212, 175, 55, 0.2) 0%,
+        transparent 75%);
       opacity: 0;
       transition: opacity var(--transition-base);
     }
     
     .card:hover {
-      transform: translateY(-25px) scale(1.08);
-      border-color: var(--color-gold-light);
-      box-shadow: var(--shadow-gold-glow);
+      transform: translateY(-28px) scale(1.1);
+      border-color: var(--gold-bright);
+      box-shadow: var(--shadow-gold);
     }
     
     .card:hover::before {
@@ -1085,72 +998,72 @@
     }
     
     .card-image {
-      width: 120px;
-      height: 120px;
+      width: 128px;
+      height: 128px;
       margin: 0 auto var(--spacing-2xl);
       border-radius: var(--radius-xl);
       object-fit: cover;
-      filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.6));
+      filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.6));
     }
     
     .card-title {
       font-size: var(--font-2xl);
       font-weight: 900;
-      background: var(--gradient-gold-shine);
+      background: var(--gradient-gold);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       margin-bottom: var(--spacing-lg);
-      animation: goldShine 4s ease-in-out infinite;
+      animation: goldShineText 5s ease-in-out infinite;
     }
     
     .card-description {
       font-size: var(--font-lg);
-      color: var(--color-cream);
-      line-height: 1.85;
+      color: var(--silver-light);
+      line-height: 1.9;
     }
     
     /* ============================================================
        FOOTER
        ============================================================ */
     .footer {
-      background: linear-gradient(135deg, var(--color-black) 0%, var(--color-dark) 100%);
-      border-top: 4px solid var(--color-gold);
+      background: linear-gradient(135deg, var(--black) 0%, var(--dark-primary) 100%);
+      border-top: 2px solid var(--gold-primary);
       padding: var(--spacing-4xl) 0;
       margin-top: var(--spacing-4xl);
-      box-shadow: var(--shadow-gold-glow);
+      box-shadow: var(--shadow-gold);
     }
     
     .footer-content {
       max-width: var(--container-max);
       margin: 0 auto;
-      padding: 0 var(--spacing-xl);
+      padding: 0 var(--spacing-2xl);
       text-align: center;
     }
     
     .footer-text {
       font-size: var(--font-xl);
-      color: var(--color-cream);
+      color: var(--silver-light);
       margin-bottom: var(--spacing-md);
-      line-height: 2.1;
+      line-height: 2.2;
     }
     
     .footer-brand {
       font-weight: 900;
-      background: var(--gradient-gold-shine);
+      background: var(--gradient-gold);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      animation: goldShine 4s ease-in-out infinite;
+      animation: goldShineText 5s ease-in-out infinite;
     }
     
     /* ============================================================
        RESPONSIVIDADE
        ============================================================ */
     @media (max-width: 1024px) {
-      .logo-image { width: 65px; height: 65px; }
+      .logo-image { width: 68px; height: 68px; }
       .logo-title { font-size: var(--font-3xl); }
       .hero {
         grid-template-columns: 1fr;
@@ -1158,14 +1071,14 @@
         padding: var(--spacing-3xl) var(--spacing-xl);
       }
       .hero-visual { order: -1; }
-      .mockup { max-width: 480px; }
+      .mockup { max-width: 500px; }
     }
     
     @media (max-width: 768px) {
-      .logo-image { width: 55px; height: 55px; }
+      .logo-image { width: 58px; height: 58px; }
       .logo-text { display: none; }
-      .nav-list { flex-wrap: wrap; justify-content: center; }
-      .nav-link { font-size: 0.75rem; padding: var(--spacing-xs) var(--spacing-sm); }
+      .nav-list { flex-wrap: wrap; justify-content: center; gap: var(--spacing-sm); }
+      .nav-link { font-size: 0.8rem; padding: var(--spacing-sm) var(--spacing-md); }
       .cards-grid { grid-template-columns: 1fr; gap: var(--spacing-2xl); }
       .cta-grid { grid-template-columns: 1fr; }
     }
@@ -1173,27 +1086,14 @@
 </head>
 <body>
   
-  <!-- Ondas luminosas -->
-  <div class="wave-container">
-    <div class="wave"></div>
-    <div class="wave"></div>
-  </div>
-  
-  <!-- Linhas fluindo -->
-  <div class="flowing-lines">
-    <div class="flowing-line"></div>
-    <div class="flowing-line"></div>
-    <div class="flowing-line"></div>
-  </div>
-  
   <!-- ============================================================
-       HEADER VERDE DA LOGO COM DOURADO
+       HEADER OURO E PRATA
        ============================================================ -->
   <header class="header">
     <div class="header-content">
       <a href="#" class="logo-wrapper">
         <img src="/assets/Logo.png" alt="Mais Sabiamente" class="logo-image" 
-             onerror="this.src='https://placehold.co/75x75/ffffff/0a0e14?text=MS&font=raleway'">
+             onerror="this.src='https://placehold.co/78x78/ffffff/0a0e14?text=MS&font=raleway'">
         <div class="logo-text">
           <div class="logo-title">Sabiamente</div>
           <div class="logo-subtitle">Curadoria Profissional</div>
@@ -1250,7 +1150,7 @@
   </div>
   
   <!-- ============================================================
-       HERO REVOLUCIONÁRIO
+       HERO OURO E PRATA
        ============================================================ -->
   <main>
     <section class="hero">
@@ -1280,8 +1180,8 @@
       </div>
       
       <div class="hero-visual">
-        <img src="/assets/mockup-phone.png" alt="Visual Premium Supremo Revolucionário" class="mockup"
-             onerror="this.src='https://placehold.co/580x1160/0a0e14/ffd700?text=Visual+Premium+Revolucionário&font=raleway'">
+        <img src="/assets/mockup-phone.png" alt="Visual Premium Ouro Prata" class="mockup"
+             onerror="this.src='https://placehold.co/600x1200/0a0e14/D4AF37?text=Visual+Premium+Ouro&font=raleway'">
       </div>
     </section>
     
@@ -1289,60 +1189,44 @@
     <section class="products-section" id="produtos">
       <div class="section-header">
         <h2 class="section-title">Produtos em Destaque</h2>
-        <p class="section-subtitle">Seleção curada revolucionária dourada</p>
+        <p class="section-subtitle">Seleção curada premium ouro e prata</p>
       </div>
       
       <div class="cards-grid">
         <article class="card">
           <img src="/assets/produto1.png" alt="Produto 1" class="card-image"
-               onerror="this.src='https://placehold.co/120x120/ffd700/0a0e14?text=P1'">
+               onerror="this.src='https://placehold.co/128x128/D4AF37/0a0e14?text=P1'">
           <h3 class="card-title">Produto Premium 1</h3>
           <p class="card-description">Destaque premium com benefícios exclusivos e qualidade garantida.</p>
         </article>
         
         <article class="card">
           <img src="/assets/produto2.png" alt="Produto 2" class="card-image"
-               onerror="this.src='https://placehold.co/120x120/41e3d7/0a0e14?text=P2'">
+               onerror="this.src='https://placehold.co/128x128/C0C0C0/0a0e14?text=P2'">
           <h3 class="card-title">Produto Premium 2</h3>
           <p class="card-description">Mais procurado pelos usuários com avaliações positivas.</p>
         </article>
         
         <article class="card">
           <img src="/assets/produto3.png" alt="Produto 3" class="card-image"
-               onerror="this.src='https://placehold.co/120x120/ffd700/0a0e14?text=P3'">
+               onerror="this.src='https://placehold.co/128x128/FFD700/0a0e14?text=P3'">
           <h3 class="card-title">Produto Premium 3</h3>
           <p class="card-description">Novidade exclusiva com tecnologia avançada e design moderno.</p>
         </article>
       </div>
     </section>
-    
-    <!-- Seções -->
-    <section id="departamentos"></section>
-    <section id="cuidados"></section>
-    <section id="tecnologia"></section>
-    <section id="consultoria"></section>
-    <section id="looker"></section>
-    <section id="sheets"></section>
-    <section id="appsheet"></section>
-    <section id="livros"></section>
-    <section id="saude"></section>
-    <section id="casa"></section>
-    <section id="home-assistant"></section>
-    <section id="marcas"></section>
-    <section id="sobre"></section>
-    <section id="contato"></section>
   </main>
   
   <!-- ============================================================
-       FOOTER DOURADO
+       FOOTER
        ============================================================ -->
   <footer class="footer">
     <div class="footer-content">
       <p class="footer-text">
-        © 2025 <span class="footer-brand">Mais Sabiamente</span> — Curadoria profissional revolucionária dourada.
+        © 2025 <span class="footer-brand">Mais Sabiamente</span> — Curadoria profissional premium ouro e prata.
       </p>
       <p class="footer-text">
-        Desenvolvido com excelência, elegância e inovação cinematográfica.
+        Desenvolvido com excelência, elegância e sofisticação dourada.
       </p>
     </div>
   </footer>
