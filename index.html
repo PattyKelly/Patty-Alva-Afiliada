@@ -105,8 +105,8 @@
       --z-fixed: 1030;
       
       /* Layout */
-      --container-max: 1400px;
-      --header-height: 80px;
+      --container-max: 1480px;
+      --header-height: 85px;
     }
     
     /* ============================================================
@@ -215,7 +215,7 @@
     }
     
     /* ============================================================
-       HEADER CLEAN
+       HEADER CLEAN COM BARRA BRANCA NA LOGO
        ============================================================ */
     .header {
       position: fixed;
@@ -231,14 +231,29 @@
       transition: all var(--transition-base);
     }
     
+    /* Barra branca apenas na área da logo */
+    .header::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 380px;
+      height: 100%;
+      background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(255, 255, 255, 0.90) 70%,
+        rgba(28, 28, 30, 0.95) 100%);
+      z-index: 0;
+    }
+    
     .header-content {
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 100%;
-      max-width: var(--container-max);
+      max-width: 100%;
       margin: 0 auto;
-      padding: 0 var(--spacing-2xl);
+      padding: 0 var(--spacing-3xl);
       position: relative;
       z-index: 2;
     }
@@ -247,9 +262,11 @@
     .logo-wrapper {
       display: flex;
       align-items: center;
-      gap: var(--spacing-xl);
+      gap: var(--spacing-lg);
       text-decoration: none;
       transition: transform var(--transition-elastic);
+      position: relative;
+      z-index: 3;
     }
     
     .logo-wrapper:hover {
@@ -265,11 +282,13 @@
       50% { transform: translateX(14px) scale(1.08); }
     }
     
+    /* LOGO MAIOR - 90px */
     .logo-image {
-      width: 60px;
-      height: 60px;
-      border-radius: var(--radius-md);
+      width: 90px;
+      height: 90px;
+      border-radius: var(--radius-lg);
       transition: all var(--transition-elastic);
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
     }
     
     .logo-wrapper:hover .logo-image {
@@ -277,7 +296,7 @@
       filter: drop-shadow(0 8px 24px rgba(212, 175, 55, 0.4));
     }
     
-    /* MAIS SABIAMENTE tipografia da logo */
+    /* MAIS SABIAMENTE tipografia MENOR */
     .logo-text {
       display: flex;
       flex-direction: column;
@@ -286,12 +305,9 @@
     
     .logo-title {
       font-family: var(--font-logo);
-      font-size: var(--font-3xl);
+      font-size: var(--font-xl);
       font-weight: 700;
-      background: var(--gradient-mixed);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--charcoal-darkest);
       line-height: 1;
       letter-spacing: 0.02em;
       text-transform: uppercase;
@@ -303,14 +319,14 @@
       font-weight: 600;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--silver-medium);
+      color: var(--charcoal-medium);
     }
     
-    /* Navegação clean */
+    /* Navegação clean AJUSTADA */
     .nav {
       display: flex;
       align-items: center;
-      gap: var(--spacing-lg);
+      gap: var(--spacing-md);
     }
     
     .nav-list {
@@ -318,6 +334,7 @@
       align-items: center;
       gap: var(--spacing-md);
       list-style: none;
+      flex-wrap: nowrap;
     }
     
     .nav-item {
@@ -454,7 +471,7 @@
       font-weight: 700;
       padding: var(--spacing-sm) var(--spacing-xl);
       border-radius: var(--radius-full);
-      margin-left: var(--spacing-lg);
+      margin-left: var(--spacing-md);
       border: 1px solid rgba(232, 200, 100, 0.3);
     }
     
@@ -837,6 +854,19 @@
     /* ============================================================
        RESPONSIVIDADE
        ============================================================ */
+    @media (max-width: 1280px) {
+      .header::before {
+        width: 320px;
+      }
+      .nav-list {
+        gap: var(--spacing-sm);
+      }
+      .nav-link {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: 0.8rem;
+      }
+    }
+    
     @media (max-width: 1024px) {
       .hero-content-wrapper {
         grid-template-columns: 1fr;
@@ -848,10 +878,14 @@
     }
     
     @media (max-width: 768px) {
-      .logo-image { width: 50px; height: 50px; }
+      .header::before {
+        width: 280px;
+      }
+      .logo-image { width: 70px; height: 70px; }
+      .logo-title { font-size: var(--font-lg); }
       .logo-text { display: none; }
-      .nav-list { flex-wrap: wrap; gap: var(--spacing-sm); }
-      .nav-link { font-size: 0.75rem; padding: var(--spacing-xs) var(--spacing-md); }
+      .nav-list { flex-wrap: wrap; gap: var(--spacing-xs); }
+      .nav-link { font-size: 0.7rem; padding: var(--spacing-xs) var(--spacing-sm); }
       .cards-grid { grid-template-columns: 1fr; gap: var(--spacing-2xl); }
       .cta-grid { grid-template-columns: 1fr; }
     }
@@ -860,13 +894,13 @@
 <body>
   
   <!-- ============================================================
-       HEADER CLEAN
+       HEADER CLEAN COM BARRA BRANCA
        ============================================================ -->
   <header class="header">
     <div class="header-content">
       <a href="#" class="logo-wrapper">
         <img src="/assets/Logo.png" alt="Mais Sabiamente" class="logo-image" 
-             onerror="this.src='https://placehold.co/60x60/FFFFFF/1C1C1E?text=MS'">
+             onerror="this.src='https://placehold.co/90x90/FFFFFF/1C1C1E?text=MS'">
         <div class="logo-text">
           <div class="logo-title">Mais Sabiamente</div>
           <div class="logo-subtitle">Curadoria Profissional</div>
